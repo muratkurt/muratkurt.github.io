@@ -1,0 +1,14 @@
+title: muratkurt RootHide Repo
+description: RootHide tweaks and command line tools
+
+# APT depo dosyalari Jekyll tarafindan islenmemeli
+include:
+  - Release
+  - Packages
+  - Packages.gz
+  - Packages.bz2
+
+exclude:
+  - update.sh
+  - make_packages.py
+  - "*.txt"

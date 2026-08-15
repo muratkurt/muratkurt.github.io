@@ -1,0 +1,49 @@
+Package: com.muratkurt.claude-cli-bridge
+Name: ClaudeCLIBridge (RootHide)
+Version: 0.4.3
+Architecture: iphoneos-arm64e
+Icon: https://muratkurt.github.io/assets/claude-cli-bridge/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.claude-cli-bridge.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.claude-cli-bridge.json
+Homepage: https://muratkurt.github.io/
+Description: RootHide compatibility bridge for Claude Code CLI
+ Claude Code installs on RootHide but does not work: the Bash tool
+ fails with "No suitable shell found", the Read/Write/Edit/Search
+ tools cannot resolve paths, and OAuth login never opens Safari.
+ The cause is RootHide's concealment architecture - the bootstrap
+ toolchain and Claude Code live in different namespaces.
+ .
+ This package bridges the two. The result: all of Claude Code's
+ tools work at FULL CAPABILITY on RootHide.
+ .
+ Secondary feature: alongside your official Claude account (OAuth),
+ you can configure alternative Anthropic-compatible API/gateway
+ profiles. Tokens are never embedded in the package; they are stored
+ in your home directory with 0600 permissions.
+ .
+ USAGE:
+ claude-rh --original          official Claude account (OAuth)
+ claude-provider add <name>    add an alternative API profile
+ claude-provider use <name>    set as default
+ claude-rh                     launch with the active profile
+ claude-rh-doctor              self-test
+ .
+ NOTE: this package's command is claude-rh. The claude and
+ claude-auth commands on your system belong to the
+ com.anthropic.claude-code package and do NOT use this bridge.
+ .
+ REQUIRED: com.anthropic.claude-code must be installed first.
+ Get it from:
+   https://imcynic.github.io/claude-code-ios/
+ .
+ On RootHide, Sileo will send this package through RootHide Patcher
+ (convert screen) before installing. That is expected, not an error.
+Maintainer: muratkurt
+Author: muratkurt & Opus 5
+Section: Development
+Depends: com.anthropic.claude-code
+Filename: debs/claude-cli-bridge_0.4.3.deb
+Size: 24322
+MD5sum: 7cfd70244487890a3672a8798f36eb21
+SHA1: 8c250535351ee3b3ca6dd5c74a1651adce652ea9
+SHA256: e43ec04cbe27e5c7138af714db1bf65c66bbaab17f330f814bdce15383a44ec2
