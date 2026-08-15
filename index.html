@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -35,135 +36,136 @@
   }
   .wrap{max-width:540px;margin:0 auto;}
 
-  /* ---- header ---- */
-  .head{text-align:center;margin-bottom:38px;}
-  .head img{width:76px;height:76px;border-radius:20px;display:block;margin:0 auto 18px;}
-  h1{
-    font-family:var(--mono);
-    font-size:19px;
-    font-weight:600;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    margin:0 0 8px;
-  }
-  .head p{color:var(--muted);margin:0;font-size:14px;}
+/* –– header –– */
+.head{text-align:center;margin-bottom:38px;}
+.head img{width:76px;height:76px;border-radius:20px;display:block;margin:0 auto 18px;}
+h1{
+font-family:var(–mono);
+font-size:19px;
+font-weight:600;
+letter-spacing:0.14em;
+text-transform:uppercase;
+margin:0 0 8px;
+}
+.head p{color:var(–muted);margin:0;font-size:14px;}
 
-  /* ---- signature: the repo as an APT stanza ---- */
-  .stanza{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:16px 18px;
-    font-family:var(--mono);
-    font-size:13px;
-    margin-bottom:14px;
-  }
-  .stanza .row{display:flex;gap:10px;padding:3px 0;}
-  .stanza .k{color:var(--muted);flex:0 0 96px;}
-  .stanza .v{color:var(--fg);word-break:break-all;}
-  .stanza .v.url{color:var(--accent);}
+/* –– signature: the repo as an APT stanza –– */
+.stanza{
+background:var(–panel);
+border:1px solid var(–line);
+border-radius:12px;
+padding:16px 18px;
+font-family:var(–mono);
+font-size:13px;
+margin-bottom:14px;
+}
+.stanza .row{display:flex;gap:10px;padding:3px 0;}
+.stanza .k{color:var(–muted);flex:0 0 96px;}
+.stanza .v{color:var(–fg);word-break:break-all;}
+.stanza .v.url{color:var(–accent);}
 
-  button.copy{
-    width:100%;
-    display:block;
-    background:var(--panel-2);
-    color:var(--fg);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:13px;
-    font-family:var(--mono);
-    font-size:13px;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    cursor:pointer;
-    margin-bottom:34px;
-    transition:border-color .15s ease, color .15s ease;
-  }
-  button.copy:hover{border-color:var(--accent);color:var(--accent);}
-  button.copy.done{border-color:var(--accent);color:var(--accent);}
+button.copy{
+width:100%;
+display:block;
+background:var(–panel-2);
+color:var(–fg);
+border:1px solid var(–line);
+border-radius:10px;
+padding:13px;
+font-family:var(–mono);
+font-size:13px;
+letter-spacing:0.06em;
+text-transform:uppercase;
+cursor:pointer;
+margin-bottom:34px;
+transition:border-color .15s ease, color .15s ease;
+}
+button.copy:hover{border-color:var(–accent);color:var(–accent);}
+button.copy.done{border-color:var(–accent);color:var(–accent);}
 
-  /* ---- section labels ---- */
-  h2{
-    font-family:var(--mono);
-    font-size:11px;
-    font-weight:500;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:var(--muted);
-    margin:0 0 12px;
-    padding-bottom:8px;
-    border-bottom:1px solid var(--line);
-  }
+/* –– section labels –– */
+h2{
+font-family:var(–mono);
+font-size:11px;
+font-weight:500;
+letter-spacing:0.18em;
+text-transform:uppercase;
+color:var(–muted);
+margin:0 0 12px;
+padding-bottom:8px;
+border-bottom:1px solid var(–line);
+}
 
-  /* ---- package manager buttons ---- */
-  .managers{display:block;margin-bottom:12px;}
-  a.mgr{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:14px 16px;
-    margin-bottom:9px;
-    text-decoration:none;
-    color:var(--fg);
-    transition:border-color .15s ease, transform .15s ease, background .15s ease;
-  }
-  a.mgr:hover{border-color:var(--accent);background:var(--panel-2);transform:translateY(-1px);}
-  a.mgr:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-  a.mgr.primary{border-color:#3A322E;background:var(--panel-2);}
-  .tile{
-    flex:0 0 40px;height:40px;
-    border-radius:11px;
-    background:#000;
-    border:1px solid var(--line);
-    display:flex;align-items:center;justify-content:center;
-    font-family:var(--mono);font-size:16px;font-weight:600;
-    color:var(--accent);
-  }
-  a.mgr.primary .tile{background:var(--accent);color:#0B0B0C;border-color:var(--accent);}
-  .mgr .name{font-family:var(--mono);font-size:15px;font-weight:500;line-height:1.3;}
-  .mgr .scheme{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.4;}
-  .hint{color:var(--muted);font-size:12.5px;margin:0 0 34px;text-align:center;}
+/* –– package manager buttons –– */
+.managers{display:block;margin-bottom:12px;}
+a.mgr{
+display:flex;
+align-items:center;
+gap:14px;
+background:var(–panel);
+border:1px solid var(–line);
+border-radius:12px;
+padding:14px 16px;
+margin-bottom:9px;
+text-decoration:none;
+color:var(–fg);
+transition:border-color .15s ease, transform .15s ease, background .15s ease;
+}
+a.mgr:hover{border-color:var(–accent);background:var(–panel-2);transform:translateY(-1px);}
+a.mgr:focus-visible{outline:2px solid var(–accent);outline-offset:2px;}
+a.mgr.primary{border-color:#3A322E;background:var(–panel-2);}
+.tile{
+flex:0 0 40px;height:40px;
+border-radius:11px;
+background:#000;
+border:1px solid var(–line);
+display:flex;align-items:center;justify-content:center;
+font-family:var(–mono);font-size:16px;font-weight:600;
+color:var(–accent);
+}
+a.mgr.primary .tile{background:var(–accent);color:#0B0B0C;border-color:var(–accent);}
+.mgr .name{font-family:var(–mono);font-size:15px;font-weight:500;line-height:1.3;}
+.mgr .scheme{font-family:var(–mono);font-size:11px;color:var(–muted);line-height:1.4;}
+.hint{color:var(–muted);font-size:12.5px;margin:0 0 34px;text-align:center;}
 
-  /* ---- packages ---- */
-  a.pkg{
-    display:flex;align-items:center;gap:14px;
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:14px 16px;
-    text-decoration:none;color:var(--fg);
-    margin-bottom:9px;
-    transition:border-color .15s ease, background .15s ease;
-  }
-  a.pkg:hover{border-color:var(--accent);background:var(--panel-2);}
-  a.pkg:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
-  .pkg img{width:44px;height:44px;border-radius:12px;flex:0 0 44px;}
-  .pkg .title{font-family:var(--mono);font-size:15px;font-weight:500;}
-  .pkg .desc{color:var(--muted);font-size:12.5px;line-height:1.45;}
-  .pkg .ver{
-    margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--muted);
-    white-space:nowrap;
-  }
+/* –– packages –– */
+a.pkg{
+display:flex;align-items:center;gap:14px;
+background:var(–panel);
+border:1px solid var(–line);
+border-radius:12px;
+padding:14px 16px;
+text-decoration:none;color:var(–fg);
+margin-bottom:9px;
+transition:border-color .15s ease, background .15s ease;
+}
+a.pkg:hover{border-color:var(–accent);background:var(–panel-2);}
+a.pkg:focus-visible{outline:2px solid var(–accent);outline-offset:2px;}
+.pkg img{width:44px;height:44px;border-radius:12px;flex:0 0 44px;}
+.pkg .title{font-family:var(–mono);font-size:15px;font-weight:500;}
+.pkg .desc{color:var(–muted);font-size:12.5px;line-height:1.45;}
+.pkg .ver{
+margin-left:auto;font-family:var(–mono);font-size:11px;color:var(–muted);
+white-space:nowrap;
+}
 
-  footer{
-    margin-top:40px;padding-top:18px;border-top:1px solid var(--line);
-    color:var(--muted);font-size:12.5px;text-align:center;
-  }
-  footer a{color:var(--accent);text-decoration:none;}
-  footer a:hover{text-decoration:underline;}
+footer{
+margin-top:40px;padding-top:18px;border-top:1px solid var(–line);
+color:var(–muted);font-size:12.5px;text-align:center;
+}
+footer a{color:var(–accent);text-decoration:none;}
+footer a:hover{text-decoration:underline;}
 
-  @media (prefers-reduced-motion: reduce){
-    *{transition:none !important;}
-    a.mgr:hover{transform:none;}
-  }
-  @media (max-width:400px){
-    .stanza .k{flex-basis:78px;}
-    .mgr .scheme{display:none;}
-  }
+@media (prefers-reduced-motion: reduce){
+*{transition:none !important;}
+a.mgr:hover{transform:none;}
+}
+@media (max-width:400px){
+.stanza .k{flex-basis:78px;}
+.mgr .scheme{display:none;}
+}
 </style>
+
 </head>
 <body>
 <div class="wrap">
@@ -181,7 +183,7 @@
     <div class="row"><span class="k">Arch</span><span class="v">iphoneos-arm64 · iphoneos-arm64e</span></div>
   </div>
 
-  <button class="copy" id="copy" type="button">Copy source URL</button>
+<button class="copy" id="copy" type="button">Copy source URL</button>
 
   <h2>Add to a package manager</h2>
   <nav class="managers">
@@ -224,13 +226,13 @@
   <p class="hint">These buttons open an app, so they only work on the device.<br>On a desktop, copy the URL instead.</p>
 
   <h2>Packages</h2>
-  <a class="pkg" href="repo/depictions/com.muratkurt.claude-cli-bridge.html">
-    <img src="repo/assets/claude-cli-bridge/icon.png" alt="">
+  <a class="pkg" href="depictions/com.muratkurt.claude-cli-bridge.html">
+    <img src="assets/claude-cli-bridge/icon.png" alt="">
     <span>
       <span class="title">ClaudeCLIBridge</span><br>
       <span class="desc">Makes Claude Code CLI work on RootHide, with provider profiles</span>
     </span>
-    <span class="ver">0.4.2</span>
+    <span class="ver">0.4.3</span>
   </a>
   <!-- Yeni tweak eklerken bu blogu kopyalayin:
   <a class="pkg" href="depictions/&lt;paket-kimligi&gt;.html">
@@ -284,5 +286,6 @@
     });
   })();
 </script>
+
 </body>
 </html>
