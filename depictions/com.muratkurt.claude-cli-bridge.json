@@ -1,0 +1,132 @@
+{
+  "minVersion": "0.1",
+  "headerImage": "https://muratkurt.github.io/assets/claude-cli-bridge/banner.png",
+  "tintColor": "#D97757",
+  "tabs": [
+    {
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "# ClaudeCLIBridge (RootHide)\n\nMake Claude Code CLI actually work on a RootHide device — and use it with your official account, your own API key, or both at the same time.\n\n## Install order matters\n\n1. Add the Claude Code repository: `https://imcynic.github.io/claude-code-ios/`\n2. Install **Claude Code** first\n3. Then install **ClaudeCLIBridge**\n\n**The convert screen is normal.** On RootHide, Sileo routes packages through RootHide Patcher before installing. If the package won't queue, or you see a *dependency not satisfied* message, that is the convert step — not a real dependency error. Convert, return to Sileo, and the queue resolves itself. Convert is safe here: both binaries keep all 9 entitlement keys and `bash-ios7`'s hash does not change.\n\n## What it fixes\n\nOn rootless jailbreaks Claude Code already works. On **RootHide** it doesn't: the bootstrap lives in a randomly named directory, which creates two separate namespaces, and Claude Code ends up on the wrong side of them.\n\n- `No suitable shell found` from the Bash tool\n- Read / Write / Edit / Search failing to resolve paths\n- OAuth login never opening Safari\n\nThis package's first job is to give Claude Code its full tool access back.\n\n## Features\n\n- Full tool access restored on RootHide — Bash, Read, Write, Edit, Search\n- OAuth login working end to end, Safari handoff included\n- Provider profiles: add an Anthropic-compatible API, set a default, switch between them\n- Separate session pools per door, so `--continue` never mixes conversations\n- Tokens stored in separate files with 0600 permissions — never inside the package, never in logs\n- Eight-item self test (`claude-rh-doctor`)\n\n## Requirements\n\n- RootHide jailbreak, arm64e\n- `com.anthropic.claude-code` installed\n- zsh, ldid (already in the bootstrap)\n\nTested on iPhone, iOS 17.0.3, RootHide."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Usage"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "### Official Claude account (OAuth)\n```\nclaude-rh --original\n```\nType `/login` inside, pick your account, Safari opens. After tapping **Authorize** the button may keep spinning — it isn't stuck. Don't wait in Safari, switch back to the terminal; \"Login successful\" appears within a few seconds.\n\n### Alternative API — no subscription needed\n```\nclaude-provider add kimi\nclaude-provider use kimi\nclaude-rh\n```\nUse the provider's **Anthropic-compatible** root address, not the OpenAI-compatible endpoint. Claude Code appends `/v1/messages` itself:\n```\nCORRECT : https://api.moonshot.ai/anthropic\nWRONG   : https://api.moonshot.ai/v1/chat/completions\n```\n\n### Session pools\n```\necho on > ~/.claude-bridge/state/sessions\n```\nOff by default. Once on, `--original` and every provider profile keep their own history, even in the same working directory.\n\n### Self test\n```\nclaude-rh-doctor\n```\n\nThe command is `claude-rh`. The `claude` and `claude-auth` commands on your system belong to a different package and do not use this bridge."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Developer",
+          "text": "muratkurt"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Package",
+          "text": "com.muratkurt.claude-cli-bridge"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "0.4.3"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Command",
+          "text": "claude-rh"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "RootHide (arm64e)"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Requires",
+          "text": "com.anthropic.claude-code"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Claude Code repository (required)",
+          "action": "https://imcynic.github.io/claude-code-ios/",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Source Code",
+          "action": "https://github.com/muratkurt/muratkurt.github.io",
+          "openExternal": true
+        }
+      ],
+      "class": "DepictionStackView"
+    },
+    {
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.4.2"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Sileo depiction and repository listing\n- No runtime changes"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.4.1"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Package description points at the repository\n- No code changes"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.4.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Separate session pool per mode — two doors no longer mix in one directory\n- Verified through RootHide Patcher: 9 entitlements kept, bash-ios7 hash unchanged\n- Full clean-install test, API-only flow verified without a subscription"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.3.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Warns when the mode changes in a directory instead of failing silently\n- browser-open rebuilt: diagnostics log is now optional and no longer fatal\n- browser-open resolves its own path, independent of the working directory"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.2.x"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Depends on com.anthropic.claude-code, measured rather than assumed\n- First from-scratch install test — four bugs found and fixed\n- Base URL warning for OpenAI-style endpoints"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.1.x"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- First package: launcher, doctor, claude-provider, PATH symlinks"
+        }
+      ],
+      "class": "DepictionStackView"
+    }
+  ],
+  "class": "DepictionTabView"
+}
