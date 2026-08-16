@@ -1,6 +1,6 @@
-# muratkurt — RootHide repo
+# muratkurt's Repo
 
-APT repository for RootHide jailbroken iOS devices.
+APT repository for jailbroken iOS devices.
 
 **Repo page:** https://muratkurt.github.io/
 
@@ -14,14 +14,14 @@ The [repo page](https://muratkurt.github.io/) has one-tap buttons for Sileo, Zeb
 
 ## Packages
 
-|Package                                                                                       |Version|Description                                                                              |
-|----------------------------------------------------------------------------------------------|-------|-----------------------------------------------------------------------------------------|
-|[ClaudeCLIBridge](https://muratkurt.github.io/depictions/com.muratkurt.claude-cli-bridge.html)|0.4.3  |Makes Claude Code CLI work on RootHide, with provider profiles and separate session pools|
+| Package | Version | Description |
+| --- | --- | --- |
+| [ClaudeCLIBridge](https://muratkurt.github.io/depictions/com.muratkurt.claude-cli-bridge.html) | 0.4.3 | Makes Claude Code CLI work on RootHide, with provider profiles and separate session pools |
 
 ## Notes
 
-- Requires a RootHide jailbreak (arm64e).
-- Installing through Sileo routes the package via RootHide Patcher first. The convert screen is expected — a “dependency not satisfied” message before converting is a misleading symptom, not a real dependency error.
+- ClaudeCLIBridge requires a RootHide jailbreak (arm64e).
+- Installing through Sileo routes the package via RootHide Patcher first. The convert screen is expected — a "dependency not satisfied" message before converting is a misleading symptom, not a real dependency error.
 - ClaudeCLIBridge depends on `com.anthropic.claude-code`, which lives in a different repository: https://imcynic.github.io/claude-code-ios/
 
 ## Repository layout
