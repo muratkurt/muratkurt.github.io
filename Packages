@@ -47,3 +47,82 @@ Size: 24322
 MD5sum: 7cfd70244487890a3672a8798f36eb21
 SHA1: 8c250535351ee3b3ca6dd5c74a1651adce652ea9
 SHA256: e43ec04cbe27e5c7138af714db1bf65c66bbaab17f330f814bdce15383a44ec2
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Homepage: https://muratkurt.github.io/
+Description: Action Button'a tek tik ve cift tik eylemi kazandirir
+ iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
+ bagimsiz eylem atamanizi saglar. Uzun basista Apple'in mevcut Action
+ Button ayari aynen calismaya devam eder.
+ .
+ Kisa basis Apple'a hic iletilmedigi icin Dynamic Island'daki stok
+ "Sessiz / uzun bas" geri bildirimi gorunmez; yalnizca sectiginiz
+ eylem calisir.
+ .
+ Eylemler: Flas, Kamera, Ekran Goruntusu.
+ Ayarlar > ActionButtonFix uzerinden secilir.
+ .
+ Kamera kilit ekraninda ve ekran kapaliyken de acilir; ekran
+ kendiliginden uyanir. Kilit acikken kamera dogrudan one gelir.
+ Ekran goruntusu stok akisla calisir: flash, sol altta kucuk onizleme,
+ dokununca duzenleme ekrani.
+ .
+ Dogrulanmis platform: iPhone 15 Pro / iOS 17.0.3 / RootHide.
+ Action Button yalnizca iPhone 15 Pro ve Pro Max modellerinde bulunur.
+ Diger cihaz ve iOS surumleri cihaz uzerinde test edilmedi.
+Architecture: iphoneos-arm64
+Version: 2.2.0
+Installed-Size: 268
+Filename: debs/com.muratkurt.actionbuttonfix_2.2.0_iphoneos-arm64.deb
+Size: 88560
+MD5sum: 7cd0028465c5c232d935f520fc2ef32f
+SHA1: 12449824fc0c5437cdfc955e602259e4231ee21e
+SHA256: a912a2ea690b2f46276d2f8041143bde5810d808b2ba735e13a449064ed86e09
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Homepage: https://muratkurt.github.io/
+Description: Action Button'a tek tik ve cift tik eylemi kazandirir
+ iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
+ bagimsiz eylem atamanizi saglar. Uzun basista Apple'in mevcut Action
+ Button ayari aynen calismaya devam eder.
+ .
+ Kisa basis Apple'a hic iletilmedigi icin Dynamic Island'daki stok
+ "Sessiz / uzun bas" geri bildirimi gorunmez; yalnizca sectiginiz
+ eylem calisir.
+ .
+ Eylemler: Flas, Kamera, Ekran Goruntusu.
+ Ayarlar > ActionButtonFix uzerinden secilir.
+ .
+ Kamera kilit ekraninda ve ekran kapaliyken de acilir; ekran
+ kendiliginden uyanir. Kilit acikken kamera dogrudan one gelir.
+ Ekran goruntusu stok akisla calisir: flash, sol altta kucuk onizleme,
+ dokununca duzenleme ekrani.
+ .
+ Dogrulanmis platform: iPhone 15 Pro / iOS 17.0.3 / RootHide.
+ Action Button yalnizca iPhone 15 Pro ve Pro Max modellerinde bulunur.
+ Diger cihaz ve iOS surumleri cihaz uzerinde test edilmedi.
+Architecture: iphoneos-arm64e
+Version: 2.2.0
+Installed-Size: 268
+Pre-Depends: rootless-compat(>= 0.9)
+Filename: debs/com.muratkurt.actionbuttonfix_2.2.0_iphoneos-arm64e.deb
+Size: 99938
+MD5sum: 168c65b4dea2831414be1125d14d5b63
+SHA1: 7b9aa2bd7cbb48b806059ce7b8e62ba18c1a48cd
+SHA256: f971e0502983d54190b76e8d8b21cc7ea2cfbf32b5105dbacb3e76257a6866d9
