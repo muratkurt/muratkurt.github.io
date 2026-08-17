@@ -1,0 +1,86 @@
+{
+  "minVersion": "0.1",
+  "headerImage": "https://muratkurt.github.io/assets/actionbuttonfix/banner.png",
+  "tintColor": "#D97757",
+  "tabs": [
+    {
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "# ActionButtonFix\n\nGive the Action Button a single click and a double click of its own — without losing the long press.\n\n## What it does\n\nOn stock iOS the Action Button only responds to a long press. ActionButtonFix adds two more gestures on top of it:\n\n- **Single click** — runs an action you choose\n- **Double click** — runs a different action you choose\n- **Long press** — keeps whatever Apple already had assigned\n\nThe short press is never handed to Apple, so the usual *Silent / hold* feedback in the Dynamic Island doesn't start. Only your action runs.\n\n## Actions\n\n- Flashlight\n- Camera\n- Screenshot\n\nPick them separately for single and double click in **Settings › ActionButtonFix**.\n\n## Behaviour worth knowing\n\n**Camera** opens the native lock screen camera when the device is locked — the display wakes on its own, even from a black screen. When the device is unlocked it brings Camera to the front directly.\n\n**Screenshot** uses the stock flow: flash, small preview in the bottom corner, tap it to edit. Left alone it disappears on its own. While the screen is off it does nothing, on purpose — waking the display only to capture the lock screen isn't worth it.\n\n**Flashlight** goes through the same controller Control Center uses, so the two stay in sync. Turn it on with the button, turn it off from Control Center, or the other way round.\n\n## Requirements\n\n- iPhone 15 Pro or Pro Max — the Action Button only exists on these\n- iOS 17.0 or later\n- RootHide or a rootless jailbreak\n\nTested on iPhone 15 Pro, iOS 17.0.3, RootHide. Other devices and iOS versions have not been verified on hardware."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Developer",
+          "text": "muratkurt"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Package",
+          "text": "com.muratkurt.actionbuttonfix"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "2.2.0"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Device",
+          "text": "iPhone 15 Pro / Pro Max"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "RootHide · rootless"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Tested on",
+          "text": "iOS 17.0.3"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Source Code",
+          "action": "https://github.com/muratkurt/muratkurt.github.io",
+          "openExternal": true
+        }
+      ],
+      "class": "DepictionStackView"
+    },
+    {
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "2.2.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "First public release.\n\n- Screenshot now uses the stock flow — flash, preview in the corner, tap to edit. It used to save straight to Photos with no interface at all.\n- Camera opens properly from the Home Screen. It no longer leaves a hidden session running in the background.\n- Flashlight stays in sync with Control Center and can be switched off from there.\n- Screenshot does nothing while the screen is off, by design.\n- New icon and a tidied Settings page."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Before 2.2.0 — unreleased"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "These versions were never published; they are listed for context.\n\n**2.1** — Camera works with the screen off. The display wakes on its own right before the camera is presented.\n\n**2.0** — Package identity settled, migration metadata cleaned up.\n\n**1.2.0** — Settings interface finished: About section, icon, version.\n\n**1.1.3** — Double click fixed. The setting was written correctly but read back as something else, so every double click fell through to screenshot.\n\n**1.0** — First working build: single click and an enable switch."
+        }
+      ],
+      "class": "DepictionStackView"
+    }
+  ],
+  "class": "DepictionTabView"
+}

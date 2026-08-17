@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ActionButtonFix</title>
+<style>
+  :root {
+    --accent: #D97757;
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --line: #e3e3e6;
+    --code-bg: #f4f4f6;
+    --note-bg: #fdf3ef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1e;
+      --fg: #f2f2f4;
+      --muted: #9a9aa0;
+      --line: #34343a;
+      --code-bg: #26262a;
+      --note-bg: #2c231f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 20px 18px 48px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  h1 { font-size: 27px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.4px; }
+  h2 { font-size: 21px; margin: 32px 0 10px; letter-spacing: -0.2px; }
+  h3 { font-size: 17px; margin: 22px 0 6px; }
+  p { margin: 0 0 12px; }
+  .lede { color: var(--muted); font-size: 17px; margin-bottom: 4px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 5px; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 14.5px;
+    background: var(--code-bg);
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+  pre {
+    background: var(--code-bg);
+    padding: 12px 14px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 0 0 14px;
+  }
+  pre code { background: none; padding: 0; font-size: 14px; line-height: 1.5; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 30px 0; }
+  .note {
+    background: var(--note-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 14px;
+    margin: 0 0 16px;
+  }
+  .note strong { color: var(--accent); }
+  ol.steps { padding-left: 20px; margin: 0 0 14px; }
+  ol.steps li { margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 0 0 14px; font-size: 16px; }
+  td { padding: 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:first-child { color: var(--muted); width: 45%; }
+  td:last-child { text-align: right; }
+  a { color: var(--accent); }
+  .foot { color: var(--muted); font-size: 14px; margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<h1>ActionButtonFix</h1>
+<p class="lede">Give the Action Button a single click and a double click of its own — without losing the long press.</p>
+
+<h2>What it does</h2>
+<p>On stock iOS the Action Button only responds to a long press. ActionButtonFix adds two more gestures on top of it:</p>
+<ul>
+  <li><strong>Single click</strong> — runs an action you choose</li>
+  <li><strong>Double click</strong> — runs a different action you choose</li>
+  <li><strong>Long press</strong> — keeps whatever Apple already had assigned</li>
+</ul>
+
+<div class="note">
+  <p style="margin:0">The short press is never handed to Apple, so the usual <strong>Silent / hold</strong> feedback in the Dynamic Island doesn't start. Only your action runs.</p>
+</div>
+
+<h2>Actions</h2>
+<ul>
+  <li>Flashlight</li>
+  <li>Camera</li>
+  <li>Screenshot</li>
+</ul>
+<p>Pick them separately for single and double click in <strong>Settings › ActionButtonFix</strong>.</p>
+
+<hr>
+
+<h2>Behaviour worth knowing</h2>
+
+<h3>Camera</h3>
+<p>Opens the native lock screen camera when the device is locked — the display wakes on its own, even from a black screen. When the device is unlocked it brings Camera to the front directly.</p>
+
+<h3>Screenshot</h3>
+<p>Uses the stock flow: flash, small preview in the bottom corner, tap it to edit. Left alone it disappears on its own.</p>
+<p>While the screen is off it does nothing, on purpose — waking the display only to capture the lock screen isn't worth it.</p>
+
+<h3>Flashlight</h3>
+<p>Goes through the same controller Control Center uses, so the two stay in sync. Turn it on with the button, turn it off from Control Center, or the other way round.</p>
+
+<hr>
+
+<h2>Requirements</h2>
+<ul>
+  <li>iPhone 15 Pro or Pro Max — the Action Button only exists on these</li>
+  <li>iOS 17.0 or later</li>
+  <li>RootHide or a rootless jailbreak</li>
+</ul>
+<p>Tested on iPhone 15 Pro, iOS 17.0.3, RootHide. Other devices and iOS versions have not been verified on hardware.</p>
+
+<h2>Information</h2>
+<table>
+  <tr><td>Developer</td><td>muratkurt</td></tr>
+  <tr><td>Package</td><td>com.muratkurt.actionbuttonfix</td></tr>
+  <tr><td>Version</td><td>2.2.0</td></tr>
+  <tr><td>Device</td><td>iPhone 15 Pro / Pro Max</td></tr>
+  <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
+  <tr><td>Tested on</td><td>iOS 17.0.3</td></tr>
+</table>
+
+<hr>
+
+<h2>Changelog</h2>
+
+<h3>2.2.0</h3>
+<p>First public release.</p>
+<ul>
+  <li>Screenshot now uses the stock flow — flash, preview in the corner, tap to edit. It used to save straight to Photos with no interface at all.</li>
+  <li>Camera opens properly from the Home Screen. It no longer leaves a hidden session running in the background.</li>
+  <li>Flashlight stays in sync with Control Center and can be switched off from there.</li>
+  <li>Screenshot does nothing while the screen is off, by design.</li>
+  <li>New icon and a tidied Settings page.</li>
+</ul>
+
+<h3>Before 2.2.0 — unreleased</h3>
+<p>These versions were never published; they are listed for context.</p>
+<ul>
+  <li><strong>2.1</strong> — Camera works with the screen off. The display wakes on its own right before the camera is presented.</li>
+  <li><strong>2.0</strong> — Package identity settled, migration metadata cleaned up.</li>
+  <li><strong>1.2.0</strong> — Settings interface finished: About section, icon, version.</li>
+  <li><strong>1.1.3</strong> — Double click fixed. The setting was written correctly but read back as something else, so every double click fell through to screenshot.</li>
+  <li><strong>1.0</strong> — First working build: single click and an enable switch.</li>
+</ul>
+
+<p class="foot">For personal use on jailbroken devices.</p>
+
+</body>
+</html>
