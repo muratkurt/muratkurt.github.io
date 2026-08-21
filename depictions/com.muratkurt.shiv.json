@@ -1,0 +1,113 @@
+{
+  "minVersion": "0.1",
+  "headerImage": "https://muratkurt.github.io/assets/shiv/banner.png",
+  "tintColor": "#D97757",
+  "tabs": [
+    {
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "# shiv\n\nAn AI assistant that runs in your terminal, on the device.\n\nTalk to a model, let it run commands, keep the conversation across sessions. Bring your own API key — the provider is up to you.\n\n## Providers\n\n- Moonshot\n- DeepSeek\n- OpenAI\n- OpenRouter\n- Ollama (local)\n- Custom endpoint\n\nAnything speaking the OpenAI `/chat/completions` format works. Claude is reachable through OpenRouter — Anthropic's own API uses a different shape and isn't supported directly.\n\n## What it does\n\n**Sessions** — every turn is saved. Pick up where you left off with `/continue`, or browse and search older conversations with `/resume`. A restored session returns to the profile it was made with, so an OpenAI conversation doesn't quietly continue on another provider.\n\n**Profiles** — keep several providers side by side and switch between them. `/profile` decides who you connect to, `/model` decides what runs.\n\n**Two languages** — Turkish and English. Chosen on first run, changeable any time with `/lang`. The reply language follows the interface language.\n\n**Input history** — arrow keys walk through previous prompts, `Ctrl+R` searches them.\n\n**Commands run on your device** — with a permission prompt before anything executes.\n\n## Commands\n\nEvery command has both a Turkish and an English name.\n\n`/profile` `/model` `/settings` `/resume` `/continue` `/lang` `/name` `/color` `/new` `/show` `/geo` `/help` `/quit`"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Node.js is required"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "shiv runs on Node.js 18 or later. It is **not** installed automatically — the package name differs between repos, and naming the wrong one would block installation entirely.\n\n**RootHide** — install **Node.js 18** from this repo. It's the same build, already converted.\n\n**Rootless** — add the Node.js repo below and install it from there.\n\nIf Node is missing, shiv tells you where to get it on first run."
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Add Node.js Repo (rootless)",
+          "action": "sileo://source/https://imcynic.github.io/nodejs-ios/",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Good to know"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**Don't run it as root.** Files would end up owned by root and `~/.shiv` could no longer be written by mobile.\n\n**Your data stays.** Profiles, API keys, sessions and input history live in `~/.shiv`. Removing the package leaves them alone — even on purge. Reinstall and you carry on where you stopped.\n\n**Your API key is yours.** It is stored locally in `~/.shiv/ayarlar.json` and sent only to the provider you chose."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Compatibility"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Tested on iPhone 15 Pro, iOS 17.0.3, RootHide.\n\nThe rootless build is published but has not been run on a rootless device yet. If you try it, feedback is welcome — `/geo` prints everything needed to diagnose."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Developer",
+          "text": "muratkurt"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Package",
+          "text": "com.muratkurt.shiv"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "0.1.0"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Requires",
+          "text": "Node.js 18+"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "RootHide · rootless"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Tested on",
+          "text": "iOS 17.0.3"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Languages",
+          "text": "Türkçe · English"
+        }
+      ],
+      "class": "DepictionStackView"
+    },
+    {
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.1.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "First release.\n\n- Sessions are saved every turn and can be continued or searched\n- Several providers side by side, switchable without losing context\n- Turkish and English throughout, including the reply language\n- Input history with arrow keys and `Ctrl+R` search\n- Output panel on `Ctrl+T`\n- Multi-line paste arrives as one message instead of one per line\n- Two builds: rootless and RootHide"
+        }
+      ],
+      "class": "DepictionStackView"
+    }
+  ],
+  "class": "DepictionTabView"
+}

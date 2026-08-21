@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>shiv</title>
+<style>
+  :root {
+    --accent: #D97757;
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --line: #e3e3e6;
+    --code-bg: #f4f4f6;
+    --note-bg: #fdf3ef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1e;
+      --fg: #f2f2f4;
+      --muted: #9a9aa0;
+      --line: #34343a;
+      --code-bg: #26262a;
+      --note-bg: #2c231f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 20px 18px 48px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  h1 { font-size: 27px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.4px; }
+  h2 { font-size: 21px; margin: 32px 0 10px; letter-spacing: -0.2px; }
+  h3 { font-size: 17px; margin: 22px 0 6px; }
+  p { margin: 0 0 12px; }
+  .lede { color: var(--muted); font-size: 17px; margin-bottom: 4px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 5px; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 14.5px;
+    background: var(--code-bg);
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+  pre {
+    background: var(--code-bg);
+    padding: 12px 14px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 0 0 14px;
+  }
+  pre code { background: none; padding: 0; font-size: 14px; line-height: 1.5; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 30px 0; }
+  .note {
+    background: var(--note-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 14px;
+    margin: 0 0 16px;
+  }
+  .note strong { color: var(--accent); }
+  ol.steps { padding-left: 20px; margin: 0 0 14px; }
+  ol.steps li { margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 0 0 14px; font-size: 16px; }
+  td { padding: 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:first-child { color: var(--muted); width: 45%; }
+  td:last-child { text-align: right; }
+  a { color: var(--accent); }
+  .foot { color: var(--muted); font-size: 14px; margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<h1>shiv</h1>
+<p class="lede">An AI assistant that runs in your terminal, on the device.</p>
+
+<p>Talk to a model, let it run commands, keep the conversation across sessions. Bring your own API key — the provider is up to you.</p>
+
+<h2>Providers</h2>
+<ul>
+  <li>Moonshot</li>
+  <li>DeepSeek</li>
+  <li>OpenAI</li>
+  <li>OpenRouter</li>
+  <li>Ollama (local)</li>
+  <li>Custom endpoint</li>
+</ul>
+<p>Anything speaking the OpenAI <code>/chat/completions</code> format works. Claude is reachable through OpenRouter — Anthropic's own API uses a different shape and isn't supported directly.</p>
+
+<h2>What it does</h2>
+
+<h3>Sessions</h3>
+<p>Every turn is saved. Pick up where you left off with <code>/continue</code>, or browse and search older conversations with <code>/resume</code>.</p>
+<p>A restored session returns to the profile it was made with, so an OpenAI conversation doesn't quietly continue on another provider.</p>
+
+<h3>Profiles</h3>
+<p>Keep several providers side by side and switch between them. <code>/profile</code> decides who you connect to, <code>/model</code> decides what runs.</p>
+
+<h3>Two languages</h3>
+<p>Turkish and English. Chosen on first run, changeable any time with <code>/lang</code>. The reply language follows the interface language.</p>
+
+<h3>Input history</h3>
+<p>Arrow keys walk through previous prompts, <code>Ctrl+R</code> searches them. <code>Ctrl+T</code> opens the output panel.</p>
+
+<h3>Commands run on your device</h3>
+<p>With a permission prompt before anything executes.</p>
+
+<h2>Commands</h2>
+<p>Every command has both a Turkish and an English name.</p>
+<pre><code>/profile   /model     /settings  /resume
+/continue  /lang      /name      /color
+/new       /show      /geo       /help
+/quit</code></pre>
+
+<hr>
+
+<div class="note">
+  <p style="margin:0"><strong>Node.js 18 or later is required.</strong> It is not installed automatically — the package name differs between repos, and naming the wrong one would block installation entirely.</p>
+</div>
+
+<table>
+  <tr><td>RootHide</td><td>install <strong>Node.js 18</strong> from this repo</td></tr>
+  <tr><td>Rootless</td><td>add <a href="https://imcynic.github.io/nodejs-ios/">imcynic's Node.js repo</a></td></tr>
+</table>
+
+<p>If Node is missing, shiv tells you where to get it on first run.</p>
+
+<hr>
+
+<h2>Good to know</h2>
+
+<div class="note">
+  <p style="margin:0"><strong>Don't run it as root.</strong> Files would end up owned by root and <code>~/.shiv</code> could no longer be written by mobile.</p>
+</div>
+
+<p><strong>Your data stays.</strong> Profiles, API keys, sessions and input history live in <code>~/.shiv</code>. Removing the package leaves them alone — even on purge. Reinstall and you carry on where you stopped.</p>
+
+<p><strong>Your API key is yours.</strong> It is stored locally and sent only to the provider you chose.</p>
+
+<h2>Compatibility</h2>
+<p>Tested on iPhone 15 Pro, iOS 17.0.3, RootHide.</p>
+<p>The rootless build is published but has not been run on a rootless device yet. If you try it, feedback is welcome — <code>/geo</code> prints everything needed to diagnose.</p>
+
+<h2>Information</h2>
+<table>
+  <tr><td>Developer</td><td>muratkurt</td></tr>
+  <tr><td>Package</td><td>com.muratkurt.shiv</td></tr>
+  <tr><td>Version</td><td>0.1.0</td></tr>
+  <tr><td>Requires</td><td>Node.js 18+</td></tr>
+  <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
+  <tr><td>Tested on</td><td>iOS 17.0.3</td></tr>
+  <tr><td>Languages</td><td>Türkçe · English</td></tr>
+</table>
+
+<hr>
+
+<h2>Changelog</h2>
+
+<h3>0.1.0</h3>
+<p>First release.</p>
+<ul>
+  <li>Sessions are saved every turn and can be continued or searched</li>
+  <li>Several providers side by side, switchable without losing context</li>
+  <li>Turkish and English throughout, including the reply language</li>
+  <li>Input history with arrow keys and <code>Ctrl+R</code> search</li>
+  <li>Output panel on <code>Ctrl+T</code></li>
+  <li>Multi-line paste arrives as one message instead of one per line</li>
+  <li>Two builds: rootless and RootHide</li>
+</ul>
+
+<p class="foot">For personal use on jailbroken devices.</p>
+
+</body>
+</html>
