@@ -23,8 +23,8 @@
         },
         {
           "class": "DepictionTableButtonView",
-          "title": "Add Node.js Repo (rootless)",
-          "action": "sileo://source/https%3A%2F%2Fimcynic.github.io%2Fnodejs-ios%2F",
+          "title": "Node.js Repo (rootless)",
+          "action": "https://imcynic.github.io/nodejs-ios/",
           "openExternal": true
         },
         {
