@@ -126,3 +126,88 @@ Size: 99938
 MD5sum: 168c65b4dea2831414be1125d14d5b63
 SHA1: 7b9aa2bd7cbb48b806059ce7b8e62ba18c1a48cd
 SHA256: f971e0502983d54190b76e8d8b21cc7ea2cfbf32b5105dbacb3e76257a6866d9
+
+Package: com.muratkurt.shiv
+Name: shiv
+Version: 0.1.0
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Author: muratkurt
+Section: Utilities
+Depends: firmware (>= 15.0), nodejs
+Icon: https://muratkurt.github.io/assets/shiv/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
+Homepage: https://muratkurt.github.io/
+Installed-Size: 9544
+Description: terminal AI assistant
+ shiv is a chat assistant that runs entirely in your terminal.
+ Bring your own API key - Moonshot, DeepSeek, OpenAI, OpenRouter
+ or any OpenAI-compatible endpoint, including a local one.
+ .
+ It reads files, searches directories and runs shell commands,
+ asking before anything that could modify your device. Sessions
+ are saved and can be resumed. Interface is Turkish or English.
+ .
+ Requires Node.js 18+. On RootHide install "Node.js 18" from this
+ repo; on rootless add https://imcynic.github.io/nodejs-ios/
+Filename: debs/com.muratkurt.shiv_0.1.0_iphoneos-arm64.deb
+Size: 746372
+MD5sum: 88ab2f552e66f8698ae709055ad8a315
+SHA1: 55515bb394ea77aa20a57ccf39070ce5079b8a2a
+SHA256: 867af19f9ce5e6f0af1b8a0fcc2d0220d2f5c34b22f5bf6da8125cf4b726af21
+
+Package: com.muratkurt.shiv
+Name: shiv
+Version: 0.1.0
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Author: muratkurt
+Section: Utilities
+Depends: firmware (>= 15.0), nodejs
+Icon: https://muratkurt.github.io/assets/shiv/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
+Homepage: https://muratkurt.github.io/
+Installed-Size: 9612
+Description: terminal AI assistant
+ shiv is a chat assistant that runs entirely in your terminal.
+ Bring your own API key - Moonshot, DeepSeek, OpenAI, OpenRouter
+ or any OpenAI-compatible endpoint, including a local one.
+ .
+ It reads files, searches directories and runs shell commands,
+ asking before anything that could modify your device. Sessions
+ are saved and can be resumed. Interface is Turkish or English.
+ .
+ Requires Node.js 18+. On RootHide install "Node.js 18" from this
+ repo; on rootless add https://imcynic.github.io/nodejs-ios/
+Filename: debs/com.muratkurt.shiv_0.1.0_iphoneos-arm64e.deb
+Size: 748740
+MD5sum: a5cb444858e8cecd74b5625e8504b827
+SHA1: 94a804a7666ac718facf1ec847fa6bf5916d155a
+SHA256: 594b936cfd1e21a9f93d281b855df1b98ad6931fefaa7349336d7051258756a2
+
+Package: io.github.imcynic.nodejs
+Name: Node.js 18
+Version: 18.20.4-1
+Architecture: iphoneos-arm64e
+Description: Node.js JavaScript runtime for iOS
+ Node.js 18.20.4 compiled for jailbroken iOS devices.
+ Includes V8 JavaScript engine with iOS-optimized flags.
+ Perfect for running JavaScript applications, npm packages, and CLI tools.
+Maintainer: imcynic
+Author: imcynic
+Section: Development
+Depends: firmware (>= 15.0), zsh, ldid
+Provides: nodejs, node
+Tag: purpose::console, role::developer
+Homepage: https://nodejs.org
+Depiction: https://github.com/imcynic/nodejs-ios
+SileoDepiction: https://github.com/imcynic/nodejs-ios
+Installed-Size: 72496
+Pre-Depends: rootless-compat(>= 0.9)
+Filename: debs/io.github.imcynic.nodejs_18.20.4-1_iphoneos-arm64e.deb
+Size: 40006102
+MD5sum: 2e72fb54702a6cf10199d3059e9ad26a
+SHA1: 406526ed5679a2c894a888273fd4cc43777ff0c9
+SHA256: 7bcef35c650a14d0ccbae14a0e4ae84c6b06ccb42baf7b2eeec0900307438dae
