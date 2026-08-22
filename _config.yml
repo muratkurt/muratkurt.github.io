@@ -1,0 +1,14 @@
+title: muratkurt's Repo
+description: Tweaks and command line tools for jailbroken iOS
+
+# APT depo dosyalari Jekyll tarafindan islenmemeli
+include:
+  - Release
+  - Packages
+  - Packages.gz
+  - Packages.bz2
+
+exclude:
+  - update.sh
+  - make_packages.py
+  - "*.txt"
