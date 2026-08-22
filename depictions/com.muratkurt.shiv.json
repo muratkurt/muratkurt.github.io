@@ -8,17 +8,28 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# shiv\n\nAn AI assistant that runs in your terminal, on the device.\n\nTalk to a model, let it run commands, keep the conversation across sessions. Bring your own API key — the provider is up to you.\n\n## Providers\n\n- Moonshot\n- DeepSeek\n- OpenAI\n- OpenRouter\n- Ollama (local)\n- Custom endpoint\n\nAnything speaking the OpenAI `/chat/completions` format works. Claude is reachable through OpenRouter — Anthropic's own API uses a different shape and isn't supported directly.\n\n## What it does\n\n**Sessions** — every turn is saved. Pick up where you left off with `/continue`, or browse and search older conversations with `/resume`. A restored session returns to the profile it was made with, so an OpenAI conversation doesn't quietly continue on another provider.\n\n**Profiles** — keep several providers side by side and switch between them. `/profile` decides who you connect to, `/model` decides what runs.\n\n**Two languages** — Turkish and English. Chosen on first run, changeable any time with `/lang`. The reply language follows the interface language.\n\n**Input history** — arrow keys walk through previous prompts, `Ctrl+R` searches them.\n\n**Commands run on your device** — with a permission prompt before anything executes.\n\n## Commands\n\nEvery command has both a Turkish and an English name.\n\n`/profile` `/model` `/settings` `/resume` `/continue` `/lang` `/name` `/color` `/new` `/show` `/geo` `/help` `/quit`"
+          "markdown": "# shiv\n\nAn AI assistant that runs in your terminal, on the device.\n\nTalk to a model, let it run commands, keep the conversation across sessions. Bring your own API key — the provider is up to you."
+        },
+        {
+          "class": "DepictionScreenshotsView",
+          "itemCornerRadius": 8,
+          "itemSize": "{300, 238}",
+          "screenshots": [
+            {
+              "url": "https://muratkurt.github.io/assets/shiv/ss1.png",
+              "accessibilityText": "Startup screen"
+            }
+          ]
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "## Providers\n\n- Moonshot\n- DeepSeek\n- OpenAI\n- OpenRouter\n- Ollama (local)\n- Custom endpoint\n\nAnything speaking the OpenAI `/chat/completions` format works. Claude is reachable through OpenRouter — Anthropic's own API uses a different shape and isn't supported directly.\n\n## What it does\n\n**Sessions** — every turn is saved. Pick up where you left off with `/continue`, or browse and search older conversations with `/resume`. A restored session returns to the profile it was made with, so an OpenAI conversation doesn't quietly continue on another provider.\n\n**Profiles** — keep several providers side by side and switch between them. `/profile` decides who you connect to, `/model` decides what runs.\n\n**Two languages** — Turkish and English. Chosen on first run, changeable any time with `/lang`. The reply language follows the interface language.\n\n**Input history** — arrow keys walk through previous prompts, `Ctrl+R` searches them.\n\n**Commands run on your device** — with a permission prompt before anything executes.\n\n## Commands\n\nEvery command has both a Turkish and an English name.\n\n`/profile` `/model` `/settings` `/resume` `/continue` `/lang` `/name` `/color` `/new` `/show` `/geo` `/help` `/quit`"
         },
         {
           "class": "DepictionScreenshotsView",
           "itemCornerRadius": 8,
           "itemSize": "{280, 230}",
           "screenshots": [
-            {
-              "url": "https://muratkurt.github.io/assets/shiv/ss1.png",
-              "accessibilityText": "Startup screen"
-            },
             {
               "url": "https://muratkurt.github.io/assets/shiv/ss2.png",
               "accessibilityText": "Keyboard shortcuts"
