@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/usr/bin/env zsh
 # muratkurt repo - Packages uretimi ve dogrulama
 # Kullanim: depo klasorunde  ./update.sh
 
