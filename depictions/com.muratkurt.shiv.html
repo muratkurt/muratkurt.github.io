@@ -126,15 +126,10 @@
 <hr>
 
 <div class="note">
-  <p style="margin:0"><strong>Node.js 18 or later is required.</strong> It is not installed automatically — the package name differs between repos, and naming the wrong one would block installation entirely.</p>
+  <p style="margin:0"><strong>Node.js 18 or later is required.</strong> It is in this repo for both RootHide and rootless, so Sileo pulls it in automatically when you install shiv.</p>
 </div>
 
-<table>
-  <tr><td>RootHide</td><td>install <strong>Node.js 18</strong> from this repo</td></tr>
-  <tr><td>Rootless</td><td>add <a href="https://imcynic.github.io/nodejs-ios/">imcynic's Node.js repo</a></td></tr>
-</table>
-
-<p>If Node is missing, shiv tells you where to get it on first run.</p>
+<p>The Node.js package is <a href="https://imcynic.github.io/nodejs-ios/">imcynic's work</a>, republished here for convenience. If Node is missing for any reason, shiv tells you where to get it on first run.</p>
 
 <hr>
 
@@ -150,13 +145,14 @@
 
 <h2>Compatibility</h2>
 <p>Tested on iPhone 15 Pro, iOS 17.0.3, RootHide.</p>
-<p>The rootless build is published but has not been run on a rootless device yet. If you try it, feedback is welcome — <code>/geo</code> prints everything needed to diagnose.</p>
+<p>The rootless build has also been verified on a rootless device.</p>
+<p>Other devices and iOS versions have not been tried. If something looks off, <code>/geo</code> prints everything needed to diagnose.</p>
 
 <h2>Information</h2>
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.shiv</td></tr>
-  <tr><td>Version</td><td>0.1.0</td></tr>
+  <tr><td>Version</td><td>0.2.0</td></tr>
   <tr><td>Requires</td><td>Node.js 18+</td></tr>
   <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
   <tr><td>Tested on</td><td>iOS 17.0.3</td></tr>
@@ -166,6 +162,14 @@
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>0.2.0</h3>
+<ul>
+  <li>Verified on a rootless device — the rootless build is no longer untested</li>
+  <li>Node.js is now in this repo for both RootHide and rootless, so it installs alongside shiv</li>
+  <li>Language handling fixed</li>
+  <li><code>/geo</code> output reworked</li>
+</ul>
 
 <h3>0.1.0</h3>
 <p>First release.</p>

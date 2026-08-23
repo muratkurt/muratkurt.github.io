@@ -53,7 +53,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "shiv runs on Node.js 18 or later. It is **not** installed automatically — the package name differs between repos, and naming the wrong one would block installation entirely.\n\n**RootHide** — install **Node.js 18** from this repo. It's the same build, already converted, and Sileo pulls it in for you.\n\n**Rootless** — add the Node.js repo first, then install shiv:\n\n`https://imcynic.github.io/nodejs-ios/`\n\nCopy that address into Sileo › Sources › +\n\nIf Node is missing, shiv tells you where to get it on first run."
+          "markdown": "shiv runs on Node.js 18 or later. It is in this repo for both RootHide and rootless, so Sileo pulls it in automatically when you install shiv — you don't need to add anything else.\n\nThe Node.js package is imcynic's work, republished here for convenience: `https://imcynic.github.io/nodejs-ios/`"
         },
         {
           "class": "DepictionSeparatorView"
@@ -75,7 +75,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "Tested on iPhone 15 Pro, iOS 17.0.3, RootHide.\n\nThe rootless build is published but has not been run on a rootless device yet. If you try it, feedback is welcome — `/geo` prints everything needed to diagnose."
+          "markdown": "Tested on iPhone 15 Pro, iOS 17.0.3, RootHide.\n\nThe rootless build has also been verified on a rootless device.\n\nOther devices and iOS versions have not been tried. If something looks off, `/geo` prints everything needed to diagnose."
         },
         {
           "class": "DepictionSeparatorView"
@@ -97,7 +97,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "0.1.0"
+          "text": "0.2.0"
         },
         {
           "class": "DepictionTableTextView",
@@ -125,6 +125,17 @@
     {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.2.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Verified on a rootless device — the rootless build is no longer untested\n- Node.js is now in this repo for both RootHide and rootless, so it installs alongside shiv\n- Language handling fixed\n- `/geo` output reworked"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "0.1.0"
