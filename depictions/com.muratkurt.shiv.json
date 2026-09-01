@@ -97,7 +97,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "0.2.0"
+          "text": "1.0.1"
         },
         {
           "class": "DepictionTableTextView",
@@ -125,6 +125,28 @@
     {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.0.1"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**New** — `/context` and `/about`, plus a detailed activity view on `Ctrl+O`.\n\n**Changed** — `/model`, `/profile` and `/lang` are pickable lists now instead of typed arguments. `/settings` reorganised. Panels behave consistently with each other. Clearer message when you interrupt a reply.\n\n**Fixed** — duplicate welcome card; model selection getting lost; Turkish strings showing up in the English interface; words breaking mid-word at the edge; session picker breaking on rotation; command names getting truncated.\n\n**Better** — fewer screen refreshes, and opening or closing the keyboard no longer resizes the panels."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.0.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**Rotation is smooth now.** Turning the device reflows the screen to the new width and keeps your conversation with it.\n\n**No more flicker.** Only the parts that actually changed get redrawn, while typing and while a reply streams in.\n\n**Landscape welcome card** — logo on the left, shortcuts and working directory on the right.\n\n**Three new themes.** Switch with `/theme`.\n\n**Command list is navigable.** Walk it with the arrow keys, filter it as you type.\n\n**Working directories** added with `/add-dir` are clearer in the panel.\n\n**Help panel reworked** — two columns in landscape, full description of the selected command in portrait."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "0.2.0"

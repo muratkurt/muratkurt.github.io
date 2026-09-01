@@ -152,7 +152,7 @@
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.shiv</td></tr>
-  <tr><td>Version</td><td>0.2.0</td></tr>
+  <tr><td>Version</td><td>1.0.1</td></tr>
   <tr><td>Requires</td><td>Node.js 18+</td></tr>
   <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
   <tr><td>Tested on</td><td>iOS 17.0.3</td></tr>
@@ -162,6 +162,23 @@
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>1.0.1</h3>
+<p><strong>New</strong> — <code>/context</code> and <code>/about</code>, plus a detailed activity view on <code>Ctrl+O</code>.</p>
+<p><strong>Changed</strong> — <code>/model</code>, <code>/profile</code> and <code>/lang</code> are pickable lists now instead of typed arguments. <code>/settings</code> reorganised. Panels behave consistently with each other. Clearer message when you interrupt a reply.</p>
+<p><strong>Fixed</strong> — duplicate welcome card; model selection getting lost; Turkish strings showing up in the English interface; words breaking mid-word at the edge; session picker breaking on rotation; command names getting truncated.</p>
+<p><strong>Better</strong> — fewer screen refreshes, and opening or closing the keyboard no longer resizes the panels.</p>
+
+<h3>1.0.0</h3>
+<ul>
+  <li><strong>Rotation is smooth now.</strong> Turning the device reflows the screen to the new width and keeps your conversation with it.</li>
+  <li><strong>No more flicker.</strong> Only the parts that actually changed get redrawn, while typing and while a reply streams in.</li>
+  <li><strong>Landscape welcome card</strong> — logo on the left, shortcuts and working directory on the right.</li>
+  <li><strong>Three new themes.</strong> Switch with <code>/theme</code>.</li>
+  <li><strong>Command list is navigable.</strong> Walk it with the arrow keys, filter it as you type.</li>
+  <li><strong>Working directories</strong> added with <code>/add-dir</code> are clearer in the panel.</li>
+  <li><strong>Help panel reworked</strong> — two columns in landscape, full description of the selected command in portrait.</li>
+</ul>
 
 <h3>0.2.0</h3>
 <ul>
