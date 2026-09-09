@@ -373,6 +373,82 @@ Icon: https://muratkurt.github.io/assets/shiv/icon.png
 Name: shiv
 Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
 
+Package: com.muratkurt.shiv
+Version: 1.2.0
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Installed-Size: 98292
+Depends: firmware (>= 15.0)
+Filename: debs/com.muratkurt.shiv_1.2.0_iphoneos-arm64e.deb
+Size: 13928804
+MD5sum: bbfce2fcdac339c6425636b8460c6bcd
+SHA1: 401e3b62f77b3e186719f7d1ca8ab57914142c27
+SHA256: e3afbccf8bdb647ab89eb190a6c29236ba0852b839339897b2a2723456dcb7a9
+Section: Utilities
+Homepage: https://muratkurt.github.io/
+Description: terminal AI assistant
+ shiv is a chat assistant that runs entirely in your terminal.
+ Nothing else to install - Node.js ships inside the package.
+ .
+ Bring your own API key. Works with Moonshot, DeepSeek, OpenAI,
+ OpenRouter or any OpenAI-compatible endpoint, including one
+ running on your own machine.
+ .
+ It reads files, searches directories and runs shell commands,
+ asking before anything that could modify your device. Sessions
+ are saved and can be resumed, and there is a rewind that takes
+ the conversation back to an earlier point.
+ .
+ Drawing and streaming speed can be tuned from /performance, so
+ it stays responsive in long sessions. Interface is Turkish or
+ English.
+ .
+ Copyright (c) 2026 Murat Kurt. All rights reserved.
+ Licensed, not sold. Run /lisans in the app for terms.
+Author: muratkurt
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
+Icon: https://muratkurt.github.io/assets/shiv/icon.png
+Name: shiv
+Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
+
+Package: com.muratkurt.shiv
+Version: 1.2.0
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Installed-Size: 98224
+Depends: firmware (>= 15.0)
+Filename: debs/com.muratkurt.shiv_1.2.0_iphoneos-arm64.deb
+Size: 13947924
+MD5sum: 049a2adc6dae4e41d5e73bd28540171f
+SHA1: 90ccd87c7f02bedea6f1556f54cc57845572f260
+SHA256: 25af39cad28a548d5f293e8ed6eeb18c0735ee633d6ff3ed26e42aec913a3c9c
+Section: Utilities
+Homepage: https://muratkurt.github.io/
+Description: terminal AI assistant
+ shiv is a chat assistant that runs entirely in your terminal.
+ Nothing else to install - Node.js ships inside the package.
+ .
+ Bring your own API key. Works with Moonshot, DeepSeek, OpenAI,
+ OpenRouter or any OpenAI-compatible endpoint, including one
+ running on your own machine.
+ .
+ It reads files, searches directories and runs shell commands,
+ asking before anything that could modify your device. Sessions
+ are saved and can be resumed, and there is a rewind that takes
+ the conversation back to an earlier point.
+ .
+ Drawing and streaming speed can be tuned from /performance, so
+ it stays responsive in long sessions. Interface is Turkish or
+ English.
+ .
+ Copyright (c) 2026 Murat Kurt. All rights reserved.
+ Licensed, not sold. Run /lisans in the app for terms.
+Author: muratkurt
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
+Icon: https://muratkurt.github.io/assets/shiv/icon.png
+Name: shiv
+Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
+
 Package: io.github.imcynic.nodejs
 Version: 18.20.4-1
 Architecture: iphoneos-arm64e

@@ -126,10 +126,10 @@
 <hr>
 
 <div class="note">
-  <p style="margin:0"><strong>Node.js 18 or later is required.</strong> It is in this repo for both RootHide and rootless, so Sileo pulls it in automatically when you install shiv.</p>
+  <p style="margin:0"><strong>Node.js is bundled.</strong> Install shiv and it runs — no runtime to add, no other repo, nothing to configure.</p>
 </div>
 
-<p>The Node.js package is <a href="https://imcynic.github.io/nodejs-ios/">imcynic's work</a>, republished here for convenience. If Node is missing for any reason, shiv tells you where to get it on first run.</p>
+<p>Versions before 1.2.0 needed Node.js separately. That package is still in this repo if you install an older build; it is <a href="https://imcynic.github.io/nodejs-ios/">imcynic's work</a>.</p>
 
 <hr>
 
@@ -152,8 +152,8 @@
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.shiv</td></tr>
-  <tr><td>Version</td><td>1.0.1</td></tr>
-  <tr><td>Requires</td><td>Node.js 18+</td></tr>
+  <tr><td>Version</td><td>1.2.0</td></tr>
+  <tr><td>Requires</td><td>nothing — Node.js included</td></tr>
   <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
   <tr><td>Tested on</td><td>iOS 17.0.3</td></tr>
   <tr><td>Languages</td><td>Türkçe · English</td></tr>
@@ -162,6 +162,36 @@
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>1.2.0</h3>
+<p><strong>Node.js is bundled now.</strong> Nothing else to install, on RootHide or rootless.</p>
+
+<p><strong>New</strong></p>
+<ul>
+  <li><strong>Sub-agents — the model can delegate.</strong> Large jobs get split into background sub-tasks that run in parallel: one searches files while another reads logs, and the results come back merged.</li>
+  <li><strong>Performance presets</strong> — <code>/performance</code>. High, Balanced or Low power. Controls whether markdown is styled while streaming, how often the screen redraws, and how much history stays live.</li>
+  <li><strong>Rewind</strong> — take the conversation back to an earlier point. Press <code>Esc</code> twice, pick a point, continue from there.</li>
+  <li><strong>Background tasks</strong> — <code>Ctrl+B</code> sends a running job to the background and tells you when it finishes.</li>
+  <li><strong>Startup hints</strong> — short tips appear on the right when you open the app, then fade on their own.</li>
+</ul>
+
+<p><strong>Changed</strong></p>
+<ul>
+  <li><strong>Speed.</strong> Typing, streaming and scrolling were rebuilt. Long sessions no longer slow down; the keyboard stays instant even after hundreds of messages.</li>
+  <li><strong>Response time.</strong> The app was sending more than it needed to on every message. Replies start sooner now.</li>
+  <li><strong>Look.</strong> New logo, consistent across the app, the icon and this page.</li>
+</ul>
+
+<p><strong>Fixed</strong></p>
+<ul>
+  <li>Wrapped lines keep their indentation</li>
+  <li>Code blocks stay inside their border when wrapped</li>
+  <li>Arrow keys and <code>Esc</code> no longer drop keystrokes</li>
+  <li>Held backspace no longer jumps the cursor</li>
+  <li>Arrow keys no longer get stuck on commands in history</li>
+  <li>A crash on launch</li>
+  <li>Streaming slowing down on long replies</li>
+</ul>
 
 <h3>1.0.1</h3>
 <p><strong>New</strong> — <code>/context</code> and <code>/about</code>, plus a detailed activity view on <code>Ctrl+O</code>.</p>

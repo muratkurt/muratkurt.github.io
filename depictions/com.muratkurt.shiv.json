@@ -49,11 +49,11 @@
         },
         {
           "class": "DepictionHeaderView",
-          "title": "Node.js is required"
+          "title": "Nothing else to install"
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "shiv runs on Node.js 18 or later. It is in this repo for both RootHide and rootless, so Sileo pulls it in automatically when you install shiv — you don't need to add anything else.\n\nThe Node.js package is imcynic's work, republished here for convenience: `https://imcynic.github.io/nodejs-ios/`"
+          "markdown": "Node.js is bundled. Install shiv and it runs — no runtime to add, no other repo, nothing to configure.\n\nVersions before 1.2.0 needed Node.js separately. That package is still in this repo if you install an older build; it is [imcynic's work](https://imcynic.github.io/nodejs-ios/)."
         },
         {
           "class": "DepictionSeparatorView"
@@ -97,12 +97,12 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "1.0.1"
+          "text": "1.2.0"
         },
         {
           "class": "DepictionTableTextView",
           "title": "Requires",
-          "text": "Node.js 18+"
+          "text": "nothing — Node.js included"
         },
         {
           "class": "DepictionTableTextView",
@@ -125,6 +125,17 @@
     {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.2.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**Node.js is bundled now.** Nothing else to install, on RootHide or rootless.\n\n### New\n\n**Sub-agents — the model can delegate.** Large jobs get split into background sub-tasks that run in parallel: one searches files while another reads logs, and the results come back merged.\n\n**Performance presets** — `/performance`. High, Balanced or Low power. Controls whether markdown is styled while streaming, how often the screen redraws, and how much history stays live.\n\n**Rewind** — take the conversation back to an earlier point. Press `Esc` twice, pick a point, continue from there.\n\n**Background tasks** — `Ctrl+B` sends a running job to the background and tells you when it finishes.\n\n**Startup hints** — short tips appear on the right when you open the app, then fade on their own.\n\n### Changed\n\n**Speed.** Typing, streaming and scrolling were rebuilt. Long sessions no longer slow down; the keyboard stays instant even after hundreds of messages.\n\n**Response time.** The app was sending more than it needed to on every message. Replies start sooner now.\n\n**Look.** New logo, consistent across the app, the icon and this page.\n\n### Fixed\n\n- Wrapped lines keep their indentation\n- Code blocks stay inside their border when wrapped\n- Arrow keys and `Esc` no longer drop keystrokes\n- Held backspace no longer jumps the cursor\n- Arrow keys no longer get stuck on commands in history\n- A crash on launch\n- Streaming slowing down on long replies"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "1.0.1"
