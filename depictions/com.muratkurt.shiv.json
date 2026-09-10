@@ -97,7 +97,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "1.2.0"
+          "text": "1.2.1"
         },
         {
           "class": "DepictionTableTextView",
@@ -125,6 +125,17 @@
     {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.2.1"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**Fixed** — entering the API key on the setup screen."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "1.2.0"
