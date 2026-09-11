@@ -8,7 +8,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# shiv\n\nAn AI assistant that runs in your terminal, on the device.\n\nTalk to a model, let it run commands, keep the conversation across sessions. Bring your own API key — the provider is up to you."
+          "markdown": "# shiv\n\nAn AI assistant that runs in your terminal, on the device.\n\nTalk to a model, let it run commands, keep the conversation across sessions. Bring your own API key — the provider is up to you.\n\nSince 1.3.0 it also helps you **write tweaks**."
         },
         {
           "class": "DepictionScreenshotsView",
@@ -23,7 +23,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "## Providers\n\n- Moonshot\n- DeepSeek\n- OpenAI\n- OpenRouter\n- Ollama (local)\n- Custom endpoint\n\nAnything speaking the OpenAI `/chat/completions` format works. Claude is reachable through OpenRouter — Anthropic's own API uses a different shape and isn't supported directly.\n\n## What it does\n\n**Sessions** — every turn is saved. Pick up where you left off with `/continue`, or browse and search older conversations with `/resume`. A restored session returns to the profile it was made with, so an OpenAI conversation doesn't quietly continue on another provider.\n\n**Profiles** — keep several providers side by side and switch between them. `/profile` decides who you connect to, `/model` decides what runs.\n\n**Two languages** — Turkish and English. Chosen on first run, changeable any time with `/lang`. The reply language follows the interface language.\n\n**Input history** — arrow keys walk through previous prompts, `Ctrl+R` searches them.\n\n**Commands run on your device** — with a permission prompt before anything executes.\n\n## Commands\n\nEvery command has both a Turkish and an English name.\n\n`/profile` `/model` `/settings` `/resume` `/continue` `/lang` `/name` `/color` `/new` `/show` `/geo` `/help` `/quit`"
+          "markdown": "## Providers\n\nMoonshot · DeepSeek · OpenAI · OpenRouter · Ollama (local) · custom endpoint\n\nAnything speaking the OpenAI `/chat/completions` format works. Claude is reachable through OpenRouter — Anthropic's own API uses a different shape and isn't supported directly.\n\n## What it does\n\n**Reads and edits files, runs shell commands** — with a permission prompt before anything that could change your device. Reading and listing don't ask.\n\n**Sessions** are saved every turn. Continue with `/continue`, browse older ones with `/resume`, or take a conversation back to an earlier point with rewind.\n\n**Profiles** let you keep several providers side by side. `/profile` picks who you connect to, `/model` picks what runs.\n\n**Two languages** — Turkish and English, chosen on first run.\n\n## Commands\n\nEvery command has a Turkish and an English name, and a prefix is enough — `/prof` works.\n\n`/profile` `/model` `/settings` `/resume` `/continue` `/lang` `/name` `/color` `/new` `/show` `/geo` `/device` `/performance` `/mac` `/help` `/quit`"
         },
         {
           "class": "DepictionScreenshotsView",
@@ -49,11 +49,11 @@
         },
         {
           "class": "DepictionHeaderView",
-          "title": "Nothing else to install"
+          "title": "Writing tweaks"
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "Node.js is bundled. Install shiv and it runs — no runtime to add, no other repo, nothing to configure.\n\nVersions before 1.2.0 needed Node.js separately. That package is still in this repo if you install an older build; it is [imcynic's work](https://imcynic.github.io/nodejs-ios/)."
+          "markdown": "The worst bug in tweak development is silent: you write a class name that doesn't exist, the code **compiles**, the tweak **loads**, and nothing happens. No error anywhere.\n\nshiv now reads your device's own system libraries and finds the real names. Nothing to download, no Mac, no setup — the data is already on your phone. 2190 classes scan in 28 ms.\n\n```\nshiv-sinif LockScreen\nshiv-sinif --metod SBLockScreenManager\nshiv-sinif --metodara notificationCount\n```\n\nThe model uses this itself: it verifies the class before writing code, and says it can't confirm rather than guessing.\n\n**Some tweaks can't be built on the device.** Anything targeting a system process — SpringBoard, CoverSheet, daemons — needs an arm64e pointer-auth ABI the on-device toolchain can't produce. Build it here and the device drops into Safe Mode. This was measured, not assumed.\n\nshiv recognises those cases, refuses, and explains why. If you have a Mac, `/mac` connects it over SSH and the build happens there without leaving the app. Tweaks targeting App Store apps and command-line tools build on the device as usual."
         },
         {
           "class": "DepictionSeparatorView"
@@ -64,7 +64,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "**Don't run it as root.** Files would end up owned by root and `~/.shiv` could no longer be written by mobile.\n\n**Your data stays.** Profiles, API keys, sessions and input history live in `~/.shiv`. Removing the package leaves them alone — even on purge. Reinstall and you carry on where you stopped.\n\n**Your API key is yours.** It is stored locally in `~/.shiv/ayarlar.json` and sent only to the provider you chose."
+          "markdown": "**Node.js is bundled.** Install shiv and it runs — nothing else to add.\n\n**Don't run it as root.** Files would end up owned by root and `~/.shiv` could no longer be written by mobile.\n\n**Your data stays.** Profiles, API keys, sessions and input history live in `~/.shiv`. Removing the package leaves them alone — even on purge.\n\n**Your API key is yours.** Stored locally, sent only to the provider you chose. `/aktar` exports a session with keys and device identifiers stripped."
         },
         {
           "class": "DepictionSeparatorView"
@@ -75,7 +75,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "Tested on iPhone 15 Pro, iOS 17.0.3, RootHide.\n\nThe rootless build has also been verified on a rootless device.\n\nOther devices and iOS versions have not been tried. If something looks off, `/geo` prints everything needed to diagnose."
+          "markdown": "Tested on iPhone 15 Pro, iOS 17.0.3, RootHide. The rootless build has also been verified on a rootless device.\n\n**Known limits.** Class lookup covers the shared cache; some Control Centre modules and Settings bundles live in separate files and aren't read yet. App Store apps are encrypted, so their class names can't be read from disk. Lookup was verified on iOS 17 — on another version shiv says it can't confirm rather than returning a wrong name."
         },
         {
           "class": "DepictionSeparatorView"
@@ -97,7 +97,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "1.2.1"
+          "text": "1.3.0"
         },
         {
           "class": "DepictionTableTextView",
@@ -125,6 +125,17 @@
     {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.3.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "### New\n\n**Class and method lookup** — shiv reads your device's own system libraries, so tweak code uses real names instead of guesses.\n\n**Remote build** — connect a Mac with `/mac` and build there without leaving the app.\n\n**`/device`** — disk, conflicting tweaks, crash history, broken packages.\n\n**`/aktar`** — export a session to a file, API keys stripped.\n\n**`BILGI.md`** — your own notes, given to the model every session.\n\n**Context trimming** — long conversations no longer hit the wall.\n\n### Changed\n\n- Smaller install: 96 → 71 MB\n- The model now refuses on-device builds that would trigger Safe Mode, and explains what to do instead\n\n### Fixed\n\n- Setup screen accepted the API key but would not advance\n- Working directory could silently reset to the install path\n- Crash logs and system paths under `/rootfs` were unreachable\n- Long tool sessions could stop without saying why"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "1.2.1"

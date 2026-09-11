@@ -81,40 +81,24 @@
 
 <p>Talk to a model, let it run commands, keep the conversation across sessions. Bring your own API key — the provider is up to you.</p>
 
+<p>Since 1.3.0 it also helps you <strong>write tweaks</strong>.</p>
+
 <h2>Providers</h2>
-<ul>
-  <li>Moonshot</li>
-  <li>DeepSeek</li>
-  <li>OpenAI</li>
-  <li>OpenRouter</li>
-  <li>Ollama (local)</li>
-  <li>Custom endpoint</li>
-</ul>
+<p>Moonshot · DeepSeek · OpenAI · OpenRouter · Ollama (local) · custom endpoint</p>
 <p>Anything speaking the OpenAI <code>/chat/completions</code> format works. Claude is reachable through OpenRouter — Anthropic's own API uses a different shape and isn't supported directly.</p>
 
 <h2>What it does</h2>
-
-<h3>Sessions</h3>
-<p>Every turn is saved. Pick up where you left off with <code>/continue</code>, or browse and search older conversations with <code>/resume</code>.</p>
-<p>A restored session returns to the profile it was made with, so an OpenAI conversation doesn't quietly continue on another provider.</p>
-
-<h3>Profiles</h3>
-<p>Keep several providers side by side and switch between them. <code>/profile</code> decides who you connect to, <code>/model</code> decides what runs.</p>
-
-<h3>Two languages</h3>
-<p>Turkish and English. Chosen on first run, changeable any time with <code>/lang</code>. The reply language follows the interface language.</p>
-
-<h3>Input history</h3>
-<p>Arrow keys walk through previous prompts, <code>Ctrl+R</code> searches them. <code>Ctrl+T</code> opens the output panel.</p>
-
-<h3>Commands run on your device</h3>
-<p>With a permission prompt before anything executes.</p>
+<p><strong>Reads and edits files, runs shell commands</strong> — with a permission prompt before anything that could change your device. Reading and listing don't ask.</p>
+<p><strong>Sessions</strong> are saved every turn. Continue with <code>/continue</code>, browse older ones with <code>/resume</code>, or take a conversation back to an earlier point with rewind.</p>
+<p><strong>Profiles</strong> let you keep several providers side by side. <code>/profile</code> picks who you connect to, <code>/model</code> picks what runs.</p>
+<p><strong>Two languages</strong> — Turkish and English, chosen on first run.</p>
 
 <h2>Commands</h2>
-<p>Every command has both a Turkish and an English name.</p>
-<pre><code>/profile   /model     /settings  /resume
-/continue  /lang      /name      /color
-/new       /show      /geo       /help
+<p>Every command has a Turkish and an English name, and a prefix is enough — <code>/prof</code> works.</p>
+<pre><code>/profile  /model    /settings  /resume
+/continue /lang     /name      /color
+/new      /show     /geo       /device
+/performance        /mac       /help
 /quit</code></pre>
 
 <h2>Screenshots</h2>
@@ -125,34 +109,49 @@
 
 <hr>
 
+<h2>Writing tweaks</h2>
+
+<p>The worst bug in tweak development is silent: you write a class name that doesn't exist, the code <strong>compiles</strong>, the tweak <strong>loads</strong>, and nothing happens. No error anywhere.</p>
+
+<p>shiv now reads your device's own system libraries and finds the real names. Nothing to download, no Mac, no setup — the data is already on your phone. 2190 classes scan in 28&nbsp;ms.</p>
+
+<pre><code>shiv-sinif LockScreen
+shiv-sinif --metod SBLockScreenManager
+shiv-sinif --metodara notificationCount</code></pre>
+
+<p>The model uses this itself: it verifies the class before writing code, and says it can't confirm rather than guessing.</p>
+
 <div class="note">
-  <p style="margin:0"><strong>Node.js is bundled.</strong> Install shiv and it runs — no runtime to add, no other repo, nothing to configure.</p>
+  <p style="margin:0"><strong>Some tweaks can't be built on the device.</strong> Anything targeting a system process — SpringBoard, CoverSheet, daemons — needs an arm64e pointer-auth ABI the on-device toolchain can't produce. Build it here and the device drops into Safe Mode. This was measured, not assumed.</p>
 </div>
 
-<p>Versions before 1.2.0 needed Node.js separately. That package is still in this repo if you install an older build; it is <a href="https://imcynic.github.io/nodejs-ios/">imcynic's work</a>.</p>
+<p>shiv recognises those cases, refuses, and explains why. If you have a Mac, <code>/mac</code> connects it over SSH and the build happens there without leaving the app.</p>
+
+<p>Tweaks targeting App Store apps and command-line tools build on the device as usual.</p>
 
 <hr>
 
 <h2>Good to know</h2>
 
+<p><strong>Node.js is bundled.</strong> Install shiv and it runs — nothing else to add.</p>
+
 <div class="note">
   <p style="margin:0"><strong>Don't run it as root.</strong> Files would end up owned by root and <code>~/.shiv</code> could no longer be written by mobile.</p>
 </div>
 
-<p><strong>Your data stays.</strong> Profiles, API keys, sessions and input history live in <code>~/.shiv</code>. Removing the package leaves them alone — even on purge. Reinstall and you carry on where you stopped.</p>
+<p><strong>Your data stays.</strong> Profiles, API keys, sessions and input history live in <code>~/.shiv</code>. Removing the package leaves them alone — even on purge.</p>
 
-<p><strong>Your API key is yours.</strong> It is stored locally and sent only to the provider you chose.</p>
+<p><strong>Your API key is yours.</strong> Stored locally, sent only to the provider you chose. <code>/aktar</code> exports a session with keys and device identifiers stripped.</p>
 
 <h2>Compatibility</h2>
-<p>Tested on iPhone 15 Pro, iOS 17.0.3, RootHide.</p>
-<p>The rootless build has also been verified on a rootless device.</p>
-<p>Other devices and iOS versions have not been tried. If something looks off, <code>/geo</code> prints everything needed to diagnose.</p>
+<p>Tested on iPhone 15 Pro, iOS 17.0.3, RootHide. The rootless build has also been verified on a rootless device.</p>
+<p><strong>Known limits.</strong> Class lookup covers the shared cache; some Control Centre modules and Settings bundles live in separate files and aren't read yet. App Store apps are encrypted, so their class names can't be read from disk. Lookup was verified on iOS 17 — on another version shiv says it can't confirm rather than returning a wrong name.</p>
 
 <h2>Information</h2>
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.shiv</td></tr>
-  <tr><td>Version</td><td>1.2.1</td></tr>
+  <tr><td>Version</td><td>1.3.0</td></tr>
   <tr><td>Requires</td><td>nothing — Node.js included</td></tr>
   <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
   <tr><td>Tested on</td><td>iOS 17.0.3</td></tr>
@@ -162,6 +161,29 @@
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>1.3.0</h3>
+<p><strong>New</strong></p>
+<ul>
+  <li><strong>Class and method lookup</strong> — shiv reads your device's own system libraries, so tweak code uses real names instead of guesses</li>
+  <li><strong>Remote build</strong> — connect a Mac with <code>/mac</code> and build there without leaving the app</li>
+  <li><strong><code>/device</code></strong> — disk, conflicting tweaks, crash history, broken packages</li>
+  <li><strong><code>/aktar</code></strong> — export a session to a file, API keys stripped</li>
+  <li><strong><code>BILGI.md</code></strong> — your own notes, given to the model every session</li>
+  <li><strong>Context trimming</strong> — long conversations no longer hit the wall</li>
+</ul>
+<p><strong>Changed</strong></p>
+<ul>
+  <li>Smaller install: 96 → 71 MB</li>
+  <li>The model now refuses on-device builds that would trigger Safe Mode, and explains what to do instead</li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul>
+  <li>Setup screen accepted the API key but would not advance</li>
+  <li>Working directory could silently reset to the install path</li>
+  <li>Crash logs and system paths under <code>/rootfs</code> were unreachable</li>
+  <li>Long tool sessions could stop without saying why</li>
+</ul>
 
 <h3>1.2.1</h3>
 <p><strong>Fixed</strong> — entering the API key on the setup screen.</p>
