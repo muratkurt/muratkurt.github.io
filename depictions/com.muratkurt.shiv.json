@@ -8,7 +8,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# shiv\n\nAn AI assistant that runs in your terminal, on the device.\n\nTalk to a model, let it run commands, keep the conversation across sessions. Bring your own API key — the provider is up to you.\n\nSince 1.3.0 it also helps you **write tweaks**."
+          "markdown": "# shiv\n\nAn AI assistant that runs in your terminal, on the device.\n\nTalk to a model, let it run commands, keep the conversation across sessions. Bring your own API key — the provider is up to you.\n\nSince **2.0** it can also build tweaks, end to end, without leaving the phone."
         },
         {
           "class": "DepictionScreenshotsView",
@@ -23,7 +23,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "## Providers\n\nMoonshot · DeepSeek · OpenAI · OpenRouter · Ollama (local) · custom endpoint\n\nAnything speaking the OpenAI `/chat/completions` format works. Claude is reachable through OpenRouter — Anthropic's own API uses a different shape and isn't supported directly.\n\n## What it does\n\n**Reads and edits files, runs shell commands** — with a permission prompt before anything that could change your device. Reading and listing don't ask.\n\n**Sessions** are saved every turn. Continue with `/continue`, browse older ones with `/resume`, or take a conversation back to an earlier point with rewind.\n\n**Profiles** let you keep several providers side by side. `/profile` picks who you connect to, `/model` picks what runs.\n\n**Two languages** — Turkish and English, chosen on first run.\n\n## Commands\n\nEvery command has a Turkish and an English name, and a prefix is enough — `/prof` works.\n\n`/profile` `/model` `/settings` `/resume` `/continue` `/lang` `/name` `/color` `/new` `/show` `/geo` `/device` `/performance` `/mac` `/help` `/quit`"
+          "markdown": "## Providers\n\nMoonshot · DeepSeek · OpenAI · OpenRouter · Ollama (local) · custom endpoint\n\nAnything speaking the OpenAI `/chat/completions` format works. Claude is reachable through OpenRouter — Anthropic's own API uses a different shape and isn't supported directly.\n\n## What it does\n\n**Reads and edits files, runs shell commands** — with a permission prompt before anything that could change your device. Reading and listing don't ask.\n\n**Sessions** are saved every turn. Continue with `/continue`, browse older ones with `/resume`, or rewind to an earlier point.\n\n**Background tasks** — `Ctrl+B` sends a running job to the background. Press `↓` to reach the counter, `Enter` for detail, `k` to stop. Output streams while the job is still running.\n\n**Profiles** keep several providers side by side. `/profile` picks who you connect to, `/model` picks what runs.\n\n## Commands\n\nTurkish and English names both work, and a prefix is enough — `/prof`.\n\n`/profile` `/model` `/settings` `/resume` `/continue` `/lang` `/name` `/color` `/new` `/show` `/geo` `/device` `/ortam` `/mac` `/performance` `/help` `/quit`"
         },
         {
           "class": "DepictionScreenshotsView",
@@ -53,7 +53,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "The worst bug in tweak development is silent: you write a class name that doesn't exist, the code **compiles**, the tweak **loads**, and nothing happens. No error anywhere.\n\nshiv now reads your device's own system libraries and finds the real names. Nothing to download, no Mac, no setup — the data is already on your phone. 2190 classes scan in 28 ms.\n\n```\nshiv-sinif LockScreen\nshiv-sinif --metod SBLockScreenManager\nshiv-sinif --metodara notificationCount\n```\n\nThe model uses this itself: it verifies the class before writing code, and says it can't confirm rather than guessing.\n\n**Some tweaks can't be built on the device.** Anything targeting a system process — SpringBoard, CoverSheet, daemons — needs an arm64e pointer-auth ABI the on-device toolchain can't produce. Build it here and the device drops into Safe Mode. This was measured, not assumed.\n\nshiv recognises those cases, refuses, and explains why. If you have a Mac, `/mac` connects it over SSH and the build happens there without leaving the app. Tweaks targeting App Store apps and command-line tools build on the device as usual."
+          "markdown": "### The bug that doesn't announce itself\n\nWrite a class name that doesn't exist and the code **compiles**. The tweak **installs**. It **loads**. And then nothing happens — no error, no log, no crash. You stare at working-looking code for hours.\n\nThis is the single most common way tweak work goes wrong, and it is why an AI writing tweak code is dangerous unless it can check its work.\n\n### So shiv reads your device\n\nEvery jailbroken iPhone already carries the shared cache — every system class, every method, sitting there in `/System/Cryptexes`. shiv parses it directly. No IPSW download, no Mac, no setup.\n\n```\nshiv-sinif LockScreen\nshiv-sinif --metod SBLockScreenManager\nshiv-sinif --metodara notificationCount\n```\n\n2190 classes scan in 28 ms. The model runs this itself before writing code, and if it can't confirm a name it says so instead of guessing.\n\n### App Store apps are encrypted\n\nTheir class names can't be read from disk — FairPlay encrypts the binary. shiv decrypts on the device, no Mac and no Python needed:\n\n```\nshiv-cek <bundle-id>\n```\n\nMeasured: YouTube, 196 MB, 32,929 classes recovered.\n\n### What builds on the phone, and what doesn't\n\nMost of it builds here. Tweaks targeting App Store apps and command-line tools compile, sign and install on the device — Theos, clang and `ldid` are all present.\n\nSystem tweaks mostly work too. The exception is narrow but real: if your code hands a **block** to a system process, the on-device toolchain produces the wrong pointer-authentication ABI and the device drops into Safe Mode. Hooks, selector calls and ivar reads are fine; handing over a block is not.\n\nshiv recognises that case, refuses, and explains why. With `/mac` it connects a Mac over SSH and builds there instead.\n\n### Start here\n\n```\n/ortam\n```\n\nMeasures the whole development environment — jailbreak type, Theos path and flavour, SDKs, frida, and the build flow it recommends. Run it before anything else; it replaces guessing with measurement."
         },
         {
           "class": "DepictionSeparatorView"
@@ -64,7 +64,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "**Node.js is bundled.** Install shiv and it runs — nothing else to add.\n\n**Don't run it as root.** Files would end up owned by root and `~/.shiv` could no longer be written by mobile.\n\n**Your data stays.** Profiles, API keys, sessions and input history live in `~/.shiv`. Removing the package leaves them alone — even on purge.\n\n**Your API key is yours.** Stored locally, sent only to the provider you chose. `/aktar` exports a session with keys and device identifiers stripped."
+          "markdown": "**Node.js is bundled.** Install shiv and it runs — nothing else to add.\n\n**Don't run it as root.** Files would end up owned by root and `~/.shiv` could no longer be written by mobile.\n\n**Your data stays.** Profiles, API keys, sessions and input history live in `~/.shiv`. Removing the package leaves them alone — even on purge.\n\n**Your API key is yours.** Stored locally, sent only to the provider you chose. `/aktar` exports a session with keys and device identifiers stripped.\n\n**`BILGI.md`** — anything you put in `~/.shiv/BILGI.md` is given to the model every session. Write down the quirks of your device once instead of explaining them every time."
         },
         {
           "class": "DepictionSeparatorView"
@@ -75,7 +75,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "Tested on iPhone 15 Pro, iOS 17.0.3, RootHide. The rootless build has also been verified on a rootless device.\n\n**Known limits.** Class lookup covers the shared cache; some Control Centre modules and Settings bundles live in separate files and aren't read yet. App Store apps are encrypted, so their class names can't be read from disk. Lookup was verified on iOS 17 — on another version shiv says it can't confirm rather than returning a wrong name."
+          "markdown": "Everything here was measured on one device: iPhone 15 Pro, iOS 17.0.3, RootHide. The rootless build has been verified on a rootless device; what is written about rootful rests on documentation, not testing.\n\n**Known limits.** `.appex` extensions run in their own process and aren't decrypted by this route. Class lookup was verified on iOS 17 — on another version shiv says it can't confirm rather than returning a wrong name."
         },
         {
           "class": "DepictionSeparatorView"
@@ -97,7 +97,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "1.3.0"
+          "text": "2.0.0"
         },
         {
           "class": "DepictionTableTextView",
@@ -125,6 +125,17 @@
     {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "2.0.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "shiv can now build tweaks end to end, on the device.\n\n### Tweak development\n\n**Class and method lookup** — reads the device's own shared cache, and now also binaries that live outside it (Control Centre modules, Settings bundles, SDKs embedded in apps).\n\n**On-device decryption** — `shiv-cek <bundle-id>` unwraps FairPlay without a Mac or Python. `shiv-oku` lists classes from a running app.\n\n**`/ortam`** — measures the development environment before work starts: jailbreak type, Theos path and flavour, SDKs, frida, and the build flow it recommends.\n\n**Build guidance** — the model knows which tweaks can be built on the phone and which need a Mac, and explains the difference instead of refusing flatly.\n\n**`TWEAK.md`** ships with the package: measured recipes the model reads when it needs them, so the base prompt stays small.\n\n### Background tasks\n\n`Ctrl+B` sends a running job to the background. `↓` reaches the counter, `Enter` opens detail, `k` stops it. Output streams while the job is still running, and the timer ticks every second.\n\n### Fixed\n\n- **Lines were losing their last character.** The gutter mark `⎿` draws two columns in this terminal while shiv counted one, so every gutter line shifted a column and later redraws clipped the end. Now `└`.\n- Command tails (`exit=1`, elapsed time) overflowed the width budget\n- `Ctrl+B` was bound twice; the background branch was unreachable\n- Fold state is saved, so `/resume` no longer reopens collapsed text\n- Sessions broken by a half-finished tool call are repaired on load\n- Mac connection and respring now go through the permission prompt\n\n### Documentation\n\nA standalone tweak development guide ships in `belgeler/` — readable on its own, without shiv."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "1.3.0"

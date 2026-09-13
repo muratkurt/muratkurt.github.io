@@ -81,7 +81,7 @@
 
 <p>Talk to a model, let it run commands, keep the conversation across sessions. Bring your own API key — the provider is up to you.</p>
 
-<p>Since 1.3.0 it also helps you <strong>write tweaks</strong>.</p>
+<p>Since <strong>2.0</strong> it can also build tweaks, end to end, without leaving the phone.</p>
 
 <h2>Providers</h2>
 <p>Moonshot · DeepSeek · OpenAI · OpenRouter · Ollama (local) · custom endpoint</p>
@@ -89,17 +89,17 @@
 
 <h2>What it does</h2>
 <p><strong>Reads and edits files, runs shell commands</strong> — with a permission prompt before anything that could change your device. Reading and listing don't ask.</p>
-<p><strong>Sessions</strong> are saved every turn. Continue with <code>/continue</code>, browse older ones with <code>/resume</code>, or take a conversation back to an earlier point with rewind.</p>
-<p><strong>Profiles</strong> let you keep several providers side by side. <code>/profile</code> picks who you connect to, <code>/model</code> picks what runs.</p>
-<p><strong>Two languages</strong> — Turkish and English, chosen on first run.</p>
+<p><strong>Sessions</strong> are saved every turn. Continue with <code>/continue</code>, browse older ones with <code>/resume</code>, or rewind to an earlier point.</p>
+<p><strong>Background tasks</strong> — <code>Ctrl+B</code> sends a running job to the background. Press <code>↓</code> to reach the counter, <code>Enter</code> for detail, <code>k</code> to stop. Output streams while the job is still running.</p>
+<p><strong>Profiles</strong> keep several providers side by side. <code>/profile</code> picks who you connect to, <code>/model</code> picks what runs.</p>
 
 <h2>Commands</h2>
-<p>Every command has a Turkish and an English name, and a prefix is enough — <code>/prof</code> works.</p>
-<pre><code>/profile  /model    /settings  /resume
-/continue /lang     /name      /color
-/new      /show     /geo       /device
-/performance        /mac       /help
-/quit</code></pre>
+<p>Turkish and English names both work, and a prefix is enough — <code>/prof</code>.</p>
+<pre><code>/profile  /model     /settings  /resume
+/continue /lang      /name      /color
+/new      /show      /geo       /device
+/ortam    /mac       /performance
+/help     /quit</code></pre>
 
 <h2>Screenshots</h2>
 <img src="https://muratkurt.github.io/assets/shiv/ss1.png" alt="Startup screen" style="width:100%;max-width:460px;display:block;border-radius:10px;margin-bottom:10px">
@@ -111,23 +111,34 @@
 
 <h2>Writing tweaks</h2>
 
-<p>The worst bug in tweak development is silent: you write a class name that doesn't exist, the code <strong>compiles</strong>, the tweak <strong>loads</strong>, and nothing happens. No error anywhere.</p>
+<h3>The bug that doesn't announce itself</h3>
+<p>Write a class name that doesn't exist and the code <strong>compiles</strong>. The tweak <strong>installs</strong>. It <strong>loads</strong>. And then nothing happens — no error, no log, no crash. You stare at working-looking code for hours.</p>
+<p>This is the single most common way tweak work goes wrong, and it is why an AI writing tweak code is dangerous unless it can check its work.</p>
 
-<p>shiv now reads your device's own system libraries and finds the real names. Nothing to download, no Mac, no setup — the data is already on your phone. 2190 classes scan in 28&nbsp;ms.</p>
-
+<h3>So shiv reads your device</h3>
+<p>Every jailbroken iPhone already carries the shared cache — every system class, every method, sitting there in <code>/System/Cryptexes</code>. shiv parses it directly. No IPSW download, no Mac, no setup.</p>
 <pre><code>shiv-sinif LockScreen
 shiv-sinif --metod SBLockScreenManager
 shiv-sinif --metodara notificationCount</code></pre>
+<p>2190 classes scan in 28&nbsp;ms. The model runs this itself before writing code, and if it can't confirm a name it says so instead of guessing.</p>
 
-<p>The model uses this itself: it verifies the class before writing code, and says it can't confirm rather than guessing.</p>
+<h3>App Store apps are encrypted</h3>
+<p>Their class names can't be read from disk — FairPlay encrypts the binary. shiv decrypts on the device, no Mac and no Python needed:</p>
+<pre><code>shiv-cek &lt;bundle-id&gt;</code></pre>
+<p>Measured: YouTube, 196&nbsp;MB, 32,929 classes recovered.</p>
+
+<h3>What builds on the phone, and what doesn't</h3>
+<p>Most of it builds here. Tweaks targeting App Store apps and command-line tools compile, sign and install on the device — Theos, clang and <code>ldid</code> are all present.</p>
 
 <div class="note">
-  <p style="margin:0"><strong>Some tweaks can't be built on the device.</strong> Anything targeting a system process — SpringBoard, CoverSheet, daemons — needs an arm64e pointer-auth ABI the on-device toolchain can't produce. Build it here and the device drops into Safe Mode. This was measured, not assumed.</p>
+  <p style="margin:0">System tweaks mostly work too. The exception is narrow but real: if your code hands a <strong>block</strong> to a system process, the on-device toolchain produces the wrong pointer-authentication ABI and the device drops into Safe Mode. Hooks, selector calls and ivar reads are fine; handing over a block is not.</p>
 </div>
 
-<p>shiv recognises those cases, refuses, and explains why. If you have a Mac, <code>/mac</code> connects it over SSH and the build happens there without leaving the app.</p>
+<p>shiv recognises that case, refuses, and explains why. With <code>/mac</code> it connects a Mac over SSH and builds there instead.</p>
 
-<p>Tweaks targeting App Store apps and command-line tools build on the device as usual.</p>
+<h3>Start here</h3>
+<pre><code>/ortam</code></pre>
+<p>Measures the whole development environment — jailbreak type, Theos path and flavour, SDKs, frida, and the build flow it recommends. Run it before anything else; it replaces guessing with measurement.</p>
 
 <hr>
 
@@ -143,15 +154,17 @@ shiv-sinif --metodara notificationCount</code></pre>
 
 <p><strong>Your API key is yours.</strong> Stored locally, sent only to the provider you chose. <code>/aktar</code> exports a session with keys and device identifiers stripped.</p>
 
+<p><strong><code>BILGI.md</code></strong> — anything you put in <code>~/.shiv/BILGI.md</code> is given to the model every session. Write down the quirks of your device once instead of explaining them every time.</p>
+
 <h2>Compatibility</h2>
-<p>Tested on iPhone 15 Pro, iOS 17.0.3, RootHide. The rootless build has also been verified on a rootless device.</p>
-<p><strong>Known limits.</strong> Class lookup covers the shared cache; some Control Centre modules and Settings bundles live in separate files and aren't read yet. App Store apps are encrypted, so their class names can't be read from disk. Lookup was verified on iOS 17 — on another version shiv says it can't confirm rather than returning a wrong name.</p>
+<p>Everything here was measured on one device: iPhone 15 Pro, iOS 17.0.3, RootHide. The rootless build has been verified on a rootless device; what is written about rootful rests on documentation, not testing.</p>
+<p><strong>Known limits.</strong> <code>.appex</code> extensions run in their own process and aren't decrypted by this route. Class lookup was verified on iOS 17 — on another version shiv says it can't confirm rather than returning a wrong name.</p>
 
 <h2>Information</h2>
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.shiv</td></tr>
-  <tr><td>Version</td><td>1.3.0</td></tr>
+  <tr><td>Version</td><td>2.0.0</td></tr>
   <tr><td>Requires</td><td>nothing — Node.js included</td></tr>
   <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
   <tr><td>Tested on</td><td>iOS 17.0.3</td></tr>
@@ -161,6 +174,36 @@ shiv-sinif --metodara notificationCount</code></pre>
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>2.0.0</h3>
+<p>shiv can now build tweaks end to end, on the device.</p>
+
+<p><strong>Tweak development</strong></p>
+<ul>
+  <li><strong>Class and method lookup</strong> — reads the device's own shared cache, and now also binaries outside it (Control Centre modules, Settings bundles, SDKs embedded in apps)</li>
+  <li><strong>On-device decryption</strong> — <code>shiv-cek &lt;bundle-id&gt;</code> unwraps FairPlay without a Mac or Python; <code>shiv-oku</code> lists classes from a running app</li>
+  <li><strong><code>/ortam</code></strong> — measures the development environment before work starts</li>
+  <li><strong>Build guidance</strong> — the model knows which tweaks can be built on the phone and which need a Mac, and explains the difference instead of refusing flatly</li>
+  <li><strong><code>TWEAK.md</code></strong> ships with the package: measured recipes the model reads when it needs them</li>
+</ul>
+
+<p><strong>Background tasks</strong></p>
+<ul>
+  <li><code>Ctrl+B</code> sends a running job to the background; <code>↓</code> reaches the counter, <code>Enter</code> opens detail, <code>k</code> stops it</li>
+  <li>Output streams while the job is still running, and the timer ticks every second</li>
+</ul>
+
+<p><strong>Fixed</strong></p>
+<ul>
+  <li><strong>Lines were losing their last character.</strong> The gutter mark <code>⎿</code> draws two columns in this terminal while shiv counted one, so every gutter line shifted a column and later redraws clipped the end. Now <code>└</code>.</li>
+  <li>Command tails (<code>exit=1</code>, elapsed time) overflowed the width budget</li>
+  <li><code>Ctrl+B</code> was bound twice; the background branch was unreachable</li>
+  <li>Fold state is saved, so <code>/resume</code> no longer reopens collapsed text</li>
+  <li>Sessions broken by a half-finished tool call are repaired on load</li>
+  <li>Mac connection and respring now go through the permission prompt</li>
+</ul>
+
+<p><strong>Documentation</strong> — a standalone tweak development guide ships in <code>belgeler/</code>, readable on its own without shiv.</p>
 
 <h3>1.3.0</h3>
 <p><strong>New</strong></p>
