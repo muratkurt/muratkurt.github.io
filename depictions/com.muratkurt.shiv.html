@@ -98,7 +98,7 @@
 <pre><code>/profile  /model     /settings  /resume
 /continue /lang      /name      /color
 /new      /show      /geo       /device
-/ortam    /mac       /performance
+/env      /mac       /performance
 /help     /quit</code></pre>
 
 <h2>Screenshots</h2>
@@ -124,21 +124,25 @@ shiv-sinif --metodara notificationCount</code></pre>
 
 <h3>App Store apps are encrypted</h3>
 <p>Their class names can't be read from disk — FairPlay encrypts the binary. shiv decrypts on the device, no Mac and no Python needed:</p>
-<pre><code>shiv-cek &lt;bundle-id&gt;</code></pre>
-<p>Measured: YouTube, 196&nbsp;MB, 32,929 classes recovered.</p>
+<pre><code>shiv-cek &lt;bundle-id&gt;
+shiv-oku &lt;bundle-id&gt; [pattern]</code></pre>
+<p>Measured: YouTube, 196&nbsp;MB, 32,929 classes recovered. <code>shiv-oku</code> reads the class list from a running app instead, which needs no decryption at all.</p>
 
-<h3>What builds on the phone, and what doesn't</h3>
-<p>Most of it builds here. Tweaks targeting App Store apps and command-line tools compile, sign and install on the device — Theos, clang and <code>ldid</code> are all present.</p>
+<h3>Building for arm64e system processes</h3>
+<p>Tweaks for App Store apps and command-line tools build on the phone with nothing to think about — those are arm64, there is no pointer authentication.</p>
+<p>System processes are arm64e, and there the on-device compiler emits an older pointer-auth ABI. Two things in your code can then trip it: an <code>@"..."</code> string literal, and handing a <strong>block</strong> to the system. Hooks, selector calls and ivar reads are fine.</p>
 
 <div class="note">
-  <p style="margin:0">System tweaks mostly work too. The exception is narrow but real: if your code hands a <strong>block</strong> to a system process, the on-device toolchain produces the wrong pointer-authentication ABI and the device drops into Safe Mode. Hooks, selector calls and ivar reads are fine; handing over a block is not.</p>
+  <p style="margin:0"><strong><code>oldabi</code> bridges both.</strong> If it is installed — and it usually is — those tweaks build and run on the phone. <code>/env</code> measures whether you have it.</p>
 </div>
 
-<p>shiv recognises that case, refuses, and explains why. With <code>/mac</code> it connects a Mac over SSH and builds there instead.</p>
+<p>For a package you hand to other people, declare it:</p>
+<pre><code>Depends: firmware (&lt;&lt; 15.0) | cy+cpu.arm64v8 | oldabi</code></pre>
+<p>Or build on a Mac with <code>/mac</code> for a deb that depends on nothing. shiv explains both and doesn't push one on you.</p>
 
 <h3>Start here</h3>
-<pre><code>/ortam</code></pre>
-<p>Measures the whole development environment — jailbreak type, Theos path and flavour, SDKs, frida, and the build flow it recommends. Run it before anything else; it replaces guessing with measurement.</p>
+<pre><code>/env</code></pre>
+<p>Measures the whole development environment — jailbreak type, Theos path and flavour, SDKs, frida, <code>oldabi</code>, and the build flow it recommends for <strong>your</strong> setup. Run it before anything else; it replaces guessing with measurement.</p>
 
 <hr>
 
@@ -157,23 +161,49 @@ shiv-sinif --metodara notificationCount</code></pre>
 <p><strong><code>BILGI.md</code></strong> — anything you put in <code>~/.shiv/BILGI.md</code> is given to the model every session. Write down the quirks of your device once instead of explaining them every time.</p>
 
 <h2>Compatibility</h2>
-<p>Everything here was measured on one device: iPhone 15 Pro, iOS 17.0.3, RootHide. The rootless build has been verified on a rootless device; what is written about rootful rests on documentation, not testing.</p>
-<p><strong>Known limits.</strong> <code>.appex</code> extensions run in their own process and aren't decrypted by this route. Class lookup was verified on iOS 17 — on another version shiv says it can't confirm rather than returning a wrong name.</p>
+<p>Measured on two devices: iPhone 15 Pro (iOS 17.0.3, RootHide) and iPhone XS (iOS 16.1.1, Dopamine rootless). Rootless support was rebuilt in 2.1.0 after measuring on real hardware rather than assuming.</p>
+<p><strong>Known limits.</strong> <code>.appex</code> extensions run in their own process and aren't decrypted by this route. Class lookup was verified on iOS 16 and 17 — on another version shiv says it can't confirm rather than returning a wrong name. Rootful jailbreaks rest on documentation, not testing.</p>
 
 <h2>Information</h2>
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.shiv</td></tr>
-  <tr><td>Version</td><td>2.0.0</td></tr>
+  <tr><td>Version</td><td>2.1.0</td></tr>
   <tr><td>Requires</td><td>nothing — Node.js included</td></tr>
   <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
-  <tr><td>Tested on</td><td>iOS 17.0.3</td></tr>
+  <tr><td>Tested on</td><td>iOS 17.0.3 · iOS 16.1.1</td></tr>
   <tr><td>Languages</td><td>Türkçe · English</td></tr>
 </table>
 
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>2.1.0</h3>
+<p>A measurement release, not a feature one. shiv was run on a second device — iPhone XS, iOS 16.1.1, Dopamine rootless — and what 2.0.0 claimed about rootless turned out to be wrong in four places.</p>
+
+<p><strong>Rootless support, rebuilt</strong></p>
+<ul>
+  <li><strong>Environment detection was wrong.</strong> The check was "is <code>/var/jb</code> a symlink" — but it is a symlink on Dopamine too, just pointing somewhere else. A rootless device reported itself as RootHide, and every piece of guidance that followed was built on that. Now measured through <code>/rootfs</code>, <code>.jbroot-*</code> and <code>readlink /var/jb</code>.</li>
+  <li><strong><code>awk</code> doesn't exist</strong> in the Dopamine bootstrap. <code>/env</code> was silently saying "no frida" while frida was running. Rewritten with <code>sed</code> and <code>grep</code>.</li>
+  <li><strong>The home directory was a shadow.</strong> <code>$HOME</code> points at <code>/var/jb/var/mobile</code> on rootless, so <code>/aktar</code> wrote somewhere Files and Filza never show. Now the real <code>/var/mobile</code>.</li>
+  <li><strong>Frida isn't in the default rootless repos.</strong> <code>/env</code> now tells you to add <code>https://build.frida.re/</code>.</li>
+</ul>
+
+<p><strong>Guidance follows the environment</strong></p>
+<p>Theos flavour, patcher and the recommended build flow are now chosen from what was measured. A rootless device is no longer told to use the RootHide fork.</p>
+<p><code>/env</code> also measures <strong><code>oldabi</code></strong> now. This mattered more than it looked: on-device <code>caps 0x00</code> tweaks were "working" — but that proved <code>oldabi</code> was installed, not that the tweak was fine. The model used to say "a tweak with a block needs a Mac build"; that text predated the measurement and has been corrected.</p>
+
+<p><strong>The packaging debt is closed</strong></p>
+<p><code>shiv-cek</code>, <code>shiv-oku</code> and <code>shivfrida</code> were described in the docs and the changelog but <code>paketle.sh</code> only ever copied <code>shiv-sinif</code> and <code>shiv-ortam</code> — tools that were written about and never shipped. All three are in the deb now (shivfrida 14&nbsp;MB, arm64e), and packaging ends by extracting them back out of the deb to verify. Missing one stops the build.</p>
+
+<p><strong>Interface</strong></p>
+<ul>
+  <li>Assistant narration is no longer folded; only tool output is (<code>SHIV_ANLATIM_KATLA=1</code> restores the old behaviour)</li>
+  <li><code>Ctrl+G</code> send-now works again; queued messages show under the spinner</li>
+  <li>The language step previews its description in the language under the cursor</li>
+  <li><code>/env</code> output reads more cleanly — separate blocks, neutral tone</li>
+</ul>
 
 <h3>2.0.0</h3>
 <p>shiv can now build tweaks end to end, on the device.</p>
@@ -182,7 +212,7 @@ shiv-sinif --metodara notificationCount</code></pre>
 <ul>
   <li><strong>Class and method lookup</strong> — reads the device's own shared cache, and now also binaries outside it (Control Centre modules, Settings bundles, SDKs embedded in apps)</li>
   <li><strong>On-device decryption</strong> — <code>shiv-cek &lt;bundle-id&gt;</code> unwraps FairPlay without a Mac or Python; <code>shiv-oku</code> lists classes from a running app</li>
-  <li><strong><code>/ortam</code></strong> — measures the development environment before work starts</li>
+  <li><strong><code>/env</code></strong> — measures the development environment before work starts</li>
   <li><strong>Build guidance</strong> — the model knows which tweaks can be built on the phone and which need a Mac, and explains the difference instead of refusing flatly</li>
   <li><strong><code>TWEAK.md</code></strong> ships with the package: measured recipes the model reads when it needs them</li>
 </ul>
