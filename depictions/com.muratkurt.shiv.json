@@ -53,7 +53,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "### The bug that doesn't announce itself\n\nWrite a class name that doesn't exist and the code **compiles**. The tweak **installs**. It **loads**. And then nothing happens — no error, no log, no crash. You stare at working-looking code for hours.\n\nThis is the single most common way tweak work goes wrong, and it is why an AI writing tweak code is dangerous unless it can check its work.\n\n### So shiv reads your device\n\nEvery jailbroken iPhone already carries the shared cache — every system class, every method, sitting there in `/System/Cryptexes`. shiv parses it directly. No IPSW download, no Mac, no setup.\n\n```\nshiv-sinif LockScreen\nshiv-sinif --metod SBLockScreenManager\nshiv-sinif --metodara notificationCount\n```\n\n2190 classes scan in 28 ms. The model runs this itself before writing code, and if it can't confirm a name it says so instead of guessing.\n\n### App Store apps are encrypted\n\nTheir class names can't be read from disk — FairPlay encrypts the binary. shiv decrypts on the device, no Mac and no Python needed:\n\n```\nshiv-cek <bundle-id>\nshiv-oku <bundle-id> [pattern]\n```\n\nMeasured: YouTube, 196 MB, 32,929 classes recovered. `shiv-oku` reads the class list from a running app instead, which needs no decryption at all.\n\n### Building for arm64e system processes\n\nTweaks for App Store apps and command-line tools build on the phone with nothing to think about — those are arm64, there is no pointer authentication.\n\nSystem processes are arm64e, and there the on-device compiler emits an older pointer-auth ABI. Two things in your code can then trip it: an `@\"...\"` string literal, and handing a **block** to the system. Hooks, selector calls and ivar reads are fine.\n\n**`oldabi` bridges both.** If it is installed — and it usually is — those tweaks build and run on the phone. `/env` measures whether you have it.\n\nFor a package you hand to other people, declare it:\n\n```\nDepends: firmware (<< 15.0) | cy+cpu.arm64v8 | oldabi\n```\n\nOr build on a Mac with `/mac` for a deb that depends on nothing. shiv explains both and doesn't push one on you.\n\n### Start here\n\n```\n/env\n```\n\nMeasures the whole development environment — jailbreak type, Theos path and flavour, SDKs, frida, `oldabi`, and the build flow it recommends for **your** setup. Run it before anything else; it replaces guessing with measurement."
+          "markdown": "### The bug that doesn't announce itself\n\nWrite a class name that doesn't exist and the code **compiles**. The tweak **installs**. It **loads**. And then nothing happens — no error, no log, no crash. You stare at working-looking code for hours.\n\nThis is the single most common way tweak work goes wrong, and it is why an AI writing tweak code is dangerous unless it can check its work.\n\n### So shiv reads your device\n\nEvery jailbroken iPhone already carries the shared cache — every system class, every method, sitting there in `/System/Cryptexes`. shiv parses it directly. No IPSW download, no Mac, no setup.\n\n```\nshiv-sinif LockScreen\nshiv-sinif --metod SBLockScreenManager\nshiv-sinif --metodara notificationCount\n```\n\n2190 classes scan in 28 ms. The model runs this itself before writing code, and if it can't confirm a name it says so instead of guessing.\n\n### App Store apps are encrypted\n\nTheir class names can't be read from disk — FairPlay encrypts the binary. shiv decrypts on the device, no Mac and no Python needed:\n\n```\nshiv-cek <bundle-id>\nshiv-oku <bundle-id> [pattern]\n```\n\nMeasured: YouTube, 196 MB, 32,929 classes recovered. `shiv-oku` reads the class list from a running app instead, which needs no decryption at all.\n\n**These need frida-server, and the version matters.** shiv links frida-core 16, so the server has to be a 16.x build — a 17.x server will not talk to it. On rootless, `shiv-frida-kur` fetches a matching 16.1.4 and pins it. `/env` measures what you have and says so.\n\n### Building for arm64e system processes\n\nTweaks for App Store apps and command-line tools build on the phone with nothing to think about — those are arm64, there is no pointer authentication.\n\nSystem processes are arm64e, and there the on-device compiler emits an older pointer-auth ABI. Two things in your code can then trip it: an `@\"...\"` string literal, and handing a **block** to the system. Hooks, selector calls and ivar reads are fine.\n\n**`oldabi` bridges both.** If it is installed — and it usually is — those tweaks build and run on the phone. `/env` measures whether you have it.\n\nFor a package you hand to other people, declare it:\n\n```\nDepends: firmware (<< 15.0) | cy+cpu.arm64v8 | oldabi\n```\n\nOr build on a Mac with `/mac` for a deb that depends on nothing. shiv explains both and doesn't push one on you.\n\n### Start here\n\n```\n/env\n```\n\nMeasures the whole development environment — jailbreak type, Theos path and flavour, SDKs, frida and its version, `oldabi`, and the build flow it recommends for **your** setup. It **runs** each tool rather than checking that the file exists, so a broken tool shows as broken."
         },
         {
           "class": "DepictionSeparatorView"
@@ -97,7 +97,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "2.1.0"
+          "text": "2.1.1"
         },
         {
           "class": "DepictionTableTextView",
@@ -125,6 +125,17 @@
     {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "2.1.1"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "The faults that the two-device field test turned up, closed.\n\n**`shiv-sinif` works again.** `dsc-disk.js` was never copied into the package, so a clean install always died with `ERR_MODULE_NOT_FOUND`. Added, and the packaging now verifies it.\n\n**`/env` runs the tools instead of looking for the files.** It used to report `ok` for three tools that were all broken. A tool that fails now shows as failed.\n\n**`shivfrida` disappeared on every reinstall.** The cause was `postrm` with no guard: on a dpkg upgrade it deleted the directory that had just been unpacked. Cleanup is now bound to `remove|purge`, as Debian expects.\n\n**frida version.** shiv links frida-core 16, so the server has to be 16.x — the repo's latest is 17.x and will not talk to it. On rootless, the new `shiv-frida-kur` fetches a matching 16.1.4 and pins it. `/env` measures the version and warns on a mismatch.\n\n**`shiv-cek` on rootless** returned empty fields because the Dopamine bootstrap has no `awk`; rewritten with `tr` and `cut`. It also finds `shivfrida` from its own location now instead of a hard-coded path.\n\n**Mac cross-build** — with `SHIV_NODE_CAPRAZ=1` the bundled iOS node is verified as a Mach-O rather than executed, so debs can be produced on a Mac without a device."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "2.1.0"

@@ -128,6 +128,10 @@ shiv-sinif --metodara notificationCount</code></pre>
 shiv-oku &lt;bundle-id&gt; [pattern]</code></pre>
 <p>Measured: YouTube, 196&nbsp;MB, 32,929 classes recovered. <code>shiv-oku</code> reads the class list from a running app instead, which needs no decryption at all.</p>
 
+<div class="note">
+  <p style="margin:0"><strong>These need frida-server, and the version matters.</strong> shiv links frida-core 16, so the server has to be a 16.x build — a 17.x server will not talk to it. On rootless, <code>shiv-frida-kur</code> fetches a matching 16.1.4 and pins it. <code>/env</code> measures what you have and says so.</p>
+</div>
+
 <h3>Building for arm64e system processes</h3>
 <p>Tweaks for App Store apps and command-line tools build on the phone with nothing to think about — those are arm64, there is no pointer authentication.</p>
 <p>System processes are arm64e, and there the on-device compiler emits an older pointer-auth ABI. Two things in your code can then trip it: an <code>@"..."</code> string literal, and handing a <strong>block</strong> to the system. Hooks, selector calls and ivar reads are fine.</p>
@@ -142,7 +146,7 @@ shiv-oku &lt;bundle-id&gt; [pattern]</code></pre>
 
 <h3>Start here</h3>
 <pre><code>/env</code></pre>
-<p>Measures the whole development environment — jailbreak type, Theos path and flavour, SDKs, frida, <code>oldabi</code>, and the build flow it recommends for <strong>your</strong> setup. Run it before anything else; it replaces guessing with measurement.</p>
+<p>Measures the whole development environment — jailbreak type, Theos path and flavour, SDKs, frida and its version, <code>oldabi</code>, and the build flow it recommends for <strong>your</strong> setup. It <strong>runs</strong> each tool rather than checking that the file exists, so a broken tool shows as broken.</p>
 
 <hr>
 
@@ -168,7 +172,7 @@ shiv-oku &lt;bundle-id&gt; [pattern]</code></pre>
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.shiv</td></tr>
-  <tr><td>Version</td><td>2.1.0</td></tr>
+  <tr><td>Version</td><td>2.1.1</td></tr>
   <tr><td>Requires</td><td>nothing — Node.js included</td></tr>
   <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
   <tr><td>Tested on</td><td>iOS 17.0.3 · iOS 16.1.1</td></tr>
@@ -178,6 +182,17 @@ shiv-oku &lt;bundle-id&gt; [pattern]</code></pre>
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>2.1.1</h3>
+<p>The faults that the two-device field test turned up, closed.</p>
+<ul>
+  <li><strong><code>shiv-sinif</code> works again.</strong> <code>dsc-disk.js</code> was never copied into the package, so a clean install always died with <code>ERR_MODULE_NOT_FOUND</code>. Added, and the packaging now verifies it.</li>
+  <li><strong><code>/env</code> runs the tools instead of looking for the files.</strong> It used to report <code>ok</code> for three tools that were all broken. A tool that fails now shows as failed.</li>
+  <li><strong><code>shivfrida</code> disappeared on every reinstall.</strong> The cause was <code>postrm</code> with no guard: on a dpkg upgrade it deleted the directory that had just been unpacked. Cleanup is now bound to <code>remove|purge</code>, as Debian expects.</li>
+  <li><strong>frida version.</strong> shiv links frida-core 16, so the server has to be 16.x — the repo's latest is 17.x and will not talk to it. On rootless the new <code>shiv-frida-kur</code> fetches a matching 16.1.4 and pins it; <code>/env</code> warns on a mismatch.</li>
+  <li><strong><code>shiv-cek</code> on rootless</strong> returned empty fields because the Dopamine bootstrap has no <code>awk</code>; rewritten with <code>tr</code> and <code>cut</code>. It also finds <code>shivfrida</code> from its own location now instead of a hard-coded path.</li>
+  <li><strong>Mac cross-build</strong> — with <code>SHIV_NODE_CAPRAZ=1</code> the bundled iOS node is verified as a Mach-O rather than executed, so debs can be produced on a Mac without a device.</li>
+</ul>
 
 <h3>2.1.0</h3>
 <p>A measurement release, not a feature one. shiv was run on a second device — iPhone XS, iOS 16.1.1, Dopamine rootless — and what 2.0.0 claimed about rootless turned out to be wrong in four places.</p>
