@@ -165,6 +165,98 @@ Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
 Name: ActionButtonFix
 Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
 
+Package: com.muratkurt.actionbuttonfix
+Version: 2.4.0
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Installed-Size: 328
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Filename: debs/ActionButtonFix-2.4.0-roothide.deb
+Size: 36924
+MD5sum: df854c00572f0bcd52b52ecbd4ce622b
+SHA1: 4af38e4daec89def246bedbaa31ac9e1ad0fabf2
+SHA256: 541aff53cfef6f4f263479eb32a12b6bb58034c9ce66f9a333d28af6ba37fb25
+Section: Tweaks
+Homepage: https://muratkurt.github.io/
+Description: Action Button'a tek tik ve cift tik eylemi kazandirir
+ iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
+ bagimsiz eylem atamanizi saglar. Uzun basista Apple'in mevcut Action
+ Button ayari aynen calismaya devam eder.
+ .
+ Eylemler: Flas, Ekran Goruntusu, Uygulama, Stok Eylem, Kamera.
+ Ayarlar > ActionButtonFix uzerinden secilir.
+ .
+ Kamera: kamerayi Apple'in kendi akisiyla acar. Kamera yonu (arka/on)
+ ve mod (Video, Agir Cekim, Hizlandirilmis, Sinematik, Fotograf,
+ Portre) tek tik ve cift tik icin ayri secilir. Video modlarinda kayit
+ otomatik baslar (acilip kapatilabilir); ayni tus kaydi durdurur.
+ Ekran kapaliyken ve kilit ekraninda da calisir. iOS Ayarlari'ndaki
+ uzun basis eylemi degismez.
+ .
+ Uygulama: listeden secilen herhangi bir uygulamayi acar (AltList).
+ Stok Eylem: iOS Ayarlari'nda uzun basisa atanmis eylemi tek/cift
+ tikla da calistirir.
+ .
+ Titresim: tek tik ve cift tik icin ayri ayri acilip kapatilir.
+ .
+ Ayarlar 12 dilde: Turkce, Ingilizce, Almanca, Fransizca, Ispanyolca,
+ Italyanca, Portekizce, Rusca, Cince, Japonca, Korece, Arapca.
+ .
+ Dogrulanmis platform: iPhone 15 Pro / iOS 17.0.3 / RootHide.
+ Action Button yalnizca iPhone 15 Pro ve Pro Max modellerinde bulunur.
+ Diger cihaz, iOS surumleri ve rootless cihaz uzerinde test edilmedi.
+Author: muratkurt
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Name: ActionButtonFix
+Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+
+Package: com.muratkurt.actionbuttonfix
+Version: 2.4.0
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Installed-Size: 328
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Filename: debs/ActionButtonFix-2.4.0-rootless.deb
+Size: 36970
+MD5sum: d69f6b44d96a8e0582be87812fb98ebe
+SHA1: 5d326c3c2b8184ea2d3858ab152e088f68dfed90
+SHA256: df76507da7c585f95c08b94999fd6ea9f14a535e06f9746197e04301902a06bb
+Section: Tweaks
+Homepage: https://muratkurt.github.io/
+Description: Action Button'a tek tik ve cift tik eylemi kazandirir
+ iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
+ bagimsiz eylem atamanizi saglar. Uzun basista Apple'in mevcut Action
+ Button ayari aynen calismaya devam eder.
+ .
+ Eylemler: Flas, Ekran Goruntusu, Uygulama, Stok Eylem, Kamera.
+ Ayarlar > ActionButtonFix uzerinden secilir.
+ .
+ Kamera: kamerayi Apple'in kendi akisiyla acar. Kamera yonu (arka/on)
+ ve mod (Video, Agir Cekim, Hizlandirilmis, Sinematik, Fotograf,
+ Portre) tek tik ve cift tik icin ayri secilir. Video modlarinda kayit
+ otomatik baslar (acilip kapatilabilir); ayni tus kaydi durdurur.
+ Ekran kapaliyken ve kilit ekraninda da calisir. iOS Ayarlari'ndaki
+ uzun basis eylemi degismez.
+ .
+ Uygulama: listeden secilen herhangi bir uygulamayi acar (AltList).
+ Stok Eylem: iOS Ayarlari'nda uzun basisa atanmis eylemi tek/cift
+ tikla da calistirir.
+ .
+ Titresim: tek tik ve cift tik icin ayri ayri acilip kapatilir.
+ .
+ Ayarlar 12 dilde: Turkce, Ingilizce, Almanca, Fransizca, Ispanyolca,
+ Italyanca, Portekizce, Rusca, Cince, Japonca, Korece, Arapca.
+ .
+ Dogrulanmis platform: iPhone 15 Pro / iOS 17.0.3 / RootHide.
+ Action Button yalnizca iPhone 15 Pro ve Pro Max modellerinde bulunur.
+ Diger cihaz, iOS surumleri ve rootless cihaz uzerinde test edilmedi.
+Author: muratkurt
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Name: ActionButtonFix
+Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+
 Package: com.muratkurt.claude-cli-bridge
 Version: 0.4.3
 Architecture: iphoneos-arm64e

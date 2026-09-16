@@ -90,9 +90,8 @@
 
 <h2>Actions</h2>
 <ul>
+  <li><strong>Camera</strong> — pick the side and the mode</li>
   <li>Flashlight</li>
-  <li>Camera</li>
-  <li><strong>Video Recording</strong></li>
   <li>Screenshot</li>
   <li><strong>Open an app</strong> — any system or App Store app</li>
   <li><strong>Stock Action</strong> — whatever you set for the long press in iOS Settings</li>
@@ -101,12 +100,13 @@
 
 <h2>Behaviour worth knowing</h2>
 
-<h3>Video Recording</h3>
-<p>Opens the camera straight in video mode and starts recording on its own. It goes through Apple's own flow, so it is fast, and it works with the screen off and on the Lock Screen. The long-press action you chose in iOS Settings is untouched.</p>
-<p>If you would rather press record yourself, turn off <strong>Start Recording Automatically</strong>.</p>
-
 <h3>Camera</h3>
-<p>Opens the native lock screen camera while the device is locked. The display wakes on its own, even from a black screen. On the Home Screen, Camera comes straight to the front instead.</p>
+<p>Opens through Apple's own flow, so it is fast, and it works with the screen off and on the Lock Screen. Choose the side — <strong>Back</strong> or <strong>Front</strong> — and the mode: Video, Slo-Mo, Time-Lapse, Cinematic, Photo or Portrait.</p>
+<p>Single and double click are configured <strong>separately</strong>, side and mode and all. Single click can be front-camera video while double click is back-camera photo.</p>
+<p>In a recording mode, <strong>Start Recording Automatically</strong> begins the recording as the camera opens, and the same click stops it. The recording screen is the normal one — the photo button stays available while recording, and the shutter stops it with one press. Turn the switch off to open the camera in that mode and press record yourself.</p>
+<div class="note">
+  <p style="margin:0">The long-press action you chose in iOS Settings is untouched either way.</p>
+</div>
 
 <h3>Open an app</h3>
 <p>Picks from a searchable list of everything installed. It does not open apps from the Lock Screen — unlock first.</p>
@@ -120,7 +120,7 @@
 <h3>Haptic feedback</h3>
 <p>On by default, with separate switches for single and double click. Changing the action does not reset the switch.</p>
 <div class="note">
-  <p style="margin:0">Video Recording and Stock Action get their haptic from Apple, so the switch does not affect those two.</p>
+  <p style="margin:0">Camera and Stock Action get their haptic from Apple, so the switch does not affect those two.</p>
 </div>
 
 <h2>Languages</h2>
@@ -140,7 +140,7 @@
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.actionbuttonfix</td></tr>
-  <tr><td>Version</td><td>2.3.1</td></tr>
+  <tr><td>Version</td><td>2.4.0</td></tr>
   <tr><td>Device</td><td>iPhone 15 Pro / Pro Max</td></tr>
   <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
   <tr><td>Tested on</td><td>iOS 17.0.3</td></tr>
@@ -149,6 +149,25 @@
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>2.4.0</h3>
+<p><strong>New</strong></p>
+<ul>
+  <li><strong>Camera action</strong> — opens the camera through Apple's own flow; choose the camera side (<strong>Back / Front</strong>) and the <strong>mode</strong> (Video, Slo-Mo, Time-Lapse, Cinematic, Photo, Portrait) separately</li>
+  <li><strong>Per-click camera settings</strong> — side, mode and auto-record are set separately for single and double click</li>
+  <li><strong>Stop with the same click</strong> — while recording, the same click stops it</li>
+</ul>
+<p><strong>Improvements</strong></p>
+<ul>
+  <li>Auto-started recording now opens the normal recording screen: the photo button stays available while recording, and the shutter stops it with one press</li>
+  <li>Video Recording and Camera merged into a single <strong>Camera</strong> action; clicks already set to Camera keep opening the back camera in photo mode</li>
+  <li>Settings page reorganised; Camera and its options have their own section</li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul>
+  <li>The shutter could stay in a half-recording state after an auto-start, needing two presses to stop</li>
+  <li>Opening the camera by hand no longer starts a recording on its own</li>
+</ul>
 
 <h3>2.3.1</h3>
 <p><strong>New</strong></p>
