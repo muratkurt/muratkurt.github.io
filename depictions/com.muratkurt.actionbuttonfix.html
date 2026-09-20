@@ -77,51 +77,49 @@
 <body>
 
 <h1>ActionButtonFix</h1>
-<p class="lede">Give the Action Button a single click and a double click of its own — without losing the long press.</p>
+<p class="lede">Single click and double click for the Action Button. The long press stays Apple's.</p>
 
-<h2>What it does</h2>
-<p>On stock iOS the Action Button only responds to a long press. ActionButtonFix adds two more gestures on top of it:</p>
+<h2>Gestures</h2>
 <ul>
-  <li><strong>Single click</strong> — runs an action you choose</li>
-  <li><strong>Double click</strong> — runs a different action you choose</li>
-  <li><strong>Long press</strong> — keeps whatever Apple already had assigned</li>
+  <li><strong>Single click</strong> — an action you pick</li>
+  <li><strong>Double click</strong> — a different action you pick</li>
+  <li><strong>Long press</strong> — unchanged, whatever iOS Settings has</li>
 </ul>
-<p>The short press is never handed to Apple, so the usual <em>Silent / hold</em> feedback in the Dynamic Island doesn't start. Only your action runs.</p>
+<p>The short press is never handed to Apple, so the <em>Silent / hold</em> feedback in the Dynamic Island never appears. Only your action runs.</p>
 
 <h2>Actions</h2>
-<ul>
-  <li><strong>Camera</strong> — pick the side and the mode</li>
-  <li>Flashlight</li>
-  <li>Screenshot</li>
-  <li><strong>Open an app</strong> — any system or App Store app</li>
-  <li><strong>Stock Action</strong> — whatever you set for the long press in iOS Settings</li>
-</ul>
-<p>Pick them separately for single and double click in <strong>Settings › ActionButtonFix</strong>.</p>
-
-<h2>Behaviour worth knowing</h2>
 
 <h3>Camera</h3>
-<p>Opens through Apple's own flow, so it is fast, and it works with the screen off and on the Lock Screen. Choose the side — <strong>Back</strong> or <strong>Front</strong> — and the mode: Video, Slo-Mo, Time-Lapse, Cinematic, Photo or Portrait.</p>
-<p>Single and double click are configured <strong>separately</strong>, side and mode and all. Single click can be front-camera video while double click is back-camera photo.</p>
-<p>In a recording mode, <strong>Start Recording Automatically</strong> begins the recording as the camera opens, and the same click stops it. The recording screen is the normal one — the photo button stays available while recording, and the shutter stops it with one press. Turn the switch off to open the camera in that mode and press record yourself.</p>
-<div class="note">
-  <p style="margin:0">The long-press action you chose in iOS Settings is untouched either way.</p>
-</div>
+<p>Side (<strong>Back / Front</strong>) and mode (Video, Slo-Mo, Time-Lapse, Cinematic, Photo, Portrait), set per click. Optionally starts recording as it opens; the same click stops it. Opens through Apple's own flow, so it is fast and works with the screen off and on the Lock Screen.</p>
 
-<h3>Open an app</h3>
-<p>Picks from a searchable list of everything installed. It does not open apps from the Lock Screen — unlock first.</p>
+<h3>Screen Recording</h3>
+<p>Starts and stops the recording. Same as Control Center's: 3-2-1 countdown, Dynamic Island view, saved to Photos. A recording started in Control Center stops with the button, and the other way round. The microphone follows the Control Center setting.</p>
 
-<h3>Screenshot</h3>
-<p>Uses the stock flow: flash, small preview in the bottom corner, tap it to edit. Left alone it disappears on its own. While the screen is off it does nothing, on purpose — waking the display only to capture the lock screen isn't worth it.</p>
+<h3>Control Center</h3>
+<p>Runs one module: Dark Mode, Rotation Lock, Silent Mode, Low Power Mode, QR Code Reader, Magnifier, Voice Memos, Quick Note, Stopwatch, Timer, Alarm, Calculator, Wallet.</p>
 
 <h3>Flashlight</h3>
-<p>Goes through the same controller Control Center uses, so the two stay in sync. Turn it on with the button, turn it off from Control Center, or the other way round.</p>
+<p>The same controller Control Center uses, so the two stay in sync.</p>
 
-<h3>Haptic feedback</h3>
-<p>On by default, with separate switches for single and double click. Changing the action does not reset the switch.</p>
+<h3>Screenshot</h3>
+<p>The stock flow: flash, corner preview, tap to edit. Does nothing while the screen is off.</p>
+
+<h3>App</h3>
+<p>Any installed app, from a searchable list. Does not open apps from the Lock Screen.</p>
+
+<h3>Stock Action</h3>
+<p>The long-press action from iOS Settings, on a click.</p>
+
+<h3>None</h3>
+<p>Turns a click off. With double click set to None, the single click fires instantly, with no wait.</p>
+
+<h2>Settings</h2>
+<p>Each click is configured on its own in <strong>Settings › ActionButtonFix</strong>, action and options both.</p>
+<p>Haptic feedback has separate switches for single and double click, on by default, and survives an action change.</p>
 <div class="note">
-  <p style="margin:0">Camera and Stock Action get their haptic from Apple, so the switch does not affect those two.</p>
+  <p style="margin:0">Camera, Screen Recording and Stock Action get their haptic from Apple, so the switch does not reach those three.</p>
 </div>
+<p>On a fresh install the tweak is off and both clicks are <strong>None</strong>. Camera starts at the back camera, photo mode.</p>
 
 <h2>Languages</h2>
 <p>Türkçe · English · Deutsch · Français · Español · Italiano · Português · Русский · 简体中文 · 日本語 · 한국어 · العربية</p>
@@ -129,19 +127,19 @@
 
 <h2>Requirements</h2>
 <ul>
-  <li>iPhone 15 Pro or Pro Max — the Action Button only exists on these</li>
-  <li>iOS 17.0 or later</li>
+  <li>An iPhone with an Action Button — 15 Pro / Pro Max, and the 16 line</li>
+  <li>iOS 17 or later</li>
   <li>RootHide or a rootless jailbreak</li>
   <li><strong>AltList</strong> (opa334's repo) and PreferenceLoader</li>
 </ul>
-<p>Tested on iPhone 15 Pro, iOS 17.0.3, RootHide. The rootless package has not been tested on a device; other devices and iOS versions have not been verified on hardware.</p>
+<p>Tested on iPhone 15 Pro, iOS 17.0.3, RootHide. The rootless package is built and shipped the same way, not verified on the developer's device. iOS 18 and the iPhone 16 line are untested.</p>
 
 <h2>Information</h2>
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.actionbuttonfix</td></tr>
-  <tr><td>Version</td><td>2.4.0</td></tr>
-  <tr><td>Device</td><td>iPhone 15 Pro / Pro Max</td></tr>
+  <tr><td>Version</td><td>2.6.0</td></tr>
+  <tr><td>Device</td><td>iPhone 15 Pro / Pro Max · iPhone 16</td></tr>
   <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
   <tr><td>Tested on</td><td>iOS 17.0.3</td></tr>
 </table>
@@ -150,68 +148,70 @@
 
 <h2>Changelog</h2>
 
+<h3>2.6.0</h3>
+<p><strong>New</strong></p>
+<ul>
+  <li><strong>Control Center action</strong> — runs one module per click: Dark Mode, Rotation Lock, Silent Mode, Low Power Mode, QR Code Reader, Magnifier, Voice Memos, Quick Note, Stopwatch, Timer, Alarm, Calculator, Wallet</li>
+  <li><strong>None</strong> — turns a click off; with double click set to None, the single click fires instantly</li>
+  <li><strong>Contact</strong> — a row in Settings opens an email with the subject filled in</li>
+</ul>
+<p><strong>Changes</strong></p>
+<ul>
+  <li>On a fresh install the tweak is off and both clicks are None; camera defaults to the back camera, photo mode</li>
+  <li>Settings storage renamed — <strong>existing settings reset once on this update</strong>; later updates keep them</li>
+</ul>
+
+<h3>2.5.0</h3>
+<p><strong>New</strong></p>
+<ul>
+  <li><strong>Screen Recording action</strong> — starts and stops the recording. Same as Control Center's: 3-2-1 countdown, Dynamic Island view, saved to Photos. A recording started in Control Center stops with the button, and the other way round. The microphone follows the Control Center setting</li>
+</ul>
+
 <h3>2.4.0</h3>
 <p><strong>New</strong></p>
 <ul>
-  <li><strong>Camera action</strong> — opens the camera through Apple's own flow; choose the camera side (<strong>Back / Front</strong>) and the <strong>mode</strong> (Video, Slo-Mo, Time-Lapse, Cinematic, Photo, Portrait) separately</li>
+  <li><strong>Camera action</strong> — side (Back / Front) and mode (Video, Slo-Mo, Time-Lapse, Cinematic, Photo, Portrait), chosen separately</li>
   <li><strong>Per-click camera settings</strong> — side, mode and auto-record are set separately for single and double click</li>
   <li><strong>Stop with the same click</strong> — while recording, the same click stops it</li>
 </ul>
-<p><strong>Improvements</strong></p>
+<p><strong>Changes</strong></p>
 <ul>
-  <li>Auto-started recording now opens the normal recording screen: the photo button stays available while recording, and the shutter stops it with one press</li>
-  <li>Video Recording and Camera merged into a single <strong>Camera</strong> action; clicks already set to Camera keep opening the back camera in photo mode</li>
-  <li>Settings page reorganised; Camera and its options have their own section</li>
+  <li>Auto-started recording uses the normal recording screen: the photo button stays available, and the shutter stops it with one press</li>
+  <li>Video Recording and Camera merged into one <strong>Camera</strong> action; clicks already set to Camera keep opening the back camera in photo mode</li>
+  <li>Camera and its options have their own section in Settings</li>
 </ul>
 <p><strong>Fixed</strong></p>
 <ul>
-  <li>The shutter could stay in a half-recording state after an auto-start, needing two presses to stop</li>
+  <li>The shutter could stay half-recording after an auto-start, needing two presses to stop</li>
   <li>Opening the camera by hand no longer starts a recording on its own</li>
 </ul>
 
 <h3>2.3.1</h3>
 <p><strong>New</strong></p>
 <ul>
-  <li><strong>Video Recording action</strong> — a single or double press opens the camera directly in video mode and starts recording automatically; works with the screen off and on the Lock Screen</li>
-  <li><strong>Start Recording Automatically</strong> switch — turn it off to start recording yourself</li>
-  <li><strong>App action</strong> — assign any app to single and double press separately, from a searchable list</li>
-  <li><strong>Stock Action</strong> — run the long-press action from iOS Settings with a single or double press</li>
-  <li><strong>Haptic feedback</strong> — separate switches for single and double press, on by default</li>
+  <li><strong>Video Recording action</strong> — opens the camera in video mode and starts recording; works with the screen off and on the Lock Screen</li>
+  <li><strong>Start Recording Automatically</strong> switch — off opens the camera in video mode and leaves the recording to you</li>
+  <li><strong>App action</strong> — any installed app, per click, from a searchable list</li>
+  <li><strong>Stock Action</strong> — the long-press action from iOS Settings, on a click</li>
+  <li><strong>Haptic feedback</strong> — separate switches per click, on by default</li>
   <li><strong>12 languages</strong> — Turkish, English, German, French, Spanish, Italian, Portuguese, Russian, Simplified Chinese, Japanese, Korean, Arabic</li>
   <li><strong>Rootless package</strong> — alongside RootHide</li>
 </ul>
-<p><strong>Improvements</strong></p>
+<p><strong>Changes</strong></p>
 <ul>
-  <li>Installs directly on RootHide without any extra tool</li>
+  <li>Installs directly on RootHide, no extra tool</li>
   <li>More stable Camera action</li>
-  <li>Cleaner Settings page; Video Recording and its switch have their own section</li>
   <li>Smaller package</li>
-</ul>
-<p><strong>Known limitations</strong></p>
-<ul>
-  <li>The App action does not open apps from the Lock Screen; unlock first</li>
-  <li>For Video Recording and Stock Action the haptic comes from Apple</li>
-  <li>The rootless package has not been tested on a device</li>
 </ul>
 
 <h3>2.2.0</h3>
 <p>First public release.</p>
 <ul>
-  <li>Screenshot now uses the stock flow — flash, preview in the corner, tap to edit. It used to save straight to Photos with no interface at all.</li>
-  <li>Camera opens properly from the Home Screen. It no longer leaves a hidden session running in the background.</li>
-  <li>Flashlight stays in sync with Control Center and can be switched off from there.</li>
-  <li>Screenshot does nothing while the screen is off, by design.</li>
-  <li>New icon and a tidied Settings page.</li>
-</ul>
-
-<h3>Before 2.2.0 — unreleased</h3>
-<p>These versions were never published; they are listed for context.</p>
-<ul>
-  <li><strong>2.1</strong> — Camera works with the screen off. The display wakes on its own right before the camera is presented.</li>
-  <li><strong>2.0</strong> — Package identity settled, migration metadata cleaned up.</li>
-  <li><strong>1.2.0</strong> — Settings interface finished: About section, icon, version.</li>
-  <li><strong>1.1.3</strong> — Double click fixed. The setting was written correctly but read back as something else, so every double click fell through to screenshot.</li>
-  <li><strong>1.0</strong> — First working build: single click and an enable switch.</li>
+  <li>Screenshot uses the stock flow — flash, corner preview, tap to edit</li>
+  <li>Screenshot does nothing while the screen is off, by design</li>
+  <li>Camera opens properly from the Home Screen, with no session left running</li>
+  <li>Flashlight stays in sync with Control Center</li>
+  <li>New icon, tidied Settings page</li>
 </ul>
 
 <p class="foot">For personal use on jailbroken devices.</p>

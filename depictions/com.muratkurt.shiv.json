@@ -8,7 +8,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# shiv\n\nAn AI assistant that runs in your terminal, on the device.\n\nTalk to a model, let it run commands, keep the conversation across sessions. Bring your own API key — the provider is up to you.\n\nSince **2.0** it can also build tweaks, end to end, without leaving the phone."
+          "markdown": "# shiv\n\nAn AI assistant that runs in your terminal, on the device.\n\nTalk to a model, let it run commands, keep the conversation across sessions. Bring your own API key — the provider is up to you. Since **2.0** it can also build tweaks, end to end, without leaving the phone."
         },
         {
           "class": "DepictionScreenshotsView",
@@ -23,7 +23,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "## Providers\n\nMoonshot · DeepSeek · OpenAI · OpenRouter · Ollama (local) · custom endpoint\n\nAnything speaking the OpenAI `/chat/completions` format works. Claude is reachable through OpenRouter — Anthropic's own API uses a different shape and isn't supported directly.\n\n## What it does\n\n**Reads and edits files, runs shell commands** — with a permission prompt before anything that could change your device. Reading and listing don't ask.\n\n**Sessions** are saved every turn. Continue with `/continue`, browse older ones with `/resume`, or rewind to an earlier point.\n\n**Background tasks** — `Ctrl+B` sends a running job to the background. Press `↓` to reach the counter, `Enter` for detail, `k` to stop. Output streams while the job is still running.\n\n**Profiles** keep several providers side by side. `/profile` picks who you connect to, `/model` picks what runs.\n\n## Commands\n\nTurkish and English names both work, and a prefix is enough — `/prof`.\n\n`/profile` `/model` `/settings` `/resume` `/continue` `/lang` `/name` `/color` `/new` `/show` `/geo` `/device` `/env` `/mac` `/performance` `/help` `/quit`"
+          "markdown": "## What it does\n\n**Reads and edits files, runs shell commands** — with a permission prompt before anything that changes your device. Reading and listing don't ask.\n\n**Sessions** are saved every turn. Continue the last one, browse older ones, or rewind to an earlier point.\n\n**Background tasks** — send a running job to the background and keep typing. Output streams while it runs.\n\n**Profiles** keep several providers side by side, switchable without losing the conversation.\n\n**Tweak development** — class and method names from the device's own shared cache, FairPlay decryption on the phone, and a build flow that matches your jailbreak.\n\nStep-by-step instructions are in the **Usage** tab."
         },
         {
           "class": "DepictionScreenshotsView",
@@ -45,37 +45,8 @@
           ]
         },
         {
-          "class": "DepictionSeparatorView"
-        },
-        {
-          "class": "DepictionHeaderView",
-          "title": "Writing tweaks"
-        },
-        {
           "class": "DepictionMarkdownView",
-          "markdown": "### The bug that doesn't announce itself\n\nWrite a class name that doesn't exist and the code **compiles**. The tweak **installs**. It **loads**. And then nothing happens — no error, no log, no crash. You stare at working-looking code for hours.\n\nThis is the single most common way tweak work goes wrong, and it is why an AI writing tweak code is dangerous unless it can check its work.\n\n### So shiv reads your device\n\nEvery jailbroken iPhone already carries the shared cache — every system class, every method, sitting there in `/System/Cryptexes`. shiv parses it directly. No IPSW download, no Mac, no setup.\n\n```\nshiv-sinif LockScreen\nshiv-sinif --metod SBLockScreenManager\nshiv-sinif --metodara notificationCount\n```\n\n2190 classes scan in 28 ms. The model runs this itself before writing code, and if it can't confirm a name it says so instead of guessing.\n\n### App Store apps are encrypted\n\nTheir class names can't be read from disk — FairPlay encrypts the binary. shiv decrypts on the device, no Mac and no Python needed:\n\n```\nshiv-cek <bundle-id>\nshiv-oku <bundle-id> [pattern]\n```\n\nMeasured: YouTube, 196 MB, 32,929 classes recovered. `shiv-oku` reads the class list from a running app instead, which needs no decryption at all.\n\n**These need frida-server, and the version matters.** shiv links frida-core 16, so the server has to be a 16.x build — a 17.x server will not talk to it. On rootless, `shiv-frida-kur` fetches a matching 16.1.4 and pins it. `/env` measures what you have and says so.\n\n### Building for arm64e system processes\n\nTweaks for App Store apps and command-line tools build on the phone with nothing to think about — those are arm64, there is no pointer authentication.\n\nSystem processes are arm64e, and there the on-device compiler emits an older pointer-auth ABI. Two things in your code can then trip it: an `@\"...\"` string literal, and handing a **block** to the system. Hooks, selector calls and ivar reads are fine.\n\n**`oldabi` bridges both.** If it is installed — and it usually is — those tweaks build and run on the phone. `/env` measures whether you have it.\n\nFor a package you hand to other people, declare it:\n\n```\nDepends: firmware (<< 15.0) | cy+cpu.arm64v8 | oldabi\n```\n\nOr build on a Mac with `/mac` for a deb that depends on nothing. shiv explains both and doesn't push one on you.\n\n### Start here\n\n```\n/env\n```\n\nMeasures the whole development environment — jailbreak type, Theos path and flavour, SDKs, frida and its version, `oldabi`, and the build flow it recommends for **your** setup. It **runs** each tool rather than checking that the file exists, so a broken tool shows as broken."
-        },
-        {
-          "class": "DepictionSeparatorView"
-        },
-        {
-          "class": "DepictionHeaderView",
-          "title": "Good to know"
-        },
-        {
-          "class": "DepictionMarkdownView",
-          "markdown": "**Node.js is bundled.** Install shiv and it runs — nothing else to add.\n\n**Don't run it as root.** Files would end up owned by root and `~/.shiv` could no longer be written by mobile.\n\n**Your data stays.** Profiles, API keys, sessions and input history live in `~/.shiv`. Removing the package leaves them alone — even on purge.\n\n**Your API key is yours.** Stored locally, sent only to the provider you chose. `/aktar` exports a session with keys and device identifiers stripped.\n\n**`BILGI.md`** — anything you put in `~/.shiv/BILGI.md` is given to the model every session. Write down the quirks of your device once instead of explaining them every time."
-        },
-        {
-          "class": "DepictionSeparatorView"
-        },
-        {
-          "class": "DepictionHeaderView",
-          "title": "Compatibility"
-        },
-        {
-          "class": "DepictionMarkdownView",
-          "markdown": "Measured on two devices: iPhone 15 Pro (iOS 17.0.3, RootHide) and iPhone XS (iOS 16.1.1, Dopamine rootless). Rootless support was rebuilt in 2.1.0 after measuring on real hardware rather than assuming.\n\n**Known limits.** `.appex` extensions run in their own process and aren't decrypted by this route. Class lookup was verified on iOS 16 and 17 — on another version shiv says it can't confirm rather than returning a wrong name. Rootful jailbreaks rest on documentation, not testing."
+          "markdown": "## Providers\n\nOpenRouter · DeepSeek · OpenAI · Moonshot (Kimi) · xAI · Qwen · Z.ai · Ollama (local) · custom endpoint\n\nOpenRouter signs in through the browser and reaches Claude, GPT, Gemini and Grok with one key. Anything speaking the OpenAI `/chat/completions` format works.\n\nAnthropic's own API is not in the list — its format is different. Gemini's OpenAI compatibility layer breaks tool calls, so it is reached through OpenRouter instead.\n\n## Node.js is bundled\n\nInstall shiv and it runs. Nothing else to add.\n\n## Compatibility\n\niPhone 15 Pro (iOS 17.0.3, RootHide) and iPhone XS (iOS 16.1.1, Dopamine rootless). Rootful jailbreaks are untested.\n\n**Limits.** `.appex` extensions run in their own process and aren't decrypted by this route. Class lookup is verified on iOS 16 and 17; on another version shiv says it can't confirm a name rather than returning a wrong one."
         },
         {
           "class": "DepictionSeparatorView"
@@ -97,7 +68,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "2.1.1"
+          "text": "2.2.0"
         },
         {
           "class": "DepictionTableTextView",
@@ -123,15 +94,285 @@
       "class": "DepictionStackView"
     },
     {
+      "tabname": "Usage",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "Start"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Open a terminal app — NewTerm, diffTerm or SSH — and run:\n\n```\nshiv\n```\n\nRun it as **mobile**, not as root. Under root the files it writes end up owned by root and `~/.shiv` stops being writable.\n\nOn first launch a wizard asks for four things: the provider, the key, the model and the interface language. Change any of them later with `/profil`, `/model` and `/lang`."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Signing in"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**OpenRouter — through the browser.** Pick OpenRouter in the wizard and the login page opens on its own at the key step. Approve it with your account in Safari and the key comes back to shiv. Nothing to copy, nothing to paste.\n\nIf the page does not open, shiv prints a short address — type `http://127.0.0.1:<port>` into Safari yourself. When something fails it names the stage: port, timeout, refusal, exchange or cancel.\n\n**Everyone else — paste the key.** Take it from the provider's own site and paste it at the key step.\n\nOne key at any time:\n\n- `/giriş` — sign in from scratch, adding a profile\n- `/anahtar` — show the key, masked. `yenile` replaces it, `sil` removes it and signs out, `aç` reveals it in full\n\nThe key is stored in `~/.shiv` on the device and is sent only to the provider you picked."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Profiles and models"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "A profile is one provider with its address, key and model. Keep as many as you like and switch between them without losing the conversation.\n\n`/profil` opens the panel. The list carries its own actions: **add a new profile** and **delete a profile**. Deleting asks twice, then takes the address, model and key together — there is no undo.\n\n`/model` lists the models of the current profile. Long lists page with `←` and `→`.\n\nCommands take prefixes, so `/prof` is enough, and so is a half-written subcommand."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Working"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Type what you want and press Enter.\n\nshiv reads files, lists directories and searches without asking. Anything that writes a file, installs a package, connects to a Mac or resprings the device stops at a permission prompt on screen. Choosing **allow all** on that prompt stops it asking again for that kind of command.\n\nIt works in the directory you started it in. Add more with `/add-dir`.\n\n**Long jobs.** Press `Ctrl+B` and the running job moves to the background while you keep typing. Press `↓` to reach the counter at the bottom, `Enter` for detail, `k` to stop it, `←` to go back to the list, `Esc` to close. Output appears while the job is still running and the timer ticks every second."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Sessions"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Every turn is saved, so closing the terminal loses nothing.\n\n- `/new` — start a clean session\n- `/continue` — pick up the last one\n- `/resume` — browse older ones and reopen one\n- `Esc` twice — rewind the conversation to an earlier point and carry on from there\n- `/aktar` — write the session to a file, with API keys and device identifiers stripped\n\n`/context` shows what is currently loaded. Long conversations are trimmed rather than hitting a wall."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Keyboard"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Ctrl+B",
+          "text": "send the running job to the background"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Ctrl+G",
+          "text": "send the queued message now"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Ctrl+T",
+          "text": "output panel"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Ctrl+O",
+          "text": "activity detail"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Ctrl+R",
+          "text": "search input history"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "↑ ↓",
+          "text": "input history · background counter"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "← →",
+          "text": "page through a long list"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Esc Esc",
+          "text": "rewind the conversation"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Commands"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Turkish and English names both work, and a prefix is enough — `/prof`."
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/help",
+          "text": "command list"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/giriş",
+          "text": "sign in from scratch, adding a profile"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/anahtar",
+          "text": "show, replace or remove the API key"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/profil",
+          "text": "pick, add or delete a provider profile"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/model",
+          "text": "pick the model"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/new",
+          "text": "new session"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/continue",
+          "text": "continue the last session"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/resume",
+          "text": "browse and reopen older sessions"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/aktar",
+          "text": "export the session, keys stripped"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/context",
+          "text": "what is currently in context"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/add-dir",
+          "text": "add a working directory"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/ortam",
+          "text": "measure the tweak development environment"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/device",
+          "text": "disk, conflicting tweaks, crashes, broken packages"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/geo",
+          "text": "the shell and paths shiv is running on"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/mac",
+          "text": "connect a Mac and build there"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/notlar",
+          "text": "your own notes"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/performance",
+          "text": "High · Balanced · Low power"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/theme",
+          "text": "colour theme"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/lang",
+          "text": "interface language"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/settings",
+          "text": "settings"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/about",
+          "text": "version and build"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "/quit",
+          "text": "exit"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Writing tweaks"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "### Run this first\n\n```\n/ortam\n```\n\nIt reports the jailbreak, the Theos path and flavour, the SDKs, frida and its version, `oldabi`, and the build flow that fits your device. It runs each tool rather than checking that the file exists, so a broken tool shows as broken. Start here — the rest assumes it passed.\n\n### Class and method names\n\n```\nshiv-sinif LockScreen\nshiv-sinif --metod SBLockScreenManager\nshiv-sinif --metodara notificationCount\nshiv-sinif --tara\n```\n\nReads the device's own shared cache, and binaries outside it — Control Centre modules, Settings bundles, SDKs embedded in apps. No Mac, no IPSW download, no setup. The model runs this itself before writing code, and if a name can't be confirmed it says so instead of guessing.\n\n### App Store apps\n\nTheir binaries are FairPlay encrypted, so class names can't be read from disk.\n\n```\nshiv-cek <bundle-id>\nshiv-oku [--taze] <bundle-id> [pattern]\n```\n\n`shiv-cek` decrypts on the device. `shiv-oku` reads the class list from the running app instead, cached for ten minutes.\n\n### Building\n\nTweaks for App Store apps and command line tools build on the phone with nothing to think about.\n\nSystem process tweaks are arm64e, and the on-device compiler emits an older pointer authentication ABI. Two things in your code trip it: an `@\"...\"` string literal, and handing a **block** to the system. Hooks, selector calls and ivar reads are fine.\n\n`oldabi` bridges both, and `/ortam` reports whether you have it. For a package other people will install, declare it:\n\n```\nDepends: firmware (<< 15.0) | cy+cpu.arm64v8 | oldabi\n```\n\nOr connect a Mac with `/mac` and build there for a deb that depends on nothing. Both routes work; shiv explains the difference instead of pushing one."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "frida"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "`shiv-cek` needs frida-server. shiv links frida-core 16, so the server has to be a **16.x** build — a 17.x server will not connect.\n\n```\nshiv-frida-kur\n```\n\nChecks and changes nothing: the binary, the package, the agent, the plist, the process, and the states that break an install — two separate binaries, an orphan binary with no package, a package with no binary, a server with no agent, a process left in memory, a version mismatch, a leftover deb.\n\nInstalling is a separate, explicit step:\n\n```\nsudo shiv-frida-kur --kur\n```\n\nOn rootless it takes 16.1.4 from GitHub releases. On RootHide it installs from the RootHide repo, which is unsigned — apt needs `--allow-unauthenticated` there, and the tool passes it. The version is then held so an update can't replace it with 17.x.\n\nThe model runs the check itself, and asks before installing rather than sending you off to download anything by hand."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Files and settings"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "`~/.shiv` — profiles, API keys, sessions and input history. Removing the package leaves it alone, even on purge.\n\n`~/.shiv/BILGI.md` — anything you write here is given to the model at the start of every session. Write your device's quirks down once instead of explaining them every time.\n\n`TWEAK.md` — ships with the package; the recipes the model reads when it needs them.\n\n`belgeler/` — a tweak development guide that reads on its own, without shiv.\n\n### Environment variables\n\n```\nSHIV_OLUK='╰' shiv\n```\n\nChanges the gutter glyph. Use it if your terminal draws the default one at the wrong width — lines will look one column short.\n\n```\nSHIV_ANLATIM_KATLA=1\n```\n\nFolds the assistant's narration as well as tool output.\n\n```\nSHIV_NODE_CAPRAZ=1\n```\n\nBuilds debs on a Mac without a device attached."
+        }
+      ],
+      "class": "DepictionStackView"
+    },
+    {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "2.2.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "### Signing in\n\n**OpenRouter signs in through the browser.** No key to copy any more. Pick OpenRouter in the wizard and the login page opens on its own; approve it in Safari and the key comes back. If the page doesn't open, a short `127.0.0.1` address can be typed by hand. A failure names its stage: port, timeout, refusal, exchange or cancel.\n\n**`/giriş`** signs in from scratch. **`/anahtar`** shows the key masked, with `yenile` to replace it, `sil` to sign out and `aç` to reveal it.\n\n**Provider list reordered.** OpenRouter first — one browser login, one key for Claude, GPT, Gemini and Grok — then DeepSeek, OpenAI, Moonshot (Kimi), xAI, and two new ones, **Qwen** and **Z.ai**. Default models updated.\n\n**Model lists page properly.** A 455-model list used to wrap back to the start after nine entries. `←` and `→` move by page, and the same paging now applies to every panel.\n\n### Profiles\n\n- `/profil` carries its own actions — **add a profile** and **delete a profile** sit in the list itself\n- Deleting asks twice; the address, model and key go together\n- Half-written subcommands match by prefix instead of being read as a profile name\n\n### frida\n\n**`shiv-frida-kur` checks first and installs nothing.** The default run changes nothing on the device: binary, package, agent, plist, process, plus the states that quietly break an install — two separate binaries, an orphan binary, a package with no binary, a server with no agent, a process left in memory, a version mismatch, a leftover deb. Installing is now an explicit `sudo shiv-frida-kur --kur`.\n\n**Both layouts are handled** — rootless from the GitHub release deb, RootHide from the RootHide repo, which is unsigned and needs `--allow-unauthenticated`.\n\n**A frida that wasn't running no longer reports as running.** The check matched any process carrying the string on its command line. It asks for the process name now.\n\n**No more false conflict warning** on RootHide, where two paths can be the same file.\n\n### Interface\n\n- Wrapped dim lines no longer turn white halfway through\n- Full-width `＋` replaced with ASCII, which the terminal counts correctly\n\n### Packaging\n\n- The source archive is produced again; its root was pinned to one path and failed silently on every build\n- Mac cross-build produces both architectures with no device attached\n- 51 tests have to pass before a package is produced"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "2.1.1"
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "The faults that the two-device field test turned up, closed.\n\n**`shiv-sinif` works again.** `dsc-disk.js` was never copied into the package, so a clean install always died with `ERR_MODULE_NOT_FOUND`. Added, and the packaging now verifies it.\n\n**`/env` runs the tools instead of looking for the files.** It used to report `ok` for three tools that were all broken. A tool that fails now shows as failed.\n\n**`shivfrida` disappeared on every reinstall.** The cause was `postrm` with no guard: on a dpkg upgrade it deleted the directory that had just been unpacked. Cleanup is now bound to `remove|purge`, as Debian expects.\n\n**frida version.** shiv links frida-core 16, so the server has to be 16.x — the repo's latest is 17.x and will not talk to it. On rootless, the new `shiv-frida-kur` fetches a matching 16.1.4 and pins it. `/env` measures the version and warns on a mismatch.\n\n**`shiv-cek` on rootless** returned empty fields because the Dopamine bootstrap has no `awk`; rewritten with `tr` and `cut`. It also finds `shivfrida` from its own location now instead of a hard-coded path.\n\n**Mac cross-build** — with `SHIV_NODE_CAPRAZ=1` the bundled iOS node is verified as a Mach-O rather than executed, so debs can be produced on a Mac without a device."
+          "markdown": "**`shiv-sinif` works again.** `dsc-disk.js` was never copied into the package, so a clean install always died with `ERR_MODULE_NOT_FOUND`. Added, and the packaging now verifies it.\n\n**`/ortam` runs the tools instead of looking for the files.** It used to report `ok` for tools that were broken. A tool that fails now shows as failed.\n\n**`shivfrida` disappeared on every reinstall.** `postrm` had no guard, so a dpkg upgrade deleted the directory that had just been unpacked. Cleanup is bound to `remove|purge` now, as Debian expects.\n\n**frida version.** shiv links frida-core 16, so the server has to be 16.x — the repo's latest is 17.x and will not talk to it. On rootless, `shiv-frida-kur` fetches a matching 16.1.4 and pins it.\n\n**`shiv-cek` on rootless** returned empty fields because the Dopamine bootstrap has no `awk`; rewritten with `tr` and `cut`. It also finds `shivfrida` from its own location instead of a hard-coded path.\n\n**Mac cross-build** — with `SHIV_NODE_CAPRAZ=1` the bundled iOS node is verified as a Mach-O rather than executed, so debs can be produced on a Mac without a device."
         },
         {
           "class": "DepictionSeparatorView"
@@ -142,7 +383,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "A measurement release, not a feature one. shiv was run on a second device — iPhone XS, iOS 16.1.1, Dopamine rootless — and what 2.0.0 claimed about rootless turned out to be wrong in four places.\n\n### Rootless support, rebuilt\n\n**Environment detection was wrong.** The check was \"is `/var/jb` a symlink\" — but it is a symlink on Dopamine too, just pointing somewhere else. A rootless device reported itself as RootHide, and every piece of guidance that followed was built on that. Now measured through `/rootfs`, `.jbroot-*` and `readlink /var/jb`.\n\n**`awk` doesn't exist** in the Dopamine bootstrap. `/env` was silently saying \"no frida\" while frida was running. Rewritten with `sed` and `grep`.\n\n**The home directory was a shadow.** `$HOME` points at `/var/jb/var/mobile` on rootless, so `/aktar` wrote somewhere Files and Filza never show. Now the real `/var/mobile`.\n\n**Frida isn't in the default rootless repos.** `/env` now tells you to add `https://build.frida.re/`.\n\n### Guidance follows the environment\n\nTheos flavour, patcher and the recommended build flow are now chosen from what was measured. A rootless device is no longer told to use the RootHide fork.\n\n`/env` also measures **`oldabi`** now. This mattered more than it looked: on-device `caps 0x00` tweaks were \"working\" — but that proved `oldabi` was installed, not that the tweak was fine. The model used to say \"a tweak with a block needs a Mac build\"; that text predated the measurement and has been corrected.\n\n### The packaging debt is closed\n\n`shiv-cek`, `shiv-oku` and `shivfrida` were described in the docs and the changelog but `paketle.sh` only ever copied `shiv-sinif` and `shiv-ortam` — tools that were written about and never shipped. All three are in the deb now (shivfrida 14 MB, arm64e), and packaging ends by extracting them back out of the deb to verify. Missing one stops the build.\n\n### Interface\n\n- Assistant narration is no longer folded; only tool output is (`SHIV_ANLATIM_KATLA=1` restores the old behaviour)\n- `Ctrl+G` send-now works again; queued messages show under the spinner\n- The language step previews its description in the language under the cursor\n- `/env` output reads more cleanly — separate blocks, neutral tone"
+          "markdown": "### Rootless support, rebuilt\n\n**Environment detection was wrong.** The check was \"is `/var/jb` a symlink\" — but it is a symlink on Dopamine too, just pointing somewhere else. A rootless device reported itself as RootHide, and every piece of guidance that followed was built on that. It is read from `/rootfs`, `.jbroot-*` and `readlink /var/jb` now.\n\n**`awk` doesn't exist** in the Dopamine bootstrap, so `/ortam` was saying \"no frida\" while frida was running. Rewritten with `sed` and `grep`.\n\n**The home directory was a shadow.** `$HOME` points at `/var/jb/var/mobile` on rootless, so `/aktar` wrote somewhere Files and Filza never show. It uses the real `/var/mobile` now.\n\n**Frida isn't in the default rootless repos.** `/ortam` says to add `https://build.frida.re/`.\n\n### Guidance follows the environment\n\nTheos flavour, patcher and the recommended build flow are chosen from the device in front of you. A rootless device is no longer told to use the RootHide fork.\n\n`/ortam` reports **`oldabi`** as well, and the model's guidance was corrected with it: a system-process tweak with a block builds on the phone when `oldabi` is present, and needs it declared in `Depends` for anyone else. A Mac build is the alternative, not the only route.\n\n### Packaging\n\n`shiv-cek`, `shiv-oku` and `shivfrida` were documented but never shipped — `paketle.sh` only copied `shiv-sinif` and `shiv-ortam`. All three are in the deb now (shivfrida 14 MB, arm64e), and packaging ends by extracting them back out of the deb to verify. A missing one stops the build.\n\n### Interface\n\n- Assistant narration is no longer folded; only tool output is (`SHIV_ANLATIM_KATLA=1` restores the old behaviour)\n- `Ctrl+G` send-now works again; queued messages show under the spinner\n- The language step previews its description in the language under the cursor\n- `/ortam` output reads more cleanly — separate blocks, neutral tone"
         },
         {
           "class": "DepictionSeparatorView"
@@ -153,7 +394,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "shiv can now build tweaks end to end, on the device.\n\n### Tweak development\n\n**Class and method lookup** — reads the device's own shared cache, and now also binaries that live outside it (Control Centre modules, Settings bundles, SDKs embedded in apps).\n\n**On-device decryption** — `shiv-cek <bundle-id>` unwraps FairPlay without a Mac or Python. `shiv-oku` lists classes from a running app.\n\n**`/env`** — measures the development environment before work starts: jailbreak type, Theos path and flavour, SDKs, frida, and the build flow it recommends.\n\n**Build guidance** — the model knows which tweaks can be built on the phone and which need a Mac, and explains the difference instead of refusing flatly.\n\n**`TWEAK.md`** ships with the package: measured recipes the model reads when it needs them, so the base prompt stays small.\n\n### Background tasks\n\n`Ctrl+B` sends a running job to the background. `↓` reaches the counter, `Enter` opens detail, `k` stops it. Output streams while the job is still running, and the timer ticks every second.\n\n### Fixed\n\n- **Lines were losing their last character.** The gutter mark `⎿` draws two columns in this terminal while shiv counted one, so every gutter line shifted a column and later redraws clipped the end. Now `└`.\n- Command tails (`exit=1`, elapsed time) overflowed the width budget\n- `Ctrl+B` was bound twice; the background branch was unreachable\n- Fold state is saved, so `/resume` no longer reopens collapsed text\n- Sessions broken by a half-finished tool call are repaired on load\n- Mac connection and respring now go through the permission prompt\n\n### Documentation\n\nA standalone tweak development guide ships in `belgeler/` — readable on its own, without shiv."
+          "markdown": "shiv can now build tweaks end to end, on the device.\n\n### Tweak development\n\n**Class and method lookup** — reads the device's own shared cache, and now also binaries that live outside it (Control Centre modules, Settings bundles, SDKs embedded in apps).\n\n**On-device decryption** — `shiv-cek <bundle-id>` unwraps FairPlay without a Mac or Python. `shiv-oku` lists classes from a running app.\n\n**`/ortam`** — measures the development environment before work starts: jailbreak type, Theos path and flavour, SDKs, frida, and the build flow it recommends.\n\n**Build guidance** — the model knows which tweaks can be built on the phone and which need a Mac, and explains the difference instead of refusing flatly.\n\n**`TWEAK.md`** ships with the package: recipes the model reads when it needs them, so the base prompt stays small.\n\n### Background tasks\n\n`Ctrl+B` sends a running job to the background. `↓` reaches the counter, `Enter` opens detail, `k` stops it. Output streams while the job is still running, and the timer ticks every second.\n\n### Fixed\n\n- **Lines were losing their last character.** The gutter mark `⎿` draws two columns in this terminal while shiv counted one, so every gutter line shifted a column and later redraws clipped the end. Now `└`.\n- Command tails (`exit=1`, elapsed time) overflowed the width budget\n- `Ctrl+B` was bound twice; the background branch was unreachable\n- Fold state is saved, so `/resume` no longer reopens collapsed text\n- Sessions broken by a half-finished tool call are repaired on load\n- Mac connection and respring now go through the permission prompt\n\n### Documentation\n\nA standalone tweak development guide ships in `belgeler/` — readable on its own, without shiv."
         },
         {
           "class": "DepictionSeparatorView"

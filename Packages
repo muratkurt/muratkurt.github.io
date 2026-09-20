@@ -257,6 +257,122 @@ Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
 Name: ActionButtonFix
 Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
 
+Package: com.muratkurt.actionbuttonfix
+Version: 2.6.0
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Installed-Size: 328
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Filename: debs/ActionButtonFix-2.6.0-rootless.deb
+Size: 43170
+MD5sum: 55c40e4b2f0ac57e87e4241723491520
+SHA1: 4c29e207f57500eb86909f41c97d58b19ba1dc9a
+SHA256: 7a47ad8ff07f3b46903f67dc2929e82c103e86d7da5102315629501d6bb1d84c
+Section: Tweaks
+Homepage: https://muratkurt.github.io/
+Description: Action Button'a tek tik ve cift tik eylemi kazandirir
+ iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
+ bagimsiz eylem atamanizi saglar. Uzun basista Apple'in mevcut Action
+ Button ayari aynen calismaya devam eder.
+ .
+ Eylemler: Yok, Flas, Ekran Goruntusu, Ekran Kaydi, Uygulama,
+ Stok Eylem, Denetim Merkezi, Kamera. Tek ve cift tik icin ayri ayri
+ secilir.
+ Ayarlar > ActionButtonFix uzerinden secilir.
+ .
+ Kamera: kamerayi Apple'in kendi akisiyla acar. Kamera yonu (arka/on)
+ ve mod (Video, Agir Cekim, Hizlandirilmis, Sinematik, Fotograf,
+ Portre) tek tik ve cift tik icin ayri secilir. Video modlarinda kayit
+ otomatik baslar (acilip kapatilabilir); ayni tus kaydi durdurur.
+ Ekran kapaliyken ve kilit ekraninda da calisir. iOS Ayarlari'ndaki
+ uzun basis eylemi degismez.
+ .
+ Ekran Kaydi: Denetim Merkezi'ndeki ekran kaydini baslatir/durdurur;
+ geri sayim, Dynamic Island gorunumu ve mikrofon ayari ayni.
+ .
+ Denetim Merkezi: Karanlik Mod, Yonlendirme Kilidi, Sessiz, Dusuk Guc
+ Modu ve QR Kod, Buyutec, Sesli Not, Hizli Not, Kronometre, Zamanlayici,
+ Alarm, Hesap Makinesi, Cuzdan modullerini tetikler.
+ .
+ "Yok" secilirse o tik hicbir sey yapmaz; cift tik "Yok" ise tek tik
+ beklemeden calisir.
+ .
+ Uygulama: listeden secilen herhangi bir uygulamayi acar (AltList).
+ Stok Eylem: iOS Ayarlari'nda uzun basisa atanmis eylemi tek/cift
+ tikla da calistirir.
+ .
+ Titresim: tek tik ve cift tik icin ayri ayri acilip kapatilir.
+ .
+ Ayarlar 12 dilde: Turkce, Ingilizce, Almanca, Fransizca, Ispanyolca,
+ Italyanca, Portekizce, Rusca, Cince, Japonca, Korece, Arapca.
+ .
+ Dogrulanmis platform: iPhone 15 Pro / iOS 17.0.3 / RootHide.
+ Action Button yalnizca iPhone 15 Pro ve Pro Max modellerinde bulunur.
+ Diger cihaz, iOS surumleri ve rootless cihaz uzerinde test edilmedi.
+Author: muratkurt
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Name: ActionButtonFix
+Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+
+Package: com.muratkurt.actionbuttonfix
+Version: 2.6.0
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Installed-Size: 328
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Filename: debs/ActionButtonFix-2.6.0-roothide.deb
+Size: 43132
+MD5sum: b2f163494489cf17a3c2a093851b9230
+SHA1: 15681de00171f2d00e58e533abdcbafdca056f3b
+SHA256: bb4aab10bf31ec315f8ab2c5eb5a2607bfc64b8a8978e1bffef15fd1b861c92c
+Section: Tweaks
+Homepage: https://muratkurt.github.io/
+Description: Action Button'a tek tik ve cift tik eylemi kazandirir
+ iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
+ bagimsiz eylem atamanizi saglar. Uzun basista Apple'in mevcut Action
+ Button ayari aynen calismaya devam eder.
+ .
+ Eylemler: Yok, Flas, Ekran Goruntusu, Ekran Kaydi, Uygulama,
+ Stok Eylem, Denetim Merkezi, Kamera. Tek ve cift tik icin ayri ayri
+ secilir.
+ Ayarlar > ActionButtonFix uzerinden secilir.
+ .
+ Kamera: kamerayi Apple'in kendi akisiyla acar. Kamera yonu (arka/on)
+ ve mod (Video, Agir Cekim, Hizlandirilmis, Sinematik, Fotograf,
+ Portre) tek tik ve cift tik icin ayri secilir. Video modlarinda kayit
+ otomatik baslar (acilip kapatilabilir); ayni tus kaydi durdurur.
+ Ekran kapaliyken ve kilit ekraninda da calisir. iOS Ayarlari'ndaki
+ uzun basis eylemi degismez.
+ .
+ Ekran Kaydi: Denetim Merkezi'ndeki ekran kaydini baslatir/durdurur;
+ geri sayim, Dynamic Island gorunumu ve mikrofon ayari ayni.
+ .
+ Denetim Merkezi: Karanlik Mod, Yonlendirme Kilidi, Sessiz, Dusuk Guc
+ Modu ve QR Kod, Buyutec, Sesli Not, Hizli Not, Kronometre, Zamanlayici,
+ Alarm, Hesap Makinesi, Cuzdan modullerini tetikler.
+ .
+ "Yok" secilirse o tik hicbir sey yapmaz; cift tik "Yok" ise tek tik
+ beklemeden calisir.
+ .
+ Uygulama: listeden secilen herhangi bir uygulamayi acar (AltList).
+ Stok Eylem: iOS Ayarlari'nda uzun basisa atanmis eylemi tek/cift
+ tikla da calistirir.
+ .
+ Titresim: tek tik ve cift tik icin ayri ayri acilip kapatilir.
+ .
+ Ayarlar 12 dilde: Turkce, Ingilizce, Almanca, Fransizca, Ispanyolca,
+ Italyanca, Portekizce, Rusca, Cince, Japonca, Korece, Arapca.
+ .
+ Dogrulanmis platform: iPhone 15 Pro / iOS 17.0.3 / RootHide.
+ Action Button yalnizca iPhone 15 Pro ve Pro Max modellerinde bulunur.
+ Diger cihaz, iOS surumleri ve rootless cihaz uzerinde test edilmedi.
+Author: muratkurt
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Name: ActionButtonFix
+Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+
 Package: com.muratkurt.claude-cli-bridge
 Version: 0.4.3
 Architecture: iphoneos-arm64e
@@ -982,6 +1098,82 @@ Size: 16671160
 MD5sum: 04883a84c66348d04ce020dff85ef365
 SHA1: 25a01012ed6786a4b867088f9e00a0b7e88881d9
 SHA256: fb78f52d146de50365873de505ba2e8634c3033ce374e60cd7d85a6413a3e695
+Section: Utilities
+Homepage: https://muratkurt.github.io/
+Description: terminal AI assistant
+ shiv is a chat assistant that runs entirely in your terminal.
+ Nothing else to install - Node.js ships inside the package.
+ .
+ Bring your own API key. Works with Moonshot, DeepSeek, OpenAI,
+ OpenRouter or any OpenAI-compatible endpoint, including one
+ running on your own machine.
+ .
+ It reads files, searches directories and runs shell commands,
+ asking before anything that could modify your device. Sessions
+ are saved and can be resumed, and there is a rewind that takes
+ the conversation back to an earlier point.
+ .
+ Drawing and streaming speed can be tuned from /performance, so
+ it stays responsive in long sessions. Interface is Turkish or
+ English.
+ .
+ Copyright (c) 2026 Murat Kurt. All rights reserved.
+ Licensed, not sold. Run /lisans in the app for terms.
+Author: muratkurt
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
+Icon: https://muratkurt.github.io/assets/shiv/icon.png
+Name: shiv
+Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
+
+Package: com.muratkurt.shiv
+Version: 2.2.0
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Installed-Size: 87636
+Depends: firmware (>= 15.0)
+Filename: debs/com.muratkurt.shiv_2.2.0_iphoneos-arm64e.deb
+Size: 16698916
+MD5sum: a9deef03d338587d9ceef0958791db04
+SHA1: 6b5a0084281206ec37d0a8be4505c5ab546be71b
+SHA256: 80358cd10f9f5739f8b20b413794611d39948c7764bee2444627d617b03519b7
+Section: Utilities
+Homepage: https://muratkurt.github.io/
+Description: terminal AI assistant
+ shiv is a chat assistant that runs entirely in your terminal.
+ Nothing else to install - Node.js ships inside the package.
+ .
+ Bring your own API key. Works with Moonshot, DeepSeek, OpenAI,
+ OpenRouter or any OpenAI-compatible endpoint, including one
+ running on your own machine.
+ .
+ It reads files, searches directories and runs shell commands,
+ asking before anything that could modify your device. Sessions
+ are saved and can be resumed, and there is a rewind that takes
+ the conversation back to an earlier point.
+ .
+ Drawing and streaming speed can be tuned from /performance, so
+ it stays responsive in long sessions. Interface is Turkish or
+ English.
+ .
+ Copyright (c) 2026 Murat Kurt. All rights reserved.
+ Licensed, not sold. Run /lisans in the app for terms.
+Author: muratkurt
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
+Icon: https://muratkurt.github.io/assets/shiv/icon.png
+Name: shiv
+Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
+
+Package: com.muratkurt.shiv
+Version: 2.2.0
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Installed-Size: 87568
+Depends: firmware (>= 15.0)
+Filename: debs/com.muratkurt.shiv_2.2.0_iphoneos-arm64.deb
+Size: 16685480
+MD5sum: 43c277044f35be760673dae9d998a4aa
+SHA1: 526a6bb6d6527b39f84b614f9758e7a8bfcdd0df
+SHA256: fe8bf10a646d4124b7e462da9735487cbd4320414675f39126bf8981981db8fe
 Section: Utilities
 Homepage: https://muratkurt.github.io/
 Description: terminal AI assistant
