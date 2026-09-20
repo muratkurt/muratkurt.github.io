@@ -109,6 +109,17 @@
         },
         {
           "class": "DepictionHeaderView",
+          "title": "Permissions"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Shell commands and file writes always ask first. What counts as \"ask every time\" is set in `/permissions`, and `/preferences` covers the rest of the behaviour.\n\nReading files, listing directories and searching don't ask.\n\nRequirements and supported jailbreaks are on the **Details** tab."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
           "title": "Everyday commands"
         },
         {
@@ -333,7 +344,18 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "### On PATH after install\n\n```\nshiv-sinif <name>          class/method search from the dyld cache (no frida)\nshiv-oku <bundle-id>       live ObjC class dump from a running app (frida)\nshiv-cek <bundle-id>       FairPlay decrypt, on the device itself (frida)\nshiv-frida-kur             diagnose frida: binary, package, agent, daemon,\n                           conflicts and leftovers\n```\n\n`shiv-oku` and `shiv-cek` need **frida-server 16.x** — the client is linked against frida-core 16, so a 17.x server cannot talk to it. `shiv-frida-kur` reports this and changes nothing on its own. It installs the matching 16.1.4 only when you ask:\n\n```\nsudo shiv-frida-kur --kur\n```\n\nRootless takes the GitHub release deb; RootHide takes it from the RootHide repo, which is unsigned and needs `--allow-unauthenticated`. The version is then held so an update can't replace it with 17.x.\n\n`TWEAK.md` ships with the package and holds the recipes the assistant follows."
+          "markdown": "### On PATH after install\n\n```\nshiv-sinif <name>          class/method search from the dyld cache (no frida)\nshiv-oku <bundle-id>       live ObjC class dump from a running app (frida)\nshiv-cek <bundle-id>       FairPlay decrypt, on the device itself (frida)\nshiv-frida-kur             diagnose frida: binary, package, agent, daemon,\n                           conflicts and leftovers\n```\n\n`TWEAK.md` ships with the package and holds the recipes the assistant follows."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "frida"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "`shiv-oku` and `shiv-cek` need **frida-server 16.x** — the client is linked against frida-core 16, so a 17.x server cannot talk to it.\n\n```\nshiv-frida-kur\n```\n\nReports what you have and changes nothing: binary, package, agent, daemon, conflicts and leftovers. It installs the matching 16.1.4 only when you ask:\n\n```\nsudo shiv-frida-kur --kur\n```\n\nRootless takes the GitHub release deb; RootHide takes it from the RootHide repo, which is unsigned and needs `--allow-unauthenticated`. The version is then held so an update can't replace it with 17.x."
         },
         {
           "class": "DepictionSeparatorView"
@@ -344,7 +366,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "Tweaks for App Store apps and command line tools build on the phone with nothing to think about.\n\nSystem process tweaks are arm64e, and the on-device compiler emits an older pointer authentication ABI. Two things in your code trip it: an `@\"...\"` string literal, and handing a **block** to the system. Hooks, selector calls and ivar reads are fine.\n\n`oldabi` bridges both, and `/env` reports whether you have it. For a package other people will install, declare it:\n\n```\nDepends: firmware (<< 15.0) | cy+cpu.arm64v8 | oldabi\n```\n\nOr connect a Mac with `/mac` and build there for a deb that depends on nothing. Both routes work; shiv explains the difference instead of pushing one."
+          "markdown": "Tweaks for App Store apps and command line tools build on the phone with nothing to think about.\n\nSystem process tweaks are arm64e, and the on-device compiler emits an older pointer authentication ABI. Two things in your code trip it: an `@\"...\"` string literal, and handing a **block** to the system. Hooks, selector calls and ivar reads are fine.\n\n`oldabi` bridges both, and `/env` reports whether you have it. It does not cover **Swift** — the Swift runtime authenticates its own pointers somewhere `oldabi` never reaches, so a Swift arm64e tweak built on the phone still crashes. That one has to be built on a Mac. For a package other people will install, declare it:\n\n```\nDepends: firmware (<< 15.0) | cy+cpu.arm64v8 | oldabi\n```\n\nOr connect a Mac with `/mac` and build there for a deb that depends on nothing. Both routes work; shiv explains the difference instead of pushing one."
         },
         {
           "class": "DepictionSeparatorView"

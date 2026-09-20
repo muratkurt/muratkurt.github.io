@@ -136,6 +136,10 @@
 <p><strong>Any other provider</strong> — paste your key at the key step.</p>
 <p>Settings live in <code>~/.shiv</code> and survive upgrades. Sessions are stored locally in <code>~/.shiv/oturumlar</code>.</p>
 
+<h3>Permissions</h3>
+<p>Shell commands and file writes always ask first. What counts as "ask every time" is set in <code>/permissions</code>, and <code>/preferences</code> covers the rest of the behaviour.</p>
+<p>Reading files, listing directories and searching don't ask.</p>
+
 <h3>Everyday commands</h3>
 <p>Command names follow the interface language (<code>/lang</code>), so <code>/login</code> and <code>/giriş</code> are the same command. A prefix is enough — <code>/prof</code>.</p>
 <table>
@@ -197,15 +201,18 @@ shiv-oku &lt;bundle-id&gt;       live ObjC class dump from a running app (frida)
 shiv-cek &lt;bundle-id&gt;       FairPlay decrypt, on the device itself (frida)
 shiv-frida-kur             diagnose frida: binary, package, agent, daemon,
                            conflicts and leftovers</code></pre>
+<p><code>TWEAK.md</code> ships with the package and holds the recipes the assistant follows.</p>
+
+<h3>frida</h3>
 <p><code>shiv-oku</code> and <code>shiv-cek</code> need <strong>frida-server 16.x</strong> — the client is linked against frida-core 16, so a 17.x server cannot talk to it. <code>shiv-frida-kur</code> reports this and changes nothing on its own. It installs the matching 16.1.4 only when you ask:</p>
 <pre><code>sudo shiv-frida-kur --kur</code></pre>
 <p>Rootless takes the GitHub release deb; RootHide takes it from the RootHide repo, which is unsigned and needs <code>--allow-unauthenticated</code>. The version is then held so an update can't replace it with 17.x.</p>
-<p><code>TWEAK.md</code> ships with the package and holds the recipes the assistant follows.</p>
 
 <h3>Building</h3>
 <p>Tweaks for App Store apps and command line tools build on the phone with nothing to think about.</p>
 <p>System process tweaks are arm64e, and the on-device compiler emits an older pointer authentication ABI. Two things in your code trip it: an <code>@"..."</code> string literal, and handing a <strong>block</strong> to the system. Hooks, selector calls and ivar reads are fine.</p>
-<p><code>oldabi</code> bridges both, and <code>/env</code> reports whether you have it. For a package other people will install, declare it:</p>
+<p><code>oldabi</code> bridges both, and <code>/env</code> reports whether you have it. It does not cover <strong>Swift</strong> — the Swift runtime authenticates its own pointers somewhere <code>oldabi</code> never reaches, so a Swift arm64e tweak built on the phone still crashes. That one has to be built on a Mac.</p>
+<p>For a package other people will install, declare it:</p>
 <pre><code>Depends: firmware (&lt;&lt; 15.0) | cy+cpu.arm64v8 | oldabi</code></pre>
 <p>Or connect a Mac with <code>/mac</code> and build there for a deb that depends on nothing. Both routes work; shiv explains the difference instead of pushing one.</p>
 
