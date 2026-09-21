@@ -49,8 +49,8 @@
         },
         {
           "class": "DepictionTableButtonView",
-          "title": "Source Code",
-          "action": "https://github.com/muratkurt/muratkurt.github.io",
+          "title": "Report a bug",
+          "action": "https://github.com/muratkurt/ActionButtonFix",
           "openExternal": true
         }
       ],

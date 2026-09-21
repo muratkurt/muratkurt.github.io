@@ -23,7 +23,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "## What it does\n\n**Reads and edits files, runs shell commands** — shell commands and file writes always ask first. What counts as \"ask every time\" is set in `/permissions`.\n\n**Sessions** are saved every turn. Resume the last one, pick an earlier one, or rewind the conversation to an earlier point.\n\n**Profiles** keep several providers side by side, switchable without losing the conversation.\n\n**Tweak and reverse engineering tools** — class and method lookup from the device's own dyld cache, a live class dump from a running app, FairPlay decryption on the phone, and an environment probe that runs each tool instead of looking for it.\n\nStep-by-step instructions are in the **Usage** tab."
+          "markdown": "## What it does\n\n**Reads and edits files, runs shell commands** — shell commands and file writes always ask first. What counts as \"ask every time\" is set in `/permissions`.\n\n**Sessions** are saved every turn. Resume the last one, pick an earlier one, or rewind the conversation to an earlier point.\n\n**Profiles** keep several providers side by side, switchable without losing the conversation.\n\n**Tweak and reverse engineering tools** — class and method lookup from the device's own dyld cache, a live class dump from a running app, reading what's on screen in a running app, FairPlay decryption on the phone, and an environment probe that runs each tool instead of looking for it.\n\nStep-by-step instructions are in the **Usage** tab."
         },
         {
           "class": "DepictionScreenshotsView",
@@ -46,7 +46,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "## Providers\n\n**OpenRouter** signs in through the browser — no key to copy — and reaches Claude, GPT, Gemini and Grok with one account.\n\nAlso built in: DeepSeek · OpenAI · Moonshot (Kimi) · xAI (Grok) · Qwen · Z.ai (GLM) · Groq · Mistral · Together AI · a local Ollama or llama.cpp · any custom OpenAI-compatible endpoint.\n\n## Node.js is bundled\n\nInstall shiv and it runs. Nothing else to add.\n\n## Requirements\n\n- iOS 15 or newer\n- **rootless** (Dopamine / Procursus) → the `iphoneos-arm64` package\n- **RootHide** → the `iphoneos-arm64e` package\n- Your own API key, or an OpenRouter account for browser sign-in\n\nBuilt and used on iPhone 15 Pro (iOS 17.0.3, RootHide) and iPhone XS (iOS 16.1.1, Dopamine rootless). Rootful jailbreaks are untested.\n\n**Limits.** `.appex` extensions run in their own process and aren't decrypted by this route. Class lookup is verified on iOS 16 and 17; on another version shiv says it can't confirm a name rather than returning a wrong one."
+          "markdown": "## Providers\n\n**OpenRouter** signs in through the browser — no key to copy — and reaches Claude, GPT, Gemini and Grok with one account.\n\nAlso built in: DeepSeek · OpenAI · Moonshot (Kimi) · xAI (Grok) · Qwen · Z.ai (GLM) · Groq · Mistral · Together AI · Ollama or llama.cpp on a computer on your network · any custom OpenAI-compatible endpoint.\n\n## Node.js is bundled\n\nInstall shiv and it runs. Nothing else to add.\n\n## Requirements\n\n- iOS 15 or newer\n- **rootless** (Dopamine / Procursus) → the `iphoneos-arm64` package\n- **RootHide** → the `iphoneos-arm64e` package\n- Your own API key, or an OpenRouter account for browser sign-in\n\nBuilt and used on iPhone 15 Pro (iOS 17.0.3, RootHide) and iPhone XS (iOS 16.1.1, Dopamine rootless). Rootful jailbreaks are untested.\n\n**Limits.** `.appex` extensions run in their own process and aren't decrypted by this route. Class lookup is verified on iOS 16 and 17; on another version shiv says it can't confirm a name rather than returning a wrong one."
         },
         {
           "class": "DepictionSeparatorView"
@@ -68,7 +68,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "2.2.0"
+          "text": "2.3.0"
         },
         {
           "class": "DepictionTableTextView",
@@ -344,7 +344,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "### On PATH after install\n\n```\nshiv-sinif <name>          class/method search from the dyld cache (no frida)\nshiv-oku <bundle-id>       live ObjC class dump from a running app (frida)\nshiv-cek <bundle-id>       FairPlay decrypt, on the device itself (frida)\nshiv-frida-kur             diagnose frida: binary, package, agent, daemon,\n                           conflicts and leftovers\n```\n\n`TWEAK.md` ships with the package and holds the recipes the assistant follows."
+          "markdown": "### On PATH after install\n\n```\nshiv-sinif <name>          class/method search from the dyld cache (no frida)\nshiv-oku <bundle-id>       live ObjC class dump from a running app (frida)\nshiv-cek <bundle-id>       FairPlay decrypt, on the device itself (frida)\nshiv-ekran <bundle-id>     what is on screen in a running app (frida)\nshiv-frida-kur             diagnose frida: binary, package, agent, daemon,\n                           conflicts and leftovers\n```\n\n### Reading the screen\n\n```\nshiv-ekran <bundle-id>            what is on screen now\nshiv-ekran --izle 40 <bundle-id>  record every page you open, for 40 s\n```\n\nThe app has to be in front. Stay in it until the phone vibrates; the terminal comes back by itself.\n\nIn record mode, open the pages one by one and wait for the vibration on each. Every page is saved on its own: `/var/mobile/tw/ekran-<bundle-id>-01.txt`, `-02.txt` …\n\nYou don't have to type it. Ask shiv to read an app from the screen and it runs it.\n\n`TWEAK.md` ships with the package and holds the recipes the assistant follows."
         },
         {
           "class": "DepictionSeparatorView"
@@ -355,7 +355,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "`shiv-oku` and `shiv-cek` need **frida-server 16.x** — the client is linked against frida-core 16, so a 17.x server cannot talk to it.\n\n```\nshiv-frida-kur\n```\n\nReports what you have and changes nothing: binary, package, agent, daemon, conflicts and leftovers. It installs the matching 16.1.4 only when you ask:\n\n```\nsudo shiv-frida-kur --kur\n```\n\nRootless takes the GitHub release deb; RootHide takes it from the RootHide repo, which is unsigned and needs `--allow-unauthenticated`. The version is then held so an update can't replace it with 17.x."
+          "markdown": "`shiv-oku`, `shiv-cek` and `shiv-ekran` need **frida-server 16.x** — the client is linked against frida-core 16, so a 17.x server cannot talk to it.\n\n```\nshiv-frida-kur\n```\n\nReports what you have and changes nothing: binary, package, agent, daemon, conflicts and leftovers. It installs the matching 16.1.4 only when you ask:\n\n```\nsudo shiv-frida-kur --kur\n```\n\nRootless takes the GitHub release deb; RootHide takes it from the RootHide repo, which is unsigned and needs `--allow-unauthenticated`. The version is then held so an update can't replace it with 17.x."
         },
         {
           "class": "DepictionSeparatorView"
@@ -385,6 +385,17 @@
     {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "2.3.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "### Reading the screen\n\n**`shiv-ekran <bundle-id>`** reads what is on screen in a running app: view controllers, classes, frames, text, accessibility ids. The app is not relaunched. Hook targets come from the screen, not from a guess.\n\n**Record mode** — `shiv-ekran --izle 40 <bundle-id>` saves every page you open, one file each. The phone vibrates on every page.\n\n**Back to the terminal** — when it's done, the terminal shiv runs in comes to the front by itself.\n\n### Fixed\n\n- Encrypted App Store apps are read live; no decryption step first\n- Looking up an app's bundle id works again\n- `/env` shows which terminal shiv runs in"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "2.2.0"

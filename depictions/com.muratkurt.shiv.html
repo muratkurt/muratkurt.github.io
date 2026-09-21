@@ -86,7 +86,7 @@
 <p><strong>Reads and edits files, runs shell commands</strong> — shell commands and file writes always ask first. What counts as "ask every time" is set in <code>/permissions</code>.</p>
 <p><strong>Sessions</strong> are saved every turn. Resume the last one, pick an earlier one, or rewind the conversation to an earlier point.</p>
 <p><strong>Profiles</strong> keep several providers side by side, switchable without losing the conversation.</p>
-<p><strong>Tweak and reverse engineering tools</strong> — class and method lookup from the device's own dyld cache, a live class dump from a running app, FairPlay decryption on the phone, and an environment probe that runs each tool instead of looking for it.</p>
+<p><strong>Tweak and reverse engineering tools</strong> — class and method lookup from the device's own dyld cache, a live class dump from a running app, reading what's on screen in a running app, FairPlay decryption on the phone, and an environment probe that runs each tool instead of looking for it.</p>
 
 <h2>Screenshots</h2>
 <img src="https://muratkurt.github.io/assets/shiv/ss1.png" alt="Startup screen" style="width:100%;max-width:460px;display:block;border-radius:10px;margin-bottom:10px">
@@ -96,7 +96,7 @@
 
 <h2>Providers</h2>
 <p><strong>OpenRouter</strong> signs in through the browser — no key to copy — and reaches Claude, GPT, Gemini and Grok with one account.</p>
-<p>Also built in: DeepSeek · OpenAI · Moonshot (Kimi) · xAI (Grok) · Qwen · Z.ai (GLM) · Groq · Mistral · Together AI · a local Ollama or llama.cpp · any custom OpenAI-compatible endpoint.</p>
+<p>Also built in: DeepSeek · OpenAI · Moonshot (Kimi) · xAI (Grok) · Qwen · Z.ai (GLM) · Groq · Mistral · Together AI · Ollama or llama.cpp on a computer on your network · any custom OpenAI-compatible endpoint.</p>
 
 <h2>Node.js is bundled</h2>
 <p>Install shiv and it runs. Nothing else to add.</p>
@@ -117,7 +117,7 @@
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.shiv</td></tr>
-  <tr><td>Version</td><td>2.2.0</td></tr>
+  <tr><td>Version</td><td>2.3.0</td></tr>
   <tr><td>Requires</td><td>nothing — Node.js included</td></tr>
   <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
   <tr><td>Tested on</td><td>iOS 17.0.3 · iOS 16.1.1</td></tr>
@@ -199,12 +199,19 @@
 <pre><code>shiv-sinif &lt;name&gt;          class/method search from the dyld cache (no frida)
 shiv-oku &lt;bundle-id&gt;       live ObjC class dump from a running app (frida)
 shiv-cek &lt;bundle-id&gt;       FairPlay decrypt, on the device itself (frida)
+shiv-ekran &lt;bundle-id&gt;     what is on screen in a running app (frida)
 shiv-frida-kur             diagnose frida: binary, package, agent, daemon,
                            conflicts and leftovers</code></pre>
+<h3>Reading the screen</h3>
+<pre><code>shiv-ekran &lt;bundle-id&gt;            what is on screen now
+shiv-ekran --izle 40 &lt;bundle-id&gt;  record every page you open, for 40 s</code></pre>
+<p>The app has to be in front. Stay in it until the phone vibrates; the terminal comes back by itself.</p>
+<p>In record mode, open the pages one by one and wait for the vibration on each. Every page is saved on its own: <code>/var/mobile/tw/ekran-&lt;bundle-id&gt;-01.txt</code>, <code>-02.txt</code> …</p>
+<p>You don't have to type it. Ask shiv to read an app from the screen and it runs it.</p>
 <p><code>TWEAK.md</code> ships with the package and holds the recipes the assistant follows.</p>
 
 <h3>frida</h3>
-<p><code>shiv-oku</code> and <code>shiv-cek</code> need <strong>frida-server 16.x</strong> — the client is linked against frida-core 16, so a 17.x server cannot talk to it. <code>shiv-frida-kur</code> reports this and changes nothing on its own. It installs the matching 16.1.4 only when you ask:</p>
+<p><code>shiv-oku</code>, <code>shiv-cek</code> and <code>shiv-ekran</code> need <strong>frida-server 16.x</strong> — the client is linked against frida-core 16, so a 17.x server cannot talk to it. <code>shiv-frida-kur</code> reports this and changes nothing on its own. It installs the matching 16.1.4 only when you ask:</p>
 <pre><code>sudo shiv-frida-kur --kur</code></pre>
 <p>Rootless takes the GitHub release deb; RootHide takes it from the RootHide repo, which is unsigned and needs <code>--allow-unauthenticated</code>. The version is then held so an update can't replace it with 17.x.</p>
 
@@ -227,6 +234,20 @@ shiv-frida-kur             diagnose frida: binary, package, agent, daemon,
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>2.3.0</h3>
+<p><strong>Reading the screen</strong></p>
+<ul>
+  <li><strong><code>shiv-ekran &lt;bundle-id&gt;</code></strong> reads what is on screen in a running app: view controllers, classes, frames, text, accessibility ids. The app is not relaunched. Hook targets come from the screen, not from a guess</li>
+  <li><strong>Record mode</strong> — <code>shiv-ekran --izle 40 &lt;bundle-id&gt;</code> saves every page you open, one file each. The phone vibrates on every page</li>
+  <li><strong>Back to the terminal</strong> — when it's done, the terminal shiv runs in comes to the front by itself</li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul>
+  <li>Encrypted App Store apps are read live; no decryption step first</li>
+  <li>Looking up an app's bundle id works again</li>
+  <li><code>/env</code> shows which terminal shiv runs in</li>
+</ul>
 
 <h3>2.2.0</h3>
 <p><strong>Signing in</strong></p>

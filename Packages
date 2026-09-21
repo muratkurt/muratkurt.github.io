@@ -1215,6 +1215,96 @@ Icon: https://muratkurt.github.io/assets/shiv/icon.png
 Name: shiv
 Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
 
+Package: com.muratkurt.shiv
+Version: 2.3.0
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Installed-Size: 87608
+Depends: firmware (>= 15.0)
+Filename: debs/com.muratkurt.shiv_2.3.0_iphoneos-arm64.deb
+Size: 16687028
+MD5sum: c146a7da2eba76f73585c8188f23c375
+SHA1: fb625dac89dced276f1c2358021328bbf7c3ce2c
+SHA256: f41cfac4cb082a0dc0ecf452ed228f5de10c6bc6f3890c624315164a829708dd
+Section: Utilities
+Homepage: https://muratkurt.github.io/
+Description: terminal AI assistant
+ shiv is a chat assistant that runs entirely in your terminal.
+ Nothing else to install - Node.js ships inside the package.
+ .
+ Sign in to OpenRouter from the browser: /login opens the approval
+ page, you confirm with your account and the key comes back - no
+ copying keys by hand. Or paste your own key for DeepSeek, OpenAI,
+ Moonshot, xAI, Qwen, Z.ai, Groq, Mistral, Together, a local
+ Ollama / llama.cpp, or any OpenAI-compatible endpoint.
+ .
+ It reads files, searches directories and runs shell commands,
+ asking before anything that could modify your device. Sessions
+ are saved and can be resumed, and there is a rewind that takes
+ the conversation back to an earlier point.
+ .
+ For tweak work it measures the device instead of guessing: /env
+ reports theos, frida, oldabi and the tools it found. Bundled
+ helpers dump ObjC classes from the dyld cache or from a live app,
+ and decrypt an App Store binary on the device itself.
+ .
+ Drawing and streaming speed can be tuned from /performance, so
+ it stays responsive in long sessions. Interface is Turkish or
+ English (/lang). Separate builds for rootless and RootHide.
+ .
+ Copyright (c) 2026 Murat Kurt. All rights reserved.
+ Licensed, not sold. Run /licence in the app for terms.
+Author: muratkurt
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
+Icon: https://muratkurt.github.io/assets/shiv/icon.png
+Name: shiv
+Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
+
+Package: com.muratkurt.shiv
+Version: 2.3.0
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Installed-Size: 87676
+Depends: firmware (>= 15.0)
+Filename: debs/com.muratkurt.shiv_2.3.0_iphoneos-arm64e.deb
+Size: 16695828
+MD5sum: 0a2ed60310c38e2c60447cc72d71d5d6
+SHA1: 41a482de9b3c8d495472bbc931ab141e491b5d5f
+SHA256: 0709729e1ce9bec45ff7ac53096b1cb75ac8ba807c3247ffb25bdd23834bf951
+Section: Utilities
+Homepage: https://muratkurt.github.io/
+Description: terminal AI assistant
+ shiv is a chat assistant that runs entirely in your terminal.
+ Nothing else to install - Node.js ships inside the package.
+ .
+ Sign in to OpenRouter from the browser: /login opens the approval
+ page, you confirm with your account and the key comes back - no
+ copying keys by hand. Or paste your own key for DeepSeek, OpenAI,
+ Moonshot, xAI, Qwen, Z.ai, Groq, Mistral, Together, a local
+ Ollama / llama.cpp, or any OpenAI-compatible endpoint.
+ .
+ It reads files, searches directories and runs shell commands,
+ asking before anything that could modify your device. Sessions
+ are saved and can be resumed, and there is a rewind that takes
+ the conversation back to an earlier point.
+ .
+ For tweak work it measures the device instead of guessing: /env
+ reports theos, frida, oldabi and the tools it found. Bundled
+ helpers dump ObjC classes from the dyld cache or from a live app,
+ and decrypt an App Store binary on the device itself.
+ .
+ Drawing and streaming speed can be tuned from /performance, so
+ it stays responsive in long sessions. Interface is Turkish or
+ English (/lang). Separate builds for rootless and RootHide.
+ .
+ Copyright (c) 2026 Murat Kurt. All rights reserved.
+ Licensed, not sold. Run /licence in the app for terms.
+Author: muratkurt
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
+Icon: https://muratkurt.github.io/assets/shiv/icon.png
+Name: shiv
+Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
+
 Package: io.github.imcynic.nodejs
 Version: 18.20.4-1
 Architecture: iphoneos-arm64e
