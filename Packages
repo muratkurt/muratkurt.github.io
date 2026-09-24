@@ -373,6 +373,122 @@ Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
 Name: ActionButtonFix
 Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
 
+Package: com.muratkurt.actionbuttonfix
+Version: 2.6.1
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Installed-Size: 332
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Filename: debs/ActionButtonFix-2.6.1-rootless.deb
+Size: 43476
+MD5sum: c7a41048400c2a44790b1984c137cfac
+SHA1: 6c7e94ec725a68bee1a6c1e70ef779b569a5e4b9
+SHA256: d8e93ee0a4ac08cfc6519e3a07ac2779dc096e017cff71a7635c4675f33ab68d
+Section: Tweaks
+Homepage: https://muratkurt.github.io/
+Description: Action Button'a tek tik ve cift tik eylemi kazandirir
+ iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
+ bagimsiz eylem atamanizi saglar. Uzun basista Apple'in mevcut Action
+ Button ayari aynen calismaya devam eder.
+ .
+ Eylemler: Yok, Flas, Ekran Goruntusu, Ekran Kaydi, Uygulama,
+ Stok Eylem, Denetim Merkezi, Kamera. Tek ve cift tik icin ayri ayri
+ secilir.
+ Ayarlar > ActionButtonFix uzerinden secilir.
+ .
+ Kamera: kamerayi Apple'in kendi akisiyla acar. Kamera yonu (arka/on)
+ ve mod (Video, Agir Cekim, Hizlandirilmis, Sinematik, Fotograf,
+ Portre) tek tik ve cift tik icin ayri secilir. Video modlarinda kayit
+ otomatik baslar (acilip kapatilabilir); ayni tus kaydi durdurur.
+ Ekran kapaliyken ve kilit ekraninda da calisir. iOS Ayarlari'ndaki
+ uzun basis eylemi degismez.
+ .
+ Ekran Kaydi: Denetim Merkezi'ndeki ekran kaydini baslatir/durdurur;
+ geri sayim, Dynamic Island gorunumu ve mikrofon ayari ayni.
+ .
+ Denetim Merkezi: Karanlik Mod, Yonlendirme Kilidi, Sessiz, Dusuk Guc
+ Modu ve QR Kod, Buyutec, Sesli Not, Hizli Not, Kronometre, Zamanlayici,
+ Alarm, Hesap Makinesi, Cuzdan modullerini tetikler.
+ .
+ "Yok" secilirse o tik hicbir sey yapmaz; cift tik "Yok" ise tek tik
+ beklemeden calisir.
+ .
+ Uygulama: listeden secilen herhangi bir uygulamayi acar (AltList).
+ Stok Eylem: iOS Ayarlari'nda uzun basisa atanmis eylemi tek/cift
+ tikla da calistirir.
+ .
+ Titresim: tek tik ve cift tik icin ayri ayri acilip kapatilir.
+ .
+ Ayarlar 12 dilde: Turkce, Ingilizce, Almanca, Fransizca, Ispanyolca,
+ Italyanca, Portekizce, Rusca, Cince, Japonca, Korece, Arapca.
+ .
+ Dogrulanmis platform: iPhone 15 Pro / iOS 17.0.3 / RootHide.
+ Action Button yalnizca iPhone 15 Pro ve Pro Max modellerinde bulunur.
+ Diger cihaz, iOS surumleri ve rootless cihaz uzerinde test edilmedi.
+Author: muratkurt
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Name: ActionButtonFix
+Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+
+Package: com.muratkurt.actionbuttonfix
+Version: 2.6.1
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Installed-Size: 332
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Filename: debs/ActionButtonFix-2.6.1-roothide.deb
+Size: 43402
+MD5sum: fda54e5e8152226c8f6a9d5478519f28
+SHA1: 87d7dc590e7d2d42a20f46c6986aab23aa74c3b2
+SHA256: e4b71f1985daea0917d1ffd06299cbe1cf5fbee50a4d723a24f9ccf76132afff
+Section: Tweaks
+Homepage: https://muratkurt.github.io/
+Description: Action Button'a tek tik ve cift tik eylemi kazandirir
+ iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
+ bagimsiz eylem atamanizi saglar. Uzun basista Apple'in mevcut Action
+ Button ayari aynen calismaya devam eder.
+ .
+ Eylemler: Yok, Flas, Ekran Goruntusu, Ekran Kaydi, Uygulama,
+ Stok Eylem, Denetim Merkezi, Kamera. Tek ve cift tik icin ayri ayri
+ secilir.
+ Ayarlar > ActionButtonFix uzerinden secilir.
+ .
+ Kamera: kamerayi Apple'in kendi akisiyla acar. Kamera yonu (arka/on)
+ ve mod (Video, Agir Cekim, Hizlandirilmis, Sinematik, Fotograf,
+ Portre) tek tik ve cift tik icin ayri secilir. Video modlarinda kayit
+ otomatik baslar (acilip kapatilabilir); ayni tus kaydi durdurur.
+ Ekran kapaliyken ve kilit ekraninda da calisir. iOS Ayarlari'ndaki
+ uzun basis eylemi degismez.
+ .
+ Ekran Kaydi: Denetim Merkezi'ndeki ekran kaydini baslatir/durdurur;
+ geri sayim, Dynamic Island gorunumu ve mikrofon ayari ayni.
+ .
+ Denetim Merkezi: Karanlik Mod, Yonlendirme Kilidi, Sessiz, Dusuk Guc
+ Modu ve QR Kod, Buyutec, Sesli Not, Hizli Not, Kronometre, Zamanlayici,
+ Alarm, Hesap Makinesi, Cuzdan modullerini tetikler.
+ .
+ "Yok" secilirse o tik hicbir sey yapmaz; cift tik "Yok" ise tek tik
+ beklemeden calisir.
+ .
+ Uygulama: listeden secilen herhangi bir uygulamayi acar (AltList).
+ Stok Eylem: iOS Ayarlari'nda uzun basisa atanmis eylemi tek/cift
+ tikla da calistirir.
+ .
+ Titresim: tek tik ve cift tik icin ayri ayri acilip kapatilir.
+ .
+ Ayarlar 12 dilde: Turkce, Ingilizce, Almanca, Fransizca, Ispanyolca,
+ Italyanca, Portekizce, Rusca, Cince, Japonca, Korece, Arapca.
+ .
+ Dogrulanmis platform: iPhone 15 Pro / iOS 17.0.3 / RootHide.
+ Action Button yalnizca iPhone 15 Pro ve Pro Max modellerinde bulunur.
+ Diger cihaz, iOS surumleri ve rootless cihaz uzerinde test edilmedi.
+Author: muratkurt
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Name: ActionButtonFix
+Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+
 Package: com.muratkurt.claude-cli-bridge
 Version: 0.4.3
 Architecture: iphoneos-arm64e
