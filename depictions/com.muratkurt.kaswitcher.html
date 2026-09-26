@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KASwitcher</title>
+<style>
+  :root {
+    --accent: #D97757;
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --line: #e3e3e6;
+    --code-bg: #f4f4f6;
+    --note-bg: #fdf3ef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1e;
+      --fg: #f2f2f4;
+      --muted: #9a9aa0;
+      --line: #34343a;
+      --code-bg: #26262a;
+      --note-bg: #2c231f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 20px 18px 48px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  h1 { font-size: 27px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.4px; }
+  h2 { font-size: 21px; margin: 32px 0 10px; letter-spacing: -0.2px; }
+  h3 { font-size: 17px; margin: 22px 0 6px; }
+  p { margin: 0 0 12px; }
+  .lede { color: var(--muted); font-size: 17px; margin-bottom: 4px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 5px; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 14.5px;
+    background: var(--code-bg);
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+  pre {
+    background: var(--code-bg);
+    padding: 12px 14px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 0 0 14px;
+  }
+  pre code { background: none; padding: 0; font-size: 14px; line-height: 1.5; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 30px 0; }
+  .note {
+    background: var(--note-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 14px;
+    margin: 0 0 16px;
+  }
+  .note strong { color: var(--accent); }
+  ol.steps { padding-left: 20px; margin: 0 0 14px; }
+  ol.steps li { margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 0 0 14px; font-size: 16px; }
+  td { padding: 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:first-child { color: var(--muted); width: 45%; }
+  td:last-child { text-align: right; }
+  a { color: var(--accent); }
+  .foot { color: var(--muted); font-size: 14px; margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<h1>KASwitcher</h1>
+<p class="lede">Close all apps in the app switcher at once.</p>
+
+<h2>Features</h2>
+<ul>
+  <li><strong>Close all</strong> — hold the X button, tap Close All</li>
+  <li><strong>Undo</strong> — tap the X during the countdown</li>
+  <li><strong>Pin</strong> — hold a card; pinned apps are not closed</li>
+  <li><strong>Protect</strong> — music and maps, plus any apps you choose</li>
+  <li><strong>Keep the most recent</strong> app open</li>
+  <li><strong>Cascade animation</strong> — style and speed</li>
+  <li><strong>Move and resize</strong> the X button, portrait and landscape</li>
+</ul>
+
+<h2>Languages</h2>
+<p>Türkçe · English · Deutsch · Français · Español · Italiano · Português · Русский · 简体中文 · 日本語 · 한국어 · العربية</p>
+
+<h2>Requirements</h2>
+<ul>
+  <li>iOS 16 or later</li>
+  <li>RootHide or rootless</li>
+  <li>PreferenceLoader</li>
+</ul>
+
+<h2>Information</h2>
+<table>
+  <tr><td>Developer</td><td>muratkurt</td></tr>
+  <tr><td>Package</td><td>com.muratkurt.kaswitcher</td></tr>
+  <tr><td>Version</td><td>0.5.1</td></tr>
+  <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
+  <tr><td>Tested on</td><td>iOS 16.1.1 · 17.0.3</td></tr>
+</table>
+<p><a href="mailto:muratkurttr@outlook.com?subject=KASwitcher">Contact</a></p>
+
+<hr>
+
+<h2>Changelog</h2>
+<h3>0.5.1</h3>
+<ul>
+  <li>First release</li>
+</ul>
+
+<p class="foot">For personal use on jailbroken devices.</p>
+
+</body>
+</html>

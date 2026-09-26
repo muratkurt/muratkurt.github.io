@@ -23,7 +23,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "## What it does\n\n**Reads and edits files, runs shell commands** — shell commands and file writes always ask first. What counts as \"ask every time\" is set in `/permissions`.\n\n**Sessions** are saved every turn. Resume the last one, pick an earlier one, or rewind the conversation to an earlier point.\n\n**Profiles** keep several providers side by side, switchable without losing the conversation.\n\n**Tweak and reverse engineering tools** — class and method lookup from the device's own dyld cache, a live class dump from a running app, reading what's on screen in a running app, FairPlay decryption on the phone, and an environment probe that runs each tool instead of looking for it.\n\nStep-by-step instructions are in the **Usage** tab."
+          "markdown": "## What it does\n\n**Reads and edits files, runs shell commands** — shell commands and file writes always ask first. What counts as \"ask every time\" is set in `/permissions`.\n\n**Sessions** are saved every turn. Resume the last one, pick an earlier one, or rewind the conversation to an earlier point.\n\n**Profiles** keep several providers side by side, switchable without losing the conversation.\n\n**Tweak and reverse engineering tools** — class and method lookup from the device's own dyld cache, a live class dump from a running app, reading what's on screen in a running app, FairPlay decryption on the phone, and an environment probe that runs each tool instead of looking for it. Since **2.5** these live in their own package, **shivtools**, installed with shiv from this repo — so any CLI can use them, not just shiv.\n\nStep-by-step instructions are in the **Usage** tab."
         },
         {
           "class": "DepictionScreenshotsView",
@@ -46,7 +46,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "## Providers\n\n**OpenRouter** signs in through the browser — no key to copy — and reaches Claude, GPT, Gemini and Grok with one account.\n\nAlso built in: DeepSeek · OpenAI · Moonshot (Kimi) · xAI (Grok) · Qwen · Z.ai (GLM) · Groq · Mistral · Together AI · Ollama or llama.cpp on a computer on your network · any custom OpenAI-compatible endpoint.\n\n## Node.js is bundled\n\nInstall shiv and it runs. Nothing else to add.\n\n## Requirements\n\n- iOS 15 or newer\n- **rootless** (Dopamine / Procursus) → the `iphoneos-arm64` package\n- **RootHide** → the `iphoneos-arm64e` package\n- Your own API key, or an OpenRouter account for browser sign-in\n\nBuilt and used on iPhone 15 Pro (iOS 17.0.3, RootHide) and iPhone XS (iOS 16.1.1, Dopamine rootless). Rootful jailbreaks are untested.\n\n**Limits.** `.appex` extensions run in their own process and aren't decrypted by this route. Class lookup is verified on iOS 16 and 17; on another version shiv says it can't confirm a name rather than returning a wrong one."
+          "markdown": "## Providers\n\n**OpenRouter** signs in through the browser — no key to copy — and reaches Claude, GPT, Gemini and Grok with one account.\n\nAlso built in: DeepSeek · OpenAI · Moonshot (Kimi) · xAI (Grok) · Qwen · Z.ai (GLM) · Groq · Mistral · Together AI · Ollama or llama.cpp on a computer on your network · any custom OpenAI-compatible endpoint.\n\n## Node.js is bundled\n\nInstall shiv and it runs. Nothing else to add.\n\n## Requirements\n\n- iOS 15 or newer\n- **rootless** (Dopamine / Procursus) → the `iphoneos-arm64` package\n- **RootHide** → the `iphoneos-arm64e` package\n- Your own API key, or an OpenRouter account for browser sign-in\n- **shivtools** (`com.muratkurt.shivtools`) for the device tools — pulled in automatically\n\nBuilt and used on iPhone 15 Pro (iOS 17.0.3, RootHide) and iPhone XS (iOS 16.1.1, Dopamine rootless). Rootful jailbreaks are untested.\n\n**Limits.** `.appex` extensions run in their own process and aren't decrypted by this route. Class lookup is verified on iOS 16 and 17; on another version shiv says it can't confirm a name rather than returning a wrong one."
         },
         {
           "class": "DepictionSeparatorView"
@@ -68,12 +68,12 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "2.3.0"
+          "text": "2.5.0"
         },
         {
           "class": "DepictionTableTextView",
           "title": "Requires",
-          "text": "nothing — Node.js included"
+          "text": "shivtools · Node.js included"
         },
         {
           "class": "DepictionTableTextView",
@@ -344,7 +344,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "### On PATH after install\n\n```\nshiv-sinif <name>          class/method search from the dyld cache (no frida)\nshiv-oku <bundle-id>       live ObjC class dump from a running app (frida)\nshiv-cek <bundle-id>       FairPlay decrypt, on the device itself (frida)\nshiv-ekran <bundle-id>     what is on screen in a running app (frida)\nshiv-frida-kur             diagnose frida: binary, package, agent, daemon,\n                           conflicts and leftovers\n```\n\n### Reading the screen\n\n```\nshiv-ekran <bundle-id>            what is on screen now\nshiv-ekran --izle 40 <bundle-id>  record every page you open, for 40 s\n```\n\nThe app has to be in front. Stay in it until the phone vibrates; the terminal comes back by itself.\n\nIn record mode, open the pages one by one and wait for the vibration on each. Every page is saved on its own: `/var/mobile/tw/ekran-<bundle-id>-01.txt`, `-02.txt` …\n\nYou don't have to type it. Ask shiv to read an app from the screen and it runs it.\n\n`TWEAK.md` ships with the package and holds the recipes the assistant follows."
+          "markdown": "### On PATH — from shivtools\n\nSince 2.5 the tools ship in `com.muratkurt.shivtools`, not in shiv. They are on PATH either way, and work from any shell or CLI.\n\n```\nshiv-ortam                 environment probe: jailbreak, theos, SDK, frida, oldabi\nshiv-sinif <name>          class/method search from the dyld cache (no frida)\nshiv-oku <bundle-id>       live ObjC class dump from a running app (frida)\nshiv-cek <bundle-id>       FairPlay decrypt, on the device itself (frida)\nshiv-ekran <bundle-id>     what is on screen in a running app (frida)\nshiv-pencere               SpringBoard windows and view tree, read-only (frida)\nshiv-yol <path>            a path in both namespaces, and which one exists\nshiv-prefs-ornek <key>     a working example from Apple's own prefs bundles\nshiv-frida-kur             diagnose frida: binary, package, agent, daemon,\n                           conflicts and leftovers\n```\n\n### Reading the screen\n\n```\nshiv-ekran <bundle-id>            what is on screen now\nshiv-ekran --izle 40 <bundle-id>  record every page you open, for 40 s\n```\n\nThe app has to be in front. Stay in it until the phone vibrates; the terminal comes back by itself.\n\nIn record mode, open the pages one by one and wait for the vibration on each. Every page is saved on its own: `/var/mobile/tw/ekran-<bundle-id>-01.txt`, `-02.txt` …\n\nYou don't have to type it. Ask shiv to read an app from the screen and it runs it.\n\n`TWEAK.md` ships with the package and holds the recipes the assistant follows."
         },
         {
           "class": "DepictionSeparatorView"
@@ -385,6 +385,28 @@
     {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "2.5.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "### Changes\n\n- Device tools moved into their own package, **shivtools**. shiv depends on it now; 16.7 → 13.3 MB\n- Last shiv release — development continues in shivtools\n\n### Fixed\n\n- Removing shiv deleted the tools shivtools had installed; installing shiv shadowed them"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "2.4.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "### New\n\n- **`shiv-pencere`** — SpringBoard's windows and view tree, read-only\n- **`shiv-yol`** — a path in both namespaces, and which one exists\n\n### Fixed\n\n- Prompt caching works on Claude models; every turn used to be paid in full\n- The output limit is per model — long file writes were cut off mid-answer\n- A reply cut at the limit no longer runs its half-written tool call\n- Reasoning streams on Claude models instead of an empty spinner\n- A truncated read says how to continue, instead of being read again from the top\n- `/context` counts tool calls; it showed 28k where the real figure was 127k\n- Temporary 402/429 provider errors are retried instead of dropping the turn\n- A sub-task that ended on a tool call keeps its result"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "2.3.0"

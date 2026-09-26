@@ -235,7 +235,7 @@
   <p class="hint">These buttons open an app, so they only work on the device.<br>On a desktop, copy the URL instead.</p>
 
   <h2>Packages</h2>
-  <a class="pkg" href="depictions/com.muratkurt.claude-cli-bridge.html">
+  <a class="pkg" href="depictions/com.muratkurt.claude-cli-bridge.html" data-pkg="com.muratkurt.claude-cli-bridge">
     <img src="assets/claude-cli-bridge/icon.png" alt="">
     <span>
       <span class="title">ClaudeCLIBridge</span><br>
@@ -243,16 +243,25 @@
     </span>
     <span class="ver">0.4.3</span>
   </a>
-  <a class="pkg" href="depictions/com.muratkurt.actionbuttonfix.html">
+  <a class="pkg" href="depictions/com.muratkurt.actionbuttonfix.html" data-pkg="com.muratkurt.actionbuttonfix">
     <img src="assets/actionbuttonfix/icon.png" alt="">
     <span>
       <span class="title">ActionButtonFix</span><br>
       <span class="desc">Single and double click actions for the Action Button</span>
     </span>
-    <span class="ver">2.6.0</span>
+    <span class="ver">2.7.0</span>
   </a>
 
-  <a class="pkg" href="depictions/com.muratkurt.shiv.html">
+  <a class="pkg" href="depictions/com.muratkurt.kaswitcher.html" data-pkg="com.muratkurt.kaswitcher">
+    <img src="assets/kaswitcher/icon.png" alt="">
+    <span>
+      <span class="title">KASwitcher</span><br>
+      <span class="desc">Close all apps in the app switcher at once</span>
+    </span>
+    <span class="ver">0.5.1</span>
+  </a>
+
+  <a class="pkg" href="depictions/com.muratkurt.shiv.html" data-pkg="com.muratkurt.shiv">
     <img src="assets/shiv/icon.png" alt="">
     <span>
       <span class="title">shiv</span><br>
@@ -261,7 +270,7 @@
     <span class="ver">2.3.0</span>
   </a>
 
-  <a class="pkg" href="https://github.com/imcynic/nodejs-ios">
+  <a class="pkg" href="https://github.com/imcynic/nodejs-ios" data-pkg="io.github.imcynic.nodejs">
     <img src="assets/nodejs/icon.png" alt="">
     <span>
       <span class="title">Node.js 18</span><br>
@@ -270,8 +279,10 @@
     <span class="ver">18.20.4</span>
   </a>
 
-  <!-- Yeni tweak eklerken bu blogu kopyalayin:
-  <a class="pkg" href="depictions/&lt;paket-kimligi&gt;.html">
+  <!-- Yeni tweak eklerken bu blogu kopyalayin. data-pkg, Packages'taki
+       Package: alani ile BIREBIR ayni olmali; surumu sayfa oradan okuyor,
+       asagidaki ver degeri yalnizca yedek (fetch basarisiz olursa gorunur).
+  <a class="pkg" href="depictions/&lt;paket-kimligi&gt;.html" data-pkg="&lt;paket-kimligi&gt;">
     <img src="assets/<paket-adi>/icon.png" alt="">
     <span>
       <span class="title">Ad</span><br>
@@ -319,6 +330,43 @@
         document.body.removeChild(t);
       }
     });
+  })();
+</script>
+
+<script>
+  /* Surumleri APT indeksinden oku. Boylece yayin sirasinda bu sayfada
+     elle guncellenecek bir sey kalmiyor: update.sh Packages'i uretir,
+     sayfa onu okur. fetch basarisiz olursa HTML'deki yedek deger kalir. */
+  (function () {
+    function cmp(a, b) {
+      var pa = a.split(/[.\-+~]/), pb = b.split(/[.\-+~]/);
+      for (var i = 0; i < Math.max(pa.length, pb.length); i++) {
+        var x = parseInt(pa[i], 10), y = parseInt(pb[i], 10);
+        if (isNaN(x)) x = 0;
+        if (isNaN(y)) y = 0;
+        if (x !== y) return x - y;
+      }
+      return 0;
+    }
+    fetch('Packages', { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+      .then(function (txt) {
+        var best = {};
+        txt.split(/\n\s*\n/).forEach(function (stanza) {
+          var n = stanza.match(/^Package:[ \t]*(.+)$/m);
+          var v = stanza.match(/^Version:[ \t]*(.+)$/m);
+          if (!n || !v) return;
+          var name = n[1].trim(), ver = v[1].trim();
+          if (!best[name] || cmp(ver, best[name]) > 0) best[name] = ver;
+        });
+        var cards = document.querySelectorAll('a.pkg[data-pkg]');
+        for (var i = 0; i < cards.length; i++) {
+          var ver = best[cards[i].getAttribute('data-pkg')];
+          var slot = cards[i].querySelector('.ver');
+          if (ver && slot) slot.textContent = ver;
+        }
+      })
+      .catch(function () { /* yedek deger kalir */ });
   })();
 </script>
 </body>

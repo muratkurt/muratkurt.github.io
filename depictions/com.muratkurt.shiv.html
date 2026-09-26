@@ -86,7 +86,7 @@
 <p><strong>Reads and edits files, runs shell commands</strong> — shell commands and file writes always ask first. What counts as "ask every time" is set in <code>/permissions</code>.</p>
 <p><strong>Sessions</strong> are saved every turn. Resume the last one, pick an earlier one, or rewind the conversation to an earlier point.</p>
 <p><strong>Profiles</strong> keep several providers side by side, switchable without losing the conversation.</p>
-<p><strong>Tweak and reverse engineering tools</strong> — class and method lookup from the device's own dyld cache, a live class dump from a running app, reading what's on screen in a running app, FairPlay decryption on the phone, and an environment probe that runs each tool instead of looking for it.</p>
+<p><strong>Tweak and reverse engineering tools</strong> — class and method lookup from the device's own dyld cache, a live class dump from a running app, reading what's on screen in a running app, FairPlay decryption on the phone, and an environment probe that runs each tool instead of looking for it. Since <strong>2.5</strong> these live in their own package, <strong>shivtools</strong>, installed with shiv from this repo — so any CLI can use them, not just shiv.</p>
 
 <h2>Screenshots</h2>
 <img src="https://muratkurt.github.io/assets/shiv/ss1.png" alt="Startup screen" style="width:100%;max-width:460px;display:block;border-radius:10px;margin-bottom:10px">
@@ -107,6 +107,7 @@
   <li><strong>rootless</strong> (Dopamine / Procursus) → the <code>iphoneos-arm64</code> package</li>
   <li><strong>RootHide</strong> → the <code>iphoneos-arm64e</code> package</li>
   <li>Your own API key, or an OpenRouter account for browser sign-in</li>
+  <li><strong>shivtools</strong> (<code>com.muratkurt.shivtools</code>) for the device tools &mdash; pulled in automatically</li>
 </ul>
 <p>Built and used on iPhone 15 Pro (iOS 17.0.3, RootHide) and iPhone XS (iOS 16.1.1, Dopamine rootless). Rootful jailbreaks are untested.</p>
 <div class="note">
@@ -117,8 +118,8 @@
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.shiv</td></tr>
-  <tr><td>Version</td><td>2.3.0</td></tr>
-  <tr><td>Requires</td><td>nothing — Node.js included</td></tr>
+  <tr><td>Version</td><td>2.5.0</td></tr>
+  <tr><td>Requires</td><td>shivtools · Node.js included</td></tr>
   <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
   <tr><td>Tested on</td><td>iOS 17.0.3 · iOS 16.1.1</td></tr>
   <tr><td>Languages</td><td>Türkçe · English</td></tr>
@@ -195,11 +196,16 @@
 <p>Reports theos, the SDK, frida, <code>oldabi</code>, the inject directory and the bundled tools — each one actually run, not just looked for, so a broken tool shows as broken.</p>
 <p><code>/device</code> scans the device itself: iOS, model, jailbreak, disk. <code>/mac</code> and <code>/remote</code> set up and check building on a Mac over the network.</p>
 
-<h3>On PATH after install</h3>
-<pre><code>shiv-sinif &lt;name&gt;          class/method search from the dyld cache (no frida)
+<h3>On PATH &mdash; from shivtools</h3>
+<p>Since 2.5 the tools ship in <code>com.muratkurt.shivtools</code>, not in shiv. They are on PATH either way, and work from any shell or CLI.</p>
+<pre><code>shiv-ortam                 environment probe: jailbreak, theos, SDK, frida, oldabi
+shiv-sinif &lt;name&gt;          class/method search from the dyld cache (no frida)
 shiv-oku &lt;bundle-id&gt;       live ObjC class dump from a running app (frida)
 shiv-cek &lt;bundle-id&gt;       FairPlay decrypt, on the device itself (frida)
 shiv-ekran &lt;bundle-id&gt;     what is on screen in a running app (frida)
+shiv-pencere               SpringBoard windows and view tree, read-only (frida)
+shiv-yol &lt;path&gt;            a path in both namespaces, and which one exists
+shiv-prefs-ornek &lt;key&gt;     a working example from Apple's own prefs bundles
 shiv-frida-kur             diagnose frida: binary, package, agent, daemon,
                            conflicts and leftovers</code></pre>
 <h3>Reading the screen</h3>
@@ -234,6 +240,35 @@ shiv-ekran --izle 40 &lt;bundle-id&gt;  record every page you open, for 40 s</co
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>2.5.0</h3>
+<p><strong>Changes</strong></p>
+<ul>
+  <li>Device tools moved into their own package, <strong>shivtools</strong>. shiv depends on it now; 16.7 &rarr; 13.3 MB</li>
+  <li>Last shiv release &mdash; development continues in shivtools</li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul>
+  <li>Removing shiv deleted the tools shivtools had installed; installing shiv shadowed them</li>
+</ul>
+
+<h3>2.4.0</h3>
+<p><strong>New</strong></p>
+<ul>
+  <li><strong><code>shiv-pencere</code></strong> &mdash; SpringBoard's windows and view tree, read-only</li>
+  <li><strong><code>shiv-yol</code></strong> &mdash; a path in both namespaces, and which one exists</li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul>
+  <li>Prompt caching works on Claude models; every turn used to be paid in full</li>
+  <li>The output limit is per model &mdash; long file writes were cut off mid-answer</li>
+  <li>A reply cut at the limit no longer runs its half-written tool call</li>
+  <li>Reasoning streams on Claude models instead of an empty spinner</li>
+  <li>A truncated read says how to continue, instead of being read again from the top</li>
+  <li><code>/context</code> counts tool calls; it showed 28k where the real figure was 127k</li>
+  <li>Temporary 402/429 provider errors are retried instead of dropping the turn</li>
+  <li>A sub-task that ended on a tool call keeps its result</li>
+</ul>
 
 <h3>2.3.0</h3>
 <p><strong>Reading the screen</strong></p>

@@ -1,0 +1,70 @@
+{
+  "minVersion": "0.1",
+  "headerImage": "https://muratkurt.github.io/assets/kaswitcher/banner.png",
+  "tintColor": "#D97757",
+  "tabs": [
+    {
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "# KASwitcher\n\nClose all apps in the app switcher at once.\n\n## Features\n\n- **Close all** — hold the X button, tap Close All\n- **Undo** — tap the X during the countdown\n- **Pin** — hold a card; pinned apps are not closed\n- **Protect** — music and maps, plus any apps you choose\n- **Keep the most recent** app open\n- **Cascade animation** — style and speed\n- **Move and resize** the X button, portrait and landscape\n\n## Languages\n\nTürkçe · English · Deutsch · Français · Español · Italiano · Português · Русский · 简体中文 · 日本語 · 한국어 · العربية\n\n## Requirements\n\n- iOS 16 or later\n- RootHide or rootless\n- PreferenceLoader"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Developer",
+          "text": "muratkurt"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Package",
+          "text": "com.muratkurt.kaswitcher"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "0.5.1"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "RootHide · rootless"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Tested on",
+          "text": "iOS 16.1.1 · 17.0.3"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Contact",
+          "action": "mailto:muratkurttr@outlook.com?subject=KASwitcher",
+          "openExternal": true
+        }
+      ],
+      "class": "DepictionStackView"
+    },
+    {
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.5.1"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- First release"
+        }
+      ],
+      "class": "DepictionStackView"
+    }
+  ],
+  "class": "DepictionTabView"
+}

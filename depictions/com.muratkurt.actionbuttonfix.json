@@ -8,7 +8,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# ActionButtonFix\n\nSingle click and double click for the Action Button. The long press stays Apple's.\n\n## Gestures\n\n- **Single click** — an action you pick\n- **Double click** — a different action you pick\n- **Long press** — unchanged, whatever iOS Settings has\n\nThe short press is never handed to Apple, so the *Silent / hold* feedback in the Dynamic Island never appears. Only your action runs.\n\n## Actions\n\n**Camera** — side (Back / Front) and mode (Video, Slo-Mo, Time-Lapse, Cinematic, Photo, Portrait), set per click. Optionally starts recording as it opens; the same click stops it. Opens through Apple's own flow, so it is fast and works with the screen off and on the Lock Screen.\n\n**Screen Recording** — starts and stops the recording. Same as Control Center's: 3-2-1 countdown, Dynamic Island view, saved to Photos. A recording started in Control Center stops with the button, and the other way round. The microphone follows the Control Center setting.\n\n**Control Center** — runs one module: Dark Mode, Rotation Lock, Silent Mode, Low Power Mode, QR Code Reader, Magnifier, Voice Memos, Quick Note, Stopwatch, Timer, Alarm, Calculator, Wallet.\n\n**Flashlight** — the same controller Control Center uses, so the two stay in sync.\n\n**Screenshot** — the stock flow: flash, corner preview, tap to edit. Does nothing while the screen is off.\n\n**App** — any installed app, from a searchable list. Does not open apps from the Lock Screen.\n\n**Stock Action** — the long-press action from iOS Settings, on a click.\n\n**None** — turns a click off. With double click set to None, the single click fires instantly, with no wait.\n\n## Settings\n\nEach click is configured on its own in **Settings › ActionButtonFix**, action and options both.\n\nHaptic feedback has separate switches for single and double click, on by default, and survives an action change. Camera, Screen Recording and Stock Action get their haptic from Apple, so the switch does not reach those three.\n\nOn a fresh install the tweak is off and both clicks are **None**. Camera starts at the back camera, photo mode.\n\n## Languages\n\nTürkçe · English · Deutsch · Français · Español · Italiano · Português · Русский · 简体中文 · 日本語 · 한국어 · العربية\n\nSettings follow your device language.\n\n## Requirements\n\n- An iPhone with an Action Button — 15 Pro / Pro Max, and the 16 line\n- iOS 17 or later\n- RootHide or a rootless jailbreak\n- **AltList** (opa334's repo) and PreferenceLoader\n\nTested on iPhone 15 Pro, iOS 17.0.3, RootHide. iOS 17.1 and 17.3 are confirmed working by users. The rootless package is built and shipped the same way, not verified on the developer's device. iOS 18 and the iPhone 16 line are untested."
+          "markdown": "# ActionButtonFix\n\nSingle click and double click for the Action Button. The long press stays Apple's.\n\n## Gestures\n\n- **Single click** — an action you pick\n- **Double click** — a different action you pick\n- **Long press** — unchanged, whatever iOS Settings has\n\nThe short press is never handed to Apple, so the *Silent / hold* feedback in the Dynamic Island never appears. Only your action runs.\n\n## Actions\n\n**Camera** — side (Back / Front) and mode (Video, Slo-Mo, Time-Lapse, Cinematic, Photo, Portrait), set per click. Optionally starts recording as it opens; the same click stops it. Opens through Apple's own flow, so it is fast and works with the screen off and on the Lock Screen.\n\n**Screen Recording** — starts and stops the recording. Same as Control Center's: 3-2-1 countdown, Dynamic Island view, saved to Photos. A recording started in Control Center stops with the button, and the other way round. The microphone follows the Control Center setting.\n\n**Control Center** — runs one module: Dark Mode, Rotation Lock, Silent Mode, Low Power Mode, QR Code Reader, Magnifier, Voice Memos, Quick Note, Stopwatch, Timer, Alarm, Calculator, Wallet.\n\n**Flashlight** — the same controller Control Center uses, so the two stay in sync. Brightness is set per click: Low, Medium, High, Maximum.\n\n**Screenshot** — the stock flow: flash, corner preview, tap to edit. Screenshot tweaks such as Prism and Snapper 3 are triggered too. Does nothing while the screen is off.\n\n**Media** — play/pause, next track, previous track.\n\n**App** — any installed app, from a searchable list. Does not open apps from the Lock Screen.\n\n**Stock Action** — the long-press action from iOS Settings, on a click.\n\n**None** — turns a click off. With double click set to None, the single click fires instantly, with no wait.\n\n## Settings\n\nEach click is configured on its own in **Settings › ActionButtonFix**, action and options both.\n\nHaptic feedback has separate switches for single and double click, on by default, and survives an action change. Camera, Screen Recording and Stock Action get their haptic from Apple, so the switch does not reach those three.\n\nOn a fresh install the tweak is off and both clicks are **None**. Camera starts at the back camera, photo mode.\n\n## Languages\n\nTürkçe · English · Deutsch · Français · Español · Italiano · Português · Русский · 简体中文 · 日本語 · 한국어 · العربية\n\nSettings follow your device language.\n\n## Requirements\n\n- An iPhone with an Action Button — 15 Pro / Pro Max, and the 16 line\n- iOS 17 or later\n- RootHide or a rootless jailbreak\n- **AltList** (opa334's repo) and PreferenceLoader\n\nTested on iPhone 15 Pro, iOS 17.0.3, RootHide. iOS 17.1 and 17.3 are confirmed working by users. The rootless package is built and shipped the same way, not verified on the developer's device. iOS 18 and the iPhone 16 line are untested."
         },
         {
           "class": "DepictionSeparatorView"
@@ -30,7 +30,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "2.6.1"
+          "text": "2.7.0"
         },
         {
           "class": "DepictionTableTextView",
@@ -59,6 +59,17 @@
     {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "2.7.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "### New\n\n**Media action** — play/pause, next track, previous track.\n\n**Flashlight brightness** — Low, Medium, High, Maximum.\n\n### Changes\n\n- The Screenshot action now triggers screenshot tweaks such as Prism and Snapper 3\n- Settings reorganized: each action's options sit in its own section"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "2.6.1"
