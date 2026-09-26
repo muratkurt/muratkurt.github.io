@@ -594,6 +594,88 @@ Icon: https://muratkurt.github.io/assets/shiv/icon.png
 Name: shiv
 Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
 
+Package: com.muratkurt.shivtools
+Version: 1.0.2
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Installed-Size: 14048
+Depends: firmware (>= 15.0)
+Recommends: re.frida.server, nodejs
+Filename: debs/com.muratkurt.shivtools_1.0.2_iphoneos-arm64e.deb
+Size: 3503052
+MD5sum: 89d501483194fb8b0458a4cf2d1890c1
+SHA1: 019f6217a6ecc9bf4432aa5eaa49a3910bc9c362
+SHA256: 9e00c715489bb14f2e2ae3668cf7025b00c8264b899fe846c6ad9d1ad39b645c
+Section: Development
+Homepage: https://muratkurt.github.io/
+Description: on-device tweak development tools
+ Measure the device instead of guessing: class and method lookup from
+ the dyld cache, the view tree of a running app or of SpringBoard,
+ namespace translation, a Preferences recipe finder, a measurement log
+ with a summariser, and an on-device FairPlay decrypt.
+ .
+ Every tool prints its own usage with --help. Missing dependencies are
+ named, not guessed at: node is needed ONLY by shiv-sinif, frida only
+ by the tools that attach to a process.
+ .
+ shiv-kurulum drops the canonical instruction file into a project as
+ CLAUDE.md and AGENTS.md (it backs up an existing copy first, never
+ overwrites it).
+ .
+ NOTE: the bundled frida client is arm64e, so the frida-backed tools
+ (shiv-ekran, shiv-pencere, shiv-oku, shiv-cek, shiv-sinif --tip) need
+ an A12 or newer device. shiv-sinif itself does not use frida and works
+ everywhere.
+ .
+ These tools come from shiv; they are packaged separately so any CLI
+ can use them.
+Author: muratkurt
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
+Icon: https://muratkurt.github.io/assets/shivtools/icon.png
+Name: shivtools
+Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
+
+Package: com.muratkurt.shivtools
+Version: 1.0.2
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Installed-Size: 14048
+Depends: firmware (>= 15.0)
+Recommends: re.frida.server, nodejs
+Filename: debs/com.muratkurt.shivtools_1.0.2_iphoneos-arm64.deb
+Size: 3507440
+MD5sum: 72d019b5ebd5c2872d1ffdfea2fc8ab5
+SHA1: 660c6593c48830a34038bdaee4f1905cb88835d0
+SHA256: b2fdb804b16cf456a017a9ebb4345a1c4ec99dae8186d93013fbe11052988ab8
+Section: Development
+Homepage: https://muratkurt.github.io/
+Description: on-device tweak development tools
+ Measure the device instead of guessing: class and method lookup from
+ the dyld cache, the view tree of a running app or of SpringBoard,
+ namespace translation, a Preferences recipe finder, a measurement log
+ with a summariser, and an on-device FairPlay decrypt.
+ .
+ Every tool prints its own usage with --help. Missing dependencies are
+ named, not guessed at: node is needed ONLY by shiv-sinif, frida only
+ by the tools that attach to a process.
+ .
+ shiv-kurulum drops the canonical instruction file into a project as
+ CLAUDE.md and AGENTS.md (it backs up an existing copy first, never
+ overwrites it).
+ .
+ NOTE: the bundled frida client is arm64e, so the frida-backed tools
+ (shiv-ekran, shiv-pencere, shiv-oku, shiv-cek, shiv-sinif --tip) need
+ an A12 or newer device. shiv-sinif itself does not use frida and works
+ everywhere.
+ .
+ These tools come from shiv; they are packaged separately so any CLI
+ can use them.
+Author: muratkurt
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
+Icon: https://muratkurt.github.io/assets/shivtools/icon.png
+Name: shivtools
+Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
+
 Package: io.github.imcynic.nodejs
 Version: 18.20.4-1
 Architecture: iphoneos-arm64e

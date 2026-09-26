@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>shivtools</title>
+<style>
+  :root {
+    --accent: #7E8B52;
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --line: #e3e3e6;
+    --code-bg: #f4f4f6;
+    --note-bg: #f3f5ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1e;
+      --fg: #f2f2f4;
+      --muted: #9a9aa0;
+      --line: #34343a;
+      --code-bg: #26262a;
+      --note-bg: #23261c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 20px 18px 48px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  h1 { font-size: 27px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.4px; }
+  h2 { font-size: 21px; margin: 32px 0 10px; letter-spacing: -0.2px; }
+  h3 { font-size: 17px; margin: 22px 0 6px; }
+  p { margin: 0 0 12px; }
+  .lede { color: var(--muted); font-size: 17px; margin-bottom: 4px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 5px; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 14.5px;
+    background: var(--code-bg);
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+  pre {
+    background: var(--code-bg);
+    padding: 12px 14px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 0 0 14px;
+  }
+  pre code { background: none; padding: 0; font-size: 14px; line-height: 1.5; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 30px 0; }
+  .note {
+    background: var(--note-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 14px;
+    margin: 0 0 16px;
+  }
+  .note strong { color: var(--accent); }
+  ol.steps { padding-left: 20px; margin: 0 0 14px; }
+  ol.steps li { margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 0 0 14px; font-size: 16px; }
+  td { padding: 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:first-child { color: var(--muted); width: 45%; }
+  td:last-child { text-align: right; }
+  a { color: var(--accent); }
+  .foot { color: var(--muted); font-size: 14px; margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<h1>shivtools</h1>
+<p class="lede">On-device tools for building tweaks.</p>
+
+<p>An AI CLI running on the iPhone calls them; you don't have to. <strong>Any CLI, any model</strong> &mdash; Claude Code, Codex, Gemini, Grok, whatever runs in your terminal. The tools are plain shell scripts with fixed, readable output, so a model can call them and act on what comes back.</p>
+
+<h2>Tools</h2>
+
+<h3>Environment</h3>
+<ul>
+  <li><code>shiv-ortam</code> &mdash; what this device is: jailbreak type, iOS, theos, frida, oldabi, node, every tool. First command of every session.</li>
+  <li><code>shiv-yol</code> &mdash; one path, both namespaces (jbroot &harr; real root).</li>
+</ul>
+
+<h3>Discovery</h3>
+<ul>
+  <li><code>shiv-sinif</code> &mdash; classes and methods from the dyld cache, no frida needed. <code>--tip</code> reads a method's real <strong>signature</strong> from the running process; <code>--sdk</code> says whether it is declared in that class's SDK headers.</li>
+  <li><code>shiv-pencere</code> &mdash; SpringBoard's windows and view tree: frames, safe area, transforms, model-vs-screen drift, interface orientation. Read-only.</li>
+  <li><code>shiv-ekran</code> &mdash; the view tree of the app in front.</li>
+  <li><code>shiv-oku</code> &mdash; every ObjC class inside a running app.</li>
+  <li><code>shiv-prefs-ornek</code> &mdash; working examples pulled from Apple's own Preferences bundles.</li>
+</ul>
+
+<h3>Measurement</h3>
+<ul>
+  <li><code>shiv-log</code> &mdash; timestamped log: write, tail, <strong>summarise</strong>, plus a ready C snippet for the tweak side.</li>
+  <li><code>shiv-kare</code> &mdash; screenshots as data: mark, then list only the frames taken after that mark.</li>
+</ul>
+
+<h3>Editing and packaging</h3>
+<ul>
+  <li><code>shiv-sil</code> &mdash; delete a line range with a dated backup, a diff and a syntax check.</li>
+  <li><code>shiv-kurulum</code> &mdash; install the bundled instruction file into a project as <code>CLAUDE.md</code> and <code>AGENTS.md</code>.</li>
+  <li><code>shiv-cek</code> &mdash; decrypt an App Store binary on the device.</li>
+  <li><code>shiv-frida-kur</code> &mdash; check the frida setup; install only when you say so.</li>
+</ul>
+
+<h2>Included</h2>
+<ul>
+  <li><strong>SHIVTOOLS.md</strong> &mdash; the rules an agent follows: red lines, the measure &rarr; cause &rarr; fix &rarr; verify loop, tool reference.</li>
+  <li><strong>TWEAK.md</strong> &mdash; recipes: build flows, ABI and caps, Preferences, hook patterns, discovery, namespaces.</li>
+  <li><strong>shivfrida</strong> &mdash; frida client, statically linked, arm64e.</li>
+</ul>
+<p>Both documents install to <code>/usr/local/share/shivtools/</code>.</p>
+
+<h2>Good to know</h2>
+<ul>
+  <li>Every tool prints its usage with <code>--help</code>.</li>
+  <li>Missing dependencies are named: <strong>node</strong> is needed only by <code>shiv-sinif</code>, <strong>frida</strong> only by the tools that attach to a process.</li>
+  <li>The frida client is arm64e (A12 and newer). <code>shiv-sinif</code>, <code>shiv-yol</code>, <code>shiv-log</code>, <code>shiv-sil</code>, <code>shiv-kurulum</code> and <code>shiv-ortam</code> don't touch frida.</li>
+  <li>Nothing runs on its own. No daemon, no background process.</li>
+</ul>
+
+<h2>Requirements</h2>
+<ul>
+  <li>iOS 15 or newer</li>
+  <li><strong>rootless</strong> (Dopamine / Procursus) &rarr; the <code>iphoneos-arm64</code> package</li>
+  <li><strong>RootHide</strong> &rarr; the <code>iphoneos-arm64e</code> package</li>
+  <li>Optional: <code>frida-server</code> 16.x and <code>nodejs</code></li>
+</ul>
+<p>Built and used on iPhone 15 Pro (iOS 17.0.3, RootHide) and iPhone XS (iOS 16.1.1, Dopamine rootless).</p>
+<div class="note">
+  <p style="margin:0">If <strong>shiv</strong> is also installed, install shivtools <strong>after</strong> it: both own the same <code>/usr/local/bin/shiv-*</code> names. <code>shiv-ortam</code> and <code>shiv-kurulum</code> warn when the names point elsewhere.</p>
+</div>
+
+<h2>Information</h2>
+<table>
+  <tr><td>Developer</td><td>muratkurt</td></tr>
+  <tr><td>Package</td><td>com.muratkurt.shivtools</td></tr>
+  <tr><td>Version</td><td>1.0.2</td></tr>
+  <tr><td>Requires</td><td>iOS 15.0 or later</td></tr>
+  <tr><td>Compatibility</td><td>rootless &middot; RootHide</td></tr>
+  <tr><td>Tested on</td><td>iOS 17.0.3 &middot; iOS 16.1.1</td></tr>
+  <tr><td>Recommends</td><td>frida-server 16.x &middot; nodejs</td></tr>
+</table>
+
+<hr>
+
+<h2>Usage</h2>
+
+<h3>Start here</h3>
+<pre><code>shiv-ortam</code></pre>
+<p>It prints the jailbreak type, iOS version, theos, frida, oldabi, node and every tool. Run it first; don't assume any of them.</p>
+
+<h3>Set up a project</h3>
+<pre><code>cd /var/mobile/Documents/MyTweak
+shiv-kurulum</code></pre>
+<p>Writes <code>CLAUDE.md</code> and <code>AGENTS.md</code> from the bundled <code>SHIVTOOLS.md</code> &mdash; two names because different CLIs read different files. An existing copy is backed up with a timestamp first. <code>shiv-kurulum --fark</code> shows how a project's copy differs from the installed one.</p>
+
+<h3>Find a class or a method</h3>
+<pre><code>shiv-sinif SBMediaController
+shiv-sinif --tara Inventory
+shiv-sinif --metod SBMediaController
+shiv-sinif --metod SBMediaController --tip
+shiv-sinif --metod UIAction --tip --sdk --desen handler</code></pre>
+<p><code>--tip</code> prints the type encoding &mdash; return type and arguments &mdash; read from the live process. <code>--sdk</code> adds whether the selector is declared in the headers of that class, its superclasses or its protocols. Default target is SpringBoard; <code>--pid N</code> or <code>--bid &lt;bundle-id&gt;</code> picks another process.</p>
+
+<h3>Read the screen</h3>
+<pre><code>shiv-pencere
+shiv-pencere --izle 60
+shiv-ekran com.apple.Preferences --ac</code></pre>
+<p><code>shiv-pencere</code> dumps SpringBoard: window levels, the view tree, frames, <code>safe=</code> insets, <code>tf=</code> transforms, <code>EKRAN:</code> where the screen disagrees with your model, and the interface orientation.</p>
+<p><code>--izle SECS</code> records: a new numbered dump each time the layout <strong>changes</strong>, with a vibration so you know a moment was captured. Use it with a short numbered script for the person holding the phone. <code>shiv-ekran</code> does the same for the app in front; <code>--ac</code> brings it forward.</p>
+
+<h3>Measure behaviour</h3>
+<pre><code>shiv-log parca        # C snippet to paste into the tweak
+shiv-log yeni         # clear before a test round
+shiv-log ozet         # count events
+shiv-log son 60       # last lines</code></pre>
+<p><code>NSLog</code> is not readable on these setups. Log to a file, then summarise &mdash; reading the raw file costs the agent its context.</p>
+
+<h3>Screenshots as data</h3>
+<pre><code>shiv-kare isaret      # remember the newest frame
+shiv-kare yeni        # paths of frames taken after that</code></pre>
+<p>Visual faults &mdash; flicker, one-frame redraws, wrong placement &mdash; never show up in a log. Only frames after the mark are listed; the camera roll is personal.</p>
+
+<h3>Edit safely</h3>
+<pre><code>shiv-sil Tweak.x 420 875 --kuru   # preview
+shiv-sil Tweak.x 420 875</code></pre>
+<p>Dated backup, deletes only that range, verifies the new line count, prints the diff, then checks for broken comments and unbalanced braces. Exit code 2 means the delete happened but a check failed.</p>
+
+<h3>Paths</h3>
+<ul>
+  <li>Tools: <code>/usr/local/bin/</code></li>
+  <li>Documents: <code>/usr/local/share/shivtools/</code></li>
+  <li>Output: <code>/var/mobile/tw/</code></li>
+</ul>
+<p>On RootHide the shell lives in jbroot while system processes write to the real root. <code>shiv-yol &lt;path&gt;</code> translates between them; file tools that are not jbroot-aware need the real path.</p>
+
+<hr>
+
+<h2>Changelog</h2>
+
+<h3>1.0.2</h3>
+<ul>
+  <li><code>shiv-kare isaret</code> writes through a temporary file, so a mark owned by another user no longer blocks it; an empty list now says so.</li>
+  <li><code>shiv-sil</code> exits with 2 when a check fails.</li>
+  <li><code>shiv-ortam</code> warns when the session runs inside a terminal app: a respring closes it too.</li>
+  <li><code>shiv-ekran --ac</code> brings the app forward.</li>
+  <li><code>shiv-sinif --tip --bid</code> wakes a suspended app before attaching.</li>
+  <li><code>shiv-pencere --izle</code> writes a dump only when the layout really changes.</li>
+  <li><code>shiv-pencere</code> reports interface orientation from the content size.</li>
+  <li><code>shiv-sinif --sdk</code> is scoped to the class, its superclasses and its protocols, and matches the whole selector.</li>
+</ul>
+
+<h3>1.0.1</h3>
+<ul>
+  <li><code>shiv-pencere</code> view lines carry <code>safe=</code>, <code>tf=</code> and <code>EKRAN:</code>.</li>
+  <li>New: <code>shiv-kare</code>, <code>shiv-sil</code>.</li>
+  <li><code>shiv-sinif --tip --sdk</code>.</li>
+  <li>Node candidates are tested by running them, not by their presence.</li>
+</ul>
+
+<h3>1.0.0</h3>
+<ul>
+  <li>First release: 13 tools, <code>shivfrida</code>, <code>SHIVTOOLS.md</code> and <code>TWEAK.md</code>.</li>
+  <li><code>shiv-sinif --metod &hellip; --tip</code> reads method signatures from the live process.</li>
+  <li><code>shiv-log</code>, <code>shiv-kurulum</code>.</li>
+  <li>Works without shiv installed.</li>
+</ul>
+
+<p class="foot">muratkurt &middot; <a href="https://muratkurt.github.io/">muratkurt.github.io</a></p>
+
+</body>
+</html>

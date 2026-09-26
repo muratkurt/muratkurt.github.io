@@ -1,0 +1,231 @@
+{
+  "minVersion": "0.1",
+  "headerImage": "https://muratkurt.github.io/assets/shivtools/banner.png",
+  "tintColor": "#9AA76A",
+  "class": "DepictionTabView",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "# shivtools\n\nOn-device tools for building tweaks. An AI CLI running on the iPhone calls them; you don't have to.\n\n**Any CLI, any model.** Claude Code, Codex, Gemini, Grok — whatever runs in your terminal. The tools are plain shell scripts with a fixed, readable output, so a model can call them and act on what comes back."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Tools"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**Environment**\n\n- `shiv-ortam` — what this device is: jailbreak type, iOS, theos, frida, oldabi, node, every tool. First command of every session.\n- `shiv-yol` — one path, both namespaces (jbroot ↔ real root).\n\n**Discovery**\n\n- `shiv-sinif` — classes and methods from the dyld cache, no frida needed. `--tip` reads a method's real **signature** from the running process; `--sdk` says whether it is declared in the SDK headers of that class.\n- `shiv-pencere` — SpringBoard's windows and view tree: frames, safe area, transforms, model-vs-screen drift, interface orientation. Read-only.\n- `shiv-ekran` — the view tree of the app in front.\n- `shiv-oku` — every ObjC class inside a running app.\n- `shiv-prefs-ornek` — working examples pulled from Apple's own Preferences bundles.\n\n**Measurement**\n\n- `shiv-log` — timestamped measurement log: write, tail, **summarise** (counts events instead of dumping the file), and a ready C snippet for the tweak side.\n- `shiv-kare` — screenshots as data: mark, then list only the frames taken after that mark.\n\n**Editing and packaging**\n\n- `shiv-sil` — delete a line range with a dated backup, a diff and a syntax check.\n- `shiv-kurulum` — install the bundled instruction file into a project as `CLAUDE.md` and `AGENTS.md`.\n- `shiv-cek` — decrypt an App Store binary on the device.\n- `shiv-frida-kur` — check the frida setup; install only when you say so."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Included"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- **SHIVTOOLS.md** — the rules an agent follows: red lines, the measure → cause → fix → verify loop, tool reference.\n- **TWEAK.md** — recipes: build flows, ABI and caps, Preferences, hook patterns, discovery, namespaces.\n- **shivfrida** — frida client, statically linked, arm64e.\n\nBoth documents install to `/usr/local/share/shivtools/`."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Good to know"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Every tool prints its usage with `--help`.\n- Missing dependencies are named: **node** is needed only by `shiv-sinif`, **frida** only by the tools that attach to a process.\n- The frida client is arm64e (A12 and newer). `shiv-sinif`, `shiv-yol`, `shiv-log`, `shiv-sil`, `shiv-kurulum` and `shiv-ortam` don't touch frida.\n- Nothing runs on its own. No daemon, no background process."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Developer",
+          "text": "muratkurt"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Package",
+          "text": "com.muratkurt.shivtools"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "1.0.2"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Requires",
+          "text": "iOS 15.0 or later"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "rootless · RootHide"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Tested on",
+          "text": "iOS 17.0.3 (RootHide) · iOS 16.1.1 (Dopamine)"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Recommends",
+          "text": "frida-server 16.x · nodejs"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "Usage",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "Start here"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "```\nshiv-ortam\n```\n\nIt prints the jailbreak type, iOS version, theos, frida, oldabi, node and every tool. Run it first; don't assume any of them."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Set up a project"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "```\ncd /var/mobile/Documents/MyTweak\nshiv-kurulum\n```\n\nWrites `CLAUDE.md` and `AGENTS.md` from the bundled `SHIVTOOLS.md` — two names because different CLIs read different files. An existing copy is backed up with a timestamp first.\n\n`shiv-kurulum --fark` shows how a project's copy differs from the installed one."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Find a class or a method"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "```\nshiv-sinif SBMediaController\nshiv-sinif --tara Inventory\nshiv-sinif --metod SBMediaController\nshiv-sinif --metod SBMediaController --tip\nshiv-sinif --metod UIAction --tip --sdk --desen handler\n```\n\n`--tip` prints the type encoding — the return type and arguments — read from the live process. `--sdk` adds whether the selector is declared in the headers of that class, its superclasses or its protocols.\n\nDefault target is SpringBoard; `--pid N` or `--bid <bundle-id>` picks another process."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Read the screen"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "```\nshiv-pencere\nshiv-pencere --izle 60\nshiv-ekran com.apple.Preferences --ac\n```\n\n`shiv-pencere` dumps SpringBoard: window levels, the view tree, frames, `safe=` insets, `tf=` transforms, `EKRAN:` where the screen disagrees with your model, and the interface orientation.\n\n`--izle SECS` records: a new numbered dump each time the layout **changes**, with a vibration so you know a moment was captured. Use it with a short numbered script for the person holding the phone.\n\n`shiv-ekran` does the same for the app in front (`--ac` brings it forward)."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Measure behaviour"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "```\nshiv-log parca        # C snippet to paste into the tweak\nshiv-log yeni         # clear before a test round\nshiv-log ozet         # count events\nshiv-log son 60       # last lines\n```\n\n`NSLog` is not readable on these setups. Log to a file, then summarise — reading the raw file costs the agent its context."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Screenshots as data"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "```\nshiv-kare isaret      # remember the newest frame\nshiv-kare yeni        # paths of frames taken after that\n```\n\nVisual faults — flicker, one-frame redraws, wrong placement — never show up in a log. Only frames after the mark are listed; the camera roll is personal."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Edit safely"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "```\nshiv-sil Tweak.x 420 875 --kuru   # preview\nshiv-sil Tweak.x 420 875\n```\n\nDated backup, deletes only that range, verifies the new line count, prints the diff, then checks for broken comments and unbalanced braces. Exit code 2 means the delete happened but a check failed."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Paths"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Tools: `/usr/local/bin/`\n- Documents: `/usr/local/share/shivtools/`\n- Output: `/var/mobile/tw/`\n\nOn RootHide the shell lives in jbroot while system processes write to the real root. `shiv-yol <path>` translates between them; file tools that are not jbroot-aware need the real path."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "If shiv is also installed"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Both packages own the same `/usr/local/bin/shiv-*` names. Install **shivtools after shiv**; `shiv-ortam` and `shiv-kurulum` warn when the names point elsewhere."
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.0.2"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- `shiv-kare isaret` writes through a temporary file, so a mark owned by another user no longer blocks it; an empty list now says so.\n- `shiv-sil` exits with 2 when a check fails.\n- `shiv-ortam` warns when the session runs inside a terminal app: a respring closes it too.\n- `shiv-ekran --ac` brings the app forward.\n- `shiv-sinif --tip --bid` wakes a suspended app before attaching.\n- `shiv-pencere --izle` writes a dump only when the layout really changes.\n- `shiv-pencere` reports interface orientation from the content size.\n- `shiv-sinif --sdk` is scoped to the class, its superclasses and its protocols, and matches the whole selector."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.0.1"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- `shiv-pencere` view lines carry `safe=`, `tf=` and `EKRAN:`.\n- New: `shiv-kare`, `shiv-sil`.\n- `shiv-sinif --tip --sdk`.\n- Node candidates are tested by running them, not by their presence."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.0.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- First release: 13 tools, `shivfrida`, `SHIVTOOLS.md` and `TWEAK.md`.\n- `shiv-sinif --metod … --tip` reads method signatures from the live process.\n- `shiv-log`, `shiv-kurulum`.\n- Works without shiv installed."
+        }
+      ]
+    }
+  ]
+}
