@@ -7,27 +7,28 @@ cd "$(dirname "$0")"
 
 echo "=== 0. ON KONTROL ==="
 
-# dpkg-scanpackages dpkg-dev paketindedir ve genelde kurulu DEGILDIR.
-# Yoksa make_packages.py devreye girer; o yalniz dpkg-deb + python ister.
+# ONCE make_packages.py — OLCULDU (26 Eyl 2026):
+# 'dpkg-scanpackages' BILINMEYEN ALANLARI ATIYOR. 'SileoDepiction' onun
+# icin bilinmeyen bir alan; o yolla uretilen Packages'ta 17 paketin
+# HICBIRINDE kalmadi ve Sileo hepsinde yerel depiction yerine HTML'e
+# dustu. Sebebi hicbir yerde yazmiyor, paket normal gorunuyor.
+# make_packages.py control'u oldugu gibi kopyaliyor; tercih odur.
+# dpkg-scanpackages yalniz python3 yoksa yedek olarak kullanilir.
 SCAN=""
-if command -v dpkg-scanpackages >/dev/null 2>&1; then
+if command -v python3.9 >/dev/null 2>&1; then
+  PY=python3.9
+elif command -v python3 >/dev/null 2>&1; then
+  PY=python3
+fi
+if [[ -n "$PY" && -f make_packages.py ]]; then
+  echo "  yontem: make_packages.py ($PY) - tum alanlar korunur"
+elif command -v dpkg-scanpackages >/dev/null 2>&1; then
   SCAN="dpkg-scanpackages"
-  echo "  yontem: dpkg-scanpackages"
+  echo "  yontem: dpkg-scanpackages (YEDEK)"
+  echo "  UYARI: bu yol SileoDepiction gibi alanlari ATAR."
 else
-  if command -v python3.9 >/dev/null 2>&1; then
-    PY=python3.9
-  elif command -v python3 >/dev/null 2>&1; then
-    PY=python3
-  else
-    echo "DUR: ne dpkg-scanpackages ne python3 var."
-    echo "  Cozum: sudo apt install dpkg-dev   (ya da python3)"
-    exit 1
-  fi
-  if [[ ! -f make_packages.py ]]; then
-    echo "DUR: dpkg-scanpackages yok ve make_packages.py da bulunamadi"
-    exit 1
-  fi
-  echo "  yontem: make_packages.py ($PY) - dpkg-scanpackages kurulu degil"
+  echo "DUR: ne python3+make_packages.py ne dpkg-scanpackages var."
+  exit 1
 fi
 
 if [[ ! -d debs ]];    then echo "DUR: debs/ klasoru yok"; exit 1; fi
@@ -57,6 +58,21 @@ fi
 
 if [[ ! -s Packages ]]; then
   echo "DUR: Packages BOS uretildi"
+  exit 1
+fi
+
+# ALAN DENETIMI — 26 Eyl 2026'da bir kez kaybedildi, bir daha sessizce
+# kaybolmasin. deb'lerde kac SileoDepiction varsa Packages'ta da o kadar
+# olmali.
+DEB_SD=0
+for f in debs/*.deb; do
+  dpkg-deb -f "$f" SileoDepiction 2>/dev/null | grep -q . && DEB_SD=$((DEB_SD + 1))
+done
+PKG_SD=$(grep -c '^SileoDepiction:' Packages || true)
+echo "  SileoDepiction: deb'lerde $DEB_SD · Packages'ta $PKG_SD"
+if [[ "$DEB_SD" -gt 0 && "$PKG_SD" -lt "$DEB_SD" ]]; then
+  echo "DUR: alan kaybi. Packages'ta $PKG_SD, olmasi gereken $DEB_SD."
+  echo "  Sebep: uretici bilinmeyen alanlari atiyor (dpkg-scanpackages)."
   exit 1
 fi
 

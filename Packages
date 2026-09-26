@@ -1,15 +1,12 @@
 Package: com.muratkurt.actionbuttonfix
-Version: 2.6.1
-Architecture: iphoneos-arm64
+Name: ActionButtonFix
 Maintainer: muratkurt
-Installed-Size: 332
-Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
-Filename: debs/ActionButtonFix-2.6.1-rootless.deb
-Size: 43476
-MD5sum: c7a41048400c2a44790b1984c137cfac
-SHA1: 6c7e94ec725a68bee1a6c1e70ef779b569a5e4b9
-SHA256: d8e93ee0a4ac08cfc6519e3a07ac2779dc096e017cff71a7635c4675f33ab68d
+Author: muratkurt
 Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
 Homepage: https://muratkurt.github.io/
 Description: Action Button'a tek tik ve cift tik eylemi kazandirir
  iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
@@ -50,24 +47,24 @@ Description: Action Button'a tek tik ve cift tik eylemi kazandirir
  Dogrulanmis platform: iPhone 15 Pro / iOS 17.0.3 / RootHide.
  Action Button yalnizca iPhone 15 Pro ve Pro Max modellerinde bulunur.
  Diger cihaz, iOS surumleri ve rootless cihaz uzerinde test edilmedi.
-Author: muratkurt
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
-Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
-Name: ActionButtonFix
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
-
-Package: com.muratkurt.actionbuttonfix
-Version: 2.6.1
 Architecture: iphoneos-arm64e
-Maintainer: muratkurt
+Version: 2.6.1
 Installed-Size: 332
-Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
 Filename: debs/ActionButtonFix-2.6.1-roothide.deb
 Size: 43402
 MD5sum: fda54e5e8152226c8f6a9d5478519f28
 SHA1: 87d7dc590e7d2d42a20f46c6986aab23aa74c3b2
 SHA256: e4b71f1985daea0917d1ffd06299cbe1cf5fbee50a4d723a24f9ccf76132afff
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
 Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
 Homepage: https://muratkurt.github.io/
 Description: Action Button'a tek tik ve cift tik eylemi kazandirir
  iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
@@ -108,24 +105,24 @@ Description: Action Button'a tek tik ve cift tik eylemi kazandirir
  Dogrulanmis platform: iPhone 15 Pro / iOS 17.0.3 / RootHide.
  Action Button yalnizca iPhone 15 Pro ve Pro Max modellerinde bulunur.
  Diger cihaz, iOS surumleri ve rootless cihaz uzerinde test edilmedi.
-Author: muratkurt
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
-Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
-Name: ActionButtonFix
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
-
-Package: com.muratkurt.actionbuttonfix
-Version: 2.7.0
 Architecture: iphoneos-arm64
+Version: 2.6.1
+Installed-Size: 332
+Filename: debs/ActionButtonFix-2.6.1-rootless.deb
+Size: 43476
+MD5sum: c7a41048400c2a44790b1984c137cfac
+SHA1: 6c7e94ec725a68bee1a6c1e70ef779b569a5e4b9
+SHA256: d8e93ee0a4ac08cfc6519e3a07ac2779dc096e017cff71a7635c4675f33ab68d
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
 Maintainer: muratkurt
-Installed-Size: 344
-Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
-Filename: debs/ActionButtonFix-2.7.0-rootless.deb
-Size: 48114
-MD5sum: ce668aa682e14909242536de6b9165f4
-SHA1: f9c8dab40ac7563088be06dac8c8fea9abba92ca
-SHA256: 077b1a70253a9cf5ec55d1d2f450900196ab023763983a2bdb1e5aeb3166bfc1
+Author: muratkurt
 Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
 Homepage: https://muratkurt.github.io/
 Description: Action Button'a tek tik ve cift tik eylemi kazandirir
  iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
@@ -166,24 +163,24 @@ Description: Action Button'a tek tik ve cift tik eylemi kazandirir
  Dogrulanmis platform: iPhone 15 Pro / iOS 17.0.3 / RootHide.
  Action Button yalnizca iPhone 15 Pro ve Pro Max modellerinde bulunur.
  Diger cihaz, iOS surumleri ve rootless cihaz uzerinde test edilmedi.
-Author: muratkurt
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
-Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
-Name: ActionButtonFix
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
-
-Package: com.muratkurt.actionbuttonfix
-Version: 2.7.0
 Architecture: iphoneos-arm64e
-Maintainer: muratkurt
+Version: 2.7.0
 Installed-Size: 344
-Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
 Filename: debs/ActionButtonFix-2.7.0-roothide.deb
 Size: 48112
 MD5sum: 23682f42aacf00f6461ed5af4be9baa6
 SHA1: 55785797c4d797a861bb5dbd239e071c9f6f48a7
 SHA256: daa2bbaa66321c1d9470d24ac8d2d6a2c31008154941e48378db780ea488e60b
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
 Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
 Homepage: https://muratkurt.github.io/
 Description: Action Button'a tek tik ve cift tik eylemi kazandirir
  iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
@@ -224,23 +221,66 @@ Description: Action Button'a tek tik ve cift tik eylemi kazandirir
  Dogrulanmis platform: iPhone 15 Pro / iOS 17.0.3 / RootHide.
  Action Button yalnizca iPhone 15 Pro ve Pro Max modellerinde bulunur.
  Diger cihaz, iOS surumleri ve rootless cihaz uzerinde test edilmedi.
+Architecture: iphoneos-arm64
+Version: 2.7.0
+Installed-Size: 344
+Filename: debs/ActionButtonFix-2.7.0-rootless.deb
+Size: 48114
+MD5sum: ce668aa682e14909242536de6b9165f4
+SHA1: f9c8dab40ac7563088be06dac8c8fea9abba92ca
+SHA256: 077b1a70253a9cf5ec55d1d2f450900196ab023763983a2bdb1e5aeb3166bfc1
+
+Package: com.muratkurt.kaswitcher
+Name: KASwitcher
 Author: muratkurt
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
-Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
-Name: ActionButtonFix
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Maintainer: muratkurt
+Section: Tweaks
+Depends: firmware (>= 16.0), preferenceloader
+Icon: https://muratkurt.github.io/assets/kaswitcher/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.json
+Homepage: https://muratkurt.github.io/
+Description: Close all apps in the app switcher at once
+ An X button in the app switcher closes every app, with undo.
+ Pin apps, protect apps, cascade animation, 12 languages.
+Architecture: iphoneos-arm64e
+Version: 0.5.1
+Installed-Size: 580
+Filename: debs/KASwitcher-0.5.1-roothide.deb
+Size: 75660
+MD5sum: 5a49b41d8cdf0036130787e1175544ac
+SHA1: 791bf709aae84f8736b581329cf21b5dd1f19b58
+SHA256: 5aa30bfb1591b1785e5a2df39b0d312c0befc5a3951d57d91267406076ed2c74
+
+Package: com.muratkurt.kaswitcher
+Name: KASwitcher
+Author: muratkurt
+Maintainer: muratkurt
+Section: Tweaks
+Depends: firmware (>= 16.0), preferenceloader
+Icon: https://muratkurt.github.io/assets/kaswitcher/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.json
+Homepage: https://muratkurt.github.io/
+Description: Close all apps in the app switcher at once
+ An X button in the app switcher closes every app, with undo.
+ Pin apps, protect apps, cascade animation, 12 languages.
+Architecture: iphoneos-arm64
+Version: 0.5.1
+Installed-Size: 580
+Filename: debs/KASwitcher-0.5.1-rootless.deb
+Size: 75758
+MD5sum: dcdccda9e192a27f170f0d95cdcd3e90
+SHA1: 6b225453a74f5c09359be232fdf0b0dd4e7c3358
+SHA256: 412b0a08dbf6e66ecb6720b45735d16de6cb6e76ffcec808c353b3a18ccb1ce6
 
 Package: com.muratkurt.claude-cli-bridge
+Name: ClaudeCLIBridge (RootHide)
 Version: 0.4.3
 Architecture: iphoneos-arm64e
-Maintainer: muratkurt
-Depends: com.anthropic.claude-code
-Filename: debs/claude-cli-bridge_0.4.3.deb
-Size: 24322
-MD5sum: 7cfd70244487890a3672a8798f36eb21
-SHA1: 8c250535351ee3b3ca6dd5c74a1651adce652ea9
-SHA256: e43ec04cbe27e5c7138af714db1bf65c66bbaab17f330f814bdce15383a44ec2
-Section: Development
+Icon: https://muratkurt.github.io/assets/claude-cli-bridge/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.claude-cli-bridge.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.claude-cli-bridge.json
 Homepage: https://muratkurt.github.io/
 Description: RootHide compatibility bridge for Claude Code CLI
  Claude Code installs on RootHide but does not work: the Bash tool
@@ -274,69 +314,29 @@ Description: RootHide compatibility bridge for Claude Code CLI
  .
  On RootHide, Sileo will send this package through RootHide Patcher
  (convert screen) before installing. That is expected, not an error.
+Maintainer: muratkurt
 Author: muratkurt & Opus 5
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.claude-cli-bridge.html
-Icon: https://muratkurt.github.io/assets/claude-cli-bridge/icon.png
-Name: ClaudeCLIBridge (RootHide)
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.claude-cli-bridge.json
-
-Package: com.muratkurt.kaswitcher
-Version: 0.5.1
-Architecture: iphoneos-arm64e
-Maintainer: muratkurt
-Installed-Size: 580
-Depends: firmware (>= 16.0), preferenceloader
-Filename: debs/KASwitcher-0.5.1-roothide.deb
-Size: 75660
-MD5sum: 5a49b41d8cdf0036130787e1175544ac
-SHA1: 791bf709aae84f8736b581329cf21b5dd1f19b58
-SHA256: 5aa30bfb1591b1785e5a2df39b0d312c0befc5a3951d57d91267406076ed2c74
-Section: Tweaks
-Homepage: https://muratkurt.github.io/
-Description: Close all apps in the app switcher at once
- An X button in the app switcher closes every app, with undo.
- Pin apps, protect apps, cascade animation, 12 languages.
-Author: muratkurt
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.html
-Icon: https://muratkurt.github.io/assets/kaswitcher/icon.png
-Name: KASwitcher
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.json
-
-Package: com.muratkurt.kaswitcher
-Version: 0.5.1
-Architecture: iphoneos-arm64
-Maintainer: muratkurt
-Installed-Size: 580
-Depends: firmware (>= 16.0), preferenceloader
-Filename: debs/KASwitcher-0.5.1-rootless.deb
-Size: 75758
-MD5sum: dcdccda9e192a27f170f0d95cdcd3e90
-SHA1: 6b225453a74f5c09359be232fdf0b0dd4e7c3358
-SHA256: 412b0a08dbf6e66ecb6720b45735d16de6cb6e76ffcec808c353b3a18ccb1ce6
-Section: Tweaks
-Homepage: https://muratkurt.github.io/
-Description: Close all apps in the app switcher at once
- An X button in the app switcher closes every app, with undo.
- Pin apps, protect apps, cascade animation, 12 languages.
-Author: muratkurt
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.html
-Icon: https://muratkurt.github.io/assets/kaswitcher/icon.png
-Name: KASwitcher
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.json
+Section: Development
+Depends: com.anthropic.claude-code
+Filename: debs/claude-cli-bridge_0.4.3.deb
+Size: 24322
+MD5sum: 7cfd70244487890a3672a8798f36eb21
+SHA1: 8c250535351ee3b3ca6dd5c74a1651adce652ea9
+SHA256: e43ec04cbe27e5c7138af714db1bf65c66bbaab17f330f814bdce15383a44ec2
 
 Package: com.muratkurt.shiv
+Name: shiv
 Version: 2.2.0
-Architecture: iphoneos-arm64e
+Architecture: iphoneos-arm64
 Maintainer: muratkurt
-Installed-Size: 87636
-Depends: firmware (>= 15.0)
-Filename: debs/com.muratkurt.shiv_2.2.0_iphoneos-arm64e.deb
-Size: 16699972
-MD5sum: d4bba1fbce79d2999ad76974bc2d52a1
-SHA1: a89bb4e09d2896b66c7aaf1c26809a10a0af4139
-SHA256: c05efedfcaf408e4bd613a8fa2ff60c315280bfd2fe4ba9a3cf5c63c009be9aa
+Author: muratkurt
 Section: Utilities
+Depends: firmware (>= 15.0)
+Icon: https://muratkurt.github.io/assets/shiv/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
 Homepage: https://muratkurt.github.io/
+Installed-Size: 87568
 Description: terminal AI assistant
  shiv is a chat assistant that runs entirely in your terminal.
  Nothing else to install - Node.js ships inside the package.
@@ -363,25 +363,25 @@ Description: terminal AI assistant
  .
  Copyright (c) 2026 Murat Kurt. All rights reserved.
  Licensed, not sold. Run /licence in the app for terms.
-Author: muratkurt
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
-Icon: https://muratkurt.github.io/assets/shiv/icon.png
-Name: shiv
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
-
-Package: com.muratkurt.shiv
-Version: 2.2.0
-Architecture: iphoneos-arm64
-Maintainer: muratkurt
-Installed-Size: 87568
-Depends: firmware (>= 15.0)
 Filename: debs/com.muratkurt.shiv_2.2.0_iphoneos-arm64.deb
 Size: 16684412
 MD5sum: 1587c7bf106f56576f0c923d19661a1c
 SHA1: d2b3a4d3ae38f16c7646b7217fa89b57cecdc5d7
 SHA256: 7a3d384b82385ece7735dfb8917f1e32e418a8aac24b4a2ae3697fb13c481184
+
+Package: com.muratkurt.shiv
+Name: shiv
+Version: 2.2.0
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Author: muratkurt
 Section: Utilities
+Depends: firmware (>= 15.0)
+Icon: https://muratkurt.github.io/assets/shiv/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
 Homepage: https://muratkurt.github.io/
+Installed-Size: 87636
 Description: terminal AI assistant
  shiv is a chat assistant that runs entirely in your terminal.
  Nothing else to install - Node.js ships inside the package.
@@ -408,25 +408,70 @@ Description: terminal AI assistant
  .
  Copyright (c) 2026 Murat Kurt. All rights reserved.
  Licensed, not sold. Run /licence in the app for terms.
-Author: muratkurt
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
-Icon: https://muratkurt.github.io/assets/shiv/icon.png
-Name: shiv
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
+Filename: debs/com.muratkurt.shiv_2.2.0_iphoneos-arm64e.deb
+Size: 16699972
+MD5sum: d4bba1fbce79d2999ad76974bc2d52a1
+SHA1: a89bb4e09d2896b66c7aaf1c26809a10a0af4139
+SHA256: c05efedfcaf408e4bd613a8fa2ff60c315280bfd2fe4ba9a3cf5c63c009be9aa
 
 Package: com.muratkurt.shiv
+Name: shiv
 Version: 2.3.0
 Architecture: iphoneos-arm64
 Maintainer: muratkurt
-Installed-Size: 87608
+Author: muratkurt
+Section: Utilities
 Depends: firmware (>= 15.0)
+Icon: https://muratkurt.github.io/assets/shiv/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
+Homepage: https://muratkurt.github.io/
+Installed-Size: 87608
+Description: terminal AI assistant
+ shiv is a chat assistant that runs entirely in your terminal.
+ Nothing else to install - Node.js ships inside the package.
+ .
+ Sign in to OpenRouter from the browser: /login opens the approval
+ page, you confirm with your account and the key comes back - no
+ copying keys by hand. Or paste your own key for DeepSeek, OpenAI,
+ Moonshot, xAI, Qwen, Z.ai, Groq, Mistral, Together, a local
+ Ollama / llama.cpp, or any OpenAI-compatible endpoint.
+ .
+ It reads files, searches directories and runs shell commands,
+ asking before anything that could modify your device. Sessions
+ are saved and can be resumed, and there is a rewind that takes
+ the conversation back to an earlier point.
+ .
+ For tweak work it measures the device instead of guessing: /env
+ reports theos, frida, oldabi and the tools it found. Bundled
+ helpers dump ObjC classes from the dyld cache or from a live app,
+ and decrypt an App Store binary on the device itself.
+ .
+ Drawing and streaming speed can be tuned from /performance, so
+ it stays responsive in long sessions. Interface is Turkish or
+ English (/lang). Separate builds for rootless and RootHide.
+ .
+ Copyright (c) 2026 Murat Kurt. All rights reserved.
+ Licensed, not sold. Run /licence in the app for terms.
 Filename: debs/com.muratkurt.shiv_2.3.0_iphoneos-arm64.deb
 Size: 16687028
 MD5sum: c146a7da2eba76f73585c8188f23c375
 SHA1: fb625dac89dced276f1c2358021328bbf7c3ce2c
 SHA256: f41cfac4cb082a0dc0ecf452ed228f5de10c6bc6f3890c624315164a829708dd
+
+Package: com.muratkurt.shiv
+Name: shiv
+Version: 2.3.0
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Author: muratkurt
 Section: Utilities
+Depends: firmware (>= 15.0)
+Icon: https://muratkurt.github.io/assets/shiv/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
 Homepage: https://muratkurt.github.io/
+Installed-Size: 87676
 Description: terminal AI assistant
  shiv is a chat assistant that runs entirely in your terminal.
  Nothing else to install - Node.js ships inside the package.
@@ -453,25 +498,25 @@ Description: terminal AI assistant
  .
  Copyright (c) 2026 Murat Kurt. All rights reserved.
  Licensed, not sold. Run /licence in the app for terms.
-Author: muratkurt
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
-Icon: https://muratkurt.github.io/assets/shiv/icon.png
-Name: shiv
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
-
-Package: com.muratkurt.shiv
-Version: 2.3.0
-Architecture: iphoneos-arm64e
-Maintainer: muratkurt
-Installed-Size: 87676
-Depends: firmware (>= 15.0)
 Filename: debs/com.muratkurt.shiv_2.3.0_iphoneos-arm64e.deb
 Size: 16695828
 MD5sum: 0a2ed60310c38e2c60447cc72d71d5d6
 SHA1: 41a482de9b3c8d495472bbc931ab141e491b5d5f
 SHA256: 0709729e1ce9bec45ff7ac53096b1cb75ac8ba807c3247ffb25bdd23834bf951
+
+Package: com.muratkurt.shiv
+Name: shiv
+Version: 2.5.0
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Author: muratkurt
 Section: Utilities
+Depends: firmware (>= 15.0), com.muratkurt.shivtools
+Icon: https://muratkurt.github.io/assets/shiv/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
 Homepage: https://muratkurt.github.io/
+Installed-Size: 73800
 Description: terminal AI assistant
  shiv is a chat assistant that runs entirely in your terminal.
  Nothing else to install - Node.js ships inside the package.
@@ -498,25 +543,25 @@ Description: terminal AI assistant
  .
  Copyright (c) 2026 Murat Kurt. All rights reserved.
  Licensed, not sold. Run /licence in the app for terms.
-Author: muratkurt
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
-Icon: https://muratkurt.github.io/assets/shiv/icon.png
-Name: shiv
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
-
-Package: com.muratkurt.shiv
-Version: 2.5.0
-Architecture: iphoneos-arm64
-Maintainer: muratkurt
-Installed-Size: 73800
-Depends: firmware (>= 15.0), com.muratkurt.shivtools
 Filename: debs/com.muratkurt.shiv_2.5.0_iphoneos-arm64.deb
 Size: 13270752
 MD5sum: acfb744eeb52c0a0fd759c83da4f3254
 SHA1: be1256a6d615d1a3f055128b1176b012b193682b
 SHA256: 336e78a5be3b7bbd26ffd31d16de6aecd760a00f22eafd2fdba32d4e4e154585
+
+Package: com.muratkurt.shiv
+Name: shiv
+Version: 2.5.0
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Author: muratkurt
 Section: Utilities
+Depends: firmware (>= 15.0), com.muratkurt.shivtools
+Icon: https://muratkurt.github.io/assets/shiv/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
 Homepage: https://muratkurt.github.io/
+Installed-Size: 73868
 Description: terminal AI assistant
  shiv is a chat assistant that runs entirely in your terminal.
  Nothing else to install - Node.js ships inside the package.
@@ -543,71 +588,26 @@ Description: terminal AI assistant
  .
  Copyright (c) 2026 Murat Kurt. All rights reserved.
  Licensed, not sold. Run /licence in the app for terms.
-Author: muratkurt
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
-Icon: https://muratkurt.github.io/assets/shiv/icon.png
-Name: shiv
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
-
-Package: com.muratkurt.shiv
-Version: 2.5.0
-Architecture: iphoneos-arm64e
-Maintainer: muratkurt
-Installed-Size: 73868
-Depends: firmware (>= 15.0), com.muratkurt.shivtools
 Filename: debs/com.muratkurt.shiv_2.5.0_iphoneos-arm64e.deb
 Size: 13292312
 MD5sum: b19c386db748f7c05990a2889a072048
 SHA1: 315d64e13d0a47a9429d92c02f8e905a344647cd
 SHA256: 845ae0e8a9951077b0d346d46262e24e0f56452b3f058f0163a7e8d07ca6a845
-Section: Utilities
-Homepage: https://muratkurt.github.io/
-Description: terminal AI assistant
- shiv is a chat assistant that runs entirely in your terminal.
- Nothing else to install - Node.js ships inside the package.
- .
- Sign in to OpenRouter from the browser: /login opens the approval
- page, you confirm with your account and the key comes back - no
- copying keys by hand. Or paste your own key for DeepSeek, OpenAI,
- Moonshot, xAI, Qwen, Z.ai, Groq, Mistral, Together, a local
- Ollama / llama.cpp, or any OpenAI-compatible endpoint.
- .
- It reads files, searches directories and runs shell commands,
- asking before anything that could modify your device. Sessions
- are saved and can be resumed, and there is a rewind that takes
- the conversation back to an earlier point.
- .
- For tweak work it measures the device instead of guessing: /env
- reports theos, frida, oldabi and the tools it found. Bundled
- helpers dump ObjC classes from the dyld cache or from a live app,
- and decrypt an App Store binary on the device itself.
- .
- Drawing and streaming speed can be tuned from /performance, so
- it stays responsive in long sessions. Interface is Turkish or
- English (/lang). Separate builds for rootless and RootHide.
- .
- Copyright (c) 2026 Murat Kurt. All rights reserved.
- Licensed, not sold. Run /licence in the app for terms.
-Author: muratkurt
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.html
-Icon: https://muratkurt.github.io/assets/shiv/icon.png
-Name: shiv
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shiv.json
 
 Package: com.muratkurt.shivtools
+Name: shivtools
 Version: 1.0.2
-Architecture: iphoneos-arm64e
+Architecture: iphoneos-arm64
 Maintainer: muratkurt
-Installed-Size: 14048
+Author: muratkurt
+Section: Development
 Depends: firmware (>= 15.0)
 Recommends: re.frida.server, nodejs
-Filename: debs/com.muratkurt.shivtools_1.0.2_iphoneos-arm64e.deb
-Size: 3503052
-MD5sum: 89d501483194fb8b0458a4cf2d1890c1
-SHA1: 019f6217a6ecc9bf4432aa5eaa49a3910bc9c362
-SHA256: 9e00c715489bb14f2e2ae3668cf7025b00c8264b899fe846c6ad9d1ad39b645c
-Section: Development
+Icon: https://muratkurt.github.io/assets/shivtools/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
 Homepage: https://muratkurt.github.io/
+Installed-Size: 14048
 Description: on-device tweak development tools
  Measure the device instead of guessing: class and method lookup from
  the dyld cache, the view tree of a running app or of SpringBoard,
@@ -629,26 +629,26 @@ Description: on-device tweak development tools
  .
  These tools come from shiv; they are packaged separately so any CLI
  can use them.
-Author: muratkurt
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
-Icon: https://muratkurt.github.io/assets/shivtools/icon.png
-Name: shivtools
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
-
-Package: com.muratkurt.shivtools
-Version: 1.0.2
-Architecture: iphoneos-arm64
-Maintainer: muratkurt
-Installed-Size: 14048
-Depends: firmware (>= 15.0)
-Recommends: re.frida.server, nodejs
 Filename: debs/com.muratkurt.shivtools_1.0.2_iphoneos-arm64.deb
 Size: 3507440
 MD5sum: 72d019b5ebd5c2872d1ffdfea2fc8ab5
 SHA1: 660c6593c48830a34038bdaee4f1905cb88835d0
 SHA256: b2fdb804b16cf456a017a9ebb4345a1c4ec99dae8186d93013fbe11052988ab8
+
+Package: com.muratkurt.shivtools
+Name: shivtools
+Version: 1.0.2
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Author: muratkurt
 Section: Development
+Depends: firmware (>= 15.0)
+Recommends: re.frida.server, nodejs
+Icon: https://muratkurt.github.io/assets/shivtools/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
 Homepage: https://muratkurt.github.io/
+Installed-Size: 14048
 Description: on-device tweak development tools
  Measure the device instead of guessing: class and method lookup from
  the dyld cache, the view tree of a running app or of SpringBoard,
@@ -670,58 +670,57 @@ Description: on-device tweak development tools
  .
  These tools come from shiv; they are packaged separately so any CLI
  can use them.
-Author: muratkurt
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
-Icon: https://muratkurt.github.io/assets/shivtools/icon.png
-Name: shivtools
-Sileodepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
+Filename: debs/com.muratkurt.shivtools_1.0.2_iphoneos-arm64e.deb
+Size: 3503052
+MD5sum: 89d501483194fb8b0458a4cf2d1890c1
+SHA1: 019f6217a6ecc9bf4432aa5eaa49a3910bc9c362
+SHA256: 9e00c715489bb14f2e2ae3668cf7025b00c8264b899fe846c6ad9d1ad39b645c
 
 Package: io.github.imcynic.nodejs
+Name: Node.js 18
 Version: 18.20.4-1
 Architecture: iphoneos-arm64e
+Description: Node.js JavaScript runtime for iOS
+ Node.js 18.20.4 compiled for jailbroken iOS devices.
+ Includes V8 JavaScript engine with iOS-optimized flags.
+ Perfect for running JavaScript applications, npm packages, and CLI tools.
 Maintainer: imcynic
-Installed-Size: 72496
-Pre-Depends: rootless-compat(>= 0.9)
+Author: imcynic
+Section: Development
 Depends: firmware (>= 15.0), zsh, ldid
 Provides: nodejs, node
+Tag: purpose::console, role::developer
+Homepage: https://nodejs.org
+Depiction: https://github.com/imcynic/nodejs-ios
+SileoDepiction: https://github.com/imcynic/nodejs-ios
+Installed-Size: 72496
+Pre-Depends: rootless-compat(>= 0.9)
 Filename: debs/io.github.imcynic.nodejs_18.20.4-1_iphoneos-arm64e.deb
 Size: 40006102
 MD5sum: 2e72fb54702a6cf10199d3059e9ad26a
 SHA1: 406526ed5679a2c894a888273fd4cc43777ff0c9
 SHA256: 7bcef35c650a14d0ccbae14a0e4ae84c6b06ccb42baf7b2eeec0900307438dae
-Section: Development
-Homepage: https://nodejs.org
+
+Package: io.github.imcynic.nodejs
+Name: Node.js 18
+Version: 18.20.4-1
+Architecture: iphoneos-arm64
 Description: Node.js JavaScript runtime for iOS
  Node.js 18.20.4 compiled for jailbroken iOS devices.
  Includes V8 JavaScript engine with iOS-optimized flags.
  Perfect for running JavaScript applications, npm packages, and CLI tools.
-Tag: purpose::console, role::developer
-Author: imcynic
-Depiction: https://github.com/imcynic/nodejs-ios
-Name: Node.js 18
-Sileodepiction: https://github.com/imcynic/nodejs-ios
-
-Package: io.github.imcynic.nodejs
-Version: 18.20.4-1
-Architecture: iphoneos-arm64
 Maintainer: imcynic
-Installed-Size: 72496
+Author: imcynic
+Section: Development
 Depends: firmware (>= 15.0), zsh, ldid
 Provides: nodejs, node
+Tag: purpose::console, role::developer
+Homepage: https://nodejs.org
+Depiction: https://github.com/imcynic/nodejs-ios
+SileoDepiction: https://github.com/imcynic/nodejs-ios
+Installed-Size: 72496
 Filename: debs/nodejs_18.20.4-1_iphoneos-arm64.deb
 Size: 12945620
 MD5sum: 8b0291e0ae6332a3042c01efa5acce50
 SHA1: bdcda2630948a3da724d8a82b46c68ddf7b8d13b
 SHA256: 89232afced627c58ff3e5dd5843d2aeebbfabcb5f4855987505c9387d7386f15
-Section: Development
-Homepage: https://nodejs.org
-Description: Node.js JavaScript runtime for iOS
- Node.js 18.20.4 compiled for jailbroken iOS devices.
- Includes V8 JavaScript engine with iOS-optimized flags.
- Perfect for running JavaScript applications, npm packages, and CLI tools.
-Tag: purpose::console, role::developer
-Author: imcynic
-Depiction: https://github.com/imcynic/nodejs-ios
-Name: Node.js 18
-Sileodepiction: https://github.com/imcynic/nodejs-ios
-
