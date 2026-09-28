@@ -864,7 +864,7 @@ SHA256: 9e00c715489bb14f2e2ae3668cf7025b00c8264b899fe846c6ad9d1ad39b645c
 
 Package: com.muratkurt.shivtools
 Name: shivtools
-Version: 1.1.0
+Version: 1.1.1
 Architecture: iphoneos-arm64
 Maintainer: muratkurt
 Author: muratkurt
@@ -875,7 +875,7 @@ Icon: https://muratkurt.github.io/assets/shivtools/icon.png
 Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
 SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
 Homepage: https://muratkurt.github.io/
-Installed-Size: 47216
+Installed-Size: 47220
 Description: on-device tweak development tools
  Measure the device instead of guessing: class and method lookup from
  the dyld cache, the view tree of a running app or of SpringBoard,
@@ -900,15 +900,15 @@ Description: on-device tweak development tools
  .
  These tools come from shiv; they are packaged separately so any CLI
  can use them.
-Filename: debs/com.muratkurt.shivtools_1.1.0_iphoneos-arm64.deb
-Size: 12766464
-MD5sum: d1535e56f9fd43f8c8948a6b14c16ac6
-SHA1: e6ec1ce80600db71dedf2df25cd9b1dd82495892
-SHA256: dbc226985f3c3b90e0a1ee6fd1b843ccd6d9d091d8d3fa8a2e0df473609f9e8f
+Filename: debs/com.muratkurt.shivtools_1.1.1_iphoneos-arm64.deb
+Size: 12774468
+MD5sum: 95d900cae84c7cae21dc22ee3b3105fd
+SHA1: f8ad70bcf2a714c4f2a47302fe97b6a12812b995
+SHA256: a4cfed7444104dbe17c6c6ef6f646d776605c4af92c94c4373e0ceb746a827ff
 
 Package: com.muratkurt.shivtools
 Name: shivtools
-Version: 1.1.0
+Version: 1.1.1
 Architecture: iphoneos-arm64e
 Maintainer: muratkurt
 Author: muratkurt
@@ -919,7 +919,7 @@ Icon: https://muratkurt.github.io/assets/shivtools/icon.png
 Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
 SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
 Homepage: https://muratkurt.github.io/
-Installed-Size: 47216
+Installed-Size: 47220
 Description: on-device tweak development tools
  Measure the device instead of guessing: class and method lookup from
  the dyld cache, the view tree of a running app or of SpringBoard,
@@ -944,8 +944,8 @@ Description: on-device tweak development tools
  .
  These tools come from shiv; they are packaged separately so any CLI
  can use them.
-Filename: debs/com.muratkurt.shivtools_1.1.0_iphoneos-arm64e.deb
-Size: 12755380
-MD5sum: fba3bde120f00a0a5f5ce7fbe14142f2
-SHA1: 721dca3275202728485dcf579e5e7b3210240c9b
-SHA256: 62e76b48c1ea2793db2fa2b1c5f3a7df43be79aa95ddf88da50a6bfc66afce68
+Filename: debs/com.muratkurt.shivtools_1.1.1_iphoneos-arm64e.deb
+Size: 12764068
+MD5sum: a5f950ab3f8e02541616138813acc00c
+SHA1: 6541c7ce254e02e837964e4765113b02f452664b
+SHA256: 5c288b717858005e6bc171e5c6eae2bc4ab98019babef63934fa00cb914915f8
