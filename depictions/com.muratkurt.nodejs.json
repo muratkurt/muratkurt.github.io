@@ -1,0 +1,126 @@
+{
+  "minVersion": "0.1",
+  "headerImage": "https://muratkurt.github.io/assets/nodejs/banner.png",
+  "tintColor": "#D9653B",
+  "class": "DepictionTabView",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "# Node.js\n\nNode 24 with npm and npx, on the iPhone. Everything is in the package — nothing is downloaded or compiled when you install it. JIT works; it is not a `--jitless` build."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Developer",
+          "text": "muratkurt"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Package",
+          "text": "com.muratkurt.nodejs"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "24.21.0-2"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Contains",
+          "text": "Node 24.21.0 · npm 11.19.0 · npx · corepack"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Requires",
+          "text": "iOS 15.0 or later · A12 or newer"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "rootless · RootHide"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Tested on",
+          "text": "iOS 17.0.3 (RootHide) · iOS 16.1.1 (Dopamine)"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Replaces",
+          "text": "io.github.imcynic.nodejs (Node 18)"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "Usage",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "Check it"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "```\nnode -v && npm -v && npx --version\nnode -e 'require(\"child_process\").execSync(\"uname -m\")'\n```\n\nThe second line is the one that matters: it proves `child_process` works, not just `node -v`."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Good to know"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- **Pure JavaScript packages install and run.** Native add-ons (`.node` files) do not load.\n- **A12 or newer.** Older chips stop with SIGILL.\n- **Run it from a login shell** — the terminal app does this. Over a one-shot `ssh host 'command'`, `/usr/local/bin` is not on `PATH`; use `ssh host \"zsh -lc 'node -v'\"`.\n- **Many workers at once** can run out of address space. `NODEIOS_V8_FLAGS=--jitless` is the escape hatch.\n- `shiv-sinif` from **shivtools** is the tool that needs it; the rest of shivtools does not."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Credits"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "[Node.js](https://nodejs.org) — OpenJS Foundation (MIT) · iOS port [nodejs-for-ios](https://github.com/realAndi/nodejs-for-ios) — andi (MIT). Packaged by muratkurt. More in the [shivtools guide](https://github.com/muratkurt/shivtools)."
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "24.21.0-2"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Icon and depiction pages. The package contents are unchanged."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "24.21.0-1"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- First release: Node 24.21.0, npm 11.19.0, npx.\n- Verified on RootHide and on rootless (A12), JIT included."
+        }
+      ]
+    }
+  ]
+}

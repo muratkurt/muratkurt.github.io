@@ -76,6 +76,12 @@ if [[ "$DEB_SD" -gt 0 && "$PKG_SD" -lt "$DEB_SD" ]]; then
   exit 1
 fi
 
+# Bayat sikistirilmis indeks, eksik olandan KOTUDUR (istemci eski paket
+# listesi gorur), o yuzden ikisi de once silinir.
+# 28 Eyl 2026'da olculdu: cihazda bzip2 KURULU DEGIL, dolayisiyla burada
+# silinen Packages.bz2 asagida yeniden uretilemiyor ve depodan sessizce
+# kayboluyordu. Artik kaybolduysa asagida ADIYLA soyleniyor.
+[ -f Packages.bz2 ] && BZ2_VARDI=1 || BZ2_VARDI=0
 rm -f Packages.gz Packages.bz2
 
 if command -v gzip >/dev/null 2>&1; then
@@ -92,6 +98,11 @@ if command -v bzip2 >/dev/null 2>&1; then
   echo "  Packages.bz2 uretildi"
 else
   echo "  Packages.bz2 ATLANDI (bzip2 kurulu degil - Sileo icin gerekmez)"
+  if [ "$BZ2_VARDI" = 1 ]; then
+    echo "  UYARI: depoda Packages.bz2 VARDI ve KALDIRILDI (bayat kalamazdi)."
+    echo "         Eski Cydia icin gerekiyorsa bzip2 olan bir makinede:"
+    echo "           bzip2 -kf Packages"
+  fi
 fi
 
 echo

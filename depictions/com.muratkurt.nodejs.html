@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Node.js</title>
+<style>
+  :root {
+    --accent: #D9653B;
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --line: #e3e3e6;
+    --code-bg: #f4f4f6;
+    --note-bg: #f3f5ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1e;
+      --fg: #f2f2f4;
+      --muted: #9a9aa0;
+      --line: #34343a;
+      --code-bg: #26262a;
+      --note-bg: #23261c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 20px 18px 48px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  h1 { font-size: 27px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.4px; }
+  h2 { font-size: 21px; margin: 32px 0 10px; letter-spacing: -0.2px; }
+  h3 { font-size: 17px; margin: 22px 0 6px; }
+  p { margin: 0 0 12px; }
+  .lede { color: var(--muted); font-size: 17px; margin-bottom: 4px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 5px; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 14.5px;
+    background: var(--code-bg);
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+  pre {
+    background: var(--code-bg);
+    padding: 12px 14px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 0 0 14px;
+  }
+  pre code { background: none; padding: 0; font-size: 14px; line-height: 1.5; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 30px 0; }
+  .note {
+    background: var(--note-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 14px;
+    margin: 0 0 16px;
+  }
+  .note strong { color: var(--accent); }
+  ol.steps { padding-left: 20px; margin: 0 0 14px; }
+  ol.steps li { margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 0 0 14px; font-size: 16px; }
+  td { padding: 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:first-child { color: var(--muted); width: 45%; }
+  td:last-child { text-align: right; }
+  a { color: var(--accent); }
+  .foot { color: var(--muted); font-size: 14px; margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<h1>Node.js</h1>
+<p>Node 24 with npm and npx, on the iPhone. Everything is in the package &mdash; nothing is downloaded or compiled when you install it. JIT works; it is not a <code>--jitless</code> build.</p>
+
+<h2>Information</h2>
+
+<table>
+  <tr><td>Developer</td><td>muratkurt</td></tr>
+  <tr><td>Package</td><td>com.muratkurt.nodejs</td></tr>
+  <tr><td>Version</td><td>24.21.0-2</td></tr>
+  <tr><td>Contains</td><td>Node 24.21.0 &middot; npm 11.19.0 &middot; npx &middot; corepack</td></tr>
+  <tr><td>Requires</td><td>iOS 15.0 or later &middot; A12 or newer</td></tr>
+  <tr><td>Compatibility</td><td>rootless &middot; RootHide</td></tr>
+  <tr><td>Tested on</td><td>iOS 17.0.3 (RootHide) &middot; iOS 16.1.1 (Dopamine)</td></tr>
+  <tr><td>Replaces</td><td>io.github.imcynic.nodejs (Node 18)</td></tr>
+</table>
+
+<hr>
+
+<h2>Usage</h2>
+
+<h3>Check it</h3>
+
+<pre><code>node -v &amp;&amp; npm -v &amp;&amp; npx --version
+node -e 'require("child_process").execSync("uname -m")'</code></pre>
+<p>The second line is the one that matters: it proves <code>child_process</code> works, not just <code>node -v</code>.</p>
+
+<h3>Good to know</h3>
+
+<ul>
+  <li><strong>Pure JavaScript packages install and run.</strong> Native add-ons (<code>.node</code> files) do not load.</li>
+  <li><strong>A12 or newer.</strong> Older chips stop with SIGILL.</li>
+  <li><strong>Run it from a login shell</strong> &mdash; the terminal app does this. Over a one-shot <code>ssh host 'command'</code>, <code>/usr/local/bin</code> is not on <code>PATH</code>; use <code>ssh host "zsh -lc 'node -v'"</code>.</li>
+  <li><strong>Many workers at once</strong> can run out of address space. <code>NODEIOS_V8_FLAGS=--jitless</code> is the escape hatch.</li>
+  <li><code>shiv-sinif</code> from <strong>shivtools</strong> is the tool that needs it; the rest of shivtools does not.</li>
+</ul>
+
+<h3>Credits</h3>
+
+<p><a href="https://nodejs.org">Node.js</a> &mdash; OpenJS Foundation (MIT) &middot; iOS port <a href="https://github.com/realAndi/nodejs-for-ios">nodejs-for-ios</a> &mdash; andi (MIT). Packaged by muratkurt. More in the <a href="https://github.com/muratkurt/shivtools">shivtools guide</a>.</p>
+
+<hr>
+
+<h2>Changelog</h2>
+
+<h3>24.21.0-2</h3>
+
+<ul>
+  <li>Icon and depiction pages. The package contents are unchanged.</li>
+</ul>
+
+<h3>24.21.0-1</h3>
+
+<ul>
+  <li>First release: Node 24.21.0, npm 11.19.0, npx.</li>
+  <li>Verified on RootHide and on rootless (A12), JIT included.</li>
+</ul>
+
+<p class="foot">muratkurt &middot; <a href="https://muratkurt.github.io/">muratkurt.github.io</a> &middot; <a href="https://github.com/muratkurt/shivtools">GitHub</a></p>
+
+</body>
+</html>

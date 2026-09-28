@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>iOS MCP</title>
+<style>
+  :root {
+    --accent: #3FB0A6;
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --line: #e3e3e6;
+    --code-bg: #f4f4f6;
+    --note-bg: #f3f5ec;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1e;
+      --fg: #f2f2f4;
+      --muted: #9a9aa0;
+      --line: #34343a;
+      --code-bg: #26262a;
+      --note-bg: #23261c;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 20px 18px 48px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  h1 { font-size: 27px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.4px; }
+  h2 { font-size: 21px; margin: 32px 0 10px; letter-spacing: -0.2px; }
+  h3 { font-size: 17px; margin: 22px 0 6px; }
+  p { margin: 0 0 12px; }
+  .lede { color: var(--muted); font-size: 17px; margin-bottom: 4px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 5px; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 14.5px;
+    background: var(--code-bg);
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+  pre {
+    background: var(--code-bg);
+    padding: 12px 14px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 0 0 14px;
+  }
+  pre code { background: none; padding: 0; font-size: 14px; line-height: 1.5; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 30px 0; }
+  .note {
+    background: var(--note-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 14px;
+    margin: 0 0 16px;
+  }
+  .note strong { color: var(--accent); }
+  ol.steps { padding-left: 20px; margin: 0 0 14px; }
+  ol.steps li { margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 0 0 14px; font-size: 16px; }
+  td { padding: 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:first-child { color: var(--muted); width: 45%; }
+  td:last-child { text-align: right; }
+  a { color: var(--accent); }
+  .foot { color: var(--muted); font-size: 14px; margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<h1>iOS MCP</h1>
+<p>An MCP server inside SpringBoard: an AI agent can take screenshots, read the accessibility tree and the live system log, tap, type, open apps and more &mdash; 46 tools.</p>
+<p>Based on <a href="https://github.com/witchan/ios-mcp">witchan/ios-mcp</a> 1.2.8, packaged for <strong>shivtools</strong> with safer defaults: it listens on <strong>127.0.0.1 only</strong>, <code>mcp-root</code> comes <strong>without setuid</strong>, and installing a deb through it <strong>does not respring</strong> on its own.</p>
+
+<h2>Information</h2>
+
+<table>
+  <tr><td>Developer</td><td>witchan &middot; packaged by muratkurt</td></tr>
+  <tr><td>Package</td><td>com.muratkurt.ios-mcp</td></tr>
+  <tr><td>Version</td><td>1.2.8-2</td></tr>
+  <tr><td>Requires</td><td>iOS 15.0 or later</td></tr>
+  <tr><td>Compatibility</td><td>rootless &middot; RootHide</td></tr>
+  <tr><td>Tested on</td><td>iOS 17.0.3 (RootHide) &middot; iOS 16.1.1 (Dopamine)</td></tr>
+  <tr><td>Replaces</td><td>com.witchan.ios-mcp</td></tr>
+</table>
+
+<hr>
+
+<h2>Usage</h2>
+
+<h3>Connect an agent</h3>
+
+<pre><code>shiv-mcp durum          # installed, running, which mode
+shiv-mcp baglan         # the claude mcp add line for this phone
+shiv-mcp baglan --mac   # SSH tunnel + claude mcp add for a Mac</code></pre>
+<p><code>shiv-mcp</code> comes with <strong>shivtools</strong>. Restart the CLI after adding the server.</p>
+
+<h3>Security</h3>
+
+<p>The server has <strong>no authentication</strong>. By default it only accepts connections from the phone itself.</p>
+<ul>
+  <li><code>shiv-mcp mod ag</code> listens on the network &mdash; it asks first. Don't use it on public Wi-Fi.</li>
+  <li>From a Mac, prefer the SSH tunnel: login and encryption come for free.</li>
+  <li><code>shiv-mcp root-ac</code> gives <code>mcp-root</code> its setuid bit. Only if you need root actions through the agent.</li>
+</ul>
+
+<h3>After installing</h3>
+
+<p>Respring once so SpringBoard loads the server. <strong>Settings &rarr; iOS MCP</strong> starts and stops it.</p>
+
+<h3>Licence</h3>
+
+<p>iOS MCP is MIT. The package also carries AppSync Unified and appinst (GPL-3.0) and ldid (AGPL-3.0), built unmodified from <a href="https://github.com/witchan/ios-mcp/tree/v1.2.8">witchan/ios-mcp v1.2.8</a>. Licence texts: <code>/usr/share/doc/</code>.</p>
+
+<hr>
+
+<h2>Changelog</h2>
+
+<h3>1.2.8-2</h3>
+
+<ul>
+  <li>Icon and depiction pages. The package contents are unchanged.</li>
+</ul>
+
+<h3>1.2.8-1</h3>
+
+<ul>
+  <li>Listens on 127.0.0.1 by default; network mode is a setting.</li>
+  <li><code>mcp-root</code> without setuid by default.</li>
+  <li>Installing a deb no longer resprings by itself.</li>
+  <li>Turkish interface.</li>
+  <li>Everything included: server, OCR, IPA installer.</li>
+</ul>
+
+<p class="foot">muratkurt &middot; <a href="https://muratkurt.github.io/">muratkurt.github.io</a> &middot; <a href="https://github.com/muratkurt/shivtools">GitHub</a></p>
+
+</body>
+</html>

@@ -274,55 +274,241 @@ MD5sum: dcdccda9e192a27f170f0d95cdcd3e90
 SHA1: 6b225453a74f5c09359be232fdf0b0dd4e7c3358
 SHA256: 412b0a08dbf6e66ecb6720b45735d16de6cb6e76ffcec808c353b3a18ccb1ce6
 
-Package: com.muratkurt.claude-cli-bridge
-Name: ClaudeCLIBridge (RootHide)
-Version: 0.4.3
+Package: com.muratkurt.frida
+Name: Frida (RootHide)
+Version: 17.19.0-3
 Architecture: iphoneos-arm64e
-Icon: https://muratkurt.github.io/assets/claude-cli-bridge/icon.png
-Depiction: https://muratkurt.github.io/depictions/com.muratkurt.claude-cli-bridge.html
-SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.claude-cli-bridge.json
-Homepage: https://muratkurt.github.io/
-Description: RootHide compatibility bridge for Claude Code CLI
- Claude Code installs on RootHide but does not work: the Bash tool
- fails with "No suitable shell found", the Read/Write/Edit/Search
- tools cannot resolve paths, and OAuth login never opens Safari.
- The cause is RootHide's concealment architecture - the bootstrap
- toolchain and Claude Code live in different namespaces.
- .
- This package bridges the two. The result: all of Claude Code's
- tools work at FULL CAPABILITY on RootHide.
- .
- Secondary feature: alongside your official Claude account (OAuth),
- you can configure alternative Anthropic-compatible API/gateway
- profiles. Tokens are never embedded in the package; they are stored
- in your home directory with 0600 permissions.
- .
- USAGE:
- claude-rh --original          official Claude account (OAuth)
- claude-provider add <name>    add an alternative API profile
- claude-provider use <name>    set as default
- claude-rh                     launch with the active profile
- claude-rh-doctor              self-test
- .
- NOTE: this package's command is claude-rh. The claude and
- claude-auth commands on your system belong to the
- com.anthropic.claude-code package and do NOT use this bridge.
- .
- REQUIRED: com.anthropic.claude-code must be installed first.
- Get it from:
-   https://imcynic.github.io/claude-code-ios/
- .
- On RootHide, Sileo will send this package through RootHide Patcher
- (convert screen) before installing. That is expected, not an error.
 Maintainer: muratkurt
-Author: muratkurt & Opus 5
+Author: Ole Andre Vadla Ravnas · RootHide paketleme: muratkurt
 Section: Development
-Depends: com.anthropic.claude-code
-Filename: debs/claude-cli-bridge_0.4.3.deb
-Size: 24322
-MD5sum: 7cfd70244487890a3672a8798f36eb21
-SHA1: 8c250535351ee3b3ca6dd5c74a1651adce652ea9
-SHA256: e43ec04cbe27e5c7138af714db1bf65c66bbaab17f330f814bdce15383a44ec2
+Priority: optional
+Depends: firmware (>= 15.0)
+Provides: re.frida.server
+Conflicts: re.frida.server
+Replaces: re.frida.server
+Installed-Size: 53500
+Tag: role::developer
+Homepage: https://frida.re/
+Icon: https://muratkurt.github.io/assets/frida/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.frida.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.frida.json
+Description: Frida 17.19.0 for RootHide
+ The official frida-server, repackaged so RootHide can install it.
+ .
+ Nothing here is rebuilt. build.frida.re publishes rootful and
+ rootless builds but no RootHide one, so RootHide users are stuck on
+ frida 16 while Dopamine 3.0.10 (iOS 26) wants 17.19.0 or newer.
+ .
+ The rootful build already carries what RootHide needs: frida-server
+ is fat with an arm64e slice at capabilities 0x80, frida-agent is
+ arm64 + arm64e, and neither bakes in a path. The only thing missing
+ is a three-line wrapper that points CRYPTEX_MOUNT_PATH at the jbroot,
+ plus a package architecture dpkg will accept. That is all this is.
+ .
+ Every build re-checks the arm64e slice: if upstream ever drops it,
+ packaging stops rather than shipping something that cannot run.
+ .
+ frida 17 removed the global ObjC bridge and Module.getExportByName.
+ shivtools agents are compiled with the bridge embedded, so they run
+ on both 16 and 17. Your own agents need:
+ frida-compile <agent>.js -B iife -S -o <out>.js
+Filename: debs/com.muratkurt.frida_17.19.0-3_iphoneos-arm64e.deb
+Size: 15487012
+MD5sum: 8702b41f13141826f3e018c5ecbea1fe
+SHA1: fbea8ffc74bb814fbf7d12475552627e9a699a9e
+SHA256: 57fde0a114aa90ab217076dc66a6b37a3f68b05bb19d6056b454b115590e3e0a
+
+Package: com.muratkurt.ios-mcp
+Name: iOS MCP (shivtools)
+Version: 1.2.8-2
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Author: witchan · shivtools uyarlamasi: muratkurt
+Section: Development
+Priority: optional
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
+Provides: ios-mcp
+Conflicts: com.witchan.ios-mcp
+Replaces: com.witchan.ios-mcp
+Installed-Size: 40808
+Tag: role::developer
+Homepage: https://muratkurt.github.io/
+Icon: https://muratkurt.github.io/assets/ios-mcp/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.ios-mcp.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.ios-mcp.json
+Description: iOS MCP 1.2.8, packaged for shivtools
+ An MCP server that runs inside SpringBoard, so an agent can read the
+ screen, the view hierarchy and the live system log, drive the UI, and
+ install IPAs from the device itself. Upstream is witchan/ios-mcp; this
+ is the same code with two changes and a different package name.
+ .
+ What is different here:
+ .
+ - The server listens on 127.0.0.1 by default. Upstream binds
+   INADDR_ANY, which exposes an unauthenticated server to everyone on
+   the network. Network mode is still one setting away; from a Mac the
+   cheaper route is an SSH tunnel, which costs nothing and gives
+   authentication and encryption for free.
+ - mcp-root is installed WITHOUT the setuid bit. With it set, any
+   process on the device can become root through the helper's own
+   allow-list. Turn it on deliberately with: shiv-mcp root-ac
+ .
+ Neither is a lock: both are settings, and the responsibility is the
+ developer's. They are defaults, not walls.
+ .
+ The PaddleOCR engine, its two models and the IPA chain (AppSync,
+ appinst, ldid, roothelper) are all included; nothing is downloaded on
+ install.
+ .
+ Installing or upgrading this package loads a new SpringBoard dylib.
+ RESPRING IS REQUIRED and it is not done for you.
+Filename: debs/com.muratkurt.ios-mcp_1.2.8-2_iphoneos-arm64.deb
+Size: 23685144
+MD5sum: d1ecdc04d9c501fc6d8e92659e77d627
+SHA1: 836e4c39133aa848cb0dad23774e4f3020ba611a
+SHA256: 9a3501db7d11b54ac9f97824a4fc8a1c6d8d2eb2497545e839fc75423fe9ab65
+
+Package: com.muratkurt.ios-mcp
+Name: iOS MCP (shivtools)
+Version: 1.2.8-2
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Author: witchan · shivtools uyarlamasi: muratkurt
+Section: Development
+Priority: optional
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
+Provides: ios-mcp
+Conflicts: com.witchan.ios-mcp
+Replaces: com.witchan.ios-mcp
+Installed-Size: 40832
+Tag: role::developer
+Homepage: https://muratkurt.github.io/
+Icon: https://muratkurt.github.io/assets/ios-mcp/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.ios-mcp.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.ios-mcp.json
+Description: iOS MCP 1.2.8, packaged for shivtools
+ An MCP server that runs inside SpringBoard, so an agent can read the
+ screen, the view hierarchy and the live system log, drive the UI, and
+ install IPAs from the device itself. Upstream is witchan/ios-mcp; this
+ is the same code with two changes and a different package name.
+ .
+ What is different here:
+ .
+ - The server listens on 127.0.0.1 by default. Upstream binds
+   INADDR_ANY, which exposes an unauthenticated server to everyone on
+   the network. Network mode is still one setting away; from a Mac the
+   cheaper route is an SSH tunnel, which costs nothing and gives
+   authentication and encryption for free.
+ - mcp-root is installed WITHOUT the setuid bit. With it set, any
+   process on the device can become root through the helper's own
+   allow-list. Turn it on deliberately with: shiv-mcp root-ac
+ .
+ Neither is a lock: both are settings, and the responsibility is the
+ developer's. They are defaults, not walls.
+ .
+ The PaddleOCR engine, its two models and the IPA chain (AppSync,
+ appinst, ldid, roothelper) are all included; nothing is downloaded on
+ install.
+ .
+ Installing or upgrading this package loads a new SpringBoard dylib.
+ RESPRING IS REQUIRED and it is not done for you.
+Filename: debs/com.muratkurt.ios-mcp_1.2.8-2_iphoneos-arm64e.deb
+Size: 23689392
+MD5sum: e97e06ebd902eb3d34db7a9db95e2f2d
+SHA1: a235fdb1e35c5f735136fd0c8e62912b444b8a77
+SHA256: cede02f062641cad50813cda50d340aae55bdf861996f1d9a5d8978d4158e281
+
+Package: com.muratkurt.nodejs
+Name: Node.js
+Version: 24.21.0-2
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Author: OpenJS Foundation · iOS portu: andi (MIT) · paketleme: muratkurt
+Section: Development
+Priority: optional
+Depends: firmware (>= 15.0), ldid
+Provides: nodejs, node, npm
+Conflicts: io.github.imcynic.nodejs, com.andi.nodejs
+Replaces: io.github.imcynic.nodejs, com.andi.nodejs
+Installed-Size: 204608
+Tag: role::developer, purpose::console
+Homepage: https://muratkurt.github.io/
+Icon: https://muratkurt.github.io/assets/nodejs/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.nodejs.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.nodejs.json
+Description: Node.js 24.21.0 with npm, patched for iOS
+ Node 24.21.0, npm 11.19.0, npx and corepack. Everything is in the
+ package: nothing is downloaded or compiled when you install it.
+ .
+ Node is not cross-compiled. This is the official darwin-arm64 build
+ from nodejs.org, verified against the checksum nodejs.org publishes,
+ then rewritten to claim platform iOS and linked against a shim that
+ supplies the three symbols iOS lacks. The shim is also what makes V8
+ run: iOS rejects MAP_JIT and has no pthread_jit_write_protect_np, so
+ it keeps each page of V8's code ranges writable or executable and
+ repairs the fault when a thread needs the other.
+ .
+ The patch and the shim are andi's work (MIT), from
+ github.com/realAndi/nodejs-for-ios. What is different here: the
+ binary is patched and signed at build time instead of on the device,
+ so installing needs no network, no free gigabyte and no python3,
+ ldid, curl or tar. Built for both rootless and RootHide.
+ .
+ npm install -g writes to ~/.npm-global, per user, without sudo.
+ .
+ Needs an A12 chip or newer. Prebuilt native addons (.node) do not
+ load. Node 24 and newer only; 23 and earlier cannot be patched.
+Filename: debs/com.muratkurt.nodejs_24.21.0-2_iphoneos-arm64.deb
+Size: 28483400
+MD5sum: d98a62b9037874bcf5fb2a712597e732
+SHA1: 45dd50cb7bc4743799cd9dddad8506fb52d0993a
+SHA256: 567faacc1d616b5b9e48e18b880a60248dab464d5b15c3b77b993025a8eeda03
+
+Package: com.muratkurt.nodejs
+Name: Node.js
+Version: 24.21.0-2
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Author: OpenJS Foundation · iOS portu: andi (MIT) · paketleme: muratkurt
+Section: Development
+Priority: optional
+Depends: firmware (>= 15.0), ldid
+Provides: nodejs, node, npm
+Conflicts: io.github.imcynic.nodejs, com.andi.nodejs
+Replaces: io.github.imcynic.nodejs, com.andi.nodejs
+Installed-Size: 204608
+Tag: role::developer, purpose::console
+Homepage: https://muratkurt.github.io/
+Icon: https://muratkurt.github.io/assets/nodejs/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.nodejs.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.nodejs.json
+Description: Node.js 24.21.0 with npm, patched for iOS
+ Node 24.21.0, npm 11.19.0, npx and corepack. Everything is in the
+ package: nothing is downloaded or compiled when you install it.
+ .
+ Node is not cross-compiled. This is the official darwin-arm64 build
+ from nodejs.org, verified against the checksum nodejs.org publishes,
+ then rewritten to claim platform iOS and linked against a shim that
+ supplies the three symbols iOS lacks. The shim is also what makes V8
+ run: iOS rejects MAP_JIT and has no pthread_jit_write_protect_np, so
+ it keeps each page of V8's code ranges writable or executable and
+ repairs the fault when a thread needs the other.
+ .
+ The patch and the shim are andi's work (MIT), from
+ github.com/realAndi/nodejs-for-ios. What is different here: the
+ binary is patched and signed at build time instead of on the device,
+ so installing needs no network, no free gigabyte and no python3,
+ ldid, curl or tar. Built for both rootless and RootHide.
+ .
+ npm install -g writes to ~/.npm-global, per user, without sudo.
+ .
+ Needs an A12 chip or newer. Prebuilt native addons (.node) do not
+ load. Node 24 and newer only; 23 and earlier cannot be patched.
+Filename: debs/com.muratkurt.nodejs_24.21.0-2_iphoneos-arm64e.deb
+Size: 28465560
+MD5sum: 4ebf0efbe30a10e2c92b36e731bad2f8
+SHA1: fe92e883448671be8e72fe696422f00ccebbcf42
+SHA256: 24f52eb890f2ab7ac059e66d0c77fb798c3b91bfc177481d93416f54b86cb3c4
 
 Package: com.muratkurt.shiv
 Name: shiv
@@ -676,51 +862,90 @@ MD5sum: 89d501483194fb8b0458a4cf2d1890c1
 SHA1: 019f6217a6ecc9bf4432aa5eaa49a3910bc9c362
 SHA256: 9e00c715489bb14f2e2ae3668cf7025b00c8264b899fe846c6ad9d1ad39b645c
 
-Package: io.github.imcynic.nodejs
-Name: Node.js 18
-Version: 18.20.4-1
-Architecture: iphoneos-arm64e
-Description: Node.js JavaScript runtime for iOS
- Node.js 18.20.4 compiled for jailbroken iOS devices.
- Includes V8 JavaScript engine with iOS-optimized flags.
- Perfect for running JavaScript applications, npm packages, and CLI tools.
-Maintainer: imcynic
-Author: imcynic
-Section: Development
-Depends: firmware (>= 15.0), zsh, ldid
-Provides: nodejs, node
-Tag: purpose::console, role::developer
-Homepage: https://nodejs.org
-Depiction: https://github.com/imcynic/nodejs-ios
-SileoDepiction: https://github.com/imcynic/nodejs-ios
-Installed-Size: 72496
-Pre-Depends: rootless-compat(>= 0.9)
-Filename: debs/io.github.imcynic.nodejs_18.20.4-1_iphoneos-arm64e.deb
-Size: 40006102
-MD5sum: 2e72fb54702a6cf10199d3059e9ad26a
-SHA1: 406526ed5679a2c894a888273fd4cc43777ff0c9
-SHA256: 7bcef35c650a14d0ccbae14a0e4ae84c6b06ccb42baf7b2eeec0900307438dae
-
-Package: io.github.imcynic.nodejs
-Name: Node.js 18
-Version: 18.20.4-1
+Package: com.muratkurt.shivtools
+Name: shivtools
+Version: 1.1.0
 Architecture: iphoneos-arm64
-Description: Node.js JavaScript runtime for iOS
- Node.js 18.20.4 compiled for jailbroken iOS devices.
- Includes V8 JavaScript engine with iOS-optimized flags.
- Perfect for running JavaScript applications, npm packages, and CLI tools.
-Maintainer: imcynic
-Author: imcynic
+Maintainer: muratkurt
+Author: muratkurt
 Section: Development
-Depends: firmware (>= 15.0), zsh, ldid
-Provides: nodejs, node
-Tag: purpose::console, role::developer
-Homepage: https://nodejs.org
-Depiction: https://github.com/imcynic/nodejs-ios
-SileoDepiction: https://github.com/imcynic/nodejs-ios
-Installed-Size: 72496
-Filename: debs/nodejs_18.20.4-1_iphoneos-arm64.deb
-Size: 12945620
-MD5sum: 8b0291e0ae6332a3042c01efa5acce50
-SHA1: bdcda2630948a3da724d8a82b46c68ddf7b8d13b
-SHA256: 89232afced627c58ff3e5dd5843d2aeebbfabcb5f4855987505c9387d7386f15
+Depends: firmware (>= 15.0), preferenceloader
+Recommends: re.frida.server, com.muratkurt.nodejs, com.muratkurt.ios-mcp
+Icon: https://muratkurt.github.io/assets/shivtools/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
+Homepage: https://muratkurt.github.io/
+Installed-Size: 47216
+Description: on-device tweak development tools
+ Measure the device instead of guessing: class and method lookup from
+ the dyld cache, the view tree of a running app or of SpringBoard,
+ namespace translation, a Preferences recipe finder, a measurement log
+ with a summariser, and an on-device FairPlay decrypt.
+ .
+ Every tool prints its own usage with --help. Missing dependencies are
+ named, not guessed at: node is needed ONLY by shiv-sinif, frida only
+ by the tools that attach to a process.
+ .
+ shiv-kurulum drops the canonical instruction file into a project as
+ CLAUDE.md and AGENTS.md (it backs up an existing copy first, never
+ overwrites it).
+ .
+ The bundled frida client is built for frida 17 (arm64 + arm64e) and
+ was measured on A12 and A17; older chips are untested. shiv-sinif
+ itself does not use frida and works everywhere.
+ .
+ Includes the tweak development guide and three working example tweaks
+ (SpringBoard hook, Preferences page, in-app network filter):
+ shiv-ornek copies one into your project.
+ .
+ These tools come from shiv; they are packaged separately so any CLI
+ can use them.
+Filename: debs/com.muratkurt.shivtools_1.1.0_iphoneos-arm64.deb
+Size: 12766464
+MD5sum: d1535e56f9fd43f8c8948a6b14c16ac6
+SHA1: e6ec1ce80600db71dedf2df25cd9b1dd82495892
+SHA256: dbc226985f3c3b90e0a1ee6fd1b843ccd6d9d091d8d3fa8a2e0df473609f9e8f
+
+Package: com.muratkurt.shivtools
+Name: shivtools
+Version: 1.1.0
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Author: muratkurt
+Section: Development
+Depends: firmware (>= 15.0), preferenceloader
+Recommends: re.frida.server, com.muratkurt.nodejs, com.muratkurt.ios-mcp
+Icon: https://muratkurt.github.io/assets/shivtools/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
+Homepage: https://muratkurt.github.io/
+Installed-Size: 47216
+Description: on-device tweak development tools
+ Measure the device instead of guessing: class and method lookup from
+ the dyld cache, the view tree of a running app or of SpringBoard,
+ namespace translation, a Preferences recipe finder, a measurement log
+ with a summariser, and an on-device FairPlay decrypt.
+ .
+ Every tool prints its own usage with --help. Missing dependencies are
+ named, not guessed at: node is needed ONLY by shiv-sinif, frida only
+ by the tools that attach to a process.
+ .
+ shiv-kurulum drops the canonical instruction file into a project as
+ CLAUDE.md and AGENTS.md (it backs up an existing copy first, never
+ overwrites it).
+ .
+ The bundled frida client is built for frida 17 (arm64 + arm64e) and
+ was measured on A12 and A17; older chips are untested. shiv-sinif
+ itself does not use frida and works everywhere.
+ .
+ Includes the tweak development guide and three working example tweaks
+ (SpringBoard hook, Preferences page, in-app network filter):
+ shiv-ornek copies one into your project.
+ .
+ These tools come from shiv; they are packaged separately so any CLI
+ can use them.
+Filename: debs/com.muratkurt.shivtools_1.1.0_iphoneos-arm64e.deb
+Size: 12755380
+MD5sum: fba3bde120f00a0a5f5ce7fbe14142f2
+SHA1: 721dca3275202728485dcf579e5e7b3210240c9b
+SHA256: 62e76b48c1ea2793db2fa2b1c5f3a7df43be79aa95ddf88da50a6bfc66afce68

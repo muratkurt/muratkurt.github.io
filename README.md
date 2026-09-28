@@ -19,18 +19,22 @@ Versions are deliberately not repeated here. The repo page reads them from the
 
 ## Notes
 
-- ClaudeCLIBridge requires a RootHide jailbreak (arm64e).
 - ActionButtonFix needs an iPhone with an Action Button; the button does not
   exist on other models. Per-version testing details are on its package page.
-- shiv requires Node.js 18 or later. RootHide users get it automatically from
-  this repo; rootless users should add https://imcynic.github.io/nodejs-ios/
-- The Node.js package is imcynic's work, converted for RootHide with RootHide
-  Patcher and republished here unmodified.
+- shivtools is the on-device tweak development toolkit. Node.js, frida and
+  iOS MCP are **not** required to install it: it recommends them and its
+  Settings page installs the ones you want.
+- The Node.js package is Node.js 24 built for iOS from
+  [realAndi/nodejs-for-ios](https://github.com/realAndi/nodejs-for-ios),
+  packaged here for both rootless and RootHide. It replaces the older
+  `io.github.imcynic.nodejs` (18.x) if you have it installed.
+- The frida package repackages the official release so it runs on RootHide,
+  and provides `re.frida.server`. iOS MCP is
+  [witchan/ios-mcp](https://github.com/witchan/ios-mcp) with the server bound
+  to loopback and auto-respring off by default.
 - Installing through Sileo routes the package via RootHide Patcher first. The
   convert screen is expected — a "dependency not satisfied" message before
   converting is a misleading symptom, not a real dependency error.
-- ClaudeCLIBridge depends on `com.anthropic.claude-code`, which lives in a
-  different repository: https://imcynic.github.io/claude-code-ios/
 
 ## Repository layout
 

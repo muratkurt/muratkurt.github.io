@@ -10,40 +10,18 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# shivtools\n\nOn-device tools for building tweaks. An AI CLI running on the iPhone calls them; you don't have to.\n\n**Any CLI, any model.** Claude Code, Codex, Gemini, Grok — whatever runs in your terminal. The tools are plain shell scripts with a fixed, readable output, so a model can call them and act on what comes back."
+          "markdown": "# shivtools\n\nTweak development tools that run on the iPhone itself. Measure the device instead of guessing — any CLI can drive them: Claude Code, Codex, Gemini, or you over SSH."
         },
         {
           "class": "DepictionSeparatorView"
         },
         {
           "class": "DepictionHeaderView",
-          "title": "Tools"
+          "title": "Highlights"
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "**Environment**\n\n- `shiv-ortam` — what this device is: jailbreak type, iOS, theos, frida, oldabi, node, every tool. First command of every session.\n- `shiv-yol` — one path, both namespaces (jbroot ↔ real root).\n\n**Discovery**\n\n- `shiv-sinif` — classes and methods from the dyld cache, no frida needed. `--tip` reads a method's real **signature** from the running process; `--sdk` says whether it is declared in the SDK headers of that class.\n- `shiv-pencere` — SpringBoard's windows and view tree: frames, safe area, transforms, model-vs-screen drift, interface orientation. Read-only.\n- `shiv-ekran` — the view tree of the app in front.\n- `shiv-oku` — every ObjC class inside a running app.\n- `shiv-prefs-ornek` — working examples pulled from Apple's own Preferences bundles.\n\n**Measurement**\n\n- `shiv-log` — timestamped measurement log: write, tail, **summarise** (counts events instead of dumping the file), and a ready C snippet for the tweak side.\n- `shiv-kare` — screenshots as data: mark, then list only the frames taken after that mark.\n\n**Editing and packaging**\n\n- `shiv-sil` — delete a line range with a dated backup, a diff and a syntax check.\n- `shiv-kurulum` — install the bundled instruction file into a project as `CLAUDE.md` and `AGENTS.md`.\n- `shiv-cek` — decrypt an App Store binary on the device.\n- `shiv-frida-kur` — check the frida setup; install only when you say so."
-        },
-        {
-          "class": "DepictionSeparatorView"
-        },
-        {
-          "class": "DepictionHeaderView",
-          "title": "Included"
-        },
-        {
-          "class": "DepictionMarkdownView",
-          "markdown": "- **SHIVTOOLS.md** — the rules an agent follows: red lines, the measure → cause → fix → verify loop, tool reference.\n- **TWEAK.md** — recipes: build flows, ABI and caps, Preferences, hook patterns, discovery, namespaces.\n- **shivfrida** — frida client, statically linked, arm64e.\n\nBoth documents install to `/usr/local/share/shivtools/`."
-        },
-        {
-          "class": "DepictionSeparatorView"
-        },
-        {
-          "class": "DepictionHeaderView",
-          "title": "Good to know"
-        },
-        {
-          "class": "DepictionMarkdownView",
-          "markdown": "- Every tool prints its usage with `--help`.\n- Missing dependencies are named: **node** is needed only by `shiv-sinif`, **frida** only by the tools that attach to a process.\n- The frida client is arm64e (A12 and newer). `shiv-sinif`, `shiv-yol`, `shiv-log`, `shiv-sil`, `shiv-kurulum` and `shiv-ortam` don't touch frida.\n- Nothing runs on its own. No daemon, no background process."
+          "markdown": "- **Find the code to hook** — classes, methods and real signatures from the running process\n- **Read the screen** — SpringBoard and app view trees as text\n- **Measure, don't guess** — a measurement log, screenshots as data, safe edits\n- **Start from working code** — a development guide and three example tweaks\n- **Settings page** — live status of the environment and every tool\n\nFull walkthrough in the **Usage** tab and on [GitHub](https://github.com/muratkurt/shivtools)."
         },
         {
           "class": "DepictionSeparatorView"
@@ -65,7 +43,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "1.0.2"
+          "text": "1.0.4"
         },
         {
           "class": "DepictionTableTextView",
@@ -85,7 +63,12 @@
         {
           "class": "DepictionTableTextView",
           "title": "Recommends",
-          "text": "frida-server 16.x · nodejs"
+          "text": "frida 17 · Node.js 24 · iOS MCP"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Docs",
+          "text": "github.com/muratkurt/shivtools"
         }
       ]
     },
@@ -95,11 +78,22 @@
       "views": [
         {
           "class": "DepictionHeaderView",
+          "title": "With an AI agent"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "shivtools gives the AI you already run in the terminal (Claude Code, Codex, Gemini…) eyes and hands on the device.\n\n```\nmkdir -p ~/Documents/MyTweak && cd ~/Documents/MyTweak\nshiv-kurulum\n```\n\nThe rules file lands in the folder; the agent reads it when it starts there. With iOS MCP installed, `shiv-mcp baglan` prints the line that connects it.\n\n**No project folder?** Tell the agent: *shivtools is installed. Find the rules file with `shiv-kurulum --goster`, read it with `cat`, and follow it for this session. Then run `shiv-ortam`.* (Say `cat`: on RootHide some agents' file tools can't see the jailbreak root.)\n\nThen start the CLI in that folder and say what you want, for example:\n\n- *Read CLAUDE.md, run `shiv-ortam`, and tell me what this device is ready for.*\n- *I want a SpringBoard tweak that hides the dock icon labels. Start from `shiv-ornek 01` and measure before you change anything.*\n- *My tweak's Settings page is empty. Find out why — measure first, don't change code yet.*\n\nYou respring, not the agent. After a RootHide re-jailbreak, run `shiv-jbroot --yap` before starting the CLI."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
           "title": "Start here"
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "```\nshiv-ortam\n```\n\nIt prints the jailbreak type, iOS version, theos, frida, oldabi, node and every tool. Run it first; don't assume any of them."
+          "markdown": "```\nshiv-ortam\n```\n\nIt prints the jailbreak type, iOS version, theos, SDK, frida, oldabi, node, the MCP server and every tool — and it **runs** each tool to check it, instead of only looking for the file. Run it first in every session; don't assume any of them.\n\n`shiv-ortam --ajan-sina` checks the whole frida chain: client → server → attach → ObjC."
         },
         {
           "class": "DepictionSeparatorView"
@@ -111,6 +105,17 @@
         {
           "class": "DepictionMarkdownView",
           "markdown": "```\ncd /var/mobile/Documents/MyTweak\nshiv-kurulum\n```\n\nWrites `CLAUDE.md` and `AGENTS.md` from the bundled `SHIVTOOLS.md` — two names because different CLIs read different files. An existing copy is backed up with a timestamp first.\n\n`shiv-kurulum --fark` shows how a project's copy differs from the installed one."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Start from an example"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "```\nshiv-ornek                  # list\nshiv-ornek 01 MyTweak       # SpringBoard hook\nshiv-ornek 02 MyPrefs       # Settings page + tweak\nshiv-ornek 03 MyAppTweak    # in-app network filter\n```\n\nCopies a working skeleton into a new folder and lists the names to change. It never writes over an existing folder. `shiv-ornek --rehber` prints where the guide is."
         },
         {
           "class": "DepictionSeparatorView"
@@ -143,7 +148,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "```\nshiv-log parca        # C snippet to paste into the tweak\nshiv-log yeni         # clear before a test round\nshiv-log ozet         # count events\nshiv-log son 60       # last lines\n```\n\n`NSLog` is not readable on these setups. Log to a file, then summarise — reading the raw file costs the agent its context."
+          "markdown": "```\nshiv-log parca        # C snippet to paste into the tweak\nshiv-log yeni         # clear before a test round\nshiv-log ozet         # count events\nshiv-log son 60       # last lines\n```\n\nWith **iOS MCP** installed, `NSLog` is readable live (`get_syslog`). Without it — or inside an app's sandbox — log to a file and summarise; reading the raw file costs the agent its context."
         },
         {
           "class": "DepictionSeparatorView"
@@ -172,11 +177,44 @@
         },
         {
           "class": "DepictionHeaderView",
+          "title": "iOS MCP"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "The optional **iOS MCP** package lets an AI agent take screenshots, read the accessibility tree, tap, type and read the live system log.\n\n```\nshiv-mcp durum            # installed? running? which mode?\nshiv-mcp baglan           # connect an agent on the phone\nshiv-mcp baglan --mac     # SSH tunnel for an agent on a Mac\n```\n\nIt listens on **127.0.0.1 only** and `mcp-root` comes **without setuid** — both are settings. The server has no authentication: `shiv-mcp mod ag` asks before it listens on the network. From a Mac, prefer the SSH tunnel."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "frida"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "The tools and the bundled client are built for **frida 17** (arm64 + arm64e, measured on A12 and A17).\n\nOn **RootHide**, frida 17 can bring SpringBoard down on about the third attach in a row; apps are fine, and rootless is not affected. Batch SpringBoard work: read once with `shiv-pencere` or `shiv-sinif --tip`, then reuse the dump. `shiv-ortam` warns about it on RootHide."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Settings page"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**Settings → shivtools** shows the last measurement: environment, every tool with a status mark, quick-start commands you can tap to copy, and credits. It reads what `shiv-ortam` measured — run `shiv-ortam` to refresh it."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
           "title": "Paths"
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- Tools: `/usr/local/bin/`\n- Documents: `/usr/local/share/shivtools/`\n- Output: `/var/mobile/tw/`\n\nOn RootHide the shell lives in jbroot while system processes write to the real root. `shiv-yol <path>` translates between them; file tools that are not jbroot-aware need the real path."
+          "markdown": "- Tools: `/usr/local/bin/`\n- Rules and recipes: `/usr/local/share/shivtools/`\n- Guide and examples: `/usr/local/share/shivtools/rehber/`, `…/ornekler/`\n- Output: `/var/mobile/tw/`\n\nOn RootHide the shell lives in jbroot while system processes use the real root. `shiv-yol <path>` translates between them."
         },
         {
           "class": "DepictionSeparatorView"
@@ -188,6 +226,17 @@
         {
           "class": "DepictionMarkdownView",
           "markdown": "Both packages own the same `/usr/local/bin/shiv-*` names. Install **shivtools after shiv**; `shiv-ortam` and `shiv-kurulum` warn when the names point elsewhere."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Full guide"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Everything above, and more, on [GitHub](https://github.com/muratkurt/shivtools). Report a problem with [an issue](https://github.com/muratkurt/shivtools/issues) — include your device, iOS, jailbreak and the output of `shiv-ortam`."
         }
       ]
     },
@@ -195,6 +244,17 @@
       "class": "DepictionStackView",
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.0.4"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- **Settings page redesigned**: header card with version and a status summary, icons, tap-to-copy commands, credits with links, an About section.\n- The Settings page showed nothing on RootHide — the measurement was written where Settings could not see it. Fixed.\n- New: **`shiv-ornek`** — copy a working example tweak into your project. The development guide and three examples now install with the package.\n- Built for **frida 17**; the client is arm64 + arm64e. `shiv-ortam --ajan-sina` checks the whole frida chain.\n- New: **`shiv-mcp`** for the optional iOS MCP package.\n- Companion packages: Node.js 24 with npm, iOS MCP, frida 17 for RootHide."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "1.0.2"

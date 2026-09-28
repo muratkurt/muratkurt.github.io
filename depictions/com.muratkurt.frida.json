@@ -1,0 +1,132 @@
+{
+  "minVersion": "0.1",
+  "headerImage": "https://muratkurt.github.io/assets/frida/banner.png",
+  "tintColor": "#E05A4E",
+  "class": "DepictionTabView",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "# Frida\n\nThe official **frida-server 17.19.0**, repackaged so RootHide can install it. `build.frida.re` offers rootful and rootless builds, but none for RootHide.\n\n**On rootless?** Take frida from `build.frida.re` directly — this package adds nothing for you."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Developer",
+          "text": "Ole André Vadla Ravnås · packaged by muratkurt"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Package",
+          "text": "com.muratkurt.frida"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "17.19.0-3"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Requires",
+          "text": "iOS 15.0 or later"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "RootHide"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Tested on",
+          "text": "iOS 17.0.3 (RootHide)"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Replaces",
+          "text": "re.frida.server"
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "Usage",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "Check it"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "```\nshiv-ortam --ajan-sina\n```\n\nFrom **shivtools**: checks client → server → attach → ObjC and prints the frida version it talks to."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Known issue on RootHide"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "frida 17 can bring **SpringBoard** down on about the third attach in a row; the device drops into safe mode and comes back in one go. Apps are fine, and frida 16 or rootless are not affected. frida 17 wants a memory-hooking API from the jailbreak that RootHide does not offer yet. Batch your SpringBoard work."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Clients"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "A frida client must match the **major** version: use frida-tools 17 on your computer. The client inside shivtools (`shivfrida`) is already built for 17."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Going back to 16"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Remove this package, then install `re.frida.server` 16.1.4 from the RootHide repo."
+        }
+      ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "17.19.0-3"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Icon and depiction pages. The package contents are unchanged."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "17.19.0-1 · -2"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- First releases: frida-server 17.19.0 for RootHide.\n- The daemon starts from a real `postinst`, so a plain `dpkg -i` works too."
+        }
+      ]
+    }
+  ]
+}
