@@ -86,7 +86,9 @@
   <li><strong>Read the screen</strong> &mdash; SpringBoard and app view trees as text</li>
   <li><strong>Measure, don't guess</strong> &mdash; a measurement log, screenshots as data, safe edits</li>
   <li><strong>Start from working code</strong> &mdash; a development guide and three example tweaks</li>
-  <li><strong>Settings page</strong> &mdash; live status of the environment and every tool</li>
+  <li><strong>Setup wizard</strong> &mdash; Settings &rarr; shivtools shows what is missing and installs Node.js, frida and iOS MCP for your device, with a live log</li>
+  <li><strong>AI agent on the device</strong> &mdash; with iOS MCP the agent can see and drive the screen over 127.0.0.1: Wi-Fi, cellular or no computer attached</li>
+  <li><strong>Settings page</strong> &mdash; live status of the environment and every tool, in 9 languages</li>
 </ul>
 <p>Full walkthrough in the <strong>Usage</strong> tab and on <a href="https://github.com/muratkurt/shivtools">GitHub</a>.</p>
 
@@ -95,7 +97,7 @@
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.shivtools</td></tr>
-  <tr><td>Version</td><td>1.0.4</td></tr>
+  <tr><td>Version</td><td>1.1.2</td></tr>
   <tr><td>Requires</td><td>iOS 15.0 or later</td></tr>
   <tr><td>Compatibility</td><td>rootless &middot; RootHide</td></tr>
   <tr><td>Tested on</td><td>iOS 17.0.3 (RootHide) &middot; iOS 16.1.1 (Dopamine)</td></tr>
@@ -157,7 +159,7 @@ shiv-sinif --metod UIAction --tip --sdk --desen handler</code></pre>
 
 <pre><code>shiv-pencere
 shiv-pencere --izle 60
-shiv-ekran com.apple.Preferences --ac</code></pre>
+shiv-ekran --ac com.apple.Preferences</code></pre>
 <p><code>shiv-pencere</code> dumps SpringBoard: window levels, the view tree, frames, <code>safe=</code> insets, <code>tf=</code> transforms, <code>EKRAN:</code> where the screen disagrees with your model, and the interface orientation.</p>
 <p><code>--izle SECS</code> records: a new numbered dump each time the layout <strong>changes</strong>, with a vibration so you know a moment was captured. Use it with a short numbered script for the person holding the phone.</p>
 <p><code>shiv-ekran</code> does the same for the app in front (<code>--ac</code> brings it forward).</p>
@@ -220,6 +222,24 @@ shiv-mcp baglan --mac     # SSH tunnel for an agent on a Mac</code></pre>
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>1.1.2</h3>
+
+<ul>
+  <li><strong>Security fix</strong> for the install helper: it now writes its files without following symbolic links, and its temporary repo list can no longer be taken over by another process. Please update.</li>
+  <li><strong>The setup wizard now works on rootless.</strong> The helper was never loaded there (wrong file ownership in the package) and could not find basic tools under /var/jb. Both fixed.</li>
+  <li><strong>Settings page in 9 languages</strong>: English, Türkçe, Deutsch, Español, Français, Italiano, Português, Русский, العربية (right-to-left).</li>
+  <li>Tools and credits moved to their own pages; tap the orange frida mark for an explanation.</li>
+  <li>The wizard opens instantly, shows a <em>Verifying</em> step at the end, and the header card is right the moment you come back.</li>
+</ul>
+
+<h3>1.1</h3>
+
+<ul>
+  <li><strong>Setup wizard</strong> in Settings &rarr; shivtools: shows what is missing and installs it &mdash; which packages, from which repo, with which command, and a live log.</li>
+  <li>New: <strong><code>shiv-kur</code></strong> checks and installs Node.js, frida, iOS MCP; <strong><code>shiv-theos-kur</code></strong> installs the right Theos for your device.</li>
+  <li><strong>Refresh</strong> button on the Settings page.</li>
+</ul>
 
 <h3>1.0.4</h3>
 

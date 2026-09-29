@@ -21,7 +21,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- **Find the code to hook** — classes, methods and real signatures from the running process\n- **Read the screen** — SpringBoard and app view trees as text\n- **Measure, don't guess** — a measurement log, screenshots as data, safe edits\n- **Start from working code** — a development guide and three example tweaks\n- **Settings page** — live status of the environment and every tool\n\nFull walkthrough in the **Usage** tab and on [GitHub](https://github.com/muratkurt/shivtools)."
+          "markdown": "- **Find the code to hook** — classes, methods and real signatures from the running process\n- **Read the screen** — SpringBoard and app view trees as text\n- **Measure, don't guess** — a measurement log, screenshots as data, safe edits\n- **Start from working code** — a development guide and three example tweaks\n- **Setup wizard** — Settings → shivtools shows what is missing and installs Node.js, frida and iOS MCP for your device, with a live log\n- **AI agent on the device** — with iOS MCP the agent can see and drive the screen over 127.0.0.1: Wi-Fi, cellular or no computer attached\n- **Settings page** — live status of the environment and every tool, in 9 languages\n\nFull walkthrough in the **Usage** tab and on [GitHub](https://github.com/muratkurt/shivtools)."
         },
         {
           "class": "DepictionSeparatorView"
@@ -43,7 +43,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "1.0.4"
+          "text": "1.1.2"
         },
         {
           "class": "DepictionTableTextView",
@@ -137,7 +137,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "```\nshiv-pencere\nshiv-pencere --izle 60\nshiv-ekran com.apple.Preferences --ac\n```\n\n`shiv-pencere` dumps SpringBoard: window levels, the view tree, frames, `safe=` insets, `tf=` transforms, `EKRAN:` where the screen disagrees with your model, and the interface orientation.\n\n`--izle SECS` records: a new numbered dump each time the layout **changes**, with a vibration so you know a moment was captured. Use it with a short numbered script for the person holding the phone.\n\n`shiv-ekran` does the same for the app in front (`--ac` brings it forward)."
+          "markdown": "```\nshiv-pencere\nshiv-pencere --izle 60\nshiv-ekran --ac com.apple.Preferences\n```\n\n`shiv-pencere` dumps SpringBoard: window levels, the view tree, frames, `safe=` insets, `tf=` transforms, `EKRAN:` where the screen disagrees with your model, and the interface orientation.\n\n`--izle SECS` records: a new numbered dump each time the layout **changes**, with a vibration so you know a moment was captured. Use it with a short numbered script for the person holding the phone.\n\n`shiv-ekran` does the same for the app in front (`--ac` brings it forward)."
         },
         {
           "class": "DepictionSeparatorView"
@@ -244,6 +244,28 @@
       "class": "DepictionStackView",
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.1.2"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- **Security fix** for the install helper: it now writes its files without following symbolic links, and its temporary repo list can no longer be taken over by another process. Please update.\n- **The setup wizard now works on rootless.** The helper was never loaded there (wrong file ownership in the package) and could not find basic tools under /var/jb. Both fixed.\n- **Settings page in 9 languages**: English, Türkçe, Deutsch, Español, Français, Italiano, Português, Русский, العربية (right-to-left).\n- Tools and credits moved to their own pages; tap the orange frida mark for an explanation.\n- The wizard opens instantly, shows a *Verifying* step at the end, and the header card is right the moment you come back."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "1.1"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- **Setup wizard** in Settings → shivtools: shows what is missing and installs it — which packages, from which repo, with which command, and a live log.\n- New: **`shiv-kur`** checks and installs Node.js, frida, iOS MCP; **`shiv-theos-kur`** installs the right Theos for your device.\n- **Refresh** button on the Settings page."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "1.0.4"
