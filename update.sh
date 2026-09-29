@@ -105,6 +105,34 @@ else
   fi
 fi
 
+# ---- Release: Date + checksum — HER calismada yeniden ----------------
+# 29 Eyl 2026'da OLCULDU, sessiz bir hataydi: Release STATIKTI (ne
+# Date ne checksum). apt listeyi tazelerken once Release'e bakiyor;
+# Release degismediyse Packages'i HIC indirmiyor. Sonuc: Packages ne
+# kadar degisirse degissin apt istemcileri eski listede kaliyordu
+# (XS'te liste 12,7 SAAT eskiydi, tazeleme yalniz 208 baytlik Release'i
+# cekti). Kurulum sihirbazi yeni yayinlanan paketi goremedi.
+# Sileo kendi yoluyla tazeledigi icin fark edilmemisti.
+#
+# Artik her calismada Date ve dosya checksum'lari yaziliyor; Packages
+# degisince Release da degisir, apt yeni listeyi ceker. Basliktaki
+# sabit alanlar (Origin, Label...) korunur.
+$PY - <<'RELEASE'
+import hashlib, os, email.utils, time
+bas = [l.rstrip("\n") for l in open("Release")
+       if not l.startswith((" ", "Date:", "MD5Sum:", "SHA1:", "SHA256:"))
+       and l.strip()]
+dosyalar = [f for f in ("Packages", "Packages.gz", "Packages.bz2") if os.path.exists(f)]
+out = bas + ["Date: " + email.utils.formatdate(time.time(), usegmt=True)]
+for ad, alg in (("MD5Sum", hashlib.md5), ("SHA256", hashlib.sha256)):
+    out.append(ad + ":")
+    for f in dosyalar:
+        d = open(f, "rb").read()
+        out.append(" %s %16d %s" % (alg(d).hexdigest(), len(d), f))
+open("Release", "w").write("\n".join(out) + "\n")
+print("  Release: Date + %d dosya checksum'i yazildi" % len(dosyalar))
+RELEASE
+
 echo
 echo "=== 2. DOGRULAMA ==="
 grep -E '^(Package|Version|Architecture|Depends|Filename):' Packages || true
