@@ -76,13 +76,16 @@ mcp = sayfa('ios-mcp', '#3FB0A6', [
 ])
 
 frida = sayfa('frida', '#E05A4E', [
-  md("# Frida\n\nThe official **frida-server 17.19.0**, repackaged so RootHide can install it. "
-     "`build.frida.re` offers rootful and rootless builds, but none for RootHide.\n\n"
-     "**On rootless?** Take frida from `build.frida.re` directly — this package adds nothing for you."),
+  md("# Frida\n\nThe official **frida-server 17.19.0** for rootless and RootHide.\n\n"
+     "**Rootless:** the upstream build, unmodified. Only the package name and a real `postinst` are ours — "
+     "upstream starts the daemon from `extrainst_`, which apt does not run.\n\n"
+     "**RootHide:** `build.frida.re` has no RootHide build. This one adds a three-line wrapper and an "
+     "architecture dpkg accepts.\n\n"
+     "Already have `re.frida.server`? Keep it; shivtools uses whichever is installed."),
   sep(), h('Information'),
   row('Developer', 'Ole André Vadla Ravnås · packaged by muratkurt'), row('Package', 'com.muratkurt.frida'),
-  row('Version', '17.19.0-3'), row('Requires', 'iOS 15.0 or later'), row('Compatibility', 'RootHide'),
-  row('Tested on', 'iOS 17.0.3 (RootHide)'), row('Replaces', 're.frida.server'),
+  row('Version', '17.19.0-3'), row('Requires', 'iOS 15.0 or later'), row('Compatibility', 'rootless · RootHide'),
+  row('Tested on', 'iOS 17.0.3 (RootHide) · iOS 16.1.1 (Dopamine)'), row('Replaces', 're.frida.server'),
 ], [
   h('Check it'),
   md("```\nshiv-ortam --ajan-sina\n```\n\nFrom **shivtools**: checks client → server → attach → ObjC and prints the frida version it talks to."),
@@ -94,9 +97,11 @@ frida = sayfa('frida', '#E05A4E', [
   md("A frida client must match the **major** version: use frida-tools 17 on your computer. "
      "The client inside shivtools (`shivfrida`) is already built for 17."),
   sep(), h('Going back to 16'),
-  md("Remove this package, then install `re.frida.server` 16.1.4 from the RootHide repo."),
+  md("Remove this package, then install `re.frida.server` 16.x — from `build.frida.re` on rootless, "
+     "from the RootHide repo on RootHide."),
 ], [
-  h('17.19.0-3'), md("- Icon and depiction pages. The package contents are unchanged."), sep(),
+  h('17.19.0-3'), md("- Rootless build: the upstream binary, unmodified (sha256 checked at packaging).\n"
+                       "- Icon and depiction pages."), sep(),
   h('17.19.0-1 · -2'), md("- First releases: frida-server 17.19.0 for RootHide.\n"
                            "- The daemon starts from a real `postinst`, so a plain `dpkg -i` works too."),
 ])

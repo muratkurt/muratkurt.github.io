@@ -77,8 +77,10 @@
 <body>
 
 <h1>Frida</h1>
-<p>The official <strong>frida-server 17.19.0</strong>, repackaged so RootHide can install it. <code>build.frida.re</code> offers rootful and rootless builds, but none for RootHide.</p>
-<p><strong>On rootless?</strong> Take frida from <code>build.frida.re</code> directly &mdash; this package adds nothing for you.</p>
+<p>The official <strong>frida-server 17.19.0</strong> for rootless and RootHide.</p>
+<p><strong>Rootless:</strong> the upstream build, unmodified. Only the package name and a real <code>postinst</code> are ours &mdash; upstream starts the daemon from <code>extrainst_</code>, which apt does not run.</p>
+<p><strong>RootHide:</strong> <code>build.frida.re</code> has no RootHide build. This one adds a three-line wrapper and an architecture dpkg accepts.</p>
+<p>Already have <code>re.frida.server</code>? Keep it; shivtools uses whichever is installed.</p>
 
 <h2>Information</h2>
 
@@ -87,8 +89,8 @@
   <tr><td>Package</td><td>com.muratkurt.frida</td></tr>
   <tr><td>Version</td><td>17.19.0-3</td></tr>
   <tr><td>Requires</td><td>iOS 15.0 or later</td></tr>
-  <tr><td>Compatibility</td><td>RootHide</td></tr>
-  <tr><td>Tested on</td><td>iOS 17.0.3 (RootHide)</td></tr>
+  <tr><td>Compatibility</td><td>rootless &middot; RootHide</td></tr>
+  <tr><td>Tested on</td><td>iOS 17.0.3 (RootHide) &middot; iOS 16.1.1 (Dopamine)</td></tr>
   <tr><td>Replaces</td><td>re.frida.server</td></tr>
 </table>
 
@@ -111,7 +113,7 @@
 
 <h3>Going back to 16</h3>
 
-<p>Remove this package, then install <code>re.frida.server</code> 16.1.4 from the RootHide repo.</p>
+<p>Remove this package, then install <code>re.frida.server</code> 16.x &mdash; from <code>build.frida.re</code> on rootless, from the RootHide repo on RootHide.</p>
 
 <hr>
 
@@ -120,7 +122,8 @@
 <h3>17.19.0-3</h3>
 
 <ul>
-  <li>Icon and depiction pages. The package contents are unchanged.</li>
+  <li>Rootless build: the upstream binary, unmodified (sha256 checked at packaging).</li>
+  <li>Icon and depiction pages.</li>
 </ul>
 
 <h3>17.19.0-1 &middot; -2</h3>

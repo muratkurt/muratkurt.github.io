@@ -10,7 +10,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# Frida\n\nThe official **frida-server 17.19.0**, repackaged so RootHide can install it. `build.frida.re` offers rootful and rootless builds, but none for RootHide.\n\n**On rootless?** Take frida from `build.frida.re` directly — this package adds nothing for you."
+          "markdown": "# Frida\n\nThe official **frida-server 17.19.0** for rootless and RootHide.\n\n**Rootless:** the upstream build, unmodified. Only the package name and a real `postinst` are ours — upstream starts the daemon from `extrainst_`, which apt does not run.\n\n**RootHide:** `build.frida.re` has no RootHide build. This one adds a three-line wrapper and an architecture dpkg accepts.\n\nAlready have `re.frida.server`? Keep it; shivtools uses whichever is installed."
         },
         {
           "class": "DepictionSeparatorView"
@@ -42,12 +42,12 @@
         {
           "class": "DepictionTableTextView",
           "title": "Compatibility",
-          "text": "RootHide"
+          "text": "rootless · RootHide"
         },
         {
           "class": "DepictionTableTextView",
           "title": "Tested on",
-          "text": "iOS 17.0.3 (RootHide)"
+          "text": "iOS 17.0.3 (RootHide) · iOS 16.1.1 (Dopamine)"
         },
         {
           "class": "DepictionTableTextView",
@@ -99,7 +99,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "Remove this package, then install `re.frida.server` 16.1.4 from the RootHide repo."
+          "markdown": "Remove this package, then install `re.frida.server` 16.x — from `build.frida.re` on rootless, from the RootHide repo on RootHide."
         }
       ]
     },
@@ -113,7 +113,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- Icon and depiction pages. The package contents are unchanged."
+          "markdown": "- Rootless build: the upstream binary, unmodified (sha256 checked at packaging).\n- Icon and depiction pages."
         },
         {
           "class": "DepictionSeparatorView"

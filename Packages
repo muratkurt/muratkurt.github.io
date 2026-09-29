@@ -275,6 +275,46 @@ SHA1: 6b225453a74f5c09359be232fdf0b0dd4e7c3358
 SHA256: 412b0a08dbf6e66ecb6720b45735d16de6cb6e76ffcec808c353b3a18ccb1ce6
 
 Package: com.muratkurt.frida
+Name: Frida
+Version: 17.19.0-3
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Author: Ole Andre Vadla Ravnas · RootHide paketleme: muratkurt
+Section: Development
+Priority: optional
+Depends: firmware (>= 15.0)
+Provides: re.frida.server
+Conflicts: re.frida.server
+Replaces: re.frida.server
+Installed-Size: 53496
+Tag: role::developer
+Homepage: https://frida.re/
+Icon: https://muratkurt.github.io/assets/frida/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.frida.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.frida.json
+Description: Frida 17.19.0 for rootless
+ The official rootless frida-server from build.frida.re, UNMODIFIED.
+ Only the package name and the install scripts are ours.
+ .
+ Why republish something upstream already ships: the shivtools setup
+ wizard installs only from this repo, so its root helper never has to
+ add a third-party source to your system; and this repo only carries
+ frida versions the shivtools clients support (16 and 17), so a new
+ major upstream cannot silently break the frida-backed tools.
+ .
+ The upstream package loads its daemon from 'extrainst_', which apt and
+ dpkg do not run: after an apt install frida-server stayed down until
+ the next reboot. Here that step is a real postinst.
+ .
+ Already have re.frida.server from build.frida.re? Keep it: shivtools
+ uses whichever frida-server is installed.
+Filename: debs/com.muratkurt.frida_17.19.0-3_iphoneos-arm64.deb
+Size: 16607972
+MD5sum: d303c84fbdb8c3fb0f98128ac8b0cfbb
+SHA1: 4d0e9062e14e17bcd9992fd89583cebdebf14839
+SHA256: ddb5ddb25ee6ff2174f71160bf696b8d328e1cfb261d0f64e706cbc1ea2c8e16
+
+Package: com.muratkurt.frida
 Name: Frida (RootHide)
 Version: 17.19.0-3
 Architecture: iphoneos-arm64e
