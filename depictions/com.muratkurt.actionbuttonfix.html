@@ -89,6 +89,9 @@
 
 <h2>Actions</h2>
 
+<h3>Voice Memo</h3>
+<p>Apple's own Voice Memo action: starts and stops a recording, also on the Lock Screen and with the screen off. The start/stop sound can be turned off.</p>
+
 <h3>Camera</h3>
 <p>Side (<strong>Back / Front</strong>) and mode (Video, Slo-Mo, Time-Lapse, Cinematic, Photo, Portrait), set per click. Optionally starts recording as it opens; the same click stops it. Opens through Apple's own flow, so it is fast and works with the screen off and on the Lock Screen.</p>
 
@@ -135,22 +138,39 @@
   <li>RootHide or a rootless jailbreak</li>
   <li><strong>AltList</strong> (opa334's repo) and PreferenceLoader</li>
 </ul>
-<p>Tested on iPhone 15 Pro, iOS 17.0.3, RootHide. iOS 17.1 and 17.3 are confirmed working by users. The rootless package is built and shipped the same way, not verified on the developer's device. iOS 18 and the iPhone 16 line are untested.</p>
+<p>Tested on iPhone 15 Pro, iOS 17.0.3, RootHide; 17.1 and 17.3 confirmed by users. iOS 26.6.2 tested on a virtual iPhone: clicks, Voice Memo, Camera and Flashlight work; Control Center and Screen Recording do nothing there yet. iOS 18, the iPhone 16 line and rootless are not verified on a real device.</p>
 
 <h2>Information</h2>
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.actionbuttonfix</td></tr>
-  <tr><td>Version</td><td>2.7.0</td></tr>
+  <tr><td>Version</td><td>2.8.1</td></tr>
   <tr><td>Device</td><td>iPhone 15 Pro / Pro Max · iPhone 16</td></tr>
   <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
-  <tr><td>Tested on</td><td>iOS 17.0.3 · 17.1 · 17.3</td></tr>
+  <tr><td>Tested on</td><td>iOS 17.0.3 · 17.1 · 17.3 · 26.6.2 (virtual)</td></tr>
 </table>
 <p>Found a bug? <a href="https://github.com/muratkurt/ActionButtonFix">Open an issue on GitHub</a>.</p>
 
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>2.8.1</h3>
+<ul>
+  <li>New settings look: an icon for every action; the selected one is colored and checked</li>
+  <li>iOS 26: the selected action's name shows on the main page</li>
+</ul>
+
+<h3>2.8.0</h3>
+<p><strong>New</strong></p>
+<ul>
+  <li><strong>Voice Memo action</strong> — starts and stops a recording, also on the Lock Screen and with the screen off. The start/stop sound can be turned off</li>
+</ul>
+<p><strong>Fixed</strong></p>
+<ul>
+  <li>Settings not saved on some installs</li>
+  <li>Groundwork for iOS 18 and later</li>
+</ul>
 
 <h3>2.7.0</h3>
 <p><strong>New</strong></p>

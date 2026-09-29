@@ -77,7 +77,7 @@
 <body>
 
 <h1>iOS MCP</h1>
-<p>An MCP server inside SpringBoard: an AI agent can take screenshots, read the accessibility tree and the live system log, tap, type, open apps and more &mdash; 46 tools.</p>
+<p>An MCP server inside SpringBoard: an AI agent can take screenshots, read the accessibility tree and the live system log, tap, type, press the Action Button, open apps and more &mdash; 47 tools.</p>
 <p>Based on <a href="https://github.com/witchan/ios-mcp">witchan/ios-mcp</a> 1.2.8, packaged for <strong>shivtools</strong> with safer defaults: it listens on <strong>127.0.0.1 only</strong>, <code>mcp-root</code> comes <strong>without setuid</strong>, and installing a deb through it <strong>does not respring</strong> on its own.</p>
 
 <h2>Information</h2>
@@ -85,7 +85,7 @@
 <table>
   <tr><td>Developer</td><td>witchan &middot; packaged by muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.ios-mcp</td></tr>
-  <tr><td>Version</td><td>1.2.8-2</td></tr>
+  <tr><td>Version</td><td>1.2.8-3</td></tr>
   <tr><td>Requires</td><td>iOS 15.0 or later</td></tr>
   <tr><td>Compatibility</td><td>rootless &middot; RootHide</td></tr>
   <tr><td>Tested on</td><td>iOS 17.0.3 (RootHide) &middot; iOS 16.1.1 (Dopamine)</td></tr>
@@ -123,6 +123,13 @@ shiv-mcp baglan --mac   # SSH tunnel + claude mcp add for a Mac</code></pre>
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>1.2.8-3</h3>
+
+<ul>
+  <li>New tool: <strong>press_action_button</strong> &mdash; single, double or long press; works on the Lock Screen too.</li>
+  <li><code>toggle_mute</code> is described correctly: it is not the Action Button.</li>
+</ul>
 
 <h3>1.2.8-2</h3>
 

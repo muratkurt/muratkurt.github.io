@@ -6,12 +6,12 @@ Codename: ios
 Architectures: iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: Tweaks and command line tools for jailbroken iOS
-Date: Tue, 29 Sep 2026 18:51:55 GMT
+Date: Tue, 29 Sep 2026 20:17:38 GMT
 MD5Sum:
- 5ed75bdd0b94183898a3b2149b2542cb            43145 Packages
- 7a417905c5182815f73534def0fa9843             8078 Packages.gz
- f17dd653c8aea96376b0c48c01e7bb0c             9083 Packages.bz2
+ 88dfb7d8cf14f758dbd71070d28d445f            56900 Packages
+ 4e65c54ed1d7cdbc8d951a780a9dff69             8926 Packages.gz
+ f26ec9999dba2375172edac924878a05            10177 Packages.bz2
 SHA256:
- 7824bac7e23257f686c237fc40b0891899ece6b3bf475f59b848b9b14b34de0a            43145 Packages
- df4013fe6f3f88821cabb5c8163b25194f5a92ab788b6d2b350d7c49d6dd8a19             8078 Packages.gz
- a3a82259d54db3300690db4c480bff22ca95bd8d2050f09704305a8b9239ef7e             9083 Packages.bz2
+ 63425cf0e28b69241114c3227d3658249353a9fa07a43226c46890f54c0a5888            56900 Packages
+ 131ed7473e996a711b702d165443a8a6cd6fda43f0c506cd6701d765d3b30896             8926 Packages.gz
+ 7b0cdcb7c9a0948da278b62f21be07baea65cfaccaead6b7e12cae4bc43c5114            10177 Packages.bz2

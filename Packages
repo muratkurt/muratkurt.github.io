@@ -230,6 +230,130 @@ MD5sum: ce668aa682e14909242536de6b9165f4
 SHA1: f9c8dab40ac7563088be06dac8c8fea9abba92ca
 SHA256: 077b1a70253a9cf5ec55d1d2f450900196ab023763983a2bdb1e5aeb3166bfc1
 
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Homepage: https://muratkurt.github.io/
+Description: Action Button'a tek tik ve cift tik eylemi kazandirir
+ iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
+ bagimsiz eylem atamanizi saglar. Uzun basista Apple'in mevcut Action
+ Button ayari aynen calismaya devam eder.
+ .
+ Eylemler: Yok, Flas, Ekran Goruntusu, Ekran Kaydi, Uygulama,
+ Stok Eylem, Denetim Merkezi, Kamera, Medya, Sesli Not. Tek ve cift tik icin ayri ayri
+ secilir.
+ Ayarlar > ActionButtonFix uzerinden secilir.
+ .
+ Kamera: kamerayi Apple'in kendi akisiyla acar. Kamera yonu (arka/on)
+ ve mod (Video, Agir Cekim, Hizlandirilmis, Sinematik, Fotograf,
+ Portre) tek tik ve cift tik icin ayri secilir. Video modlarinda kayit
+ otomatik baslar (acilip kapatilabilir); ayni tus kaydi durdurur.
+ Ekran kapaliyken ve kilit ekraninda da calisir. iOS Ayarlari'ndaki
+ uzun basis eylemi degismez.
+ .
+ Sesli Not: Apple'in kendi Sesli Not eylemiyle kaydi baslatir/durdurur;
+ Dynamic Island ve kilit ekrani ayni. Baslama/bitis sesi tek ve cift
+ tik icin ayri kapatilabilir. iOS Ayarlari'ndaki uzun basis eylemi degismez.
+ .
+ Ekran Kaydi: Denetim Merkezi'ndeki ekran kaydini baslatir/durdurur;
+ geri sayim, Dynamic Island gorunumu ve mikrofon ayari ayni.
+ .
+ Denetim Merkezi: Karanlik Mod, Yonlendirme Kilidi, Sessiz, Dusuk Guc
+ Modu ve QR Kod, Buyutec, Sesli Not, Hizli Not, Kronometre, Zamanlayici,
+ Alarm, Hesap Makinesi, Cuzdan modullerini tetikler.
+ .
+ "Yok" secilirse o tik hicbir sey yapmaz; cift tik "Yok" ise tek tik
+ beklemeden calisir.
+ .
+ Uygulama: listeden secilen herhangi bir uygulamayi acar (AltList).
+ Stok Eylem: iOS Ayarlari'nda uzun basisa atanmis eylemi tek/cift
+ tikla da calistirir.
+ .
+ Titresim: tek tik ve cift tik icin ayri ayri acilip kapatilir.
+ .
+ Ayarlar 12 dilde: Turkce, Ingilizce, Almanca, Fransizca, Ispanyolca,
+ Italyanca, Portekizce, Rusca, Cince, Japonca, Korece, Arapca.
+ .
+ Dogrulanmis platform: iPhone 15 Pro / iOS 17.0.3 / RootHide.
+ Action Button yalnizca iPhone 15 Pro ve Pro Max modellerinde bulunur.
+ Diger cihaz, iOS surumleri ve rootless cihaz uzerinde test edilmedi.
+Architecture: iphoneos-arm64e
+Version: 2.8.1
+Installed-Size: 476
+Filename: debs/ActionButtonFix-2.8.1-roothide.deb
+Size: 61382
+MD5sum: 181c4b7f03cf64a9930d2193128c18a9
+SHA1: 91658adaa36dda4a5f90d790e3b82473df7e8738
+SHA256: 9beef95ab0d9f6badd61ceb27b2300e16788ad695ba16f1ca9a18bbf044bce13
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Homepage: https://muratkurt.github.io/
+Description: Action Button'a tek tik ve cift tik eylemi kazandirir
+ iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
+ bagimsiz eylem atamanizi saglar. Uzun basista Apple'in mevcut Action
+ Button ayari aynen calismaya devam eder.
+ .
+ Eylemler: Yok, Flas, Ekran Goruntusu, Ekran Kaydi, Uygulama,
+ Stok Eylem, Denetim Merkezi, Kamera, Medya, Sesli Not. Tek ve cift tik icin ayri ayri
+ secilir.
+ Ayarlar > ActionButtonFix uzerinden secilir.
+ .
+ Kamera: kamerayi Apple'in kendi akisiyla acar. Kamera yonu (arka/on)
+ ve mod (Video, Agir Cekim, Hizlandirilmis, Sinematik, Fotograf,
+ Portre) tek tik ve cift tik icin ayri secilir. Video modlarinda kayit
+ otomatik baslar (acilip kapatilabilir); ayni tus kaydi durdurur.
+ Ekran kapaliyken ve kilit ekraninda da calisir. iOS Ayarlari'ndaki
+ uzun basis eylemi degismez.
+ .
+ Sesli Not: Apple'in kendi Sesli Not eylemiyle kaydi baslatir/durdurur;
+ Dynamic Island ve kilit ekrani ayni. Baslama/bitis sesi tek ve cift
+ tik icin ayri kapatilabilir. iOS Ayarlari'ndaki uzun basis eylemi degismez.
+ .
+ Ekran Kaydi: Denetim Merkezi'ndeki ekran kaydini baslatir/durdurur;
+ geri sayim, Dynamic Island gorunumu ve mikrofon ayari ayni.
+ .
+ Denetim Merkezi: Karanlik Mod, Yonlendirme Kilidi, Sessiz, Dusuk Guc
+ Modu ve QR Kod, Buyutec, Sesli Not, Hizli Not, Kronometre, Zamanlayici,
+ Alarm, Hesap Makinesi, Cuzdan modullerini tetikler.
+ .
+ "Yok" secilirse o tik hicbir sey yapmaz; cift tik "Yok" ise tek tik
+ beklemeden calisir.
+ .
+ Uygulama: listeden secilen herhangi bir uygulamayi acar (AltList).
+ Stok Eylem: iOS Ayarlari'nda uzun basisa atanmis eylemi tek/cift
+ tikla da calistirir.
+ .
+ Titresim: tek tik ve cift tik icin ayri ayri acilip kapatilir.
+ .
+ Ayarlar 12 dilde: Turkce, Ingilizce, Almanca, Fransizca, Ispanyolca,
+ Italyanca, Portekizce, Rusca, Cince, Japonca, Korece, Arapca.
+ .
+ Dogrulanmis platform: iPhone 15 Pro / iOS 17.0.3 / RootHide.
+ Action Button yalnizca iPhone 15 Pro ve Pro Max modellerinde bulunur.
+ Diger cihaz, iOS surumleri ve rootless cihaz uzerinde test edilmedi.
+Architecture: iphoneos-arm64
+Version: 2.8.1
+Installed-Size: 476
+Filename: debs/ActionButtonFix-2.8.1-rootless.deb
+Size: 61522
+MD5sum: 542084949d8955209f6d19b1ab9b979e
+SHA1: 123022854cff80c2419e1935c37f01e02e886f4f
+SHA256: 63708a738046f5bd787b1a3490d514b7918e087c38a684c777dac01ea1a514d7
+
 Package: com.muratkurt.kaswitcher
 Name: KASwitcher
 Author: muratkurt
@@ -457,6 +581,106 @@ Size: 23689392
 MD5sum: e97e06ebd902eb3d34db7a9db95e2f2d
 SHA1: a235fdb1e35c5f735136fd0c8e62912b444b8a77
 SHA256: cede02f062641cad50813cda50d340aae55bdf861996f1d9a5d8978d4158e281
+
+Package: com.muratkurt.ios-mcp
+Name: iOS MCP (shivtools)
+Version: 1.2.8-3
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Author: witchan · shivtools uyarlamasi: muratkurt
+Section: Development
+Priority: optional
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
+Provides: ios-mcp
+Conflicts: com.witchan.ios-mcp
+Replaces: com.witchan.ios-mcp
+Installed-Size: 40808
+Tag: role::developer
+Homepage: https://muratkurt.github.io/
+Icon: https://muratkurt.github.io/assets/ios-mcp/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.ios-mcp.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.ios-mcp.json
+Description: iOS MCP 1.2.8, packaged for shivtools
+ An MCP server that runs inside SpringBoard, so an agent can read the
+ screen, the view hierarchy and the live system log, drive the UI, and
+ install IPAs from the device itself. Upstream is witchan/ios-mcp; this
+ is the same code with two changes and a different package name.
+ .
+ What is different here:
+ .
+ - The server listens on 127.0.0.1 by default. Upstream binds
+   INADDR_ANY, which exposes an unauthenticated server to everyone on
+   the network. Network mode is still one setting away; from a Mac the
+   cheaper route is an SSH tunnel, which costs nothing and gives
+   authentication and encryption for free.
+ - mcp-root is installed WITHOUT the setuid bit. With it set, any
+   process on the device can become root through the helper's own
+   allow-list. Turn it on deliberately with: shiv-mcp root-ac
+ .
+ Neither is a lock: both are settings, and the responsibility is the
+ developer's. They are defaults, not walls.
+ .
+ The PaddleOCR engine, its two models and the IPA chain (AppSync,
+ appinst, ldid, roothelper) are all included; nothing is downloaded on
+ install.
+ .
+ Installing or upgrading this package loads a new SpringBoard dylib.
+ RESPRING IS REQUIRED and it is not done for you.
+Filename: debs/com.muratkurt.ios-mcp_1.2.8-3_iphoneos-arm64.deb
+Size: 23644692
+MD5sum: 6691ee082a86df38ee3c6c327d292fce
+SHA1: 9f84b4b82ebae643836bfff7ad20b9bb293b0977
+SHA256: 074254e995fa0321e6cf2261c041d690270dd5efda24c84fb90b5217848d42ad
+
+Package: com.muratkurt.ios-mcp
+Name: iOS MCP (shivtools)
+Version: 1.2.8-3
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Author: witchan · shivtools uyarlamasi: muratkurt
+Section: Development
+Priority: optional
+Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
+Provides: ios-mcp
+Conflicts: com.witchan.ios-mcp
+Replaces: com.witchan.ios-mcp
+Installed-Size: 40832
+Tag: role::developer
+Homepage: https://muratkurt.github.io/
+Icon: https://muratkurt.github.io/assets/ios-mcp/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.ios-mcp.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.ios-mcp.json
+Description: iOS MCP 1.2.8, packaged for shivtools
+ An MCP server that runs inside SpringBoard, so an agent can read the
+ screen, the view hierarchy and the live system log, drive the UI, and
+ install IPAs from the device itself. Upstream is witchan/ios-mcp; this
+ is the same code with two changes and a different package name.
+ .
+ What is different here:
+ .
+ - The server listens on 127.0.0.1 by default. Upstream binds
+   INADDR_ANY, which exposes an unauthenticated server to everyone on
+   the network. Network mode is still one setting away; from a Mac the
+   cheaper route is an SSH tunnel, which costs nothing and gives
+   authentication and encryption for free.
+ - mcp-root is installed WITHOUT the setuid bit. With it set, any
+   process on the device can become root through the helper's own
+   allow-list. Turn it on deliberately with: shiv-mcp root-ac
+ .
+ Neither is a lock: both are settings, and the responsibility is the
+ developer's. They are defaults, not walls.
+ .
+ The PaddleOCR engine, its two models and the IPA chain (AppSync,
+ appinst, ldid, roothelper) are all included; nothing is downloaded on
+ install.
+ .
+ Installing or upgrading this package loads a new SpringBoard dylib.
+ RESPRING IS REQUIRED and it is not done for you.
+Filename: debs/com.muratkurt.ios-mcp_1.2.8-3_iphoneos-arm64e.deb
+Size: 23646476
+MD5sum: 7120bf2e42b49bc81820b8c433adba17
+SHA1: 5e945c4f100b0575a5401adddff68c6030697214
+SHA256: 715336a542bb839e5c31a23b1f9ba97cccdef331f6bfb4c07180aaa15d12e04a
 
 Package: com.muratkurt.nodejs
 Name: Node.js
@@ -989,3 +1213,91 @@ Size: 12794784
 MD5sum: f299388320c83f693cd1cc33d43fd0f2
 SHA1: 4a2ea5fb06c8fcdca443f1e718f63a78a824a0fe
 SHA256: aa963f7f8326f1377fef72f4d7d171d21b3e035152548596f7731ee814e979e6
+
+Package: com.muratkurt.shivtools
+Name: shivtools
+Version: 1.2.0
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Author: muratkurt
+Section: Development
+Depends: firmware (>= 15.0), preferenceloader
+Recommends: re.frida.server, com.muratkurt.nodejs, com.muratkurt.ios-mcp
+Icon: https://muratkurt.github.io/assets/shivtools/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
+Homepage: https://muratkurt.github.io/
+Installed-Size: 47528
+Description: on-device tweak development tools
+ Measure the device instead of guessing: class and method lookup from
+ the dyld cache, the view tree of a running app or of SpringBoard,
+ namespace translation, a Preferences recipe finder, a measurement log
+ with a summariser, and an on-device FairPlay decrypt.
+ .
+ Every tool prints its own usage with --help. Missing dependencies are
+ named, not guessed at: node is needed ONLY by shiv-sinif, frida only
+ by the tools that attach to a process.
+ .
+ shiv-kurulum drops the canonical instruction file into a project as
+ CLAUDE.md and AGENTS.md (it backs up an existing copy first, never
+ overwrites it).
+ .
+ The bundled frida client is built for frida 17 (arm64 + arm64e) and
+ was measured on A12 and A17; older chips are untested. shiv-sinif
+ itself does not use frida and works everywhere.
+ .
+ Includes the tweak development guide and three working example tweaks
+ (SpringBoard hook, Preferences page, in-app network filter):
+ shiv-ornek copies one into your project.
+ .
+ These tools come from shiv; they are packaged separately so any CLI
+ can use them.
+Filename: debs/com.muratkurt.shivtools_1.2.0_iphoneos-arm64.deb
+Size: 12799104
+MD5sum: 38a40fb966ae844635a52a7b4c6cfb39
+SHA1: 88cf391ecc61e746c72dd9b0a9b565109fba94e2
+SHA256: 02ee861ad0f89c7ee3b676aa48c0a2c49673dd0edcdbf0f9d1670a3ce563077f
+
+Package: com.muratkurt.shivtools
+Name: shivtools
+Version: 1.2.0
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Author: muratkurt
+Section: Development
+Depends: firmware (>= 15.0), preferenceloader
+Recommends: re.frida.server, com.muratkurt.nodejs, com.muratkurt.ios-mcp
+Icon: https://muratkurt.github.io/assets/shivtools/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
+Homepage: https://muratkurt.github.io/
+Installed-Size: 47528
+Description: on-device tweak development tools
+ Measure the device instead of guessing: class and method lookup from
+ the dyld cache, the view tree of a running app or of SpringBoard,
+ namespace translation, a Preferences recipe finder, a measurement log
+ with a summariser, and an on-device FairPlay decrypt.
+ .
+ Every tool prints its own usage with --help. Missing dependencies are
+ named, not guessed at: node is needed ONLY by shiv-sinif, frida only
+ by the tools that attach to a process.
+ .
+ shiv-kurulum drops the canonical instruction file into a project as
+ CLAUDE.md and AGENTS.md (it backs up an existing copy first, never
+ overwrites it).
+ .
+ The bundled frida client is built for frida 17 (arm64 + arm64e) and
+ was measured on A12 and A17; older chips are untested. shiv-sinif
+ itself does not use frida and works everywhere.
+ .
+ Includes the tweak development guide and three working example tweaks
+ (SpringBoard hook, Preferences page, in-app network filter):
+ shiv-ornek copies one into your project.
+ .
+ These tools come from shiv; they are packaged separately so any CLI
+ can use them.
+Filename: debs/com.muratkurt.shivtools_1.2.0_iphoneos-arm64e.deb
+Size: 12812388
+MD5sum: 3bbaf37e36a4745fb6b4ddc9926dcfd1
+SHA1: f18f8b8cfa678368ac1c984f82d7ccf425f13b38
+SHA256: 34d5bb12afcb246a7d25b25b8d888605cb9f73e94e0eec89bba89535d6cae038

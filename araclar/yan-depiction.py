@@ -45,13 +45,13 @@ nodejs = sayfa('nodejs', '#D9653B', [
 
 mcp = sayfa('ios-mcp', '#3FB0A6', [
   md("# iOS MCP\n\nAn MCP server inside SpringBoard: an AI agent can take screenshots, read the "
-     "accessibility tree and the live system log, tap, type, open apps and more — 46 tools.\n\n"
+     "accessibility tree and the live system log, tap, type, press the Action Button, open apps and more — 47 tools.\n\n"
      "Based on [witchan/ios-mcp](https://github.com/witchan/ios-mcp) 1.2.8, packaged for **shivtools** "
      "with safer defaults: it listens on **127.0.0.1 only**, `mcp-root` comes **without setuid**, and "
      "installing a deb through it **does not respring** on its own."),
   sep(), h('Information'),
   row('Developer', 'witchan · packaged by muratkurt'), row('Package', 'com.muratkurt.ios-mcp'),
-  row('Version', '1.2.8-2'), row('Requires', 'iOS 15.0 or later'), row('Compatibility', 'rootless · RootHide'),
+  row('Version', '1.2.8-3'), row('Requires', 'iOS 15.0 or later'), row('Compatibility', 'rootless · RootHide'),
   row('Tested on', TESTED), row('Replaces', 'com.witchan.ios-mcp'),
 ], [
   h('Connect an agent'),
@@ -70,6 +70,7 @@ mcp = sayfa('ios-mcp', '#3FB0A6', [
      "built unmodified from [witchan/ios-mcp v1.2.8](https://github.com/witchan/ios-mcp/tree/v1.2.8). "
      "Licence texts: `/usr/share/doc/`."),
 ], [
+  h('1.2.8-3'), md("- New tool: **press_action_button** — single, double or long press; works on the Lock Screen too.\n- `toggle_mute` is described correctly: it is not the Action Button."), sep(),
   h('1.2.8-2'), md("- Icon and depiction pages. The package contents are unchanged."), sep(),
   h('1.2.8-1'), md("- Listens on 127.0.0.1 by default; network mode is a setting.\n- `mcp-root` without setuid by default.\n"
                    "- Installing a deb no longer resprings by itself.\n- Turkish interface.\n- Everything included: server, OCR, IPA installer."),
