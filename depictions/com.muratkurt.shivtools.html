@@ -77,151 +77,40 @@
 <body>
 
 <h1>shivtools</h1>
-<p>Tweak development tools that run on the iPhone itself. Measure the device instead of guessing &mdash; any CLI can drive them: Claude Code, Codex, Gemini, or you over SSH.</p>
+<p>Tweak development tools that run on the iPhone itself.</p>
 
-<h2>Highlights</h2>
-
-<ul>
-  <li><strong>Find the code to hook</strong> &mdash; classes, methods and real signatures from the running process</li>
-  <li><strong>Read the screen</strong> &mdash; SpringBoard and app view trees as text</li>
-  <li><strong>Measure, don't guess</strong> &mdash; a measurement log, screenshots as data, safe edits</li>
-  <li><strong>Start from working code</strong> &mdash; a development guide and three example tweaks</li>
-  <li><strong>Setup wizard</strong> &mdash; Settings &rarr; shivtools shows what is missing and installs Node.js, frida and iOS MCP for your device, with a live log</li>
-  <li><strong>AI agent on the device</strong> &mdash; with iOS MCP the agent can see and drive the screen over 127.0.0.1: Wi-Fi, cellular or no computer attached</li>
-  <li><strong>Settings page</strong> &mdash; live status of the environment and every tool, in 9 languages</li>
-</ul>
-<p>Full walkthrough in the <strong>Usage</strong> tab and on <a href="https://github.com/muratkurt/shivtools">GitHub</a>.<br>- <strong>Press the Action Button</strong> &mdash; <code>shiv-dugme</code>, a real press for testing button tweaks</p>
+<div style="display:flex;gap:10px;overflow-x:auto;padding:4px 0">
+  <a href="https://muratkurt.github.io/assets/shivtools/ss-1.png"><img src="https://muratkurt.github.io/assets/shivtools/ss-1.png" alt="Environment" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/shivtools/ss-2.png"><img src="https://muratkurt.github.io/assets/shivtools/ss-2.png" alt="Tools" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/shivtools/ss-3.png"><img src="https://muratkurt.github.io/assets/shivtools/ss-3.png" alt="Tools" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/shivtools/ss-4.png"><img src="https://muratkurt.github.io/assets/shivtools/ss-4.png" alt="Getting started" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+</div>
 
 <h2>Information</h2>
 
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.shivtools</td></tr>
-  <tr><td>Version</td><td>1.2.0</td></tr>
+  <tr><td>Version</td><td>1.3.0</td></tr>
   <tr><td>Requires</td><td>iOS 15.0 or later</td></tr>
   <tr><td>Compatibility</td><td>rootless &middot; RootHide</td></tr>
   <tr><td>Tested on</td><td>iOS 17.0.3 (RootHide) &middot; iOS 16.1.1 (Dopamine)</td></tr>
-  <tr><td>Recommends</td><td>frida 17 &middot; Node.js 24 &middot; iOS MCP</td></tr>
-  <tr><td>Docs</td><td>github.com/muratkurt/shivtools</td></tr>
 </table>
 
-<hr>
-
-<h2>Usage</h2>
-
-<h3>With an AI agent</h3>
-
-<p>shivtools gives the AI you already run in the terminal (Claude Code, Codex, Gemini…) eyes and hands on the device.</p>
-<pre><code>mkdir -p ~/Documents/MyTweak &amp;&amp; cd ~/Documents/MyTweak
-shiv-kurulum</code></pre>
-<p>The rules file lands in the folder; the agent reads it when it starts there. With iOS MCP installed, <code>shiv-mcp baglan</code> prints the line that connects it.</p>
-<p><strong>No project folder?</strong> Tell the agent: <em>shivtools is installed. Find the rules file with <code>shiv-kurulum --goster</code>, read it with <code>cat</code>, and follow it for this session. Then run <code>shiv-ortam</code>.</em> (Say <code>cat</code>: on RootHide some agents' file tools can't see the jailbreak root.)</p>
-<p>Then start the CLI in that folder and say what you want, for example:</p>
-<ul>
-  <li><em>Read CLAUDE.md, run <code>shiv-ortam</code>, and tell me what this device is ready for.</em></li>
-  <li><em>I want a SpringBoard tweak that hides the dock icon labels. Start from <code>shiv-ornek 01</code> and measure before you change anything.</em></li>
-  <li><em>My tweak's Settings page is empty. Find out why &mdash; measure first, don't change code yet.</em></li>
-</ul>
-<p>You respring, not the agent. After a RootHide re-jailbreak, run <code>shiv-jbroot --yap</code> before starting the CLI.</p>
-
-<h3>Start here</h3>
-
-<pre><code>shiv-ortam</code></pre>
-<p>It prints the jailbreak type, iOS version, theos, SDK, frida, oldabi, node, the MCP server and every tool &mdash; and it <strong>runs</strong> each tool to check it, instead of only looking for the file. Run it first in every session; don't assume any of them.</p>
-<p><code>shiv-ortam --ajan-sina</code> checks the whole frida chain: client &rarr; server &rarr; attach &rarr; ObjC.</p>
-
-<h3>Set up a project</h3>
-
-<pre><code>cd /var/mobile/Documents/MyTweak
-shiv-kurulum</code></pre>
-<p>Writes <code>CLAUDE.md</code> and <code>AGENTS.md</code> from the bundled <code>SHIVTOOLS.md</code> &mdash; two names because different CLIs read different files. An existing copy is backed up with a timestamp first.</p>
-<p><code>shiv-kurulum --fark</code> shows how a project's copy differs from the installed one.</p>
-
-<h3>Start from an example</h3>
-
-<pre><code>shiv-ornek                  # list
-shiv-ornek 01 MyTweak       # SpringBoard hook
-shiv-ornek 02 MyPrefs       # Settings page + tweak
-shiv-ornek 03 MyAppTweak    # in-app network filter</code></pre>
-<p>Copies a working skeleton into a new folder and lists the names to change. It never writes over an existing folder. <code>shiv-ornek --rehber</code> prints where the guide is.</p>
-
-<h3>Find a class or a method</h3>
-
-<pre><code>shiv-sinif SBMediaController
-shiv-sinif --tara Inventory
-shiv-sinif --metod SBMediaController
-shiv-sinif --metod SBMediaController --tip
-shiv-sinif --metod UIAction --tip --sdk --desen handler</code></pre>
-<p><code>--tip</code> prints the type encoding &mdash; the return type and arguments &mdash; read from the live process. <code>--sdk</code> adds whether the selector is declared in the headers of that class, its superclasses or its protocols.</p>
-<p>Default target is SpringBoard; <code>--pid N</code> or <code>--bid &lt;bundle-id&gt;</code> picks another process.</p>
-
-<h3>Read the screen</h3>
-
-<pre><code>shiv-pencere
-shiv-pencere --izle 60
-shiv-ekran --ac com.apple.Preferences</code></pre>
-<p><code>shiv-pencere</code> dumps SpringBoard: window levels, the view tree, frames, <code>safe=</code> insets, <code>tf=</code> transforms, <code>EKRAN:</code> where the screen disagrees with your model, and the interface orientation.</p>
-<p><code>--izle SECS</code> records: a new numbered dump each time the layout <strong>changes</strong>, with a vibration so you know a moment was captured. Use it with a short numbered script for the person holding the phone.</p>
-<p><code>shiv-ekran</code> does the same for the app in front (<code>--ac</code> brings it forward).</p>
-
-<h3>Measure behaviour</h3>
-
-<pre><code>shiv-log parca        # C snippet to paste into the tweak
-shiv-log yeni         # clear before a test round
-shiv-log ozet         # count events
-shiv-log son 60       # last lines</code></pre>
-<p>With <strong>iOS MCP</strong> installed, <code>NSLog</code> is readable live (<code>get_syslog</code>). Without it &mdash; or inside an app's sandbox &mdash; log to a file and summarise; reading the raw file costs the agent its context.</p>
-
-<h3>Screenshots as data</h3>
-
-<pre><code>shiv-kare isaret      # remember the newest frame
-shiv-kare yeni        # paths of frames taken after that</code></pre>
-<p>Visual faults &mdash; flicker, one-frame redraws, wrong placement &mdash; never show up in a log. Only frames after the mark are listed; the camera roll is personal.</p>
-
-<h3>Edit safely</h3>
-
-<pre><code>shiv-sil Tweak.x 420 875 --kuru   # preview
-shiv-sil Tweak.x 420 875</code></pre>
-<p>Dated backup, deletes only that range, verifies the new line count, prints the diff, then checks for broken comments and unbalanced braces. Exit code 2 means the delete happened but a check failed.</p>
-
-<h3>iOS MCP</h3>
-
-<p>The optional <strong>iOS MCP</strong> package lets an AI agent take screenshots, read the accessibility tree, tap, type and read the live system log.</p>
-<pre><code>shiv-mcp durum            # installed? running? which mode?
-shiv-mcp baglan           # connect an agent on the phone
-shiv-mcp baglan --mac     # SSH tunnel for an agent on a Mac</code></pre>
-<p>It listens on <strong>127.0.0.1 only</strong> and <code>mcp-root</code> comes <strong>without setuid</strong> &mdash; both are settings. The server has no authentication: <code>shiv-mcp mod ag</code> asks before it listens on the network. From a Mac, prefer the SSH tunnel.</p>
-
-<h3>frida</h3>
-
-<p>The tools and the bundled client are built for <strong>frida 17</strong> (arm64 + arm64e, measured on A12 and A17).</p>
-<p>On <strong>RootHide</strong>, frida 17 can bring SpringBoard down on about the third attach in a row; apps are fine, and rootless is not affected. Batch SpringBoard work: read once with <code>shiv-pencere</code> or <code>shiv-sinif --tip</code>, then reuse the dump. <code>shiv-ortam</code> warns about it on RootHide.</p>
-
-<h3>Settings page</h3>
-
-<p><strong>Settings &rarr; shivtools</strong> shows the last measurement: environment, every tool with a status mark, quick-start commands you can tap to copy, and credits. It reads what <code>shiv-ortam</code> measured &mdash; run <code>shiv-ortam</code> to refresh it.</p>
-
-<h3>Paths</h3>
-
-<ul>
-  <li>Tools: <code>/usr/local/bin/</code></li>
-  <li>Rules and recipes: <code>/usr/local/share/shivtools/</code></li>
-  <li>Guide and examples: <code>/usr/local/share/shivtools/rehber/</code>, <code>…/ornekler/</code></li>
-  <li>Output: <code>/var/mobile/tw/</code></li>
-</ul>
-<p>On RootHide the shell lives in jbroot while system processes use the real root. <code>shiv-yol &lt;path&gt;</code> translates between them.</p>
-
-<h3>If shiv is also installed</h3>
-
-<p>Both packages own the same <code>/usr/local/bin/shiv-*</code> names. Install <strong>shivtools after shiv</strong>; <code>shiv-ortam</code> and <code>shiv-kurulum</code> warn when the names point elsewhere.</p>
-
-<h3>Full guide</h3>
-
-<p>Everything above, and more, on <a href="https://github.com/muratkurt/shivtools">GitHub</a>. Report a problem with <a href="https://github.com/muratkurt/shivtools/issues">an issue</a> &mdash; include your device, iOS, jailbreak and the output of <code>shiv-ortam</code>.</p>
+<p><a href="https://github.com/muratkurt/shivtools">Documentation &rarr;</a></p>
 
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>1.3.0</h3>
+
+<ul>
+  <li>Commands also have English names (<code>shiv-env</code>, <code>shiv-class</code>…).</li>
+  <li>Theos installs from Settings.</li>
+  <li>Settings shows available updates.</li>
+  <li>New: <code>shiv-verify</code>, <code>shiv-back</code>.</li>
+</ul>
 
 <h3>1.2.0</h3>
 

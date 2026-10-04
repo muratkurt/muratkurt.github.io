@@ -44,6 +44,15 @@ for i, tab in enumerate(d['tabs']):
         elif c == 'DepictionHeaderView':
             govde.append(('<h2>' if i == 0 else '<h3>') + satir_ici(v['title'])
                          + ('</h2>' if i == 0 else '</h3>'))
+        elif c == 'DepictionScreenshotsView':
+            # Sileo'daki kaydirilan resim seridi; web'de yatay kayan satir.
+            govde.append('<div style="display:flex;gap:10px;overflow-x:auto;padding:4px 0">\n'
+                + '\n'.join('  <a href="%s"><img src="%s" alt="%s" loading="lazy" '
+                             'style="height:420px;border-radius:10px;flex:none"></a>'
+                             % (x['url'], x['url'], html.escape(x.get('accessibilityText', '')))
+                             for x in v['screenshots']) + '\n</div>')
+        elif c == 'DepictionTableButtonView':
+            govde.append('<p><a href="%s">%s &rarr;</a></p>' % (v['action'], satir_ici(v['title'])))
         elif c == 'DepictionTableTextView':
             tablo.append('  <tr><td>' + satir_ici(v['title']) + '</td><td>'
                          + satir_ici(v['text']) + '</td></tr>')

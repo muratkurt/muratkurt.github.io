@@ -8,7 +8,54 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# KASwitcher\n\nClose all apps in the app switcher at once.\n\n## Features\n\n- **Close all** — hold the X button, tap Close All\n- **Undo** — tap the X during the countdown\n- **Pin** — hold a card; pinned apps are not closed\n- **Protect** — music and maps, plus any apps you choose\n- **Keep the most recent** app open\n- **Cascade animation** — style and speed\n- **Move and resize** the X button, portrait and landscape\n\n## Languages\n\nTürkçe · English · Deutsch · Français · Español · Italiano · Português · Русский · 简体中文 · 日本語 · 한국어 · العربية\n\n## Requirements\n\n- iOS 16 or later\n- RootHide or rootless\n- PreferenceLoader"
+          "markdown": "# KASwitcher\n\nClose all apps at once, hide apps in a locked vault, pin the ones you keep. 10 themes."
+        },
+        {
+          "class": "DepictionScreenshotsView",
+          "itemCornerRadius": 10,
+          "itemSize": "{160, 321}",
+          "screenshots": [
+            {
+              "url": "https://muratkurt.github.io/assets/kaswitcher/ss-1.jpg",
+              "accessibilityText": "Holographic"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/kaswitcher/ss-2.jpg",
+              "accessibilityText": "Terminal"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/kaswitcher/ss-3.jpg",
+              "accessibilityText": "Retro Game"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/kaswitcher/ss-4.jpg",
+              "accessibilityText": "Nostalgia"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/kaswitcher/ss-5.jpg",
+              "accessibilityText": "Aurora"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/kaswitcher/ss-6.jpg",
+              "accessibilityText": "Buttons"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/kaswitcher/ss-7.jpg",
+              "accessibilityText": "Menu"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/kaswitcher/ss-8.jpg",
+              "accessibilityText": "Undo"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/kaswitcher/ss-9.jpg",
+              "accessibilityText": "Settings"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/kaswitcher/ss-10.jpg",
+              "accessibilityText": "Settings"
+            }
+          ]
         },
         {
           "class": "DepictionSeparatorView"
@@ -30,7 +77,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "0.5.1"
+          "text": "0.7.0"
         },
         {
           "class": "DepictionTableTextView",
@@ -40,7 +87,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Tested on",
-          "text": "iOS 16.1.1 · 17.0.3"
+          "text": "iOS 16.1.1 · 17.0.3 · 26.6.2 (virtual iPhone)"
         },
         {
           "class": "DepictionTableButtonView",
@@ -54,6 +101,14 @@
     {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.7.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Hidden vault: swipe a card down to hide it, opens with Face ID\n- Pin apps in the vault\n- 10 themes\n- Tap X to close all; hold for the menu"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "0.5.1"

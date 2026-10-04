@@ -354,6 +354,58 @@ MD5sum: 542084949d8955209f6d19b1ab9b979e
 SHA1: 123022854cff80c2419e1935c37f01e02e886f4f
 SHA256: 63708a738046f5bd787b1a3490d514b7918e087c38a684c777dac01ea1a514d7
 
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Homepage: https://muratkurt.github.io/
+Description: Single and double click actions for the Action Button
+ Assign separate actions to single and double click; the long press stays Apple's.
+ .
+ Actions: Shortcut, Siri, Camera, Voice Memo, Flashlight, Screenshot, Screen Recording,
+ Control Center, Media, App, Stock Action.
+ .
+ Settings > ActionButtonFix. 12 languages.
+Architecture: iphoneos-arm64e
+Version: 2.9.0
+Installed-Size: 480
+Filename: debs/ActionButtonFix-2.9.0-roothide.deb
+Size: 67474
+MD5sum: abb10c02187edce6497ed3c64b7568b6
+SHA1: 1c9584c8718971a6392fd644025a1c6430e05862
+SHA256: 3d10d87d8c4dd49f653aaab0e2b4d02f11f724b404dd558bbcc9a0bf32053f07
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Homepage: https://muratkurt.github.io/
+Description: Single and double click actions for the Action Button
+ Assign separate actions to single and double click; the long press stays Apple's.
+ .
+ Actions: Shortcut, Siri, Camera, Voice Memo, Flashlight, Screenshot, Screen Recording,
+ Control Center, Media, App, Stock Action.
+ .
+ Settings > ActionButtonFix. 12 languages.
+Architecture: iphoneos-arm64
+Version: 2.9.0
+Installed-Size: 480
+Filename: debs/ActionButtonFix-2.9.0-rootless.deb
+Size: 67498
+MD5sum: ec368c773b7b584b28d3b4dd0585047b
+SHA1: c74f0c230855f0c11fe904027ed0294bc30b28e7
+SHA256: 94c588c3cf619593da9a433a67ae2f0e387fe8e2f9311c00ea431afa0dce6b67
+
 Package: com.muratkurt.kaswitcher
 Name: KASwitcher
 Author: muratkurt
@@ -397,6 +449,50 @@ Size: 75758
 MD5sum: dcdccda9e192a27f170f0d95cdcd3e90
 SHA1: 6b225453a74f5c09359be232fdf0b0dd4e7c3358
 SHA256: 412b0a08dbf6e66ecb6720b45735d16de6cb6e76ffcec808c353b3a18ccb1ce6
+
+Package: com.muratkurt.kaswitcher
+Name: KASwitcher
+Author: muratkurt
+Maintainer: muratkurt
+Section: Tweaks
+Depends: firmware (>= 16.0), preferenceloader
+Icon: https://muratkurt.github.io/assets/kaswitcher/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.json
+Homepage: https://muratkurt.github.io/
+Description: Close all apps in the app switcher at once
+ An X button in the app switcher closes every app, with undo.
+ Pin apps, protect apps, cascade animation, 12 languages.
+Architecture: iphoneos-arm64e
+Version: 0.7.0
+Installed-Size: 912
+Filename: debs/KASwitcher-0.7.0-roothide.deb
+Size: 155276
+MD5sum: 985f9261ea91465f87a5fccf6463f214
+SHA1: 67d61aeb559afce38a58e157fa0d564d6d26d8b0
+SHA256: 340b6471c49ec9f160557c6ab4194cc150c315c8c668fb8d0ee8641c987bdb6c
+
+Package: com.muratkurt.kaswitcher
+Name: KASwitcher
+Author: muratkurt
+Maintainer: muratkurt
+Section: Tweaks
+Depends: firmware (>= 16.0), preferenceloader
+Icon: https://muratkurt.github.io/assets/kaswitcher/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.json
+Homepage: https://muratkurt.github.io/
+Description: Close all apps in the app switcher at once
+ An X button in the app switcher closes every app, with undo.
+ Pin apps, protect apps, cascade animation, 12 languages.
+Architecture: iphoneos-arm64
+Version: 0.7.0
+Installed-Size: 912
+Filename: debs/KASwitcher-0.7.0-rootless.deb
+Size: 155140
+MD5sum: eecd679db853f96e6e5c687787845e3e
+SHA1: b02e67fcfc1b973eb5f072a25162f62eaf1136ac
+SHA256: b082c022523d76962aad428e8c6b19fe6ce680da435ed8d2b55d8b558f6ecd82
 
 Package: com.muratkurt.frida
 Name: Frida
@@ -1301,3 +1397,91 @@ Size: 12812388
 MD5sum: 3bbaf37e36a4745fb6b4ddc9926dcfd1
 SHA1: f18f8b8cfa678368ac1c984f82d7ccf425f13b38
 SHA256: 34d5bb12afcb246a7d25b25b8d888605cb9f73e94e0eec89bba89535d6cae038
+
+Package: com.muratkurt.shivtools
+Name: shivtools
+Version: 1.3.0
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Author: muratkurt
+Section: Development
+Depends: firmware (>= 15.0), preferenceloader
+Recommends: re.frida.server, com.muratkurt.nodejs, com.muratkurt.ios-mcp
+Icon: https://muratkurt.github.io/assets/shivtools/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
+Homepage: https://muratkurt.github.io/
+Installed-Size: 48968
+Description: on-device tweak development tools
+ Measure the device instead of guessing: class and method lookup from
+ the dyld cache, the view tree of a running app or of SpringBoard,
+ namespace translation, a Preferences recipe finder, a measurement log
+ with a summariser, and an on-device FairPlay decrypt.
+ .
+ Every tool prints its own usage with --help. Missing dependencies are
+ named, not guessed at: node is needed ONLY by shiv-sinif, frida only
+ by the tools that attach to a process.
+ .
+ shiv-kurulum drops the canonical instruction file into a project as
+ CLAUDE.md and AGENTS.md (it backs up an existing copy first, never
+ overwrites it).
+ .
+ The bundled frida client is built for frida 17 (arm64 + arm64e) and
+ was measured on A12 and A17; older chips are untested. shiv-sinif
+ itself does not use frida and works everywhere.
+ .
+ Includes the tweak development guide and three working example tweaks
+ (SpringBoard hook, Preferences page, in-app network filter):
+ shiv-ornek copies one into your project.
+ .
+ These tools come from shiv; they are packaged separately so any CLI
+ can use them.
+Filename: debs/com.muratkurt.shivtools_1.3.0_iphoneos-arm64.deb
+Size: 13063860
+MD5sum: e6edc021e45e3805fe2cdfd0c26af42c
+SHA1: 060529cc6e6493843f769fa3a0880dd56fe722df
+SHA256: 9ecf9c0eba61e1646c9e2b50eaf2ca68e5663802a6ed356033f8c9797c8fb80e
+
+Package: com.muratkurt.shivtools
+Name: shivtools
+Version: 1.3.0
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Author: muratkurt
+Section: Development
+Depends: firmware (>= 15.0), preferenceloader
+Recommends: re.frida.server, com.muratkurt.nodejs, com.muratkurt.ios-mcp
+Icon: https://muratkurt.github.io/assets/shivtools/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
+Homepage: https://muratkurt.github.io/
+Installed-Size: 48968
+Description: on-device tweak development tools
+ Measure the device instead of guessing: class and method lookup from
+ the dyld cache, the view tree of a running app or of SpringBoard,
+ namespace translation, a Preferences recipe finder, a measurement log
+ with a summariser, and an on-device FairPlay decrypt.
+ .
+ Every tool prints its own usage with --help. Missing dependencies are
+ named, not guessed at: node is needed ONLY by shiv-sinif, frida only
+ by the tools that attach to a process.
+ .
+ shiv-kurulum drops the canonical instruction file into a project as
+ CLAUDE.md and AGENTS.md (it backs up an existing copy first, never
+ overwrites it).
+ .
+ The bundled frida client is built for frida 17 (arm64 + arm64e) and
+ was measured on A12 and A17; older chips are untested. shiv-sinif
+ itself does not use frida and works everywhere.
+ .
+ Includes the tweak development guide and three working example tweaks
+ (SpringBoard hook, Preferences page, in-app network filter):
+ shiv-ornek copies one into your project.
+ .
+ These tools come from shiv; they are packaged separately so any CLI
+ can use them.
+Filename: debs/com.muratkurt.shivtools_1.3.0_iphoneos-arm64e.deb
+Size: 13058224
+MD5sum: e9045e0d79e08526ed1649f33f420626
+SHA1: a7237172c898273d8ae8be9cec9454701a8323de
+SHA256: c89b4301fa0db758329833c74059cb0e1f45e5e06436da3960172a26b4aec05d
