@@ -8,7 +8,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# KASwitcher\n\nClose all apps at once, hide apps in a locked vault, pin the ones you keep. 10 themes."
+          "markdown": "# KASwitcher\n\nClose all apps at once, hide apps in a locked vault, pin the ones you keep. 10 themes.\n\n**Move the X button:** hold the X › Settings › Move Button."
         },
         {
           "class": "DepictionScreenshotsView",
@@ -91,8 +91,14 @@
         },
         {
           "class": "DepictionTableButtonView",
-          "title": "Contact",
-          "action": "mailto:muratkurttr@outlook.com?subject=KASwitcher",
+          "title": "Report a bug",
+          "action": "https://github.com/muratkurt/KASwitcher/issues/new/choose",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Documentation",
+          "action": "https://github.com/muratkurt/KASwitcher",
           "openExternal": true
         }
       ],
