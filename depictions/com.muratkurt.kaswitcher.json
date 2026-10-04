@@ -77,7 +77,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "0.7.0"
+          "text": "0.7.1"
         },
         {
           "class": "DepictionTableTextView",
@@ -107,6 +107,17 @@
     {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.7.1"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Fixed: Settings switches showed \"1\" / \"0\" on a fresh install.\n- Vault button always visible; a hint when the vault is empty.\n- New installs start with everything off."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "0.7.0"
