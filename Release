@@ -6,12 +6,12 @@ Codename: ios
 Architectures: iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: Tweaks and command line tools for jailbroken iOS
-Date: Sun, 04 Oct 2026 11:25:07 GMT
+Date: Sun, 04 Oct 2026 21:16:13 GMT
 MD5Sum:
- 9f1bccce5b357109407b45f2a68a479a            64688 Packages
- 556b60aae431bfed043dde74929c3594             9791 Packages.gz
- 1dce26f3c085ff98324c7c465a08b824            10983 Packages.bz2
+ 441cfcaef06ce12c35eaecf4bbc96323            70723 Packages
+ c1f8d78c3b3ad2673242a293d7617ce5            10291 Packages.gz
+ 6a74894102f7ba5f6dce0794e7ccaaee            11448 Packages.bz2
 SHA256:
- 54bea42497e3af13050a2bb0bf795894b26bc02910e23f3bd2f96cac988845a6            64688 Packages
- 983fba7991fb7e816641f77233bb636cc62d24e5ddee00685b3f3e706177975a             9791 Packages.gz
- c42b9f2657922b2bddff06e69407d9c508e11de8c201b34b15573a2b964f2a90            10983 Packages.bz2
+ 9be919ee13eac7fca6bedcb13a226de83e072b7ee19d22502517907c09c9e769            70723 Packages
+ eb491a47473264daf905705b16a4a032bcc01ed50fcf6aaaa1e96174c1111908            10291 Packages.gz
+ 1c89c11ec41fa5a475f56a67083a041c1253a79c329139cf10bbc8745b716a3c            11448 Packages.bz2

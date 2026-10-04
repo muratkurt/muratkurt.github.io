@@ -8,6 +8,58 @@ Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
 Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
 SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
 Homepage: https://muratkurt.github.io/
+Description: Single and double click actions for the Action Button
+ Assign separate actions to single and double click; the long press stays Apple's.
+ .
+ Actions: Shortcut, Siri, Camera, Voice Memo, Flashlight, Screenshot, Screen Recording,
+ Control Center, Media, App, Stock Action.
+ .
+ Settings > ActionButtonFix. 12 languages.
+Architecture: iphoneos-arm64e
+Version: 2.10.0
+Installed-Size: 536
+Filename: debs/ActionButtonFix-2.10.0-roothide.deb
+Size: 83516
+MD5sum: b83766d24a2c275428105a9ed9d0dec0
+SHA1: ac0300997038b70cd9a49457a6ee489c89796660
+SHA256: a8bed2d8a6504d947ca8dfdabeb8d0a9b41dfefa0547e24a1399c938f37ef566
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Homepage: https://muratkurt.github.io/
+Description: Single and double click actions for the Action Button
+ Assign separate actions to single and double click; the long press stays Apple's.
+ .
+ Actions: Shortcut, Siri, Camera, Voice Memo, Flashlight, Screenshot, Screen Recording,
+ Control Center, Media, App, Stock Action.
+ .
+ Settings > ActionButtonFix. 12 languages.
+Architecture: iphoneos-arm64
+Version: 2.10.0
+Installed-Size: 536
+Filename: debs/ActionButtonFix-2.10.0-rootless.deb
+Size: 83602
+MD5sum: f7340d41fea8899f686bb3a035191790
+SHA1: 7965847d56f95b5d2eabe498bdefed1a61fdef1e
+SHA256: fe1630d303aa1e088b04774c425e44512aea7703921bfbcdb2363d51e7cef8ac
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Homepage: https://muratkurt.github.io/
 Description: Action Button'a tek tik ve cift tik eylemi kazandirir
  iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
  bagimsiz eylem atamanizi saglar. Uzun basista Apple'in mevcut Action
@@ -1485,3 +1537,91 @@ Size: 13058224
 MD5sum: e9045e0d79e08526ed1649f33f420626
 SHA1: a7237172c898273d8ae8be9cec9454701a8323de
 SHA256: c89b4301fa0db758329833c74059cb0e1f45e5e06436da3960172a26b4aec05d
+
+Package: com.muratkurt.shivtools
+Name: shivtools
+Version: 1.3.1
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Author: muratkurt
+Section: Development
+Depends: firmware (>= 15.0), preferenceloader
+Recommends: re.frida.server, com.muratkurt.nodejs, com.muratkurt.ios-mcp
+Icon: https://muratkurt.github.io/assets/shivtools/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
+Homepage: https://muratkurt.github.io/
+Installed-Size: 49108
+Description: on-device tweak development tools
+ Measure the device instead of guessing: class and method lookup from
+ the dyld cache, the view tree of a running app or of SpringBoard,
+ namespace translation, a Preferences recipe finder, a measurement log
+ with a summariser, and an on-device FairPlay decrypt.
+ .
+ Every tool prints its own usage with --help. Missing dependencies are
+ named, not guessed at: node is needed ONLY by shiv-sinif, frida only
+ by the tools that attach to a process.
+ .
+ shiv-kurulum drops the canonical instruction file into a project as
+ CLAUDE.md and AGENTS.md (it backs up an existing copy first, never
+ overwrites it).
+ .
+ The bundled frida client is built for frida 17 (arm64 + arm64e) and
+ was measured on A12 and A17; older chips are untested. shiv-sinif
+ itself does not use frida and works everywhere.
+ .
+ Includes the tweak development guide and three working example tweaks
+ (SpringBoard hook, Preferences page, in-app network filter):
+ shiv-ornek copies one into your project.
+ .
+ These tools come from shiv; they are packaged separately so any CLI
+ can use them.
+Filename: debs/com.muratkurt.shivtools_1.3.1_iphoneos-arm64.deb
+Size: 13078140
+MD5sum: 64ce633ff7a9241ed962dbb853b7bbd8
+SHA1: 46e76b9101f3439eb17d0b5d2819da7b6297ae54
+SHA256: afa37765d10b3781a5106ed44f24894a3d7f0f27f8c43e53450acbc65088690b
+
+Package: com.muratkurt.shivtools
+Name: shivtools
+Version: 1.3.1
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Author: muratkurt
+Section: Development
+Depends: firmware (>= 15.0), preferenceloader
+Recommends: re.frida.server, com.muratkurt.nodejs, com.muratkurt.ios-mcp
+Icon: https://muratkurt.github.io/assets/shivtools/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
+Homepage: https://muratkurt.github.io/
+Installed-Size: 49108
+Description: on-device tweak development tools
+ Measure the device instead of guessing: class and method lookup from
+ the dyld cache, the view tree of a running app or of SpringBoard,
+ namespace translation, a Preferences recipe finder, a measurement log
+ with a summariser, and an on-device FairPlay decrypt.
+ .
+ Every tool prints its own usage with --help. Missing dependencies are
+ named, not guessed at: node is needed ONLY by shiv-sinif, frida only
+ by the tools that attach to a process.
+ .
+ shiv-kurulum drops the canonical instruction file into a project as
+ CLAUDE.md and AGENTS.md (it backs up an existing copy first, never
+ overwrites it).
+ .
+ The bundled frida client is built for frida 17 (arm64 + arm64e) and
+ was measured on A12 and A17; older chips are untested. shiv-sinif
+ itself does not use frida and works everywhere.
+ .
+ Includes the tweak development guide and three working example tweaks
+ (SpringBoard hook, Preferences page, in-app network filter):
+ shiv-ornek copies one into your project.
+ .
+ These tools come from shiv; they are packaged separately so any CLI
+ can use them.
+Filename: debs/com.muratkurt.shivtools_1.3.1_iphoneos-arm64e.deb
+Size: 13074436
+MD5sum: 8ac5ec13fe7d5095807f7ba264b0c52c
+SHA1: 6267ad467c1d25c6816ffde1ad95290f3e8fb99f
+SHA256: 271c41d4c27b3a4dcc397004a31397b88985ae458e30b0c47924555db004b725
