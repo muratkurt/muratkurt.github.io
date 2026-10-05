@@ -1669,3 +1669,91 @@ Size: 13074436
 MD5sum: 8ac5ec13fe7d5095807f7ba264b0c52c
 SHA1: 6267ad467c1d25c6816ffde1ad95290f3e8fb99f
 SHA256: 271c41d4c27b3a4dcc397004a31397b88985ae458e30b0c47924555db004b725
+
+Package: com.muratkurt.shivtools
+Name: shivtools
+Version: 1.4.0
+Architecture: iphoneos-arm64
+Maintainer: muratkurt
+Author: muratkurt
+Section: Development
+Depends: firmware (>= 15.0), preferenceloader
+Recommends: re.frida.server, com.muratkurt.nodejs, com.muratkurt.ios-mcp
+Icon: https://muratkurt.github.io/assets/shivtools/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
+Homepage: https://muratkurt.github.io/
+Installed-Size: 49224
+Description: on-device tweak development tools
+ Measure the device instead of guessing: class and method lookup from
+ the dyld cache, the view tree of a running app or of SpringBoard,
+ namespace translation, a Preferences recipe finder, a measurement log
+ with a summariser, and an on-device FairPlay decrypt.
+ .
+ Every tool prints its own usage with --help. Missing dependencies are
+ named, not guessed at: node is needed ONLY by shiv-sinif, frida only
+ by the tools that attach to a process.
+ .
+ shiv-kurulum drops the canonical instruction file into a project as
+ CLAUDE.md and AGENTS.md (it backs up an existing copy first, never
+ overwrites it).
+ .
+ The bundled frida client is built for frida 17 (arm64 + arm64e) and
+ was measured on A12 and A17; older chips are untested. shiv-sinif
+ itself does not use frida and works everywhere.
+ .
+ Includes the tweak development guide and three working example tweaks
+ (SpringBoard hook, Preferences page, in-app network filter):
+ shiv-ornek copies one into your project.
+ .
+ These tools come from shiv; they are packaged separately so any CLI
+ can use them.
+Filename: debs/com.muratkurt.shivtools_1.4.0_iphoneos-arm64.deb
+Size: 13075136
+MD5sum: deddc68f93ab0f3280f53419e4d85274
+SHA1: c6574578bdfc22d47c0200f86c0b5b0d0c8bbdd7
+SHA256: 695f37888feb467dacf45debf6779d4ba7b951f62d12d3c483e2571237e3e733
+
+Package: com.muratkurt.shivtools
+Name: shivtools
+Version: 1.4.0
+Architecture: iphoneos-arm64e
+Maintainer: muratkurt
+Author: muratkurt
+Section: Development
+Depends: firmware (>= 15.0), preferenceloader
+Recommends: re.frida.server, com.muratkurt.nodejs, com.muratkurt.ios-mcp
+Icon: https://muratkurt.github.io/assets/shivtools/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.shivtools.json
+Homepage: https://muratkurt.github.io/
+Installed-Size: 49224
+Description: on-device tweak development tools
+ Measure the device instead of guessing: class and method lookup from
+ the dyld cache, the view tree of a running app or of SpringBoard,
+ namespace translation, a Preferences recipe finder, a measurement log
+ with a summariser, and an on-device FairPlay decrypt.
+ .
+ Every tool prints its own usage with --help. Missing dependencies are
+ named, not guessed at: node is needed ONLY by shiv-sinif, frida only
+ by the tools that attach to a process.
+ .
+ shiv-kurulum drops the canonical instruction file into a project as
+ CLAUDE.md and AGENTS.md (it backs up an existing copy first, never
+ overwrites it).
+ .
+ The bundled frida client is built for frida 17 (arm64 + arm64e) and
+ was measured on A12 and A17; older chips are untested. shiv-sinif
+ itself does not use frida and works everywhere.
+ .
+ Includes the tweak development guide and three working example tweaks
+ (SpringBoard hook, Preferences page, in-app network filter):
+ shiv-ornek copies one into your project.
+ .
+ These tools come from shiv; they are packaged separately so any CLI
+ can use them.
+Filename: debs/com.muratkurt.shivtools_1.4.0_iphoneos-arm64e.deb
+Size: 13073512
+MD5sum: 5cd6b5cd59a4ddd4380d158cd031d938
+SHA1: e62a44092322f62127a99634df3b6dd831d1e506
+SHA256: 5ec6b35292d16c8113ca726ebdc4a53b8e04f068f9a6ee744060cc2333e5bcc7
