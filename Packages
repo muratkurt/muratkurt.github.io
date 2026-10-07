@@ -590,6 +590,50 @@ MD5sum: 33672db616261f8a97cb2842c189b279
 SHA1: 2f7e44f5c4a3f6af3ae3132703f9316f38c29c44
 SHA256: 0c21db6f425f26fc9b454d3ab070b9ee3e44036c1d2c72e6436cbdaa980df7ed
 
+Package: com.muratkurt.kaswitcher
+Name: KASwitcher
+Author: muratkurt
+Maintainer: muratkurt
+Section: Tweaks
+Depends: firmware (>= 16.0), preferenceloader
+Icon: https://muratkurt.github.io/assets/kaswitcher/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.json
+Homepage: https://muratkurt.github.io/
+Description: Close all apps in the app switcher at once
+ An X button in the app switcher closes every app, with undo.
+ Pin apps, protect apps, cascade animation, 12 languages.
+Architecture: iphoneos-arm64e
+Version: 0.7.2
+Installed-Size: 920
+Filename: debs/KASwitcher-0.7.2-roothide.deb
+Size: 161930
+MD5sum: 0bb20817b616305c40fe0821638a815d
+SHA1: 491bedd584cacc532472baedc7abf87b0284a19d
+SHA256: 423b1cbbc92086dc20ec2cda843f71f25bcf6ad3dfbc33f680f3ae7141c1f52c
+
+Package: com.muratkurt.kaswitcher
+Name: KASwitcher
+Author: muratkurt
+Maintainer: muratkurt
+Section: Tweaks
+Depends: firmware (>= 16.0), preferenceloader
+Icon: https://muratkurt.github.io/assets/kaswitcher/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.kaswitcher.json
+Homepage: https://muratkurt.github.io/
+Description: Close all apps in the app switcher at once
+ An X button in the app switcher closes every app, with undo.
+ Pin apps, protect apps, cascade animation, 12 languages.
+Architecture: iphoneos-arm64
+Version: 0.7.2
+Installed-Size: 920
+Filename: debs/KASwitcher-0.7.2-rootless.deb
+Size: 161602
+MD5sum: 8320a356f7d591febe92a0a9c57cbc90
+SHA1: 3674b652d2bee1ceef1b1aa4689f4dfde627ca6a
+SHA256: f994876e613f77eeec433d7b65b3db9ae838822cdf99fc0cd0f47283a53acb19
+
 Package: com.muratkurt.frida
 Name: Frida
 Version: 17.19.0-3

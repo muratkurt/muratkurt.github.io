@@ -8,7 +8,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# KASwitcher\n\nClose all apps at once, hide apps in a locked vault, pin the ones you keep. 10 themes.\n\n**Move the X button:** hold the X › Settings › Move Button."
+          "markdown": "# KASwitcher\n\nClose all apps at once, hide apps in a locked vault, pin the ones you keep. 12 themes.\n\n**Move the X button:** hold the X › Settings › Move Button."
         },
         {
           "class": "DepictionScreenshotsView",
@@ -77,7 +77,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "0.7.1"
+          "text": "0.7.2"
         },
         {
           "class": "DepictionTableTextView",
@@ -109,6 +109,17 @@
       "views": [
         {
           "class": "DepictionHeaderView",
+          "title": "0.7.2"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Vault can be turned off.\n- Vault button: Always / When not empty / Never.\n- Adjustable undo time (0–8 s).\n- Two new themes: Liquid Glass and Lava."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
           "title": "0.7.1"
         },
         {
@@ -124,7 +135,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- Hidden vault: swipe a card down to hide it, opens with Face ID\n- Pin apps in the vault\n- 10 themes\n- Tap X to close all; hold for the menu"
+          "markdown": "- Hidden vault: swipe a card down to hide it, opens with Face ID\n- Pin apps in the vault\n- 12 themes\n- Tap X to close all; hold for the menu"
         },
         {
           "class": "DepictionHeaderView",
