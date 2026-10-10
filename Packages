@@ -60,6 +60,58 @@ Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
 Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
 SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
 Homepage: https://muratkurt.github.io/
+Description: Single and double click actions for the Action Button
+ Assign separate actions to single and double click; the long press stays Apple's.
+ .
+ Actions: Shortcut, Siri, Camera, Voice Memo, Flashlight, Screenshot, Screen Recording,
+ Control Center, Media, App, Stock Action.
+ .
+ Settings > ActionButtonFix. 12 languages.
+Architecture: iphoneos-arm64e
+Version: 2.11.0
+Installed-Size: 556
+Filename: debs/ActionButtonFix-2.11.0-roothide.deb
+Size: 89608
+MD5sum: 40c5476cc3011045ea4ce59b24e36016
+SHA1: dacc8677989f84d53b083ec53673c52c81036f4d
+SHA256: a9125699360e4da1c476d1a209dfbfcc63311d6989933f1a61bf6c66f669efb9
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Homepage: https://muratkurt.github.io/
+Description: Single and double click actions for the Action Button
+ Assign separate actions to single and double click; the long press stays Apple's.
+ .
+ Actions: Shortcut, Siri, Camera, Voice Memo, Flashlight, Screenshot, Screen Recording,
+ Control Center, Media, App, Stock Action.
+ .
+ Settings > ActionButtonFix. 12 languages.
+Architecture: iphoneos-arm64
+Version: 2.11.0
+Installed-Size: 556
+Filename: debs/ActionButtonFix-2.11.0-rootless.deb
+Size: 89660
+MD5sum: e82010171ef757442281b3d6352189b1
+SHA1: 5f48c4860e7008dedf96b01ed312c898a2a92a7f
+SHA256: 72414056cacfec24cd5b18d079f68b406fcc9f95b0ec3ec8576a9aa75bed914c
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Homepage: https://muratkurt.github.io/
 Description: Action Button'a tek tik ve cift tik eylemi kazandirir
  iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
  bagimsiz eylem atamanizi saglar. Uzun basista Apple'in mevcut Action
