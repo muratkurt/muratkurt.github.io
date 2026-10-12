@@ -99,6 +99,16 @@
   <li><strong>Deep mode</strong> &mdash; optional, for apps with their own network code</li>
   <li>12 languages</li>
 </ul>
+<h2>How it works</h2>
+<ul>
+  <li>A small background service places drop rules in iOS's own network policy system (NECP) &mdash; the layer iOS uses for its own network rules.</li>
+  <li>Each rule is a tracker domain: about 2,600, where HaGeZi Multi PRO meets the DuckDuckGo and Disconnect company lists.</li>
+  <li>A connection to one of them is dropped before it leaves the phone, in every app and in Safari; system lookups are cut too.</li>
+  <li>Nothing is injected into apps, so they keep running untouched. Apps you exclude are skipped.</li>
+  <li>Each blocked attempt is counted on the device with the app, the company and the server's country.</li>
+  <li>Pause or turn it off and the rules are gone within milliseconds; nothing is left behind.</li>
+  <li>Apps that bring their own DNS or a fixed IP get past the system layer; Deep mode covers those inside the apps you pick.</li>
+</ul>
 <h2>Requirements</h2>
 <ul>
   <li>iOS 15 or later, RootHide or rootless</li>
