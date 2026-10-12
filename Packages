@@ -112,6 +112,58 @@ Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
 Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
 SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
 Homepage: https://muratkurt.github.io/
+Description: Single and double click actions for the Action Button
+ Assign separate actions to single and double click; the long press stays Apple's.
+ .
+ Actions: Shortcut, Siri, Camera, Voice Memo, Flashlight, Screenshot, Screen Recording,
+ Control Center, Media, App, Stock Action.
+ .
+ Settings > ActionButtonFix. 12 languages.
+Architecture: iphoneos-arm64e
+Version: 2.12.0
+Installed-Size: 556
+Filename: debs/ActionButtonFix-2.12.0-roothide.deb
+Size: 90928
+MD5sum: 288e3ef57588dd780619ff1d75a22abd
+SHA1: 233868b30acf1bf801a61a70206ffb626b9b69e7
+SHA256: c3e47d9649c580fe2dfcef063bd098c3aeea0b19c81f98204ec96e132de6426e
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Homepage: https://muratkurt.github.io/
+Description: Single and double click actions for the Action Button
+ Assign separate actions to single and double click; the long press stays Apple's.
+ .
+ Actions: Shortcut, Siri, Camera, Voice Memo, Flashlight, Screenshot, Screen Recording,
+ Control Center, Media, App, Stock Action.
+ .
+ Settings > ActionButtonFix. 12 languages.
+Architecture: iphoneos-arm64
+Version: 2.12.0
+Installed-Size: 556
+Filename: debs/ActionButtonFix-2.12.0-rootless.deb
+Size: 91040
+MD5sum: c604ffacfe9a08ea6b22a7e5e872ef6e
+SHA1: 4fc8a8085dd98c7a25dbc6eee622805ef980c493
+SHA256: 53ea7bb465ec1cf6b85d00e505d4f4e172ac3bc5ee8fac8e706594ca00f3ebb4
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Homepage: https://muratkurt.github.io/
 Description: Action Button'a tek tik ve cift tik eylemi kazandirir
  iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
  bagimsiz eylem atamanizi saglar. Uzun basista Apple'in mevcut Action
@@ -509,6 +561,62 @@ Size: 67498
 MD5sum: ec368c773b7b584b28d3b4dd0585047b
 SHA1: c74f0c230855f0c11fe904027ed0294bc30b28e7
 SHA256: 94c588c3cf619593da9a433a67ae2f0e387fe8e2f9311c00ea431afa0dce6b67
+
+Package: com.muratkurt.apptrackerblock
+Name: AppTrackerBlock
+Author: muratkurt
+Maintainer: muratkurt
+Section: Tweaks
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader, curl
+Suggests: com.opa334.ccsupport
+Icon: https://muratkurt.github.io/assets/apptrackerblock/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.apptrackerblock.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.apptrackerblock.json
+Homepage: https://muratkurt.github.io/
+Description: Blocks app trackers system-wide, without injecting into apps
+ Tracker domains are blocked in the kernel network layer, Safari included.
+ .
+ App with a 7-day report per app, company and country, a live feed and a daily
+ report. Quick panel, home screen widgets, Control Center button
+ (iOS 18+ built in; iOS 15–17 needs CCSupport).
+ .
+ Settings > AppTrackerBlock. 12 languages.
+Architecture: iphoneos-arm64e
+Version: 2.0.0
+Installed-Size: 5628
+Filename: debs/AppTrackerBlock-2.0.0-roothide.deb
+Size: 971262
+MD5sum: 93286be63b60669dddfaef282dff8da5
+SHA1: 58ae6319b8499671547dce65f3f6007683aaa6ee
+SHA256: cc1648845a0629da976e746b05f314a104d862a41bed9c46d19fb0593db36adb
+
+Package: com.muratkurt.apptrackerblock
+Name: AppTrackerBlock
+Author: muratkurt
+Maintainer: muratkurt
+Section: Tweaks
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader, curl
+Suggests: com.opa334.ccsupport
+Icon: https://muratkurt.github.io/assets/apptrackerblock/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.apptrackerblock.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.apptrackerblock.json
+Homepage: https://muratkurt.github.io/
+Description: Blocks app trackers system-wide, without injecting into apps
+ Tracker domains are blocked in the kernel network layer, Safari included.
+ .
+ App with a 7-day report per app, company and country, a live feed and a daily
+ report. Quick panel, home screen widgets, Control Center button
+ (iOS 18+ built in; iOS 15–17 needs CCSupport).
+ .
+ Settings > AppTrackerBlock. 12 languages.
+Architecture: iphoneos-arm64
+Version: 2.0.0
+Installed-Size: 5628
+Filename: debs/AppTrackerBlock-2.0.0-rootless.deb
+Size: 970180
+MD5sum: f35130f6d67ce1ec45ce23d8ea5e358f
+SHA1: aed68340e56f46f5de3aaaa0d233250f71da0656
+SHA256: 9f1b61df0084f6681dab60593c5c0dd9b3afc8258cc1276374bfa89962277ded
 
 Package: com.muratkurt.kaswitcher
 Name: KASwitcher

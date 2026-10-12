@@ -77,198 +77,172 @@
 <body>
 
 <h1>ActionButtonFix</h1>
-<p class="lede">Single click and double click for the Action Button. The long press stays Apple's.</p>
-
+<p>Single click and double click for the Action Button. The long press stays Apple's.</p>
 <h2>Gestures</h2>
 <ul>
-  <li><strong>Single click</strong> — an action you pick</li>
-  <li><strong>Double click</strong> — a different action you pick</li>
-  <li><strong>Long press</strong> — unchanged, whatever iOS Settings has</li>
+  <li><strong>Single click</strong> &mdash; an action you pick</li>
+  <li><strong>Double click</strong> &mdash; a different action you pick</li>
+  <li><strong>Long press</strong> &mdash; unchanged, whatever iOS Settings has</li>
 </ul>
 <p>The short press is never handed to Apple, so the <em>Silent / hold</em> feedback in the Dynamic Island never appears. Only your action runs.</p>
-
 <h2>Actions</h2>
-
-<h3>Control</h3>
-<p>Any Control Center control, including app controls, picked in Apple's own sheet. iOS 18+.</p>
-
-<h3>Accessibility</h3>
-<p>Toggles a feature from Apple's Action Button list: Zoom, Magnifier, VoiceOver…</p>
-
-<h3>Shortcut</h3>
-<p>Runs a shortcut the way Apple's Action Button does: the Shortcuts app stays closed, a short confirmation shows in the Dynamic Island. Picked in Apple's own sheet.</p>
-
-<h3>Siri</h3>
-<p>Opens Siri the same way holding the side button does.</p>
-
-<h3>Voice Memo</h3>
-<p>Apple's own Voice Memo action: starts and stops a recording, also on the Lock Screen and with the screen off. The start/stop sound can be turned off.</p>
-
-<h3>Camera</h3>
-<p>Side (<strong>Back / Front</strong>) and mode (Video, Slo-Mo, Time-Lapse, Cinematic, Photo, Portrait), set per click. Optionally starts recording as it opens; the same click stops it. Opens through Apple's own flow, so it is fast and works with the screen off and on the Lock Screen.</p>
-
-<h3>Screen Recording</h3>
-<p>Starts and stops the recording. Same as Control Center's: 3-2-1 countdown, Dynamic Island view, saved to Photos. A recording started in Control Center stops with the button, and the other way round. The microphone follows the Control Center setting.</p>
-
-<h3>Control Center</h3>
-<p>Runs one module: Dark Mode, Rotation Lock, Silent Mode, Low Power Mode, QR Code Reader, Magnifier, Voice Memos, Quick Note, Stopwatch, Timer, Alarm, Calculator, Wallet.</p>
-
-<h3>Flashlight</h3>
-<p>The same controller Control Center uses, so the two stay in sync. Brightness is set per click: Low, Medium, High, Maximum. While it is on, the volume buttons change its brightness.</p>
-
-<h3>Screenshot</h3>
-<p>The stock flow: flash, corner preview, tap to edit. Screenshot tweaks such as Prism and Snapper 3 are triggered too. Does nothing while the screen is off.</p>
-
-<h3>Media</h3>
-<p>Play/pause, next track, previous track.</p>
-
-<h3>While Media Plays</h3>
-<p>Optional: while something is playing, single and double click get their own media action.</p>
-
-<h3>App</h3>
-<p>Any installed app, from a searchable list. Does not open apps from the Lock Screen.</p>
-
-<h3>Stock Action</h3>
-<p>The long-press action from iOS Settings, on a click.</p>
-
-<h3>None</h3>
-<p>Turns a click off. With double click set to None, the single click fires instantly, with no wait.</p>
-
+<p><strong>Control</strong> &mdash; any Control Center control, including app controls, picked in Apple's own sheet. iOS 18+.</p>
+<p><strong>Accessibility</strong> &mdash; toggles a feature from Apple's Action Button list: Zoom, Magnifier, VoiceOver…</p>
+<p><strong>Shortcut</strong> &mdash; runs a shortcut the way Apple's Action Button does: the Shortcuts app stays closed, a short confirmation shows in the Dynamic Island. Picked in Apple's own sheet.</p>
+<p><strong>Siri</strong> &mdash; opens Siri the same way holding the side button does.</p>
+<p><strong>Voice Memo</strong> &mdash; Apple's own Voice Memo action: starts and stops a recording, also on the Lock Screen and with the screen off. The start/stop sound can be turned off.</p>
+<p><strong>Camera</strong> &mdash; side (Back / Front) and mode (Video, Slo-Mo, Time-Lapse, Cinematic, Photo, Portrait), set per click. Optionally starts recording as it opens; the same click stops it. Opens through Apple's own flow, so it is fast and works with the screen off and on the Lock Screen.</p>
+<p><strong>Screen Recording</strong> &mdash; starts and stops the recording. Same as Control Center's: 3-2-1 countdown, Dynamic Island view, saved to Photos. A recording started in Control Center stops with the button, and the other way round. The microphone follows the Control Center setting.</p>
+<p><strong>Control Center</strong> &mdash; runs one module: Dark Mode, Rotation Lock, Silent Mode, Low Power Mode, QR Code Reader, Magnifier, Voice Memos, Quick Note, Stopwatch, Timer, Alarm, Calculator, Wallet.</p>
+<p><strong>Flashlight</strong> &mdash; the same controller Control Center uses, so the two stay in sync. Brightness is set per click: Low, Medium, High, Maximum. While it is on, the volume buttons change its brightness.</p>
+<p><strong>Screenshot</strong> &mdash; the stock flow: flash, corner preview, tap to edit. Screenshot tweaks such as Prism and Snapper 3 are triggered too. Does nothing while the screen is off.</p>
+<p><strong>Media</strong> &mdash; play/pause, next track, previous track.</p>
+<p><strong>While Media Plays</strong> &mdash; optional: while something is playing, single and double click get their own media action.</p>
+<p><strong>App</strong> &mdash; any installed app, from a searchable list. Does not open apps from the Lock Screen.</p>
+<p><strong>Stock Action</strong> &mdash; the long-press action from iOS Settings, on a click.</p>
+<p><strong>None</strong> &mdash; turns a click off. With double click set to None, the single click fires instantly, with no wait.</p>
 <h2>Settings</h2>
 <p>Each click is configured on its own in <strong>Settings › ActionButtonFix</strong>, action and options both.</p>
-<p>Haptic feedback has separate switches for single and double click, on by default, and survives an action change.</p>
-<div class="note">
-  <p style="margin:0">Camera, Voice Memo, Shortcut, Screen Recording and Stock Action get their haptic from Apple, so the switch does not reach those.</p>
-</div>
+<p>Haptic feedback has separate switches for single and double click, on by default, and survives an action change. Camera, Voice Memo, Shortcut, Screen Recording and Stock Action get their haptic from Apple, so the switch does not reach those.</p>
 <p>On a fresh install the tweak is off and both clicks are <strong>None</strong>. Camera starts at the back camera, photo mode.</p>
-
 <h2>Requirements</h2>
 <ul>
-  <li>An iPhone with an Action Button — 15 Pro / Pro Max, and the 16 line</li>
+  <li>An iPhone with an Action Button &mdash; 15 Pro / Pro Max, and the 16 line</li>
   <li>iOS 17 or later</li>
   <li>RootHide or a rootless jailbreak</li>
   <li><strong>AltList</strong> (opa334's repo) and PreferenceLoader</li>
 </ul>
-<p>Tested on iPhone 15 Pro, iOS 17.0.3, RootHide; 17.1 and 17.3 confirmed by users. Supports up to iOS 26.6.2, tested on a virtual iPhone.</p>
+<p>Tested on iPhone 15 Pro, iOS 17.0.3, RootHide; 17.1 and 17.3 confirmed by users. Supports up to iOS 27.0.1, tested on a virtual iPhone.</p>
 
 <h2>Information</h2>
+
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.actionbuttonfix</td></tr>
-  <tr><td>Version</td><td>2.11.0</td></tr>
-  <tr><td>Device</td><td>iPhone 15 Pro / Pro Max · iPhone 16</td></tr>
-  <tr><td>Compatibility</td><td>RootHide · rootless</td></tr>
-  <tr><td>Tested on</td><td>iOS 17.0.3 · 17.1 · 17.3 · 26.6.2 (virtual iPhone)</td></tr>
+  <tr><td>Version</td><td>2.12.0</td></tr>
+  <tr><td>Device</td><td>iPhone 15 Pro / Pro Max &middot; iPhone 16</td></tr>
+  <tr><td>Compatibility</td><td>RootHide &middot; rootless</td></tr>
+  <tr><td>Tested on</td><td>iOS 17.0.3 &middot; 17.1 &middot; 17.3 &middot; 18.6.2 &middot; 26.6.2 &middot; 27.0.1 (virtual iPhone)</td></tr>
 </table>
-<p>Found a bug? <a href="https://github.com/muratkurt/ActionButtonFix">Open an issue on GitHub</a>.</p>
+
+<p><a href="https://github.com/muratkurt/ActionButtonFix">Report a bug &rarr;</a></p>
 
 <hr>
 
 <h2>Changelog</h2>
 
-<h3>2.11.0</h3>
+<h3>2.12.0</h3>
+
 <ul>
-  <li><strong>While Media Plays</strong> — play/pause, next, previous while media is playing</li>
-  <li>Volume buttons change flashlight brightness while it is on</li>
+  <li>iOS 27 support.</li>
+  <li>Previous / Next work like Control Center on every iOS version.</li>
+  <li><strong>Quick Note</strong> opens the stock sheet.</li>
+  <li>The Control Center module list follows your Control Center.</li>
+  <li>iOS 18+: the Control action replaces the Control Center action.</li>
+</ul>
+
+<h3>2.11.0</h3>
+
+<ul>
+  <li><strong>While Media Plays</strong> &mdash; play/pause, next, previous while media is playing.</li>
+  <li>Volume buttons change flashlight brightness while it is on.</li>
 </ul>
 
 <h3>2.10.0</h3>
+
 <ul>
-  <li><strong>Control action</strong> — any Control Center control (iOS 18+)</li>
-  <li><strong>Accessibility action</strong> — Zoom, Magnifier, VoiceOver and more</li>
-  <li>iOS 26: Screen Recording and Control Center work</li>
+  <li><strong>Control action</strong> &mdash; any Control Center control (iOS 18+).</li>
+  <li><strong>Accessibility action</strong> &mdash; Zoom, Magnifier, VoiceOver and more.</li>
+  <li>iOS 26: Screen Recording and Control Center work.</li>
 </ul>
 
 <h3>2.9.0</h3>
+
 <ul>
-  <li><strong>Shortcut action</strong> — runs a shortcut like Apple's Action Button, picked in Apple's own sheet</li>
-  <li><strong>Siri action</strong> — opens Siri like holding the side button</li>
+  <li><strong>Shortcut action</strong> &mdash; runs a shortcut like Apple's Action Button, picked in Apple's own sheet.</li>
+  <li><strong>Siri action</strong> &mdash; opens Siri like holding the side button.</li>
 </ul>
 
 <h3>2.8.1</h3>
+
 <ul>
-  <li>New settings look: an icon for every action; the selected one is colored and checked</li>
+  <li>New settings look: an icon for every action; the selected one is colored and checked.</li>
 </ul>
 
 <h3>2.8.0</h3>
-<p><strong>New</strong></p>
-<ul>
-  <li><strong>Voice Memo action</strong> — starts and stops a recording, also on the Lock Screen and with the screen off. The start/stop sound can be turned off</li>
-</ul>
-<p><strong>Fixed</strong></p>
+
+<h4>New</h4>
+<p><strong>Voice Memo action</strong> &mdash; starts and stops a recording, also on the Lock Screen and with the screen off. The start/stop sound can be turned off.</p>
+<h4>Fixed</h4>
 <ul>
   <li>Settings not saved on some installs</li>
   <li>Groundwork for iOS 18 and later</li>
 </ul>
 
 <h3>2.7.0</h3>
-<p><strong>New</strong></p>
-<ul>
-  <li><strong>Media action</strong> — play/pause, next track, previous track</li>
-  <li><strong>Flashlight brightness</strong> — Low, Medium, High, Maximum</li>
-</ul>
-<p><strong>Changes</strong></p>
+
+<h4>New</h4>
+<p><strong>Media action</strong> &mdash; play/pause, next track, previous track.</p>
+<p><strong>Flashlight brightness</strong> &mdash; Low, Medium, High, Maximum.</p>
+<h4>Changes</h4>
 <ul>
   <li>The Screenshot action now triggers screenshot tweaks such as Prism and Snapper 3</li>
   <li>Settings reorganized: each action's options sit in its own section</li>
 </ul>
 
 <h3>2.6.1</h3>
-<p><strong>Fixed</strong></p>
+
+<h4>Fixed</h4>
 <ul>
-  <li>The Camera action on iOS 17.3 — a click set to Camera ran the long-press action from iOS Settings instead of opening the camera</li>
+  <li>The Camera action on iOS 17.3 &mdash; a click set to Camera ran the long-press action from iOS Settings instead of opening the camera</li>
 </ul>
 
 <h3>2.6.0</h3>
-<p><strong>New</strong></p>
-<ul>
-  <li><strong>Control Center action</strong> — runs one module per click: Dark Mode, Rotation Lock, Silent Mode, Low Power Mode, QR Code Reader, Magnifier, Voice Memos, Quick Note, Stopwatch, Timer, Alarm, Calculator, Wallet</li>
-  <li><strong>None</strong> — turns a click off; with double click set to None, the single click fires instantly</li>
-  <li><strong>Contact</strong> — a row in Settings opens an email with the subject filled in</li>
-</ul>
-<p><strong>Changes</strong></p>
+
+<h4>New</h4>
+<p><strong>Control Center action</strong> &mdash; runs one module per click: Dark Mode, Rotation Lock, Silent Mode, Low Power Mode, QR Code Reader, Magnifier, Voice Memos, Quick Note, Stopwatch, Timer, Alarm, Calculator, Wallet.</p>
+<p><strong>None</strong> &mdash; turns a click off. With double click set to None, the single click fires instantly, with no wait.</p>
+<p><strong>Contact</strong> &mdash; a row in Settings opens an email with the subject filled in.</p>
+<h4>Changes</h4>
 <ul>
   <li>On a fresh install the tweak is off and both clicks are None; camera defaults to the back camera, photo mode</li>
-  <li>Settings storage renamed — <strong>existing settings reset once on this update</strong>; later updates keep them</li>
+  <li>Settings storage renamed &mdash; <strong>existing settings reset once on this update</strong>; later updates keep them</li>
 </ul>
 
 <h3>2.5.0</h3>
-<p><strong>New</strong></p>
-<ul>
-  <li><strong>Screen Recording action</strong> — starts and stops the recording. Same as Control Center's: 3-2-1 countdown, Dynamic Island view, saved to Photos. A recording started in Control Center stops with the button, and the other way round. The microphone follows the Control Center setting</li>
-</ul>
+
+<h4>New</h4>
+<p><strong>Screen Recording action</strong> &mdash; starts and stops the recording. Same as Control Center's: 3-2-1 countdown, Dynamic Island view, saved to Photos. A recording started in Control Center stops with the button, and the other way round. The microphone follows the Control Center setting.</p>
 
 <h3>2.4.0</h3>
-<p><strong>New</strong></p>
-<ul>
-  <li><strong>Camera action</strong> — side (Back / Front) and mode (Video, Slo-Mo, Time-Lapse, Cinematic, Photo, Portrait), chosen separately</li>
-  <li><strong>Per-click camera settings</strong> — side, mode and auto-record are set separately for single and double click</li>
-  <li><strong>Stop with the same click</strong> — while recording, the same click stops it</li>
-</ul>
-<p><strong>Changes</strong></p>
+
+<h4>New</h4>
+<p><strong>Camera action</strong> &mdash; side (Back / Front) and mode (Video, Slo-Mo, Time-Lapse, Cinematic, Photo, Portrait), chosen separately.</p>
+<p><strong>Per-click camera settings</strong> &mdash; side, mode and auto-record are set separately for single and double click.</p>
+<p><strong>Stop with the same click</strong> &mdash; while recording, the same click stops it.</p>
+<h4>Changes</h4>
 <ul>
   <li>Auto-started recording uses the normal recording screen: the photo button stays available, and the shutter stops it with one press</li>
   <li>Video Recording and Camera merged into one <strong>Camera</strong> action; clicks already set to Camera keep opening the back camera in photo mode</li>
   <li>Camera and its options have their own section in Settings</li>
 </ul>
-<p><strong>Fixed</strong></p>
+<h4>Fixed</h4>
 <ul>
   <li>The shutter could stay half-recording after an auto-start, needing two presses to stop</li>
   <li>Opening the camera by hand no longer starts a recording on its own</li>
 </ul>
 
 <h3>2.3.1</h3>
-<p><strong>New</strong></p>
-<ul>
-  <li><strong>Video Recording action</strong> — opens the camera in video mode and starts recording; works with the screen off and on the Lock Screen</li>
-  <li><strong>Start Recording Automatically</strong> switch — off opens the camera in video mode and leaves the recording to you</li>
-  <li><strong>App action</strong> — any installed app, per click, from a searchable list</li>
-  <li><strong>Stock Action</strong> — the long-press action from iOS Settings, on a click</li>
-  <li><strong>Haptic feedback</strong> — separate switches per click, on by default</li>
-  <li><strong>12 languages</strong> — Turkish, English, German, French, Spanish, Italian, Portuguese, Russian, Simplified Chinese, Japanese, Korean, Arabic</li>
-  <li><strong>Rootless package</strong> — alongside RootHide</li>
-</ul>
-<p><strong>Changes</strong></p>
+
+<h4>New</h4>
+<p><strong>Video Recording action</strong> &mdash; opens the camera in video mode and starts recording. Works with the screen off and on the Lock Screen.</p>
+<p><strong>Start Recording Automatically</strong> switch &mdash; off opens the camera in video mode and leaves the recording to you.</p>
+<p><strong>App action</strong> &mdash; any installed app, per click, from a searchable list.</p>
+<p><strong>Stock Action</strong> &mdash; the long-press action from iOS Settings, on a click.</p>
+<p><strong>Haptic feedback</strong> &mdash; separate switches per click, on by default.</p>
+<p><strong>12 languages</strong> &mdash; Turkish, English, German, French, Spanish, Italian, Portuguese, Russian, Simplified Chinese, Japanese, Korean, Arabic.</p>
+<p><strong>Rootless package</strong> &mdash; alongside RootHide.</p>
+<h4>Changes</h4>
 <ul>
   <li>Installs directly on RootHide, no extra tool</li>
   <li>More stable Camera action</li>
@@ -276,16 +250,17 @@
 </ul>
 
 <h3>2.2.0</h3>
+
 <p>First public release.</p>
 <ul>
-  <li>Screenshot uses the stock flow — flash, corner preview, tap to edit</li>
+  <li>Screenshot uses the stock flow &mdash; flash, corner preview, tap to edit</li>
   <li>Screenshot does nothing while the screen is off, by design</li>
   <li>Camera opens properly from the Home Screen, with no session left running</li>
   <li>Flashlight stays in sync with Control Center</li>
   <li>New icon, tidied Settings page</li>
 </ul>
 
-<p class="foot">For personal use on jailbroken devices.</p>
+<p class="foot">muratkurt &middot; <a href="https://muratkurt.github.io/">muratkurt.github.io</a> &middot; <a href="https://github.com/muratkurt/shivtools">GitHub</a></p>
 
 </body>
 </html>

@@ -1,0 +1,95 @@
+{
+  "minVersion": "0.1",
+  "headerImage": "https://muratkurt.github.io/assets/apptrackerblock/banner.png",
+  "tintColor": "#5856D6",
+  "tabs": [
+    {
+      "tabname": "Details",
+      "class": "DepictionStackView",
+      "views": [
+        {
+          "class": "DepictionScreenshotsView",
+          "itemCornerRadius": 12,
+          "itemSize": "{300, 200}",
+          "screenshots": [
+            {
+              "url": "https://muratkurt.github.io/assets/apptrackerblock/promo-1.jpg",
+              "accessibilityText": "Quick panel"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/apptrackerblock/promo-2.jpg",
+              "accessibilityText": "The app"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/apptrackerblock/promo-3.jpg",
+              "accessibilityText": "Every tracker"
+            }
+          ]
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "# AppTrackerBlock\n\nBlocks app trackers system-wide, Safari included. Nothing is injected into apps.\n\nSee what was blocked in the app, the quick panel and the widgets; a daily report comes at 21:00. The Control Center button is built in on iOS 18+; on iOS 15–17 it needs CCSupport."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Developer",
+          "text": "muratkurt"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Package",
+          "text": "com.muratkurt.apptrackerblock"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "2.0.0"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "RootHide · rootless"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Tested on",
+          "text": "iOS 17.0.3 · 26.6.2 · 27.0.1 (virtual iPhone)"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Report a bug",
+          "action": "https://github.com/muratkurt/AppTrackerBlock/issues/new/choose",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Documentation",
+          "action": "https://github.com/muratkurt/AppTrackerBlock",
+          "openExternal": true
+        }
+      ]
+    },
+    {
+      "tabname": "Changelog",
+      "class": "DepictionStackView",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "2.0.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- First release."
+        }
+      ]
+    }
+  ],
+  "class": "DepictionTabView"
+}

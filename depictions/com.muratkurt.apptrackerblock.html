@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AppTrackerBlock</title>
+<style>
+  :root {
+    --accent: #5856D6;
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --line: #e3e3e6;
+    --code-bg: #f4f4f6;
+    --note-bg: #fdf3ef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1e;
+      --fg: #f2f2f4;
+      --muted: #9a9aa0;
+      --line: #34343a;
+      --code-bg: #26262a;
+      --note-bg: #2c231f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 20px 18px 48px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  h1 { font-size: 27px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.4px; }
+  h2 { font-size: 21px; margin: 32px 0 10px; letter-spacing: -0.2px; }
+  h3 { font-size: 17px; margin: 22px 0 6px; }
+  p { margin: 0 0 12px; }
+  .lede { color: var(--muted); font-size: 17px; margin-bottom: 4px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 5px; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 14.5px;
+    background: var(--code-bg);
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+  pre {
+    background: var(--code-bg);
+    padding: 12px 14px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 0 0 14px;
+  }
+  pre code { background: none; padding: 0; font-size: 14px; line-height: 1.5; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 30px 0; }
+  .note {
+    background: var(--note-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 14px;
+    margin: 0 0 16px;
+  }
+  .note strong { color: var(--accent); }
+  ol.steps { padding-left: 20px; margin: 0 0 14px; }
+  ol.steps li { margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 0 0 14px; font-size: 16px; }
+  td { padding: 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:first-child { color: var(--muted); width: 45%; }
+  td:last-child { text-align: right; }
+  a { color: var(--accent); }
+  .foot { color: var(--muted); font-size: 14px; margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<div style="display:flex;gap:10px;overflow-x:auto;padding:4px 0">
+  <a href="https://muratkurt.github.io/assets/apptrackerblock/promo-1.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/promo-1.jpg" alt="Quick panel" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/apptrackerblock/promo-2.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/promo-2.jpg" alt="The app" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/apptrackerblock/promo-3.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/promo-3.jpg" alt="Every tracker" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+</div>
+
+<h1>AppTrackerBlock</h1>
+<p>Blocks app trackers system-wide, Safari included. Nothing is injected into apps.</p>
+<p>See what was blocked in the app, the quick panel and the widgets; a daily report comes at 21:00. The Control Center button is built in on iOS 18+; on iOS 15–17 it needs CCSupport.</p>
+
+<h2>Information</h2>
+
+<table>
+  <tr><td>Developer</td><td>muratkurt</td></tr>
+  <tr><td>Package</td><td>com.muratkurt.apptrackerblock</td></tr>
+  <tr><td>Version</td><td>2.0.0</td></tr>
+  <tr><td>Compatibility</td><td>RootHide &middot; rootless</td></tr>
+  <tr><td>Tested on</td><td>iOS 17.0.3 &middot; 26.6.2 &middot; 27.0.1 (virtual iPhone)</td></tr>
+</table>
+
+<p><a href="https://github.com/muratkurt/AppTrackerBlock/issues/new/choose">Report a bug &rarr;</a></p>
+
+<p><a href="https://github.com/muratkurt/AppTrackerBlock">Documentation &rarr;</a></p>
+
+<hr>
+
+<h2>Changelog</h2>
+
+<h3>2.0.0</h3>
+
+<ul>
+  <li>First release.</li>
+</ul>
+
+<p class="foot">muratkurt &middot; <a href="https://muratkurt.github.io/">muratkurt.github.io</a> &middot; <a href="https://github.com/muratkurt/shivtools">GitHub</a></p>
+
+</body>
+</html>
