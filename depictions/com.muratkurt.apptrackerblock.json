@@ -80,7 +80,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Tested on",
-          "text": "iOS 17.0.3 · 26.6.2 · 27.0.1 (virtual iPhone)"
+          "text": "iOS 17.0.3 (iPhone 15 Pro) · iOS 26.6.2 and 27.0.1 (virtual iPhone)"
         },
         {
           "class": "DepictionTableButtonView",
