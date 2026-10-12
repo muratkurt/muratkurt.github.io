@@ -9,26 +9,46 @@
       "views": [
         {
           "class": "DepictionScreenshotsView",
-          "itemCornerRadius": 12,
-          "itemSize": "{300, 200}",
+          "itemCornerRadius": 14,
+          "itemSize": "{240, 480}",
           "screenshots": [
             {
-              "url": "https://muratkurt.github.io/assets/apptrackerblock/promo-1.jpg",
+              "url": "https://muratkurt.github.io/assets/apptrackerblock/card-1.jpg",
+              "accessibilityText": "Trackers, blocked"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/apptrackerblock/card-2.jpg",
               "accessibilityText": "Quick panel"
             },
             {
-              "url": "https://muratkurt.github.io/assets/apptrackerblock/promo-2.jpg",
-              "accessibilityText": "The app"
+              "url": "https://muratkurt.github.io/assets/apptrackerblock/card-3.jpg",
+              "accessibilityText": "Today at a glance"
             },
             {
-              "url": "https://muratkurt.github.io/assets/apptrackerblock/promo-3.jpg",
-              "accessibilityText": "Every tracker"
+              "url": "https://muratkurt.github.io/assets/apptrackerblock/card-4.jpg",
+              "accessibilityText": "Who each app talks to"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/apptrackerblock/card-5.jpg",
+              "accessibilityText": "Know the companies"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/apptrackerblock/card-6.jpg",
+              "accessibilityText": "Where they show up"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/apptrackerblock/card-7.jpg",
+              "accessibilityText": "Where data would go"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/apptrackerblock/card-8.jpg",
+              "accessibilityText": "Live feed"
             }
           ]
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# AppTrackerBlock\n\nBlocks app trackers system-wide, Safari included. Nothing is injected into apps.\n\nSee what was blocked in the app, the quick panel and the widgets; a daily report comes at 21:00. The Control Center button is built in on iOS 18+; on iOS 15–17 it needs CCSupport."
+          "markdown": "# AppTrackerBlock\n\nBlocks app trackers system-wide, Safari included. Nothing is injected into apps.\n\n## Features\n\n- **Blocking** — tracker domains are dropped in the network layer, for every app\n- **App** — today, the last 7 days, every app, company and server country, and a live feed\n- **Daily report** — at 21:00: what was blocked, and which apps reached trackers for the first time\n- **Quick panel** — from Control Center; pause for 15 minutes or an hour\n- **Widgets** — for the Home Screen, 9 themes\n- **Deep mode** — optional, for apps with their own network code\n- 12 languages\n\n## Requirements\n\n- iOS 15 or later, RootHide or rootless\n- PreferenceLoader\n- CCSupport, only for the Control Center button on iOS 15–17 (built in on iOS 18+)"
         },
         {
           "class": "DepictionSeparatorView"
