@@ -93,18 +93,18 @@
 <h2>Features</h2>
 <ul>
   <li><strong>Blocking</strong> &mdash; tracker domains are dropped in the network layer, for every app</li>
-  <li><strong>App</strong> &mdash; Overview, Apps, Trackers, Live and Settings: today, the last 7 and 30 days, every app, company and server country, a real-time feed</li>
-  <li><strong>Your rules</strong> &mdash; allow a domain everywhere with a long press; turn blocking or Deep mode on and off per app</li>
+  <li><strong>App</strong> &mdash; Overview, Apps, Trackers, Live and Settings: today, the last 7 and 30 days, every app, company, category and server country, a real-time feed, CSV export</li>
+  <li><strong>Your rules</strong> &mdash; allow a domain everywhere or in one app, block your own domains, pause one app for 10 minutes; blocking and Deep mode per app</li>
   <li><strong>Daily report</strong> &mdash; at 21:00: what was blocked, and which apps reached trackers for the first time</li>
   <li><strong>Quick panel</strong> &mdash; from Control Center; pause for 15 minutes or an hour</li>
-  <li><strong>Widgets</strong> &mdash; for the Home Screen, 9 themes</li>
+  <li><strong>Widgets</strong> &mdash; Home Screen (9 themes) and Lock Screen; Shortcuts and a Control Center toggle</li>
   <li><strong>Deep mode</strong> &mdash; optional, for apps with their own network code</li>
   <li>12 languages</li>
 </ul>
 <h2>How it works</h2>
 <ul>
   <li>A small background service places drop rules in iOS's own network policy system (NECP) &mdash; the layer iOS uses for its own network rules.</li>
-  <li>Each rule is a tracker domain: about 2,600, where HaGeZi Multi PRO meets the DuckDuckGo and Disconnect company lists.</li>
+  <li>Each rule is a tracker domain: about 2,600, where HaGeZi Multi PRO meets the DuckDuckGo and Disconnect company lists. The list updates itself once a week.</li>
   <li>A connection to one of them is dropped before it leaves the phone, in every app and in Safari; system lookups are cut too.</li>
   <li>Nothing is injected into apps, so they keep running untouched. Apps you exclude and domains you allow are skipped.</li>
   <li>Each blocked attempt is counted on the device with the app, the company and the server's country.</li>
@@ -123,9 +123,9 @@
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.apptrackerblock</td></tr>
-  <tr><td>Version</td><td>2.1.0</td></tr>
+  <tr><td>Version</td><td>2.2.0</td></tr>
   <tr><td>Compatibility</td><td>RootHide &middot; rootless</td></tr>
-  <tr><td>Tested on</td><td>iOS 17.0.3 (iPhone 15 Pro) &middot; iOS 26.6.2 and 27.0.1 (virtual iPhone, 2.0.0)</td></tr>
+  <tr><td>Tested on</td><td>iOS 16.1.1 (iPhone XS, rootless) &middot; iOS 17.0.3 (iPhone 15 Pro) &middot; iOS 26.6.2 and 27.0.1 (virtual iPhone)</td></tr>
 </table>
 
 <p><a href="https://github.com/muratkurt/AppTrackerBlock/issues/new/choose">Report a bug &rarr;</a></p>
@@ -135,6 +135,20 @@
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>2.2.0</h3>
+
+<ul>
+  <li>Block your own domains, and allow a domain in just one app.</li>
+  <li>Tracker categories: ads, analytics, social, fingerprinting, crash reporting.</li>
+  <li>The tracker list updates itself once a week; Update now in Settings.</li>
+  <li>When blocking stops, the app says why and offers a fix.</li>
+  <li>Pause blocking in one app for 10 minutes.</li>
+  <li>Shortcuts, a Control Center toggle (iOS 18+) and Lock Screen widgets.</li>
+  <li>Export the week as CSV.</li>
+  <li>Other apps can no longer change AppTrackerBlock's settings.</li>
+  <li>Fixed: a short gap in blocking when rules changed, allowed domains in Deep mode applying late, counts capped at 15.</li>
+</ul>
 
 <h3>2.1.0</h3>
 
