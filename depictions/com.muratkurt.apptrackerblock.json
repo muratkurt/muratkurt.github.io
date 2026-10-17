@@ -18,7 +18,7 @@
             },
             {
               "url": "https://muratkurt.github.io/assets/apptrackerblock/card-2.jpg",
-              "accessibilityText": "Quick panel"
+              "accessibilityText": "Who's watching"
             },
             {
               "url": "https://muratkurt.github.io/assets/apptrackerblock/card-3.jpg",
@@ -26,7 +26,7 @@
             },
             {
               "url": "https://muratkurt.github.io/assets/apptrackerblock/card-4.jpg",
-              "accessibilityText": "Who each app talks to"
+              "accessibilityText": "Your week"
             },
             {
               "url": "https://muratkurt.github.io/assets/apptrackerblock/card-5.jpg",
@@ -34,21 +34,25 @@
             },
             {
               "url": "https://muratkurt.github.io/assets/apptrackerblock/card-6.jpg",
-              "accessibilityText": "Where they show up"
-            },
-            {
-              "url": "https://muratkurt.github.io/assets/apptrackerblock/card-7.jpg",
               "accessibilityText": "Where data would go"
             },
             {
-              "url": "https://muratkurt.github.io/assets/apptrackerblock/card-8.jpg",
+              "url": "https://muratkurt.github.io/assets/apptrackerblock/card-7.jpg",
               "accessibilityText": "Live feed"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/apptrackerblock/card-8.jpg",
+              "accessibilityText": "Your rules"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/apptrackerblock/card-9.jpg",
+              "accessibilityText": "In Settings too"
             }
           ]
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# AppTrackerBlock\n\nBlocks app trackers system-wide, Safari included. Nothing is injected into apps.\n\n## Features\n\n- **Blocking** — tracker domains are dropped in the network layer, for every app\n- **App** — today, the last 7 days, every app, company and server country, and a live feed\n- **Daily report** — at 21:00: what was blocked, and which apps reached trackers for the first time\n- **Quick panel** — from Control Center; pause for 15 minutes or an hour\n- **Widgets** — for the Home Screen, 9 themes\n- **Deep mode** — optional, for apps with their own network code\n- 12 languages\n\n## How it works\n\n- A small background service places drop rules in iOS's own network policy system (NECP) — the layer iOS uses for its own network rules.\n- Each rule is a tracker domain: about 2,600, where HaGeZi Multi PRO meets the DuckDuckGo and Disconnect company lists.\n- A connection to one of them is dropped before it leaves the phone, in every app and in Safari; system lookups are cut too.\n- Nothing is injected into apps, so they keep running untouched. Apps you exclude are skipped.\n- Each blocked attempt is counted on the device with the app, the company and the server's country.\n- Pause or turn it off and the rules are gone within milliseconds; nothing is left behind.\n- Apps that bring their own DNS or a fixed IP get past the system layer; Deep mode covers those inside the apps you pick.\n\n## Requirements\n\n- iOS 15 or later, RootHide or rootless\n- PreferenceLoader\n- CCSupport, only for the Control Center button on iOS 15–17 (built in on iOS 18+)"
+          "markdown": "# AppTrackerBlock\n\nBlocks app trackers system-wide, Safari included. Nothing is injected into apps.\n\n## Features\n\n- **Blocking** — tracker domains are dropped in the network layer, for every app\n- **App** — Overview, Apps, Trackers, Live and Settings: today, the last 7 and 30 days, every app, company and server country, a real-time feed\n- **Your rules** — allow a domain everywhere with a long press; turn blocking or Deep mode on and off per app\n- **Daily report** — at 21:00: what was blocked, and which apps reached trackers for the first time\n- **Quick panel** — from Control Center; pause for 15 minutes or an hour\n- **Widgets** — for the Home Screen, 9 themes\n- **Deep mode** — optional, for apps with their own network code\n- 12 languages\n\n## How it works\n\n- A small background service places drop rules in iOS's own network policy system (NECP) — the layer iOS uses for its own network rules.\n- Each rule is a tracker domain: about 2,600, where HaGeZi Multi PRO meets the DuckDuckGo and Disconnect company lists.\n- A connection to one of them is dropped before it leaves the phone, in every app and in Safari; system lookups are cut too.\n- Nothing is injected into apps, so they keep running untouched. Apps you exclude and domains you allow are skipped.\n- Each blocked attempt is counted on the device with the app, the company and the server's country.\n- Pause or turn it off and the rules are gone within milliseconds; nothing is left behind.\n- Apps that bring their own DNS or a fixed IP get past the system layer; Deep mode covers those inside the apps you pick.\n\n## Requirements\n\n- iOS 15 or later, RootHide or rootless\n- PreferenceLoader\n- CCSupport, only for the Control Center button on iOS 15–17 (built in on iOS 18+)"
         },
         {
           "class": "DepictionSeparatorView"
@@ -70,7 +74,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "2.0.0"
+          "text": "2.1.0"
         },
         {
           "class": "DepictionTableTextView",
@@ -80,7 +84,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Tested on",
-          "text": "iOS 17.0.3 (iPhone 15 Pro) · iOS 26.6.2 and 27.0.1 (virtual iPhone)"
+          "text": "iOS 17.0.3 (iPhone 15 Pro) · iOS 26.6.2 and 27.0.1 (virtual iPhone, 2.0.0)"
         },
         {
           "class": "DepictionTableButtonView",
@@ -100,6 +104,17 @@
       "tabname": "Changelog",
       "class": "DepictionStackView",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "2.1.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Redesigned app: Overview, Apps, Trackers, Live and Settings tabs.\n- Allow a domain in every app with a long press; it is skipped in the network rules and in Deep mode.\n- Turn blocking or Deep mode on and off per app.\n- Live feed updates on every block, without polling.\n- More statistics, including the last 30 days.\n- The app in 12 languages; dates and numbers follow its language.\n- Fixed: a false \"Protection stopped\" alert after the phone slept.\n- Fixed: the screen not updating when a pause ended, and an empty hourly chart."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "2.0.0"

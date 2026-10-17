@@ -618,6 +618,62 @@ MD5sum: f35130f6d67ce1ec45ce23d8ea5e358f
 SHA1: aed68340e56f46f5de3aaaa0d233250f71da0656
 SHA256: 9f1b61df0084f6681dab60593c5c0dd9b3afc8258cc1276374bfa89962277ded
 
+Package: com.muratkurt.apptrackerblock
+Name: AppTrackerBlock
+Author: muratkurt
+Maintainer: muratkurt
+Section: Tweaks
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader, curl
+Suggests: com.opa334.ccsupport
+Icon: https://muratkurt.github.io/assets/apptrackerblock/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.apptrackerblock.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.apptrackerblock.json
+Homepage: https://muratkurt.github.io/
+Description: Blocks app trackers system-wide, without injecting into apps
+ Tracker domains are blocked in the kernel network layer, Safari included.
+ .
+ App with a 7-day report per app, company and country, a live feed and a daily
+ report. Quick panel, home screen widgets, Control Center button
+ (iOS 18+ built in; iOS 15–17 needs CCSupport).
+ .
+ Settings > AppTrackerBlock. 12 languages.
+Architecture: iphoneos-arm64e
+Version: 2.1.0
+Installed-Size: 6592
+Filename: debs/AppTrackerBlock-2.1.0-roothide.deb
+Size: 1116314
+MD5sum: 7974a292d746d40a851aca2a95c4c64d
+SHA1: 8401ec896db904d36bc92d7b360aa7f36f79dbd5
+SHA256: a96ced6d869448d5b94016b65cc69e57dd8a5b29edb4939750a3aa6112c6020c
+
+Package: com.muratkurt.apptrackerblock
+Name: AppTrackerBlock
+Author: muratkurt
+Maintainer: muratkurt
+Section: Tweaks
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader, curl
+Suggests: com.opa334.ccsupport
+Icon: https://muratkurt.github.io/assets/apptrackerblock/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.apptrackerblock.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.apptrackerblock.json
+Homepage: https://muratkurt.github.io/
+Description: Blocks app trackers system-wide, without injecting into apps
+ Tracker domains are blocked in the kernel network layer, Safari included.
+ .
+ App with a 7-day report per app, company and country, a live feed and a daily
+ report. Quick panel, home screen widgets, Control Center button
+ (iOS 18+ built in; iOS 15–17 needs CCSupport).
+ .
+ Settings > AppTrackerBlock. 12 languages.
+Architecture: iphoneos-arm64
+Version: 2.1.0
+Installed-Size: 6592
+Filename: debs/AppTrackerBlock-2.1.0-rootless.deb
+Size: 1116000
+MD5sum: 4ad3e0ad00265c04569b25be8660607c
+SHA1: 96598ce237cefafa4f37dfb99fb7f490ce803964
+SHA256: 7e5143118d20d972f873666650a6b70fe19ed2d0c6eb9ac9ce03bff97446b802
+
 Package: com.muratkurt.kaswitcher
 Name: KASwitcher
 Author: muratkurt

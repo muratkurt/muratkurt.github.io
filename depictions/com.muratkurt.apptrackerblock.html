@@ -78,13 +78,14 @@
 
 <div style="display:flex;gap:10px;overflow-x:auto;padding:4px 0">
   <a href="https://muratkurt.github.io/assets/apptrackerblock/card-1.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/card-1.jpg" alt="Trackers, blocked" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
-  <a href="https://muratkurt.github.io/assets/apptrackerblock/card-2.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/card-2.jpg" alt="Quick panel" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/apptrackerblock/card-2.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/card-2.jpg" alt="Who&#x27;s watching" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
   <a href="https://muratkurt.github.io/assets/apptrackerblock/card-3.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/card-3.jpg" alt="Today at a glance" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
-  <a href="https://muratkurt.github.io/assets/apptrackerblock/card-4.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/card-4.jpg" alt="Who each app talks to" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/apptrackerblock/card-4.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/card-4.jpg" alt="Your week" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
   <a href="https://muratkurt.github.io/assets/apptrackerblock/card-5.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/card-5.jpg" alt="Know the companies" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
-  <a href="https://muratkurt.github.io/assets/apptrackerblock/card-6.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/card-6.jpg" alt="Where they show up" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
-  <a href="https://muratkurt.github.io/assets/apptrackerblock/card-7.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/card-7.jpg" alt="Where data would go" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
-  <a href="https://muratkurt.github.io/assets/apptrackerblock/card-8.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/card-8.jpg" alt="Live feed" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/apptrackerblock/card-6.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/card-6.jpg" alt="Where data would go" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/apptrackerblock/card-7.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/card-7.jpg" alt="Live feed" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/apptrackerblock/card-8.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/card-8.jpg" alt="Your rules" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/apptrackerblock/card-9.jpg"><img src="https://muratkurt.github.io/assets/apptrackerblock/card-9.jpg" alt="In Settings too" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
 </div>
 
 <h1>AppTrackerBlock</h1>
@@ -92,7 +93,8 @@
 <h2>Features</h2>
 <ul>
   <li><strong>Blocking</strong> &mdash; tracker domains are dropped in the network layer, for every app</li>
-  <li><strong>App</strong> &mdash; today, the last 7 days, every app, company and server country, and a live feed</li>
+  <li><strong>App</strong> &mdash; Overview, Apps, Trackers, Live and Settings: today, the last 7 and 30 days, every app, company and server country, a real-time feed</li>
+  <li><strong>Your rules</strong> &mdash; allow a domain everywhere with a long press; turn blocking or Deep mode on and off per app</li>
   <li><strong>Daily report</strong> &mdash; at 21:00: what was blocked, and which apps reached trackers for the first time</li>
   <li><strong>Quick panel</strong> &mdash; from Control Center; pause for 15 minutes or an hour</li>
   <li><strong>Widgets</strong> &mdash; for the Home Screen, 9 themes</li>
@@ -104,7 +106,7 @@
   <li>A small background service places drop rules in iOS's own network policy system (NECP) &mdash; the layer iOS uses for its own network rules.</li>
   <li>Each rule is a tracker domain: about 2,600, where HaGeZi Multi PRO meets the DuckDuckGo and Disconnect company lists.</li>
   <li>A connection to one of them is dropped before it leaves the phone, in every app and in Safari; system lookups are cut too.</li>
-  <li>Nothing is injected into apps, so they keep running untouched. Apps you exclude are skipped.</li>
+  <li>Nothing is injected into apps, so they keep running untouched. Apps you exclude and domains you allow are skipped.</li>
   <li>Each blocked attempt is counted on the device with the app, the company and the server's country.</li>
   <li>Pause or turn it off and the rules are gone within milliseconds; nothing is left behind.</li>
   <li>Apps that bring their own DNS or a fixed IP get past the system layer; Deep mode covers those inside the apps you pick.</li>
@@ -121,9 +123,9 @@
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.apptrackerblock</td></tr>
-  <tr><td>Version</td><td>2.0.0</td></tr>
+  <tr><td>Version</td><td>2.1.0</td></tr>
   <tr><td>Compatibility</td><td>RootHide &middot; rootless</td></tr>
-  <tr><td>Tested on</td><td>iOS 17.0.3 (iPhone 15 Pro) &middot; iOS 26.6.2 and 27.0.1 (virtual iPhone)</td></tr>
+  <tr><td>Tested on</td><td>iOS 17.0.3 (iPhone 15 Pro) &middot; iOS 26.6.2 and 27.0.1 (virtual iPhone, 2.0.0)</td></tr>
 </table>
 
 <p><a href="https://github.com/muratkurt/AppTrackerBlock/issues/new/choose">Report a bug &rarr;</a></p>
@@ -133,6 +135,19 @@
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>2.1.0</h3>
+
+<ul>
+  <li>Redesigned app: Overview, Apps, Trackers, Live and Settings tabs.</li>
+  <li>Allow a domain in every app with a long press; it is skipped in the network rules and in Deep mode.</li>
+  <li>Turn blocking or Deep mode on and off per app.</li>
+  <li>Live feed updates on every block, without polling.</li>
+  <li>More statistics, including the last 30 days.</li>
+  <li>The app in 12 languages; dates and numbers follow its language.</li>
+  <li>Fixed: a false "Protection stopped" alert after the phone slept.</li>
+  <li>Fixed: the screen not updating when a pause ended, and an empty hourly chart.</li>
+</ul>
 
 <h3>2.0.0</h3>
 
