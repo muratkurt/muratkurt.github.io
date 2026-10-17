@@ -89,7 +89,7 @@
         {
           "class": "DepictionTableButtonView",
           "title": "Report a bug",
-          "action": "https://github.com/muratkurt/AppTrackerBlock/issues/new/choose",
+          "action": "https://github.com/muratkurt/AppTrackerBlock/issues/new",
           "openExternal": true
         },
         {

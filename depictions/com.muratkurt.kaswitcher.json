@@ -80,7 +80,7 @@
         {
           "class": "DepictionTableButtonView",
           "title": "Report a bug",
-          "action": "https://github.com/muratkurt/KASwitcher/issues/new/choose",
+          "action": "https://github.com/muratkurt/KASwitcher/issues/new",
           "openExternal": true
         },
         {
