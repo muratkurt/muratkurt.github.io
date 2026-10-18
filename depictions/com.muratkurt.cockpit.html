@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cockpit</title>
+<style>
+  :root {
+    --accent: #E08600;
+    --bg: #ffffff;
+    --fg: #1c1c1e;
+    --muted: #6b6b70;
+    --line: #e3e3e6;
+    --code-bg: #f4f4f6;
+    --note-bg: #fdf3ef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1e;
+      --fg: #f2f2f4;
+      --muted: #9a9aa0;
+      --line: #34343a;
+      --code-bg: #26262a;
+      --note-bg: #2c231f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 20px 18px 48px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  h1 { font-size: 27px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -0.4px; }
+  h2 { font-size: 21px; margin: 32px 0 10px; letter-spacing: -0.2px; }
+  h3 { font-size: 17px; margin: 22px 0 6px; }
+  p { margin: 0 0 12px; }
+  .lede { color: var(--muted); font-size: 17px; margin-bottom: 4px; }
+  ul { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 5px; }
+  code {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 14.5px;
+    background: var(--code-bg);
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+  pre {
+    background: var(--code-bg);
+    padding: 12px 14px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 0 0 14px;
+  }
+  pre code { background: none; padding: 0; font-size: 14px; line-height: 1.5; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 30px 0; }
+  .note {
+    background: var(--note-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 14px;
+    margin: 0 0 16px;
+  }
+  .note strong { color: var(--accent); }
+  ol.steps { padding-left: 20px; margin: 0 0 14px; }
+  ol.steps li { margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; margin: 0 0 14px; font-size: 16px; }
+  td { padding: 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:first-child { color: var(--muted); width: 45%; }
+  td:last-child { text-align: right; }
+  a { color: var(--accent); }
+  .foot { color: var(--muted); font-size: 14px; margin-top: 30px; }
+</style>
+</head>
+<body>
+<p><img src="https://muratkurt.github.io/assets/cockpit/banner.png" alt="Cockpit" loading="lazy" style="width:100%;border-radius:12px"></p>
+<p style="display:flex;gap:8px;overflow-x:auto"><img src="https://muratkurt.github.io/assets/cockpit/card-1.jpg" alt="Your device at a glance" loading="lazy" style="width:45%;flex:none;border-radius:10px"><img src="https://muratkurt.github.io/assets/cockpit/card-2.jpg" alt="Tweaks and services" loading="lazy" style="width:45%;flex:none;border-radius:10px"><img src="https://muratkurt.github.io/assets/cockpit/card-3.jpg" alt="From Control Center" loading="lazy" style="width:45%;flex:none;border-radius:10px"><img src="https://muratkurt.github.io/assets/cockpit/card-4.jpg" alt="Light or dark" loading="lazy" style="width:45%;flex:none;border-radius:10px"><img src="https://muratkurt.github.io/assets/cockpit/card-5.jpg" alt="Make it yours" loading="lazy" style="width:45%;flex:none;border-radius:10px"></p>
+
+<h1>Cockpit</h1>
+<p class="lede">Your device at a glance, in place of the Today view.</p>
+
+<ul>
+  <li><strong>Live</strong> — CPU, memory and GPU load; battery health, cycles, temperature and power; network speed and thermal state.</li>
+  <li><strong>Connectivity</strong> — Wi-Fi, Bluetooth with the connected device, cellular data and AirDrop, each with its own switch.</li>
+  <li><strong>Actions</strong> — quick respring (open apps keep running), respring, userspace reboot, refresh icons, copy IP, safe mode.</li>
+  <li><strong>Tweaks</strong> — turn any tweak on or off; it applies on the next respring.</li>
+  <li><strong>Services</strong> — SSH and frida on or off, iOS MCP status.</li>
+  <li><strong>Processes</strong> — the largest by memory, with an end button.</li>
+  <li><strong>Control Center</strong> — a button opens Cockpit as a sheet over Control Center.</li>
+</ul>
+<p>A switch at the top returns to the stock widgets. On the Lock Screen, actions wait until the phone is unlocked. Nothing is read while the panel is off screen.</p>
+<p><strong>Settings › Cockpit:</strong> an on/off switch, card order, refresh rate, Lock Screen, style and colours.</p>
+
+<h2>Requirements</h2>
+<ul>
+  <li>iOS 16 or later</li>
+  <li>RootHide or a rootless jailbreak, PreferenceLoader</li>
+  <li>CCSupport for the Control Center button on iOS 16–17</li>
+</ul>
+
+<h2>Information</h2>
+
+<table>
+  <tr><td>Developer</td><td>muratkurt</td></tr>
+  <tr><td>Package</td><td>com.muratkurt.cockpit</td></tr>
+  <tr><td>Version</td><td>0.2.0</td></tr>
+  <tr><td>Compatibility</td><td>RootHide &middot; rootless</td></tr>
+  <tr><td>Tested on</td><td>iPhone 15 Pro iOS 17.0.3 &middot; iPhone XS iOS 16.1.1 &middot; iOS 27 (virtual iPhone)</td></tr>
+</table>
+
+<p><a href="https://github.com/muratkurt/Cockpit/issues/new">Report a bug &rarr;</a></p>
+
+<p><a href="https://github.com/muratkurt/Cockpit">Documentation &rarr;</a></p>
+
+<hr>
+
+<h2>Changelog</h2>
+
+<h3>0.2.0</h3>
+
+<ul>
+  <li>First release</li>
+</ul>
+
+<p class="foot">muratkurt &middot; <a href="https://muratkurt.github.io/">muratkurt.github.io</a> &middot; <a href="https://github.com/muratkurt/Cockpit">GitHub</a></p>
+
+</body>
+</html>

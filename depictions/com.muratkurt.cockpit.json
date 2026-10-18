@@ -1,0 +1,102 @@
+{
+  "minVersion": "0.1",
+  "headerImage": "https://muratkurt.github.io/assets/cockpit/banner.png",
+  "tintColor": "#FF9500",
+  "tabs": [
+    {
+      "tabname": "Details",
+      "class": "DepictionStackView",
+      "views": [
+        {
+          "class": "DepictionScreenshotsView",
+          "itemCornerRadius": 14,
+          "itemSize": "{240, 480}",
+          "screenshots": [
+            {
+              "url": "https://muratkurt.github.io/assets/cockpit/card-1.jpg",
+              "accessibilityText": "Your device at a glance"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/cockpit/card-2.jpg",
+              "accessibilityText": "Tweaks and services"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/cockpit/card-3.jpg",
+              "accessibilityText": "From Control Center"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/cockpit/card-4.jpg",
+              "accessibilityText": "Light or dark"
+            },
+            {
+              "url": "https://muratkurt.github.io/assets/cockpit/card-5.jpg",
+              "accessibilityText": "Make it yours"
+            }
+          ]
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "# Cockpit\n\nYour device at a glance, in place of the Today view.\n\n- **Live** — CPU, memory and GPU load; battery health, cycles, temperature and power; network speed and thermal state.\n- **Connectivity** — Wi-Fi, Bluetooth with the connected device, cellular data and AirDrop, each with its own switch.\n- **Actions** — quick respring (open apps keep running), respring, userspace reboot, refresh icons, copy IP, safe mode.\n- **Tweaks** — turn any tweak on or off; it applies on the next respring.\n- **Services** — SSH and frida on or off, iOS MCP status.\n- **Processes** — the largest by memory, with an end button.\n- **Control Center** — a button opens Cockpit as a sheet over Control Center.\n\nA switch at the top returns to the stock widgets. On the Lock Screen, actions wait until the phone is unlocked. Nothing is read while the panel is off screen.\n\n**Settings › Cockpit:** an on/off switch, card order, refresh rate, Lock Screen, style and colours.\n\n## Requirements\n\n- iOS 16 or later\n- RootHide or a rootless jailbreak, PreferenceLoader\n- CCSupport for the Control Center button on iOS 16–17"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Developer",
+          "text": "muratkurt"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Package",
+          "text": "com.muratkurt.cockpit"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "0.2.0"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "RootHide · rootless"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Tested on",
+          "text": "iPhone 15 Pro iOS 17.0.3 · iPhone XS iOS 16.1.1 · iOS 27 (virtual iPhone)"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Report a bug",
+          "action": "https://github.com/muratkurt/Cockpit/issues/new",
+          "openExternal": true
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Documentation",
+          "action": "https://github.com/muratkurt/Cockpit",
+          "openExternal": true
+        }
+      ]
+    },
+    {
+      "tabname": "Changelog",
+      "class": "DepictionStackView",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.2.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- First release."
+        }
+      ]
+    }
+  ]
+}
