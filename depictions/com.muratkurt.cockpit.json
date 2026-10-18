@@ -1,4 +1,5 @@
 {
+  "class": "DepictionTabView",
   "minVersion": "0.1",
   "headerImage": "https://muratkurt.github.io/assets/cockpit/banner.png",
   "tintColor": "#FF9500",
