@@ -76,12 +76,6 @@
           "title": "Report a bug",
           "action": "https://github.com/muratkurt/Cockpit/issues/new",
           "openExternal": true
-        },
-        {
-          "class": "DepictionTableButtonView",
-          "title": "Documentation",
-          "action": "https://github.com/muratkurt/Cockpit",
-          "openExternal": true
         }
       ]
     },

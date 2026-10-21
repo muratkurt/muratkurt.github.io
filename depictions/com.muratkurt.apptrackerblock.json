@@ -91,12 +91,6 @@
           "title": "Report a bug",
           "action": "https://github.com/muratkurt/AppTrackerBlock/issues/new",
           "openExternal": true
-        },
-        {
-          "class": "DepictionTableButtonView",
-          "title": "Documentation",
-          "action": "https://github.com/muratkurt/AppTrackerBlock",
-          "openExternal": true
         }
       ]
     },
