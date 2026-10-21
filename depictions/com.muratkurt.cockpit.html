@@ -75,24 +75,32 @@
 </style>
 </head>
 <body>
-<p><img src="https://muratkurt.github.io/assets/cockpit/banner.png" alt="Cockpit" loading="lazy" style="width:100%;border-radius:12px"></p>
-<p style="display:flex;gap:8px;overflow-x:auto"><img src="https://muratkurt.github.io/assets/cockpit/card-1.jpg" alt="Your device at a glance" loading="lazy" style="width:45%;flex:none;border-radius:10px"><img src="https://muratkurt.github.io/assets/cockpit/card-2.jpg" alt="Tweaks and services" loading="lazy" style="width:45%;flex:none;border-radius:10px"><img src="https://muratkurt.github.io/assets/cockpit/card-3.jpg" alt="From Control Center" loading="lazy" style="width:45%;flex:none;border-radius:10px"><img src="https://muratkurt.github.io/assets/cockpit/card-4.jpg" alt="Light or dark" loading="lazy" style="width:45%;flex:none;border-radius:10px"><img src="https://muratkurt.github.io/assets/cockpit/card-5.jpg" alt="Make it yours" loading="lazy" style="width:45%;flex:none;border-radius:10px"></p>
+
+<div style="display:flex;gap:10px;overflow-x:auto;padding:4px 0">
+  <a href="https://muratkurt.github.io/assets/cockpit/card-1.jpg"><img src="https://muratkurt.github.io/assets/cockpit/card-1.jpg" alt="Your device at a glance" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/cockpit/card-2.jpg"><img src="https://muratkurt.github.io/assets/cockpit/card-2.jpg" alt="Clean up, safely" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/cockpit/card-3.jpg"><img src="https://muratkurt.github.io/assets/cockpit/card-3.jpg" alt="Review before you clean" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/cockpit/card-4.jpg"><img src="https://muratkurt.github.io/assets/cockpit/card-4.jpg" alt="See what was freed" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/cockpit/card-5.jpg"><img src="https://muratkurt.github.io/assets/cockpit/card-5.jpg" alt="Pull down at the top left" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/cockpit/card-6.jpg"><img src="https://muratkurt.github.io/assets/cockpit/card-6.jpg" alt="Light or dark" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+  <a href="https://muratkurt.github.io/assets/cockpit/card-7.jpg"><img src="https://muratkurt.github.io/assets/cockpit/card-7.jpg" alt="Make it yours" loading="lazy" style="height:420px;border-radius:10px;flex:none"></a>
+</div>
 
 <h1>Cockpit</h1>
-<p class="lede">Your device at a glance, in place of the Today view.</p>
-
+<p>Your device at a glance, in place of the Today view.</p>
 <ul>
-  <li><strong>Live</strong> — CPU, memory and GPU load; battery health, cycles, temperature and power; network speed and thermal state.</li>
-  <li><strong>Connectivity</strong> — Wi-Fi, Bluetooth with the connected device, cellular data and AirDrop, each with its own switch.</li>
-  <li><strong>Actions</strong> — quick respring (open apps keep running), respring, userspace reboot, refresh icons, copy IP, safe mode.</li>
-  <li><strong>Tweaks</strong> — turn any tweak on or off; it applies on the next respring.</li>
-  <li><strong>Services</strong> — SSH and frida on or off, iOS MCP status.</li>
-  <li><strong>Processes</strong> — the largest by memory, with an end button.</li>
-  <li><strong>Control Center</strong> — a button opens Cockpit as a sheet over Control Center.</li>
+  <li><strong>Live</strong> &mdash; CPU, memory and GPU; battery health, cycles, temperature and power; network speed and heat.</li>
+  <li><strong>Cleanup</strong> &mdash; see what can be freed (app caches, temporary files, logs), review it and clean it. Apps are closed first; only a fixed list of folders is touched.</li>
+  <li><strong>Connectivity</strong> &mdash; Wi-Fi, Bluetooth, cellular data and Voice &amp; Data mode (5G, LTE, 3G), Personal Hotspot and AirDrop.</li>
+  <li><strong>Actions</strong> &mdash; quick respring (open apps keep running), respring, userspace reboot, close apps, refresh icons, copy IP, safe mode.</li>
+  <li><strong>Tweaks</strong> &mdash; turn any tweak on or off; reset, back up and restore its settings.</li>
+  <li><strong>Services</strong> &mdash; SSH and frida on or off, iOS MCP status.</li>
+  <li><strong>Processes</strong> &mdash; the largest by memory, with an end button.</li>
+  <li><strong>Pull down at the top left</strong> &mdash; opens Cockpit from the clock's side, as Control Center opens from the right (off by default).</li>
+  <li><strong>Control Center</strong> &mdash; a button opens Cockpit as a sheet over Control Center.</li>
 </ul>
-<p>A switch at the top returns to the stock widgets. On the Lock Screen, actions wait until the phone is unlocked. Nothing is read while the panel is off screen.</p>
-<p><strong>Settings › Cockpit:</strong> an on/off switch, card order, refresh rate, Lock Screen, style and colours.</p>
-
+<p>A switch at the top returns to the stock widgets. On the Lock Screen, actions wait until the phone is unlocked. Nothing is read while the panel is off screen. 12 languages.</p>
+<p><strong>Settings › Cockpit:</strong> an on/off switch, card order, refresh rate, Lock Screen, pull-down, style and colours.</p>
 <h2>Requirements</h2>
 <ul>
   <li>iOS 16 or later</li>
@@ -105,9 +113,9 @@
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.cockpit</td></tr>
-  <tr><td>Version</td><td>0.2.0</td></tr>
+  <tr><td>Version</td><td>0.3.0</td></tr>
   <tr><td>Compatibility</td><td>RootHide &middot; rootless</td></tr>
-  <tr><td>Tested on</td><td>iPhone 15 Pro iOS 17.0.3 &middot; iPhone XS iOS 16.1.1 &middot; iOS 27 (virtual iPhone)</td></tr>
+  <tr><td>Tested on</td><td>iPhone 15 Pro iOS 17.0.3 &middot; iPhone XS iOS 16.1.1 &middot; iOS 18.6.2, 26.6.2 and 27 (virtual iPhone)</td></tr>
 </table>
 
 <p><a href="https://github.com/muratkurt/Cockpit/issues/new">Report a bug &rarr;</a></p>
@@ -116,13 +124,24 @@
 
 <h2>Changelog</h2>
 
+<h3>0.3.0</h3>
+
+<ul>
+  <li><strong>Cleanup:</strong> see what can be freed and clean it safely &mdash; apps are closed first, nothing outside a fixed folder list is touched.</li>
+  <li>Pull down at the top left opens Cockpit, like Control Center (Settings, off by default).</li>
+  <li>12 languages.</li>
+  <li>Close Apps action; Personal Hotspot, Voice &amp; Data and AirDrop modes from the panel.</li>
+  <li>Reset, back up and restore any tweak's settings.</li>
+  <li>Faster after a respring; iOS 26 and iOS 16 fixes.</li>
+</ul>
+
 <h3>0.2.0</h3>
 
 <ul>
-  <li>First release</li>
+  <li>First release.</li>
 </ul>
 
-<p class="foot">muratkurt &middot; <a href="https://muratkurt.github.io/">muratkurt.github.io</a> &middot; <a href="https://github.com/muratkurt/Cockpit">GitHub</a></p>
+<p class="foot">muratkurt &middot; <a href="https://muratkurt.github.io/">muratkurt.github.io</a> &middot; <a href="https://github.com/muratkurt/shivtools">GitHub</a></p>
 
 </body>
 </html>
