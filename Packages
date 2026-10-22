@@ -834,6 +834,58 @@ MD5sum: 1b15b9bce6ac593289741c1bb21f488b
 SHA1: d3021827dc354aa73d46d61bc9f0fa37421d3259
 SHA256: ae1b3c63395aed00bcad60a58f45889f972468c9a9bf4ddf05a96dc843868a01
 
+Package: com.muratkurt.cockpit
+Name: Cockpit
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 16.0), mobilesubstrate (>= 0.9.5000), preferenceloader, uikittools, coreutils, findutils, gawk
+Suggests: com.opa334.ccsupport
+Icon: https://muratkurt.github.io/assets/cockpit/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.cockpit.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.cockpit.json
+Homepage: https://muratkurt.github.io/
+Description: Device status, tweaks and quick actions in place of the Today view
+ Swipe right on the Home Screen: live CPU, memory, GPU, battery and network; switches for Wi-Fi, Bluetooth, cellular data and AirDrop; your tweaks, services and processes.
+ .
+ Also as a sheet from a Control Center button (iOS 16-17 need CCSupport).
+ .
+ Settings > Cockpit.
+Architecture: iphoneos-arm64e
+Version: 0.3.1
+Installed-Size: 1796
+Filename: debs/Cockpit-0.3.1-roothide.deb
+Size: 259948
+MD5sum: dc2762c4c380acd3ecb1684896f5ec86
+SHA1: d224ddc83834c32543d17a0a168784395d8bc32d
+SHA256: ea9d3e601ad72779b38128bbec3bd54f676afba48a21ca81591540da2fc28353
+
+Package: com.muratkurt.cockpit
+Name: Cockpit
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 16.0), mobilesubstrate (>= 0.9.5000), preferenceloader, uikittools, coreutils, findutils, gawk
+Suggests: com.opa334.ccsupport
+Icon: https://muratkurt.github.io/assets/cockpit/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.cockpit.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.cockpit.json
+Homepage: https://muratkurt.github.io/
+Description: Device status, tweaks and quick actions in place of the Today view
+ Swipe right on the Home Screen: live CPU, memory, GPU, battery and network; switches for Wi-Fi, Bluetooth, cellular data and AirDrop; your tweaks, services and processes.
+ .
+ Also as a sheet from a Control Center button (iOS 16-17 need CCSupport).
+ .
+ Settings > Cockpit.
+Architecture: iphoneos-arm64
+Version: 0.3.1
+Installed-Size: 1796
+Filename: debs/Cockpit-0.3.1-rootless.deb
+Size: 260162
+MD5sum: 1b2fea89273045f068ea8a4141eccca5
+SHA1: df7030dfa07e8cb035095982f71ff6cdd0b2bf8a
+SHA256: 6956d31b30ef8a33b1728cdc76d9e1a3f24fe4df23384e240a00f1ce682a365d
+
 Package: com.muratkurt.kaswitcher
 Name: KASwitcher
 Author: muratkurt

@@ -45,7 +45,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# Cockpit\n\nYour device at a glance, in place of the Today view.\n\n- **Live** — CPU, memory and GPU; battery health, cycles, temperature and power; network speed and heat.\n- **Cleanup** — see what can be freed (app caches, temporary files, logs), review it and clean it. Apps are closed first; only a fixed list of folders is touched.\n- **Connectivity** — Wi-Fi, Bluetooth, cellular data and Voice & Data mode (5G, LTE, 3G), Personal Hotspot and AirDrop.\n- **Actions** — quick respring (open apps keep running), respring, userspace reboot, close apps, refresh icons, copy IP, safe mode.\n- **Tweaks** — turn any tweak on or off; reset, back up and restore its settings.\n- **Services** — SSH and frida on or off, iOS MCP status.\n- **Processes** — the largest by memory, with an end button.\n- **Pull down at the top left** — opens Cockpit from the clock's side, as Control Center opens from the right (off by default).\n- **Control Center** — a button opens Cockpit as a sheet over Control Center.\n\nA switch at the top returns to the stock widgets. On the Lock Screen, actions wait until the phone is unlocked. Nothing is read while the panel is off screen. 12 languages.\n\n**Settings › Cockpit:** an on/off switch, card order, refresh rate, Lock Screen, pull-down, style and colours.\n\n## Requirements\n\n- iOS 16 or later\n- RootHide or a rootless jailbreak, PreferenceLoader\n- CCSupport for the Control Center button on iOS 16–17"
+          "markdown": "# Cockpit\n\nYour device at a glance, in place of the Today view.\n\n- **Live** — CPU, memory and GPU; battery health, cycles, temperature and power; network speed and heat.\n- **Cleanup** — see what can be freed (app caches, temporary files, logs), review it and clean it. Apps are closed first; only a fixed list of folders is touched.\n- **Connectivity** — Wi-Fi, Bluetooth, cellular data and Voice & Data mode (5G, LTE, 3G), Personal Hotspot and AirDrop.\n- **Actions** — quick respring (open apps keep running), respring, userspace reboot, close apps, refresh icons, copy IP, safe mode.\n- **Tweaks** — turn any tweak on or off; reset, back up and restore its settings.\n- **Services** — SSH and frida on or off, iOS MCP status.\n- **Processes** — the largest by memory, with an end button.\n- **Pull down at the top left** — opens Cockpit from the clock's side, as Control Center opens from the right (off by default).\n- **Control Center** — a button opens Cockpit as a sheet over Control Center.\n\nA switch at the top returns to the stock widgets. On the Lock Screen, actions wait until the phone is unlocked. Nothing is read while the panel is off screen. 12 languages.\n\n**Settings › Cockpit:** an on/off switch, card order, refresh rate, Lock Screen, pull-down, switch position (for status bar tweaks like NiceBarX), style and colours.\n\n## Requirements\n\n- iOS 16 or later\n- RootHide or a rootless jailbreak, PreferenceLoader\n- CCSupport for the Control Center button on iOS 16–17"
         },
         {
           "class": "DepictionSeparatorView"
@@ -67,7 +67,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "0.3.0"
+          "text": "0.3.1"
         },
         {
           "class": "DepictionTableTextView",
@@ -91,6 +91,14 @@
       "tabname": "Changelog",
       "class": "DepictionStackView",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.3.1"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Switch Position slider: move the Widgets / Cockpit switch down for status bar tweaks like NiceBarX.\n- Settings and the screenshot editor now open in front of the top-left panel.\n- Lock Screen: the switch no longer jumps between Widgets and Cockpit.\n- Settings' Respring is now Quick."
+        },
         {
           "class": "DepictionHeaderView",
           "title": "0.3.0"

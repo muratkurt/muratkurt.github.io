@@ -6,12 +6,12 @@ Codename: ios
 Architectures: iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: Tweaks and command line tools for jailbroken iOS
-Date: Wed, 21 Oct 2026 20:49:16 GMT
+Date: Thu, 22 Oct 2026 22:08:48 GMT
 MD5Sum:
- 10a41a137507ace8dbae771db78d577a            94084 Packages
- 1fcc44df073e3faed70ab7d72a64d82e            13115 Packages.gz
- 4116e318ab927109fb379ab3398e8563            14016 Packages.bz2
+ 58109d4792006e686c9636718692b433            96365 Packages
+ 7fd2eb1169b0c40e547e1e270aebd79e            13344 Packages.gz
+ 2663da38bd0a83fe3b4c764ba91ee54f            14225 Packages.bz2
 SHA256:
- 71225e9cc0e68295298ec90715ce4372cb7eb12756db59e573bb21ca1ce9680b            94084 Packages
- e90fcdd35df414380be12d1172494f4ed195167bfaf170acb6d00a280dd08bd4            13115 Packages.gz
- 681623fe0445961408a2f5de76a0b21ef6b52fb569f02659ae8d9987d11c7fef            14016 Packages.bz2
+ 2f1858a0c401aa3f662d290356e0e06f95020ab2ad1a23caf886e9369ef938ce            96365 Packages
+ 6890c9f683a01b4126984bf48fe0636ac79bfcf8096c835303ab5ccdd5bfca2d            13344 Packages.gz
+ cfc601c56c2d7bc48e59a46b32f998a38d8ccb297cff6094826ef88648de099f            14225 Packages.bz2
