@@ -84,6 +84,10 @@
           "title": "Report a bug",
           "action": "https://github.com/muratkurt/Cockpit/issues/new",
           "openExternal": true
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Special thanks to [u/akrobolist](https://www.reddit.com/user/akrobolist) for testing and feedback."
         }
       ]
     },
@@ -97,7 +101,7 @@
         },
         {
           "class": "DepictionMarkdownView",
-          "markdown": "- Switch Position slider: move the Widgets / Cockpit switch down for status bar tweaks like NiceBarX.\n- Settings and the screenshot editor now open in front of the top-left panel.\n- Lock Screen: the switch no longer jumps between Widgets and Cockpit.\n- Settings' Respring is now Quick."
+          "markdown": "- Switch Position slider: move the Widgets / Cockpit switch down for status bar tweaks like NiceBarX.\n- Settings and the screenshot editor now open in front of the top-left panel.\n- Lock Screen: the switch no longer jumps between Widgets and Cockpit.\n- Settings' Respring is now Quick.\n\nThanks to [u/akrobolist](https://www.reddit.com/user/akrobolist) for testing with NiceBarX."
         },
         {
           "class": "DepictionHeaderView",
