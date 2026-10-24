@@ -89,18 +89,19 @@
 <h1>Cockpit</h1>
 <p>Your device at a glance, in place of the Today view.</p>
 <ul>
-  <li><strong>Live</strong> &mdash; CPU, memory and GPU; battery health, cycles, temperature and power; network speed and heat.</li>
-  <li><strong>Cleanup</strong> &mdash; see what can be freed (app caches, temporary files, logs), review it and clean it. Apps are closed first; only a fixed list of folders is touched.</li>
-  <li><strong>Connectivity</strong> &mdash; Wi-Fi, Bluetooth, cellular data and Voice &amp; Data mode (5G, LTE, 3G), Personal Hotspot and AirDrop.</li>
-  <li><strong>Actions</strong> &mdash; quick respring (open apps keep running), respring, userspace reboot, close apps, refresh icons, copy IP, safe mode.</li>
-  <li><strong>Tweaks</strong> &mdash; turn any tweak on or off; reset, back up and restore its settings.</li>
-  <li><strong>Services</strong> &mdash; SSH and frida on or off, iOS MCP status.</li>
-  <li><strong>Processes</strong> &mdash; the largest by memory, with an end button.</li>
-  <li><strong>Pull down at the top left</strong> &mdash; opens Cockpit from the clock's side, as Control Center opens from the right (off by default).</li>
-  <li><strong>Control Center</strong> &mdash; a button opens Cockpit as a sheet over Control Center.</li>
+  <li><strong>Live</strong>: CPU, memory and GPU; battery health, cycles, temperature and power; network speed and heat.</li>
+  <li><strong>Cleanup</strong>: see what can be freed (app caches, temporary files, logs), review it and clean it. Apps are closed first; only a fixed list of folders is touched.</li>
+  <li><strong>Connectivity</strong>: Wi-Fi, Bluetooth, cellular data and Voice &amp; Data mode (5G, LTE, 3G), Personal Hotspot and AirDrop.</li>
+  <li><strong>Actions</strong>: quick respring (open apps keep running), respring, userspace reboot, close apps, refresh icons, copy IP, safe mode.</li>
+  <li><strong>Tweaks</strong>: turn any tweak on or off; reset, back up and restore its settings.</li>
+  <li><strong>Device</strong>: iOS version and build, chip, memory, jailbreak type and uptime.</li>
+  <li><strong>Services</strong>: SSH and frida on or off, iOS MCP status.</li>
+  <li><strong>Processes</strong>: the largest by memory, with an end button.</li>
+  <li><strong>Pull down at the top left</strong>: opens Cockpit from the clock's side, as Control Center opens from the right (off by default).</li>
+  <li><strong>Control Center</strong>: a button opens Cockpit as a sheet over Control Center.</li>
 </ul>
 <p>A switch at the top returns to the stock widgets. On the Lock Screen, actions wait until the phone is unlocked. Nothing is read while the panel is off screen. 12 languages.</p>
-<p><strong>Settings › Cockpit:</strong> an on/off switch, card order, refresh rate, Lock Screen, pull-down, switch position (for status bar tweaks like NiceBarX), style and colours.</p>
+<p><strong>Settings › Cockpit:</strong> an on/off switch, card order, refresh rate, Lock Screen, pull-down, switch position and size (for status bar tweaks like NiceBarX), style and colours, Reset All Settings.</p>
 <h2>Requirements</h2>
 <ul>
   <li>iOS 16 or later</li>
@@ -113,7 +114,7 @@
 <table>
   <tr><td>Developer</td><td>muratkurt</td></tr>
   <tr><td>Package</td><td>com.muratkurt.cockpit</td></tr>
-  <tr><td>Version</td><td>0.3.1</td></tr>
+  <tr><td>Version</td><td>0.3.3</td></tr>
   <tr><td>Compatibility</td><td>RootHide &middot; rootless</td></tr>
   <tr><td>Tested on</td><td>iPhone 15 Pro iOS 17.0.3 &middot; iPhone XS iOS 16.1.1 &middot; iOS 18.6.2, 26.6.2 and 27 (virtual iPhone)</td></tr>
 </table>
@@ -125,6 +126,17 @@
 <hr>
 
 <h2>Changelog</h2>
+
+<h3>0.3.3</h3>
+
+<ul>
+  <li>The top-left panel closes when the phone locks, like Control Center.</li>
+  <li>The screenshot editor opens over the panel without closing it.</li>
+  <li>Cleanup scans only when you tap Scan (Settings › Scan Automatically for the old behaviour).</li>
+  <li>Switch size slider, and Reset All Settings.</li>
+  <li>Device card: build, chip and memory, jailbreak type.</li>
+  <li>Labels fit in every language.</li>
+</ul>
 
 <h3>0.3.1</h3>
 

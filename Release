@@ -6,12 +6,12 @@ Codename: ios
 Architectures: iphoneos-arm64 iphoneos-arm64e
 Components: main
 Description: Tweaks and command line tools for jailbroken iOS
-Date: Thu, 22 Oct 2026 22:08:48 GMT
+Date: Sat, 24 Oct 2026 14:23:35 GMT
 MD5Sum:
- 58109d4792006e686c9636718692b433            96365 Packages
- 7fd2eb1169b0c40e547e1e270aebd79e            13344 Packages.gz
- 2663da38bd0a83fe3b4c764ba91ee54f            14225 Packages.bz2
+ bbc6217209e60e5e17f6518eca4a563f           100875 Packages
+ ac7e1cba983c58ea421843dee294ddb7            13868 Packages.gz
+ e77bf86ec4e4a5519adc66b3fd12f1fc            14621 Packages.bz2
 SHA256:
- 2f1858a0c401aa3f662d290356e0e06f95020ab2ad1a23caf886e9369ef938ce            96365 Packages
- 6890c9f683a01b4126984bf48fe0636ac79bfcf8096c835303ab5ccdd5bfca2d            13344 Packages.gz
- cfc601c56c2d7bc48e59a46b32f998a38d8ccb297cff6094826ef88648de099f            14225 Packages.bz2
+ 8def76b79630b054a39d412240f62fb2f993ae7c1584a165bf916140e5f4f94a           100875 Packages
+ 2fc72ff5e2bf63268ad7ae1f3d7e4b590255e81dad96149cd104056ef1862b47            13868 Packages.gz
+ 2950f74e894ea3a7852fd5e287c5526542d885c48c11ccf425c83536a1d039b0            14621 Packages.bz2

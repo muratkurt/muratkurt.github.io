@@ -8,7 +8,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# ActionButtonFix\n\nSingle click and double click for the Action Button. The long press stays Apple's.\n\n## Gestures\n\n- **Single click** — an action you pick\n- **Double click** — a different action you pick\n- **Long press** — unchanged, whatever iOS Settings has\n\nThe short press is never handed to Apple, so the *Silent / hold* feedback in the Dynamic Island never appears. Only your action runs.\n\n## Actions\n\n**Control** — any Control Center control, including app controls, picked in Apple's own sheet. iOS 18+.\n\n**Accessibility** — toggles a feature from Apple's Action Button list: Zoom, Magnifier, VoiceOver…\n\n**Shortcut** — runs a shortcut the way Apple's Action Button does: the Shortcuts app stays closed, a short confirmation shows in the Dynamic Island. Picked in Apple's own sheet.\n\n**Siri** — opens Siri the same way holding the side button does.\n\n**Voice Memo** — Apple's own Voice Memo action: starts and stops a recording, also on the Lock Screen and with the screen off. The start/stop sound can be turned off.\n\n**Camera** — side (Back / Front) and mode (Video, Slo-Mo, Time-Lapse, Cinematic, Photo, Portrait), set per click. Optionally starts recording as it opens; the same click stops it. Opens through Apple's own flow, so it is fast and works with the screen off and on the Lock Screen.\n\n**Screen Recording** — starts and stops the recording. Same as Control Center's: 3-2-1 countdown, Dynamic Island view, saved to Photos. A recording started in Control Center stops with the button, and the other way round. The microphone follows the Control Center setting.\n\n**Control Center** — runs one module: Dark Mode, Rotation Lock, Silent Mode, Low Power Mode, QR Code Reader, Magnifier, Voice Memos, Quick Note, Stopwatch, Timer, Alarm, Calculator, Wallet.\n\n**Flashlight** — the same controller Control Center uses, so the two stay in sync. Brightness is set per click: Low, Medium, High, Maximum. While it is on, the volume buttons change its brightness.\n\n**Screenshot** — the stock flow: flash, corner preview, tap to edit. Screenshot tweaks such as Prism and Snapper 3 are triggered too. Does nothing while the screen is off.\n\n**Media** — play/pause, next track, previous track.\n\n**While Media Plays** — optional: while something is playing, single and double click get their own media action.\n\n**App** — any installed app, from a searchable list. Does not open apps from the Lock Screen.\n\n**Stock Action** — the long-press action from iOS Settings, on a click.\n\n**None** — turns a click off. With double click set to None, the single click fires instantly, with no wait.\n\n## Settings\n\nEach click is configured on its own in **Settings › ActionButtonFix**, action and options both.\n\nHaptic feedback has separate switches for single and double click, on by default, and survives an action change. Camera, Voice Memo, Shortcut, Screen Recording and Stock Action get their haptic from Apple, so the switch does not reach those.\n\nOn a fresh install the tweak is off and both clicks are **None**. Camera starts at the back camera, photo mode.\n\n## Requirements\n\n- An iPhone with an Action Button — 15 Pro / Pro Max, and the 16 line\n- iOS 17 or later\n- RootHide or a rootless jailbreak\n- **AltList** (opa334's repo) and PreferenceLoader\n\nTested on iPhone 15 Pro, iOS 17.0.3, RootHide; 17.1 and 17.3 confirmed by users. Supports up to iOS 27.0.1, tested on a virtual iPhone."
+          "markdown": "# ActionButtonFix\n\nSeparate actions for single and double click on the Action Button. Long press stays as Apple set it, and the Silent / hold pill no longer shows on a click.\n\n## Actions\n\n- **Control**: any Control Center control, picked in Apple's sheet (iOS 18+)\n- **Accessibility**: Zoom, Magnifier, VoiceOver and the rest of Apple's list\n- **Shortcut**: runs without opening Shortcuts, like Apple's button does\n- **Siri**\n- **Voice Memo**: start and stop a recording, also locked or with the screen off\n- **Camera**: front or back, any mode, optional auto record. Works from the Lock Screen\n- **Screen Recording**: same as Control Center's, countdown included\n- **Control Center** (iOS 17): Dark Mode, Low Power, Rotation Lock, Quick Note, Timer and more\n- **Flashlight**: four brightness levels. Volume buttons adjust it while it's on\n- **Screenshot**: stock flow, works with Prism and Snapper 3\n- **Media**: play/pause, next, previous\n- **App**: any app. From the Lock Screen it asks for Face ID first\n- **Stock Action**: the long press action, on a click\n- **None**: click off. With double click on None, single click fires instantly\n\n## When it runs\n\n- **By Situation**: other actions on the Lock Screen and in apps you choose\n- **While Media Plays**: media controls while something is playing\n- **Condition (beta)**: another action while charging, on Wi-Fi, with headphones, while music plays or in a time range\n\nEach click has its own haptic switch. A fresh install starts off, both clicks on None.\n\n## Requirements\n\n- iPhone with an Action Button, iOS 17 or later\n- RootHide or rootless\n- AltList (opa334's repo) and PreferenceLoader"
         },
         {
           "class": "DepictionSeparatorView"
@@ -30,7 +30,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "2.12.0"
+          "text": "2.13.0"
         },
         {
           "class": "DepictionTableTextView",
@@ -50,7 +50,7 @@
         {
           "class": "DepictionTableButtonView",
           "title": "Report a bug",
-          "action": "https://github.com/muratkurt/ActionButtonFix",
+          "action": "https://github.com/muratkurt/ActionButtonFix/issues/new",
           "openExternal": true
         }
       ],
@@ -59,6 +59,17 @@
     {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "2.13.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- **By Situation**: own actions on the Lock Screen and in apps you choose.\n- **Condition (beta)**: a different action while charging, on Wi-Fi, with headphones, while music plays or in a time range.\n- App action on the Lock Screen asks for Face ID / passcode, then opens the app.\n- Low Power Mode and Dark Mode fixed.\n- New strings in 12 languages."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "2.12.0"
