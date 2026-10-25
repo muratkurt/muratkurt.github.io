@@ -216,6 +216,60 @@ Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
 Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
 SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
 Homepage: https://muratkurt.github.io/
+Description: Single and double click actions for the Action Button
+ Assign separate actions to single and double click; the long press stays Apple's.
+ Different actions on the Lock Screen, per app, or when conditions are met.
+ .
+ Actions: Shortcut, Siri, Camera, Voice Memo, Flashlight, Screenshot, Screen Recording,
+ Control, Accessibility, Control Center, Media, App, Stock Action, Menu.
+ .
+ Settings > ActionButtonFix. 12 languages.
+Architecture: iphoneos-arm64e
+Version: 2.14.0
+Installed-Size: 848
+Filename: debs/ActionButtonFix-2.14.0-roothide.deb
+Size: 153276
+MD5sum: fa5dc327b13282cf88ae4fc25901be68
+SHA1: c6b7de2bbcaa76a2a1bd0083ad4b75d3d273d958
+SHA256: ea653dacf0b6afda413ee084c3fe41d73f5e177bfc96ad477d86b0477ef5d3d8
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Homepage: https://muratkurt.github.io/
+Description: Single and double click actions for the Action Button
+ Assign separate actions to single and double click; the long press stays Apple's.
+ Different actions on the Lock Screen, per app, or when conditions are met.
+ .
+ Actions: Shortcut, Siri, Camera, Voice Memo, Flashlight, Screenshot, Screen Recording,
+ Control, Accessibility, Control Center, Media, App, Stock Action, Menu.
+ .
+ Settings > ActionButtonFix. 12 languages.
+Architecture: iphoneos-arm64
+Version: 2.14.0
+Installed-Size: 848
+Filename: debs/ActionButtonFix-2.14.0-rootless.deb
+Size: 153294
+MD5sum: 17afe6e6ba0cec623542dd5f98510c75
+SHA1: bc8f86e72ea66928d7a1cd1182db602db55746ae
+SHA256: 7e6a4c7cbcf8b7632a66b3c27fa1664854f81ee7c3c38803e0185dd5bddd20c9
+
+Package: com.muratkurt.actionbuttonfix
+Name: ActionButtonFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 17.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/actionbuttonfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.actionbuttonfix.json
+Homepage: https://muratkurt.github.io/
 Description: Action Button'a tek tik ve cift tik eylemi kazandirir
  iPhone 15 Pro Action Button'unda tek tiklama ve cift tiklama icin
  bagimsiz eylem atamanizi saglar. Uzun basista Apple'in mevcut Action
@@ -985,6 +1039,54 @@ Size: 270392
 MD5sum: 2c7631cd899b644af73c69250b14a952
 SHA1: 8ce48ea096e82e461c1281e1d13cf78e80a41378
 SHA256: b6eec9ff21d298d37effae52a6f85b8ab96a18d704ac73e1e1c3b4884061060d
+
+Package: com.muratkurt.cockpit
+Name: Cockpit
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 16.0), mobilesubstrate (>= 0.9.5000), preferenceloader, uikittools, coreutils, findutils, gawk
+Suggests: com.opa334.ccsupport
+Icon: https://muratkurt.github.io/assets/cockpit/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.cockpit.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.cockpit.json
+Homepage: https://muratkurt.github.io/
+Description: Device status, quick actions and cleanup in place of the Today view
+ Swipe right on the Home Screen: live CPU, memory, battery and network, per-app energy and data; your widgets; Wi-Fi, Bluetooth, cellular and AirDrop; tweaks, services and processes; cache cleanup.
+ .
+ Also opens from the top-left corner (Settings) and from a Control Center button (iOS 16-17 need CCSupport).
+Architecture: iphoneos-arm64e
+Version: 0.4.0
+Installed-Size: 1952
+Filename: debs/Cockpit-0.4.0-roothide.deb
+Size: 304566
+MD5sum: 5bb4c61f426659fc816e77e10f8c45d2
+SHA1: 4c777f11db91bda3bdef9b2f4988ff3cdd10deee
+SHA256: e72fc288996f7692b857ef116020a79522fda08f7aca6a44988559c6ca419308
+
+Package: com.muratkurt.cockpit
+Name: Cockpit
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 16.0), mobilesubstrate (>= 0.9.5000), preferenceloader, uikittools, coreutils, findutils, gawk
+Suggests: com.opa334.ccsupport
+Icon: https://muratkurt.github.io/assets/cockpit/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.cockpit.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.cockpit.json
+Homepage: https://muratkurt.github.io/
+Description: Device status, quick actions and cleanup in place of the Today view
+ Swipe right on the Home Screen: live CPU, memory, battery and network, per-app energy and data; your widgets; Wi-Fi, Bluetooth, cellular and AirDrop; tweaks, services and processes; cache cleanup.
+ .
+ Also opens from the top-left corner (Settings) and from a Control Center button (iOS 16-17 need CCSupport).
+Architecture: iphoneos-arm64
+Version: 0.4.0
+Installed-Size: 1952
+Filename: debs/Cockpit-0.4.0-rootless.deb
+Size: 305652
+MD5sum: 752dbcf6e0b7492db3ac7c674cfd360c
+SHA1: fd22bd86c2978ca678870deb8301676145c213d1
+SHA256: c5adb5de511cf203e5ea6e1076eb3e4eebf440d5a4b118fc96ee3797006ebd0a
 
 Package: com.muratkurt.kaswitcher
 Name: KASwitcher

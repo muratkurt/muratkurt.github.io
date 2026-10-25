@@ -8,7 +8,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# ActionButtonFix\n\nSeparate actions for single and double click on the Action Button. Long press stays as Apple set it, and the Silent / hold pill no longer shows on a click.\n\n## Actions\n\n- **Control**: any Control Center control, picked in Apple's sheet (iOS 18+)\n- **Accessibility**: Zoom, Magnifier, VoiceOver and the rest of Apple's list\n- **Shortcut**: runs without opening Shortcuts, like Apple's button does\n- **Siri**\n- **Voice Memo**: start and stop a recording, also locked or with the screen off\n- **Camera**: front or back, any mode, optional auto record. Works from the Lock Screen\n- **Screen Recording**: same as Control Center's, countdown included\n- **Control Center** (iOS 17): Dark Mode, Low Power, Rotation Lock, Quick Note, Timer and more\n- **Flashlight**: four brightness levels. Volume buttons adjust it while it's on\n- **Screenshot**: stock flow, works with Prism and Snapper 3\n- **Media**: play/pause, next, previous\n- **App**: any app. From the Lock Screen it asks for Face ID first\n- **Stock Action**: the long press action, on a click\n- **None**: click off. With double click on None, single click fires instantly\n\n## When it runs\n\n- **By Situation**: other actions on the Lock Screen and in apps you choose\n- **While Media Plays**: media controls while something is playing\n- **Condition (beta)**: another action while charging, on Wi-Fi, with headphones, while music plays or in a time range\n\nEach click has its own haptic switch. A fresh install starts off, both clicks on None.\n\n## Requirements\n\n- iPhone with an Action Button, iOS 17 or later\n- RootHide or rootless\n- AltList (opa334's repo) and PreferenceLoader"
+          "markdown": "# ActionButtonFix\n\nSeparate actions for single and double click on the Action Button. Long press stays as Apple set it, and the Silent / hold pill no longer shows on a click.\n\n## Actions\n\n- **Control**: any Control Center control, picked in Apple's sheet (iOS 18+)\n- **Accessibility**: Zoom, Magnifier, VoiceOver and the rest of Apple's list\n- **Shortcut**: runs without opening Shortcuts, like Apple's button does\n- **Siri**\n- **Voice Memo**: start and stop a recording, also locked or with the screen off\n- **Camera**: front or back, any mode, optional auto record. Works from the Lock Screen\n- **Screen Recording**: same as Control Center's, countdown included\n- **Control Center** (iOS 17): Dark Mode, Low Power, Rotation Lock, Quick Note, Timer and more\n- **Flashlight**: four brightness levels. Volume buttons adjust it while it's on\n- **Screenshot**: stock flow, works with Prism and Snapper 3\n- **Media**: play/pause, next, previous\n- **App**: any app. From the Lock Screen it asks for Face ID first\n- **Stock Action**: the long press action, on a click\n- **Menu**: press, then pick an action from a short list\n- **None**: click off. With double click on None, single click fires instantly\n\n## When it runs\n\n- **By Situation**: other actions on the Lock Screen and in apps you choose\n- **While Media Plays**: media controls while something is playing\n- **Condition (beta)**: another action when your checks match: charging, Wi-Fi network, Bluetooth device, headphones, music, Focus, Low Power, low battery, time range, weekdays or weekends\n\nEach click has its own haptic switch. A fresh install starts off, both clicks on None.\n\n## Requirements\n\n- iPhone with an Action Button, iOS 17 or later\n- RootHide or rootless\n- AltList (opa334's repo) and PreferenceLoader"
         },
         {
           "class": "DepictionSeparatorView"
@@ -30,7 +30,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "2.13.0"
+          "text": "2.14.0"
         },
         {
           "class": "DepictionTableTextView",
@@ -59,6 +59,17 @@
     {
       "tabname": "Changelog",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "2.14.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- **Conditions** combine several checks, each Yes, No or Any.\n- New checks: Bluetooth device, Wi-Fi network, Focus, Low Power, low battery, weekdays / weekends.\n- **Menu** action: pick from a list when you press.\n- \"How It Works\" guide for conditions.\n- Reset buttons for conditions and for all settings."
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
         {
           "class": "DepictionHeaderView",
           "title": "2.13.0"
