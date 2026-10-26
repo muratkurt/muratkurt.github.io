@@ -1,0 +1,70 @@
+{
+  "class": "DepictionTabView",
+  "minVersion": "0.1",
+  "headerImage": "https://muratkurt.github.io/assets/frontcamfix/banner.png",
+  "tintColor": "#DC7856",
+  "tabs": [
+    {
+      "tabname": "Details",
+      "class": "DepictionStackView",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "# FrontCamFix\n\nFront camera broken? FrontCamFix gives every app the rear camera instead: FaceTime, video calls, selfie and ID checks keep working. Also handy when an app only offers the front camera. The front camera is never started.\n\n- **Every app**: the switch happens in iOS's camera service, so Camera, FaceTime, video calls and Safari all get the rear camera. The app is not told.\n- **Mirroring**: stock (as the app sets it), off, or on.\n- **Excluded apps** keep the real front camera.\n\n**Settings › FrontCamFix.** Changes apply the next time an app opens the camera. 12 languages.\n\n## Requirements\n\n- iOS 16 or 17 (iOS 18 and later not tested yet)\n- RootHide or a rootless jailbreak, PreferenceLoader, AltList"
+        },
+        {
+          "class": "DepictionSeparatorView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Information"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Developer",
+          "text": "muratkurt"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Package",
+          "text": "com.muratkurt.frontcamfix"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Version",
+          "text": "0.1.0"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Compatibility",
+          "text": "RootHide · rootless"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Tested on",
+          "text": "iPhone 15 Pro iOS 17.0.3 · iPhone 14 Pro Max iOS 16.5.1"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Contact",
+          "action": "mailto:muratkurttr@outlook.com?subject=FrontCamFix",
+          "openExternal": true
+        }
+      ]
+    },
+    {
+      "tabname": "Changelog",
+      "class": "DepictionStackView",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.1.0"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- First release."
+        }
+      ]
+    }
+  ]
+}
