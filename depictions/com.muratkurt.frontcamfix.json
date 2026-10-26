@@ -32,7 +32,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "0.1.0"
+          "text": "0.1.1"
         },
         {
           "class": "DepictionTableTextView",
@@ -56,6 +56,14 @@
       "tabname": "Changelog",
       "class": "DepictionStackView",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.1.1"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Works right after installing: the install restarts mediaserverd, which a respring does not do."
+        },
         {
           "class": "DepictionHeaderView",
           "title": "0.1.0"

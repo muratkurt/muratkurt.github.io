@@ -1134,6 +1134,52 @@ MD5sum: 371b2f10e4fa95fceaa071f8e026e8b0
 SHA1: 6d4189acb6b530a3846f423186a44defb4fb4b84
 SHA256: 54baff5b46a52a29eaf03c63bc199c4195cc124dfed93007c1034b683be4a04d
 
+Package: com.muratkurt.frontcamfix
+Name: FrontCamFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 16.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/frontcamfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.frontcamfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.frontcamfix.json
+Homepage: https://muratkurt.github.io/
+Description: Use the rear camera wherever an app asks for the front camera
+ For phones with a broken front camera: apps that open it (FaceTime, video calls, selfie and ID checks) freeze. FrontCamFix hands them the rear camera instead, so they keep working. Also for anyone who wants the rear camera in an app that only offers the front one.
+ .
+ Works in every app, FaceTime and Safari included. The front camera is never started. Settings: on/off, mirroring, excluded apps.
+Architecture: iphoneos-arm64e
+Version: 0.1.1
+Installed-Size: 432
+Filename: debs/FrontCamFix-0.1.1-roothide.deb
+Size: 25786
+MD5sum: a6f90820ed1c03faccfe5675ae5d5c74
+SHA1: 109b23152ec9967687df220a4a5ebbceb115c3dc
+SHA256: f0f2b86bdaeea8d5d8932d8fa0196d55b115b4bd0d094688e45435a41b62e101
+
+Package: com.muratkurt.frontcamfix
+Name: FrontCamFix
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 16.0), mobilesubstrate (>= 0.9.5000), preferenceloader, com.opa334.altlist
+Icon: https://muratkurt.github.io/assets/frontcamfix/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.frontcamfix.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.frontcamfix.json
+Homepage: https://muratkurt.github.io/
+Description: Use the rear camera wherever an app asks for the front camera
+ For phones with a broken front camera: apps that open it (FaceTime, video calls, selfie and ID checks) freeze. FrontCamFix hands them the rear camera instead, so they keep working. Also for anyone who wants the rear camera in an app that only offers the front one.
+ .
+ Works in every app, FaceTime and Safari included. The front camera is never started. Settings: on/off, mirroring, excluded apps.
+Architecture: iphoneos-arm64
+Version: 0.1.1
+Installed-Size: 432
+Filename: debs/FrontCamFix-0.1.1-rootless.deb
+Size: 25854
+MD5sum: a8787f4be70c712c1cecbdbc810b2164
+SHA1: 4b2eb758ef41466d97af0e067986439f4a99b589
+SHA256: ff4fc3d18d1f14960072b3723ae90240aae4bc7bb40e69a046850a3f775a0cbb
+
 Package: com.muratkurt.kaswitcher
 Name: KASwitcher
 Author: muratkurt
