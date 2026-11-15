@@ -46,8 +46,8 @@
         },
         {
           "class": "DepictionTableButtonView",
-          "title": "Contact",
-          "action": "mailto:muratkurttr@outlook.com?subject=FrontCamFix",
+          "title": "Report a bug",
+          "action": "https://github.com/muratkurt/FrontCamFix/issues/new",
           "openExternal": true
         }
       ]
