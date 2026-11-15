@@ -67,7 +67,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "0.4.0"
+          "text": "0.4.1"
         },
         {
           "class": "DepictionTableTextView",
@@ -95,6 +95,14 @@
       "tabname": "Changelog",
       "class": "DepictionStackView",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.4.1"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Smoother: no stutter while the panel is open.\n- The Today page slides in on its first opening after a respring.\n- Fixed: the Today page bouncing back after closing the top-left panel."
+        },
         {
           "class": "DepictionHeaderView",
           "title": "0.4.0"

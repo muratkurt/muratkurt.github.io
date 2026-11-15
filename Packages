@@ -1088,6 +1088,54 @@ MD5sum: 752dbcf6e0b7492db3ac7c674cfd360c
 SHA1: fd22bd86c2978ca678870deb8301676145c213d1
 SHA256: c5adb5de511cf203e5ea6e1076eb3e4eebf440d5a4b118fc96ee3797006ebd0a
 
+Package: com.muratkurt.cockpit
+Name: Cockpit
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 16.0), mobilesubstrate (>= 0.9.5000), preferenceloader, uikittools, coreutils, findutils, gawk
+Suggests: com.opa334.ccsupport
+Icon: https://muratkurt.github.io/assets/cockpit/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.cockpit.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.cockpit.json
+Homepage: https://muratkurt.github.io/
+Description: Device status, quick actions and cleanup in place of the Today view
+ Swipe right on the Home Screen: live CPU, memory, battery and network, per-app energy and data; your widgets; Wi-Fi, Bluetooth, cellular and AirDrop; tweaks, services and processes; cache cleanup.
+ .
+ Also opens from the top-left corner (Settings) and from a Control Center button (iOS 16-17 need CCSupport).
+Architecture: iphoneos-arm64e
+Version: 0.4.1
+Installed-Size: 1952
+Filename: debs/Cockpit-0.4.1-roothide.deb
+Size: 310438
+MD5sum: 5d2981f151205fc4b6b18ccc5d415c75
+SHA1: 931bca2b558fe4c71c2057555fc59e5f8808c35f
+SHA256: dd20a986ac097c7f06b1b8b6994fe56a4e8bf8214da134b00563322e3e8f93af
+
+Package: com.muratkurt.cockpit
+Name: Cockpit
+Maintainer: muratkurt
+Author: muratkurt
+Section: Tweaks
+Depends: firmware (>= 16.0), mobilesubstrate (>= 0.9.5000), preferenceloader, uikittools, coreutils, findutils, gawk
+Suggests: com.opa334.ccsupport
+Icon: https://muratkurt.github.io/assets/cockpit/icon.png
+Depiction: https://muratkurt.github.io/depictions/com.muratkurt.cockpit.html
+SileoDepiction: https://muratkurt.github.io/depictions/com.muratkurt.cockpit.json
+Homepage: https://muratkurt.github.io/
+Description: Device status, quick actions and cleanup in place of the Today view
+ Swipe right on the Home Screen: live CPU, memory, battery and network, per-app energy and data; your widgets; Wi-Fi, Bluetooth, cellular and AirDrop; tweaks, services and processes; cache cleanup.
+ .
+ Also opens from the top-left corner (Settings) and from a Control Center button (iOS 16-17 need CCSupport).
+Architecture: iphoneos-arm64
+Version: 0.4.1
+Installed-Size: 1952
+Filename: debs/Cockpit-0.4.1-rootless.deb
+Size: 310432
+MD5sum: 174fc0f0744ec67ba248b6593b854246
+SHA1: fbc44cf9ab1e719d64fee259ff3111bb575a543e
+SHA256: 91d9d3f84c1b97d8de3f7a57492cd8840ae50c2093b09f156383deb5678c82d7
+
 Package: com.muratkurt.frontcamfix
 Name: FrontCamFix
 Maintainer: muratkurt
