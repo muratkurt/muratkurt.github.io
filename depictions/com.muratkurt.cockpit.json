@@ -67,7 +67,7 @@
         {
           "class": "DepictionTableTextView",
           "title": "Version",
-          "text": "0.4.1"
+          "text": "0.4.2"
         },
         {
           "class": "DepictionTableTextView",
@@ -95,6 +95,14 @@
       "tabname": "Changelog",
       "class": "DepictionStackView",
       "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "0.4.2"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Fixed: SpringBoard crash with the Processes card on, when a process name is in a non-Latin script (e.g. Cyrillic)."
+        },
         {
           "class": "DepictionHeaderView",
           "title": "0.4.1"
